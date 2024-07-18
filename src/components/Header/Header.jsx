@@ -1,6 +1,7 @@
 import React from "react";
 import imageLogo from "../../assets/headerImages/Foody..png";
 import "../../style/header.css";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -9,7 +10,9 @@ function Header() {
         <img src={imageLogo} alt="" className="imgLogo" />
 
         <ul>
-          <li>Home</li>
+          <Link to="/">
+            <li>Home</li>
+          </Link>
           <li>Restaurants</li>
           <li>About us</li>
           <li>How it works</li>
