@@ -1,0 +1,311 @@
+
+
+.div1 {
+    background-color: black;
+    width: 50%;
+    position: relative;
+    border-radius: 10%;
+    margin-right: 10%;
+}
+
+.div5 {
+    position: relative;
+}
+
+.burger {
+    width: 100%;
+    height: auto;
+    margin-top: 15%;
+    position: relative;
+    z-index: 1;
+}
+
+.div2, .div3, .div4 {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    height: 15%;
+    border-radius: 20%;
+    animation: moveUpDown 8s infinite alternate;
+}
+
+.div2 {
+    top: 90%;
+    left: -15%;
+}
+
+.div3 {
+    top: 10%;
+    left: 75%;
+}
+
+.div4 {
+    top: 90%;
+    left: 80%;
+}
+
+.div2 img, .div3 img, .div4 img {
+    width: 80px;
+    height: 100%;
+    border-radius: 50%;
+    opacity: 1;
+}
+
+.div2 p, .div3 p, .div4 p {
+    font-family: Mukta, sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    text-align: center;
+    color: black;
+    margin-top: 5px;
+}
+
+.all {
+    display: flex;
+    margin-left: 5%;
+    background-color: rgba(243, 244, 246, 1);
+    width: 90%;
+}
+
+.all1{
+    margin-left: 5%;
+}
+
+.info p {
+    font-family: Roboto;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.03em;
+    text-align: left;
+    width: 50%;
+}
+
+.info h1 {
+    font-family: Roboto;
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 70px;
+    letter-spacing: 0.03em;
+    text-align: left;
+    width: 70%;
+}
+
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+.register{
+    width: 220px;
+height: 60px;
+border-radius: 30px;
+opacity: 0px;
+color: white;
+background-color: red;
+border: none;
+}
+
+.order{
+    width: 220px;
+height: 60px;
+border-radius: 30px;
+opacity: 0px;
+}
+
+.h1{
+    font-family: Roboto;
+font-size: 40px;
+font-weight: 900;
+line-height: 70px;
+letter-spacing: 0.03em;
+text-align: center;
+margin-top: 10%;
+
+
+
+}
+
+.h3{
+    font-family: Roboto;
+font-size: 22px;
+font-weight: 400;
+line-height: 30px;
+letter-spacing: 0.03em;
+text-align: center;
+width: 780px;
+height: 105px;
+margin-left: 20%;
+
+}
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 10%;
+}
+
+.card1, .card2, .card3{
+    border: solid;
+    border-width: 1px ;
+    box-shadow:  0 4px 10px  ;
+    width: 20%;
+
+}
+
+.card1 img, .card2 img, .card3 img{
+    width: 80%;
+
+}
+
+.card2 img{
+    width: 70%;
+    margin-left: 13%;
+}
+
+.card2 h2{
+    margin-top: 1%;
+}
+
+.card1 h2, .card2 h2, .card3 h2{
+    text-align: center;
+}
+
+.card1 p, .card2 p, .card3 p{
+    font-family: Roboto;
+font-size: 18px;
+font-weight: 400;
+line-height: 30px;
+letter-spacing: 0.03em;
+text-align: center;
+}
+
+.main1{
+    display: flex;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+.main1 img{
+    width: 90%
+}
+
+.txt1{
+    width: 60%
+}
+
+.main1 h1{
+    font-family: Roboto;
+font-size: 50px;
+font-weight: 900;
+line-height: 70px;
+letter-spacing: 0.03em;
+text-align: left;
+
+}
+
+.main1 p{
+    font-family: Roboto;
+font-size: 22px;
+font-weight: 400;
+line-height: 30px;
+letter-spacing: 0.03em;
+text-align: left;
+
+}
+
+.main2{
+    display: flex;
+    margin-left: 10%;margin-top: 10%;
+}
+
+.txt2{
+    width: 40%;
+    margin-left: 10%;
+}
+
+.txt2 h1{
+    font-family: Roboto;
+font-size: 50px;
+font-weight: 900;
+line-height: 70px;
+letter-spacing: 0.03em;
+text-align: left;
+
+}
+
+.txt2 p{
+    font-family: Roboto;
+font-size: 22px;
+font-weight: 400;
+line-height: 30px;
+letter-spacing: 0.03em;
+text-align: left;
+
+}
+
+
+.main3{
+    display: flex;
+    flex-direction: row;
+    margin-left: 10%;
+    margin-top: 10%;
+
+}
+
+.txt3{
+    width: 40%;
+}
+
+.txt3 h1{
+    font-family: Roboto;
+font-size: 50px;
+font-weight: 900;
+line-height: 70px;
+letter-spacing: 0.03em;
+text-align: left;
+
+}
+
+.txt3 p{
+    font-family: Roboto;
+font-size: 22px;
+font-weight: 400;
+line-height: 30px;
+letter-spacing: 0.03em;
+text-align: left;
+}
+
+.main3 img{
+    margin-left: 15%;
+
+
+}
+.main3 .imgcontainer {
+    margin-left: 15%;;
+    padding: 20px; 
+    display: inline-block;  
+    border-radius: 10px; 
+    position: relative;
+}
+
+.imgcontainer img{
+    margin-left: 10% ;
+    width: 90%;
+
+}
+
+.rec{
+    position: absolute;
+    z-index: 1;
+}
+
