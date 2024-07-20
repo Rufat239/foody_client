@@ -10,7 +10,9 @@ import card3 from '../../assets/homeImages/card3.png'
 import kfc from '../../assets/homeImages/kfc pad.jpg'
 import bigpizza from '../../assets/homeImages/pizzapad.jpg'
 import bigfries from '../../assets/homeImages/fripad.png'
-
+import dublecheese from '../../assets/homeImages/dublecheese.jpg'
+import margarita from '../../assets/homeImages/margarita.jpg'
+import twistermenu from '../../assets/homeImages/Twistermenu.jpg'
 
 function Home() {
 return (
@@ -104,16 +106,34 @@ return (
     </div>   
         <div className="imgcontainer">
             <img className="fre" src={bigfries} alt="" />
-            
         </div>
 </div>
 
 
+    <h1 className="pop">Our Popular Update New Foods</h1>
+    <p  className="txt">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
 
 
+    <div className="cards">
 
+    <div className="cards1" >
+        <img src={dublecheese} alt="" />
+        <h2>Dubble Chees</h2>
+        <p>Lorem ipsum is placeholder  commonly used in the graphic </p>
+    </div>
 
+    <div className="cards2" >
+        <img src={margarita} alt="" />
+        <h2>Margarita</h2>
+        <p>Lorem ipsum is placeholder  commonly used in the graphic </p>
+    </div>
 
+    <div className="cards3" >
+        <img src={twistermenu} alt="" />
+        <h2>Twister Menu</h2>
+        <p>Lorem ipsum is placeholder  commonly used in the graphic </p>
+    </div>
+    </div>
 
     </div>
 )
