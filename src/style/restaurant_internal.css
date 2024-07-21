@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+
+
+                                                           /* Profile part */
+.profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    font-family: Roboto;
+    
+}
+.profileImg{
+    width:60rem;
+    margin-left: 300px;
+
+}
+.profileImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.information{
+    display: flex;
+    flex-direction: row;
+}
+.restaurantName{
+    margin-left: 40px;
+}
+.productName{
+    margin-left: 55%;
+    color:rgba(130, 130, 130, 1);
+    font-family: 14px;
+}
+.productName p{
+font-size: 10px;
+font-weight: 500;
+text-align: left;
+
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    margin-top: 17px;
+    margin-left: 100px;
+    gap: 20px;
+   
+}
+.delbtn{
+    border: 1px solid rgba(214, 54, 38, 1);
+    border-radius: 5px;
+    background-color: white;
+    color: rgba(214, 54, 38, 1);
+    width: 72px;
+    height: 52px;
+}
+.backbtn{
+    background-color:rgba(214, 54, 38, 1) ;
+    border: 0;
+    border-radius: 5px;
+    width: 72px;
+    height: 52px;
+}
+.backbtn a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+
+
+                                                                            /* Products part */
+
+.products {
+    width: 800px;
+    height: 701px;
+    margin-top: 30px;
+    margin-left: 40px;
+    border-radius: 4px 0 0 0;
+    background-color: rgba(243, 244, 246, 1);
+    font-family: Roboto, sans-serif;
+    overflow: auto;
+}
+
+.products::-webkit-scrollbar {
+    width: 4px;
+    background: red;
+    border-radius: 6px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+
+}
+.container h3{
+    text-align: center;
+    margin-top: 40px;
+    font-size: 23px;
+}
+.productImg{
+    margin-left: 58px;
+}
+.productImg img{
+    width: 40px;
+    margin-top: 40px;
+
+}
+.productImg img:hover{
+    width: 100px;
+}
+
+.productList{
+    display: flex;
+    flex-direction: column;
+}
+.productItem{
+    
+    display: flex;
+    flex-direction: row;
+ 
+}
+.info{
+    margin-left: 30px;
+
+}
+.info h4{
+    margin-top: 40px;
+    font-size: 15px;
+}
+.info p{
+    margin-top: -20px;
+    color: rgba(130, 130, 130, 1);
+    font-size: 12px;
+}
+.price{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 50px;
+    margin-left: 70px;
+}
+.price span{
+    color: rgba(130, 130, 130, 1);
+    font-size: 10px;
+}
+.price span strong{
+    color: black;
+    font-size: 15px;
+    margin-left: 10px;
+}
+.circle {
+    width: 30px;
+    height: 30px;
+    margin-left: 40px;
+    margin-top: -5px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(189, 189, 189, 1);
+    background-color:rgba(243, 244, 246, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: rgba(189, 189, 189, 1);
+}
+.circle:hover{
+    background: rgba(111, 207, 151, 1);
+    color: white;
+
+}
