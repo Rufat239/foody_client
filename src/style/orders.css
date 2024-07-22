@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.orderContainer {
+    width: 79%;
+    height: 634px;
+    background-color: #F3F4F6;
+    border-radius: 5px;
+
+
+}
+
+.titleOrders h1{
+    color: #4F4F4F;
+    font-family: Mukta;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 0.9px;
+    margin: 49px 31px;
+}
+
+.tableContainer {
+    background-color: #FFF;
+    margin-inline: 2%;
+    width: 97%;
+
+}
+
+.tableContainer table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableContainer thead th {
+    height: 54px;
+    font-family: 'Open Sans';
+    font-size: 14px;
+    font-weight: 600;
+    border-bottom: 1px solid #DFE2E9;
+    text-align: center;
+}
+
+.tableContainer tbody td {
+    height: 50px;
+    font-family: 'Open Sans';
+    font-size: 14px;
+    font-weight: 400;
+    border-bottom: 1px solid #DFE2E9;
+    text-align: center;
+}
+
+.ordersAddress {
+    width: 20%;
+    font-size: 14px;
+    padding: 0;
+}
+
+
+.idOrders p {
+    width: 57px;
+    height: 24px;
+    border: 1px solid #DFE2E9;
+    border-radius: 8px;
+    margin: auto
+}
+
+
+.optionsButton {
+    border: none;
+    background: #FFF;
+    float: right;
+    margin-right: 30px;
+
+}
+
+.optionsButtonCell {
+    width: 13%;
+
+}
+
+.dropDownMenuOrders {
+    background-color: #FFF;
+    box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.20);
+    width: 79px;
+    height: 47px;
+
+
+
+}
+
+
+
+
+.showLink {
+    color: #6FCF97;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.deleteLink {
+    color: #EB5757;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
