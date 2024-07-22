@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+.userBasketItemContainer {
+  /* height: 10em; */
+  padding: 1em 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e0e0e0;
+}
+/* .userBasketItemContainer:last-child{
+    border-bottom-color: transparent;
+} */
+.userBasketItemFigDet {
+  transform: translateX(-2.2em);
+  display: flex;
+}
+
+.userBasketItemFigure {
+  width: 6em;
+  height: 6em;
+}
+.userBasketItemFigure img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+/* Details */
+.userBasketItemDetails {
+  display: flex;
+  flex-direction: column;
+}
+.userBasketItemDetails h2 {
+  transform: translateY(0.5em);
+  color: #4f4f4f;
+  font-family: "Roboto";
+  font-size: 1.3rem;
+}
+.userBasketItemDetails h4 {
+  transform: translateY(-0.5em);
+  font-family: "Roboto";
+  color: #4f4f4f;
+  font-size: 1.1rem;
+}
+
+/* Butons */
+.userBasketItemInc {
+  transform: translateY(1em);
+  width: 2.6em;
+  height: 5.6em;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 50px;
+  margin-right: -10px;
+}
+.userBasketItemInc button {
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.5rem;
+}
+.userBasketItemInc span {
+  color: #000;
+  font-family: "Roboto";
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.userBasketActions {
+  position: relative;
+  margin-right: 60px;
+}
+.userDeleteIcon {
+  position: absolute;
+  border: none;
+  background-color: #f3f4f6;
+  top: -7px;
+  right: -60px;
+}
+
+.userDeleteIcon img {
+  width: 1.7em;
+  height: 1.5em;
+}
+
+/* FOR SMALL SCREEN */
+@media screen and (max-width: 431px) {
+  .userBasketItemFigure {
+    width: 2.6em;
+    height: 3.1em;
+  }
+
+  .userBasketItemFigure img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+  .userBasketItemDetails {
+    transform: translateX(-1.9em);
+  }
+
+  .userBasketItemDetails h2 {
+    font-size: 0.8rem;
+    transform: translateY(0.9em);
+  }
+  .userBasketItemDetails h4 {
+    font-size: 0.75rem;
+    transform: translateY(-0.9em);
+  }
+
+  .userDeleteIcon {
+    right: 285px;
+    top: -15px;
+    background-color: #fff;
+  }
+
+  .userBasketItemInc {
+    width: 1.8em;
+    height: 4.9em;
+    margin-top: -0.2em;
+    transform: translateX(3em);
+  }
+  .userBasketItemInc {
+    background-color: #F3F4F6;
+  }
+  .userBasketItemInc button {
+    background-color: #F3F4F6;
+  }
+}
