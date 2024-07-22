@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../style/restaurant.css';
 import pizza from '../../assets/restaurant_images/Pizza.jpg';
 import burger from '../../assets/restaurant_images/burger.jpg';
@@ -17,7 +17,9 @@ const restaurants = [
 ];
 
 const filter = [
+  { image: pizza, menu: 'All' },
   { image: pizza, menu: 'Azerbaijan' },
+  { image: pizza, menu: 'Korean' },
   { image: pizza, menu: 'Chinese' },
   { image: pizza, menu: 'Pizza' },
   { image: pizza, menu: 'Indian' },
@@ -27,30 +29,38 @@ const filter = [
 ];
 
 function Restaurant() {
+  const [selectedMenu, setSelectedMenu] = useState('All');
+
+  const handleMenuClick = (menu) => {
+    setSelectedMenu(menu);
+  };
+
+  const filteredRestaurants = selectedMenu === 'All'
+    ? restaurants
+    : restaurants.filter(restaurant => restaurant.description.toLowerCase().includes(selectedMenu.toLowerCase()));
+
   return (
     <div className='main'>
-                                                                        {/* Side part */}
       <section className='sidebar'>
         <div className='body'>
           {filter.map((item, index) => (
-            <div key={index} className='side'>
+            <div key={index} className='side' onClick={() => handleMenuClick(item.menu)}>
               <div className='image'>
-                <img src={item.image}  />
+                <img src={item.image} />
               </div>
               <span>{item.menu}</span>
             </div>
           ))}
         </div>
       </section>
-                                                                          {/* Restaurant part */}
       <section className='restaurant'>
-        {restaurants.map((restaurant, index) => (
+        {filteredRestaurants.map((restaurant, index) => (
           <Link key={index} to={'/internal'}>
-            <div className='card'>
+            <div className='sry_card'>
               <div className='cardImage'>
-                <img src={restaurant.image}  />
+                <img src={restaurant.image} />
               </div>
-              <div className='info'>
+              <div className='srym_info'>
                 <h2>{restaurant.name}</h2>
                 <p>{restaurant.description}</p>
               </div>

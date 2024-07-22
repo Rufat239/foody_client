@@ -1,6 +1,8 @@
 import React from 'react';
 import "../../style/restaurant_internal.css"
 import Brand from '../../assets/restaurant_images/Brand.jpg';
+import trash from '../../assets/restaurant_images/trash.jpg';
+import basket from '../../assets/restaurant_images/basket.jpg'
 import pizza from '../../assets/restaurant_images/Pizza.jpg';
 import { Link } from 'react-router-dom';
 
@@ -29,10 +31,12 @@ function Internal() {
           </div>
           <div className='buttons'>
             <button className='delbtn'> $5 Delivery</button>
-            <button className='backbtn'> <Link to={'/'}> Go Back</Link></button>
+            <button className='backbtn'> <Link to={'/restaurantMain'}> Go Back</Link></button>
           </div>
         </div>
       </div>
+      
+      <div className="sry_user">
 
       <div className='products'>
         <div className='container'>
@@ -56,6 +60,53 @@ function Internal() {
           </div>
         </div>
       </div>
+
+
+      <div className="sry_basket">
+        <div className='sry_nav'>
+          <div className='bskt_image'>
+            <img src={basket} />
+          </div>
+           <div className='bskt_num'>
+            <p>  <span>0</span> items</p>
+           </div>
+        </div>
+
+        <div className='sry_common'>
+        <div className='sry_text'>
+        <div className='sry_image'>
+          <img src={pizza} />
+        </div>
+        <div className='sry_info'>
+          <p>Papa John’s Pizza Restaurant</p>
+          <span>$ 15.80</span>
+        </div>
+        </div>
+    
+        <div className='sry_price'>
+          <div className='trash'>
+            <img src={trash} />
+          </div>
+          <div className='quantity'>
+            <span className='plus'>+</span>
+            <p>0</p>
+            <span>—</span>
+          </div>
+
+        </div>
+
+        </div>
+
+
+        <div className='check_btn'>
+          <p>Checkout</p>
+          <span>$0.00</span>
+        </div>
+   
+      </div>
+
+         </div>
+    
     </div>
   );
 }

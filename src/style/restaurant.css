@@ -12,29 +12,33 @@
                                                                       /* Section (Sidebar) */
 .body{
     width: 251px;
-    height: 700px;
+    height:auto;
     top: 168px;
     margin-left: 20px;
     background-color: rgba(243, 244, 246, 1);
+    overflow:auto;
+    margin-top: 12%;
 }
+.body::-webkit-scrollbar {
+  width: 4px;
+  background: red;
+  border-radius: 6px;
+}
+
 .side{
 display: flex;
 flex-direction: row;
-overflow:auto;
 
 }
-.side::-webkit-scrollbar {
-    width: 4px;
-    background: red;
-    border-radius: 6px;
-  }
+.side:hover{
+  background-color: rgba(214, 54, 38, 0.12);
 
-
+}
 .image{
     width: 40px;
     height: 40px;
     margin-left: 40px;
-    margin-top: 25px;
+    margin-top: 20px;
 }
 .image img{
     width: 100%;
@@ -47,7 +51,9 @@ font-size: 20px;
 font-weight: 600;
 margin-left: 20px;
 margin-top: 25px;
-
+}
+.side span:hover{
+  color:rgba(214, 54, 38, 1);
 
 }
 
@@ -56,12 +62,13 @@ margin-top: 25px;
 .restaurant{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 5px;
+  gap: 2px;
   overflow:auto;
+  margin-top: 1.4%;
 
 }
 .restaurant::-webkit-scrollbar {
-  width: 100px;
+  width: 10px;
   background: red;
 
 }
@@ -69,12 +76,12 @@ margin-top: 25px;
   text-decoration: none;
 }
 
-.card{
+.sry_card{
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 65%;
-  height: 285px;
+  height: auto;
   margin: 10px;
 
 }
@@ -89,12 +96,12 @@ margin-top: 25px;
   object-fit: fill;
 
 }
-.info{
+.srym_info{
   display: flex;
   flex-direction: column;
 
 }
-.info h2{
+.srym_info h2{
   margin-left: 20px;
   font-size: 15px;
   white-space: nowrap;
@@ -105,7 +112,7 @@ margin-top: 25px;
 
 }
 
-.info p{
+.srym_info p{
 color: rgba(130, 130, 130, 1);
 font-size: 15px;
 margin-left: 20px;  
@@ -134,56 +141,6 @@ margin-left: 20px;
      border-radius: 30px;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
