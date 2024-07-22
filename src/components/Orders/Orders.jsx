@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../../style/orders.css'
 import options from '../../assets/ordersImages/Group 377.svg'
+import DeleteModal from '../DeleteModal/DeleteModal';
 
 function Orders() {
     const [showMenu, setShowMenu] = useState(false);
@@ -90,7 +91,7 @@ function Orders() {
             </table>
           </div>
           {showDeleteModal && (
-          <OrderDeleteModal />
+          <DeleteModal />
         )}
         </div>
       )
