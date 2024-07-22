@@ -1,4 +1,9 @@
 import React from "react";
+import pizza from "../../assets/userBasketImages/pizza.png"
+import cheeseBurger from "../../assets/userBasketImages/cheeseBurger.png"
+import coffee from "../../assets/userBasketImages/coffee.png"
+import DeleteIcon from "../../assets/userBasket/deleteIcon.svg"
+import "../../style/userBasketItem.css"
 
 function UserBasketItem() {
   const userBasketData = [
