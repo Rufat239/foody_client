@@ -1,5 +1,5 @@
 import React from 'react';
-import style from '../../style/restaurant.css';
+import '../../style/restaurant.css';
 import pizza from '../../assets/restaurant_images/Pizza.jpg';
 import burger from '../../assets/restaurant_images/burger.jpg';
 import mania from '../../assets/restaurant_images/mania.jpg';
@@ -28,14 +28,14 @@ const filter = [
 
 function Restaurant() {
   return (
-    <div className={style.main}>
-      {/* Side part */}
+    <div className='main'>
+                                                                        {/* Side part */}
       <section className='sidebar'>
-        <div className={style.body}>
+        <div className='body'>
           {filter.map((item, index) => (
-            <div key={index} className={style.side}>
-              <div className={style.image}>
-                <img src={item.image} alt={item.menu} />
+            <div key={index} className='side'>
+              <div className='image'>
+                <img src={item.image}  />
               </div>
               <span>{item.menu}</span>
             </div>
@@ -43,18 +43,18 @@ function Restaurant() {
         </div>
       </section>
                                                                           {/* Restaurant part */}
-      <section className={style.restaurant}>
+      <section className='restaurant'>
         {restaurants.map((restaurant, index) => (
           <Link key={index} to={'/internal'}>
-            <div className={style.card}>
-              <div className={style.cardImage}>
-                <img src={restaurant.image} alt={restaurant.name} />
+            <div className='card'>
+              <div className='cardImage'>
+                <img src={restaurant.image}  />
               </div>
-              <div className={style.info}>
+              <div className='info'>
                 <h2>{restaurant.name}</h2>
                 <p>{restaurant.description}</p>
               </div>
-              <div className={style.delivery}>
+              <div className='delivery'>
                 <p>{restaurant.price}</p>
                 <span>{restaurant.time}</span>
               </div>

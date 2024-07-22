@@ -5,6 +5,7 @@ function Restaurant_Main() {
   return (
     <div>
       <Restaurant/>
+   
     </div>
   )
 }

@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import imageLogo from "../../assets/headerImages/Foody..png";
 import "../../style/header.css";
 import { Link } from "react-router-dom";
 
 function Header() {
+  const [showDropdown, setShowDropdown] = useState(false);
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
   return (
     <div className="navBar">
       <div className="logoLinks">
@@ -25,7 +29,30 @@ function Header() {
       <div className="inputBtns">
         <input type="text" />
         <button className="langBtn">LANG</button>
-        <button className="inpSignUp">Sign up</button>
+        <button className="inpSignUp" onClick={toggleDropdown}>
+          {showDropdown && (
+            <div className="dropdownMenu">
+              <ul>
+                <li>
+                  <a href="/profile">Profile</a>
+                </li>
+                <li>
+                  <a href="/yourBasket">Your Basket</a>
+                </li>
+                <li>
+                  <a href="/yourOrders">Your Orders</a>
+                </li>
+                <li>
+                  <a href="/checkout">Checkout</a>
+                </li>
+                <li>
+                  <a href="/logout">Logout</a>
+                </li>
+              </ul>
+            </div>
+          )}
+          Sign up
+        </button>
       </div>
     </div>
   );
