@@ -46,7 +46,7 @@ function Header() {
                   <Link to="/yourBasketPage">Your Basket</Link>
                 </li>
                 <li>
-                  <a href="/yourOrders">Your Orders</a>
+                  <Link to="/ordersPage">Your Orders</Link>
                 </li>
                 <li>
                   <a href="/checkout">Checkout</a>
