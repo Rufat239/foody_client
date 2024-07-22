@@ -43,7 +43,7 @@ function Header() {
                   <a href="/profile">Profile</a>
                 </li>
                 <li>
-                  <a href="/yourBasket">Your Basket</a>
+                  <Link to="/yourBasketPage">Your Basket</Link>
                 </li>
                 <li>
                   <a href="/yourOrders">Your Orders</a>

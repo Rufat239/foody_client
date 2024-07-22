@@ -6,6 +6,7 @@ import Restaurant_Main from "./pages/Restaurant_Main";
 import AboutPage from "./pages/AboutPage";
 import HowPage from "./pages/HowPage";
 import FaqPage from "./pages/FaqPage";
+import YourBasketPage from "./pages/YourBasketPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/aboutPage" element={<AboutPage />} />
           <Route path="/howItWorks" element={<HowPage />} />
           <Route path="/faqs" element={<FaqPage />} />
+          <Route path="/yourBasketPage" element={<YourBasketPage />} />
         </Routes>
       </Layout>
     </Router>
