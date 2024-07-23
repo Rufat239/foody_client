@@ -26,6 +26,10 @@ const filter = [
   { image: pizza, menu: 'Kabab' },
   { image: pizza, menu: 'Fast Food' },
   { image: pizza, menu: 'Sea Food' },
+  { image: pizza, menu: 'Korean' },
+  { image: pizza, menu: 'Chinese' },
+  { image: pizza, menu: 'Pizza' },
+  { image: pizza, menu: 'Indian' },
 ];
 
 function Restaurant() {
@@ -41,10 +45,11 @@ function Restaurant() {
 
   return (
     <div className='main'>
-      <section className='sidebar'>
-        <div className='body'>
+                                                                          {/* Side_part */}
+      <section className='restaurant_sidebar'>
+        <div className='restaurant_body'>
           {filter.map((item, index) => (
-            <div key={index} className='side' onClick={() => handleMenuClick(item.menu)}>
+            <div key={index} className='restaurant_side' onClick={() => handleMenuClick(item.menu)}>
               <div className='image'>
                 <img src={item.image} />
               </div>
@@ -52,15 +57,24 @@ function Restaurant() {
             </div>
           ))}
         </div>
+
+                 {/* <ul >
+                <li>
+                  <img src={item.image} />
+                  <span>{item.menu}</span>
+              </li>
+              </ul> */}
       </section>
-      <section className='restaurant'>
+
+                                                                {/* Restaurant_Card_Part */}
+      <section className='restaurantCards'>
         {filteredRestaurants.map((restaurant, index) => (
           <Link key={index} to={'/internal'}>
-            <div className='sry_card'>
-              <div className='cardImage'>
+            <div className='restaurants_card'>
+              <div className='restaurant_cardImage'>
                 <img src={restaurant.image} />
               </div>
-              <div className='srym_info'>
+              <div className='restaurants_Info'>
                 <h2>{restaurant.name}</h2>
                 <p>{restaurant.description}</p>
               </div>

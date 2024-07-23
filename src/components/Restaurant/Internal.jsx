@@ -10,6 +10,9 @@ import { Link } from 'react-router-dom';
 const productList = [
   { image: pizza, name: 'Papa John’s Pizza Restaurant', description: 'Prepared with a patty, a slice of cheese and special sauce' },
   { image: pizza, name: 'Papa John’s Pizza Restaurant', description: 'Prepared with a patty, a slice of cheese and special sauce' },
+  { image: pizza, name: 'Papa John’s Pizza Restaurant', description: 'Prepared with a patty, a slice of cheese and special sauce' },
+  { image: pizza, name: 'Papa John’s Pizza Restaurant', description: 'Prepared with a patty, a slice of cheese and special sauce' },
+  { image: pizza, name: 'Papa John’s Pizza Restaurant', description: 'Prepared with a patty, a slice of cheese and special sauce' },
   { image: pizza, name: 'Papa John’s Pizza Restaurant', description: 'Prepared with a patty, a slice of cheese and special sauce' }
 ];
 
@@ -36,18 +39,17 @@ function Internal() {
         </div>
       </div>
       
-      <div className="sry_user">
+      <div className="restaurants_user">
 
       <div className='products'>
-        <div className='container'>
+        <div className='restaurantsContainer'>
           <h3>Products</h3>
-          <div className='productList'>
             {productList.map((product, index) => (
               <div key={index} className='productItem'>
                 <div className='productImg'>
                   <img src={product.image} alt="Product" />
                 </div>
-                <div className='info'>
+                <div className='restaurantsInfo'>
                   <h4>{product.name}</h4>
                   <p>{product.description}</p>
                 </div>
@@ -57,13 +59,13 @@ function Internal() {
                 </div>
               </div>
             ))}
-          </div>
+          
         </div>
       </div>
 
 
-      <div className="sry_basket">
-        <div className='sry_nav'>
+      <div className="restaurants_basket">
+        <div className='restaurants_nav'>
           <div className='bskt_image'>
             <img src={basket} />
           </div>
@@ -72,18 +74,18 @@ function Internal() {
            </div>
         </div>
 
-        <div className='sry_common'>
-        <div className='sry_text'>
-        <div className='sry_image'>
+        <div className='restaurants_common'>
+        <div className='restaurants_text'>
+        <div className='restaurants_image'>
           <img src={pizza} />
         </div>
-        <div className='sry_info'>
+        <div className='restaurants_info'>
           <p>Papa John’s Pizza Restaurant</p>
           <span>$ 15.80</span>
         </div>
         </div>
     
-        <div className='sry_price'>
+        <div className='restaurants_price'>
           <div className='trash'>
             <img src={trash} />
           </div>
