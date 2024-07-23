@@ -175,37 +175,38 @@ margin-left: 20%;
 
 .container{
     display: flex;
+    flex-direction: row !important;
     justify-content: space-around;
-    margin-left: 10%;
+    margin-left: 5%;
 }
 
-.card1, .card2, .card3{
+.homecard1, .homecard2, .homecard3{
     width: 20%;
     background-color: #FFF;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
 }
 
-.card1 img, .card2 img, .card3 img{
+.homecard1 img, .homecard2 img, .homecard3 img{
     width: 80%;
     margin-left: 13% ;
 
 }
 
-.card2 img{
+.homecard2 img{
     width: 70%;
     margin-left: 13%;
 }
 
-.card2 h2{
+.homecard2 h2{
     margin-top: 1%;
 }
 
-.card1 h2, .card2 h2, .card3 h2{
+.homecard1 h2, .homecard2 h2, .homecard3 h2{
     text-align: center;
 }
 
-.card1 p, .card2 p, .card3 p{
+.homecard1 p, .homecard2 p, .homecard3 p{
     font-family: Roboto;
 font-size: 18px;
 font-weight: 400;
@@ -414,12 +415,49 @@ text-align: center;
 width: 90%;
 color: rgba(130, 130, 130, 1);
 margin-left: 5%;
+}
 
+.finish{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    background: rgba(39, 39, 39, 1);
+    width: 60%;
+    height: 40%;
+    margin-top: 15%;
+    margin-left: 20%;
+    border-radius: 50px;
+}
+
+.finish img{
+    width: 200px;
+    height: 200px;
+height: 200px;
+rotate: 0.64 deg;
+padding-top: 25%;
+padding-left: 10%;
 
 }
 
+.finish h1{
+    font-family: Roboto;
+font-size: 50px;
+font-weight: 500;
+line-height: 60px;
+letter-spacing: 0.03em;
+text-align: center;
+color: rgba(255, 255, 255, 1);
+}
 
-
+.finish button{
+    background-color: orange;
+    margin-left: 30%;
+    width:45% ;
+    height: 13%;
+    color: white;
+    border-radius: 25px;
+}
 
 
 
@@ -524,7 +562,7 @@ height: 60%;
     }
 
 
-    .card2 {
+    .homecard2 {
         width: 190%;
         height: 270%;
         margin-bottom: 50px;
@@ -532,7 +570,7 @@ height: 60%;
         margin-left: 5%;
     }
 
-    .card2 h2{
+    .homecard2 h2{
         font-family: Roboto;
 font-size: 400%;
 font-weight: 700;
@@ -542,7 +580,7 @@ text-align: center;
 color: rgba(79, 79, 79, 1);
     }
 
-    .card2 p{
+    .homecard2 p{
         font-family: Roboto;
 font-size: 350%;
 font-weight: 400;
@@ -552,7 +590,7 @@ text-align: center;
 
     }
 
-    .card1, .card3{
+    .homecard1, .homecard3{
         display: none;
 
     }
@@ -654,6 +692,36 @@ color: rgba(130, 130, 130, 1)
     .cards1, .cards2{
         width: 90%;
         margin-bottom: 20px;
+    }
+
+
+    .finish img{
+        display: none;
+    }
+
+    .finish{
+        width: 150%;
+    }
+
+    .finish h1{
+        margin-top: 10%;
+        font-family: Roboto;
+font-size: 60px;
+font-weight: 500;
+line-height: 71px;
+letter-spacing: 0.03em;
+text-align: center;
+    }
+
+    .finish button{
+        height: 20%;
+        font-family: Roboto;
+font-size: 38px;
+font-weight: 600;
+line-height: 24px;
+letter-spacing: 0.03em;
+text-align: center;
+
     }
 }
 
