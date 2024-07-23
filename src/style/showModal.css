@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+.showModalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    /* z-index: 999; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.showModalContainer {
+    background: white;
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 433px;
+    /* padding: 20px 0 50px 70px; */
+    max-width: 50%;
+    border-radius: 4px;
+}
+
+.closeButton {
+    position: absolute;
+    top: 25%;
+    left: 72%;
+    cursor: pointer;
+}
+
+.showModalContainer table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-inline: 6%;
+    margin-top: 50px;
+
+}
+
+.showModalContainer table th {
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-weight: 600;
+    color: #00072B;
+    border-bottom: 1px solid #C9CFDA;
+    height: 70px;
+    /* padding: 6px 12px; */
+    text-align: center;
+    /* margin-top: -40px; */
+    /* padding: 30px 0; */
+
+}
+
+.showModalContainer table td {
+    font-family: "Open Sans";
+    font-size: 14px;
+    color: #00072B;
+    font-weight: 400;
+    height: 60px;
+    /* padding: 14px 12px; */
+    border-bottom: 1px solid #DFE2E9;
+    text-align: center;
+}
+
+.pagination {
+    display: flex;
+    width: 42%;
+    justify-content: space-between;
+    text-align: center;
+    position: absolute;
+    top: 70%;
+    left: 28%;
+
+}
+
+.prev-button,
+.next-button {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #FCDDEC;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+}
+
+.next-button{
+    margin-left: 10px;
+}
+
+.prev-next {
+    /* text-align: center; */
+    align-items: center;
+}
+
+.currentPage {
+    border: 2px solid #FCDDEC;
+    padding: 5px 8px;
+    margin-left: 10px;
+    color: #BB6BD9;
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0 10px;
+
+}
+
+.slash {
+    color: #FCDDEC;
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.totalPages {
+    color: #828282;
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.select-text {
+    color: #828282;
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.select-options {
+    display: flex;
+    width: 28%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.select-options select {
+    width: 60px;
+    height: 32px;
+    border: 1px solid #B0BAC9;
+    color: #00072B;
+    font-family: "Open Sans";
+    font-size: 14px;
+}
