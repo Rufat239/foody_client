@@ -211,27 +211,27 @@
 
 .homecard1 img, .homecard2 img, .homecard3 img{
     width: 80%;
-    margin-left: 13% ;
+    margin-left: 13% ;}
 
-.card2 img {
+.homecard2 img {
   width: 70%;
   margin-left: 13%;
 }
 
-.card2 h2 {
+.homecard2 h2 {
   margin-top: 1%;
 }
 
-.card1 h2,
-.card2 h2,
-.card3 h2 {
+.homecard1 h2,
+.homecard2 h2,
+.homecard3 h2 {
   text-align: center;
 }
 
 
-.card1 p,
-.card2 p,
-.card3 p {
+.homecard1 p,
+.homecard2 p,
+.homecard3 p {
   font-family: Roboto;
   font-size: 18px;
   font-weight: 400;
