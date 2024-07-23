@@ -137,12 +137,12 @@ return (
 
     <div className="finish">
         <div><img src={pizza} alt="" /></div>
-        <div>
+        <div className="end">
             <h1>Discover Restaurants
             Near From you</h1>
             <button>Explore now</button>
         </div>
-        <div><img src={burger} alt="" /></div>
+        <div className="sonimg"><img src={burger} alt="" /></div>
     </div>
 
     </div>
