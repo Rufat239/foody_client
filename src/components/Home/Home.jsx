@@ -61,20 +61,20 @@ return (
 
 
 <div className="container">
-    <div className="card1">
+    <div className="homecard1">
         <img src={card1} alt="" />
         <h2>Discount Boucher</h2>
         <p>Lorem ipsum is placeholder  commonly used in the graphic </p>
     </div>
 
-    <div className="card2">
+    <div className="homecard2">
         <img src={card2} alt="" />
         <h2>Fresh healthy Food</h2>
         <p>Lorem ipsum is placeholder  commonly used in the graphic </p>
     </div>
 
     
-    <div className="card3" >
+    <div className="homecard3" >
         <img src={card3} alt="" />
         <h2>Fast Home Delivery</h2>
         <p>Lorem ipsum is placeholder  commonly used in the graphic </p>
@@ -133,6 +133,16 @@ return (
         <h2>Twister Menu</h2>
         <p>Lorem ipsum is placeholder  commonly used in the graphic </p>
     </div>
+    </div>
+
+    <div className="finish">
+        <div><img src={pizza} alt="" /></div>
+        <div>
+            <h1>Discover Restaurants
+            Near From you</h1>
+            <button>Explore now</button>
+        </div>
+        <div><img src={burger} alt="" /></div>
     </div>
 
     </div>

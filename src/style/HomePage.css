@@ -194,6 +194,25 @@
   margin-left: 13%;
 }
 
+
+.container{
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-around;
+    margin-left: 5%;
+}
+
+.homecard1, .homecard2, .homecard3{
+    width: 20%;
+    background-color: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+.homecard1 img, .homecard2 img, .homecard3 img{
+    width: 80%;
+    margin-left: 13% ;
+
 .card2 img {
   width: 70%;
   margin-left: 13%;
@@ -209,6 +228,7 @@
   text-align: center;
 }
 
+
 .card1 p,
 .card2 p,
 .card3 p {
@@ -219,6 +239,28 @@
   letter-spacing: 0.03em;
   text-align: center;
 }
+
+
+.homecard2 img{
+    width: 70%;
+    margin-left: 13%;
+}
+
+.homecard2 h2{
+    margin-top: 1%;
+}
+
+.homecard1 h2, .homecard2 h2, .homecard3 h2{
+    text-align: center;
+}
+
+.homecard1 p, .homecard2 p, .homecard3 p{
+    font-family: Roboto;
+font-size: 18px;
+font-weight: 400;
+line-height: 30px;
+letter-spacing: 0.03em;
+text-align: center;
 
 .main1 {
   display: flex;
@@ -241,6 +283,7 @@
   line-height: 70px;
   letter-spacing: 0.03em;
   text-align: left;
+
 }
 
 .main1 p {
@@ -612,6 +655,325 @@
     margin-left: 0;
     margin-top: 40%;
     font-family: Roboto;
+
+font-size: 18px;
+font-weight: 400;
+line-height: 30px;
+letter-spacing: 0.03em;
+text-align: center;
+width: 90%;
+color: rgba(130, 130, 130, 1);
+margin-left: 5%;
+}
+
+.finish{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    background: rgba(39, 39, 39, 1);
+    width: 60%;
+    height: 40%;
+    margin-top: 15%;
+    margin-left: 20%;
+    border-radius: 50px;
+}
+
+.finish img{
+    width: 200px;
+    height: 200px;
+height: 200px;
+rotate: 0.64 deg;
+padding-top: 25%;
+padding-left: 10%;
+
+}
+
+.finish h1{
+    font-family: Roboto;
+font-size: 50px;
+font-weight: 500;
+line-height: 60px;
+letter-spacing: 0.03em;
+text-align: center;
+color: rgba(255, 255, 255, 1);
+}
+
+.finish button{
+    background-color: orange;
+    margin-left: 30%;
+    width:45% ;
+    height: 13%;
+    color: white;
+    border-radius: 25px;
+}
+
+
+
+
+
+    @media only screen and (max-width: 431px) {
+
+    .all {
+        flex-direction: column-reverse;
+        align-items: center;
+        width: 200% !important;
+        margin-bottom: 10%;
+}
+    
+    .div3, .div4{
+        display: none;
+    }
+    
+    .div2{
+        margin-left: 60%;
+        margin-top: -50%;
+        width: 50%;
+        height: 20%;
+    }
+
+    .div2 img{
+        width: 40%;
+    }
+
+    .div2 p{
+        font-family: Mukta;
+font-size: 200%;
+font-weight: 700;
+line-height: 200%;
+letter-spacing: 0.03em;
+text-align: center;
+
+    }
+
+    .info h1{
+        font-family: Roboto;
+font-size: 300%;
+font-weight: 900;
+line-height: 44px;
+letter-spacing: 0.03em;
+text-align: center;
+width: 100%;
+height: 90px;
+top: 16002px;
+
+    }
+
+    .info p{
+        display: none;
+    }
+
+    .div1 {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+        background-color: rgba(242, 242, 242, 1);
+    }
+
+    .register,
+    .order {
+        width: 80%;
+        margin: 10px 0;
+    }
+
+    .regor{
+        display: flex;
+        flex-direction: column;
+        margin-left: 20%;
+    }
+
+    .h1{
+        font-family: Roboto;
+font-size: 400%;
+font-weight: 900;
+line-height: 90px;
+letter-spacing: 0.09em;
+text-align: center;
+margin-left: 60%;
+margin-top: 20%;
+    }
+
+    .h3{
+        font-family: Roboto;
+font-size: 300%;
+font-weight: 400;
+line-height: 60px;
+letter-spacing: 0.09em;
+text-align: center;
+margin-left: 10%;
+height: 60%;
+    }
+    
+    .container{
+        width: 190%;
+        margin-left: 1%;
+        margin-top: 10%;
+    }
+
+
+    .homecard2 {
+        width: 190%;
+        height: 270%;
+        margin-bottom: 50px;
+        margin-top: -1%;
+        margin-left: 5%;
+    }
+
+    .homecard2 h2{
+        font-family: Roboto;
+font-size: 400%;
+font-weight: 700;
+line-height: 70px;
+letter-spacing: 0.03em;
+text-align: center;
+color: rgba(79, 79, 79, 1);
+    }
+
+    .homecard2 p{
+        font-family: Roboto;
+font-size: 350%;
+font-weight: 400;
+line-height: 100%;
+letter-spacing: 0.09em;
+text-align: center;
+
+    }
+
+    .homecard1, .homecard3{
+        display: none;
+
+    }
+    .main1 {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+        width: 200%;
+    }
+    
+
+    .main2{
+        flex-direction: column-reverse;
+        width: 200%;
+        margin-top: 70%;
+        
+
+    }
+    .main3{
+        display: none;
+    }
+
+    .main1 h1, .main2 h1{
+        font-family: Roboto;
+font-size: 400%;
+font-weight: 800;
+line-height: 81px;
+letter-spacing: 0.03em;
+text-align: center;
+    }
+
+    .main1 p, .main2 p{
+        font-family: Roboto;
+font-size: 300%;
+font-weight: 400;
+line-height: 81px;
+letter-spacing: 0.03em;
+text-align: center;
+width: 100%;
+    }
+
+    .main1 img {
+        width: 120%;
+    }
+
+    .main2 img{
+        width: 100%;
+
+    }
+
+    .main2 h1{
+        width: 200%;
+    }
+
+    .main2 p{
+        width: 200%;
+        margin-left: 1%;
+    }
+
+    .imgcontainer {
+        width: 90%;
+    }
+
+    .pop {
+        width: 200%;
+        margin-left: 0;
+        font-family: Roboto;
+font-size: 75px;
+font-weight: 900;
+line-height: 81px;
+letter-spacing: 0.09em;
+text-align: center;
+margin-top: 60%;
+    }
+
+    .txt {
+        width: 200%;
+        margin-left: 0;
+        margin-top: 40%;
+        font-family: Roboto;
+font-size: 50px;
+font-weight: 400;
+line-height: 81px;
+letter-spacing: 0.03em;
+text-align: center;
+color: rgba(130, 130, 130, 1)
+    }
+
+    .cards {
+        flex-direction: column-reverse;
+        align-items: center;
+        width: 200%;
+        margin-left: 5%;
+    }
+
+    .cards3{
+        display: none;
+    }
+    .cards1, .cards2{
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+
+    .finish img{
+        display: none;
+    }
+
+    .finish{
+        width: 150%;
+    }
+
+    .finish h1{
+        margin-top: 10%;
+        font-family: Roboto;
+font-size: 60px;
+font-weight: 500;
+line-height: 71px;
+letter-spacing: 0.03em;
+text-align: center;
+    }
+
+    .finish button{
+        height: 20%;
+        font-family: Roboto;
+font-size: 38px;
+font-weight: 600;
+line-height: 24px;
+letter-spacing: 0.03em;
+text-align: center;
+
+    }
+}
+
     font-size: 50px;
     font-weight: 400;
     line-height: 81px;
@@ -619,6 +981,7 @@
     text-align: center;
     color: rgba(130, 130, 130, 1);
   }
+
 
   .cards {
     flex-direction: column-reverse;
