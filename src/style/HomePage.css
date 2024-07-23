@@ -549,7 +549,7 @@ text-align: center;
     margin-top: 10%;
   }
 
-  .card2 {
+  .homecard2 {
     width: 190%;
     height: 270%;
     margin-bottom: 50px;
@@ -557,7 +557,7 @@ text-align: center;
     margin-left: 5%;
   }
 
-  .card2 h2 {
+  .homecard2 h2 {
     font-family: Roboto;
     font-size: 400%;
     font-weight: 700;
@@ -567,7 +567,7 @@ text-align: center;
     color: rgba(79, 79, 79, 1);
   }
 
-  .card2 p {
+  .homecard2 p {
     font-family: Roboto;
     font-size: 350%;
     font-weight: 400;
@@ -576,8 +576,8 @@ text-align: center;
     text-align: center;
   }
 
-  .card1,
-  .card3 {
+  .homecard1,
+  .homecard3 {
     display: none;
   }
   .main1 {
