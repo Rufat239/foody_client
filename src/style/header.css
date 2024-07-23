@@ -6,6 +6,7 @@ body {
   width: 100%;
   height: 12vh;
   display: flex;
+
   justify-content: space-between;
   background-color: #f3f4f6;
 }
@@ -16,6 +17,14 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.imgHamburg {
+  display: none;
+}
+
+.hamburgBtn {
+  display: none;
 }
 
 .imgLogo {
@@ -83,6 +92,7 @@ body {
   box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.2);
   width: 158px;
   height: 234px;
+  position: absolute;
 }
 .dropdownMenu ul {
   margin-top: 30px;
@@ -103,4 +113,53 @@ body {
   text-decoration: none;
   color: #000;
   font-family: "Roboto";
+}
+
+@media only screen and (max-width: 431px) {
+  body {
+    padding-inline: 0;
+    margin: 0;
+  }
+
+  .navBar {
+    width: 100%;
+  }
+
+  .logoLinks {
+    width: 45%;
+  }
+
+  .imgLogo {
+    width: 60%;
+    height: 36%;
+  }
+
+  .imgHamburg {
+    display: block;
+    width: 80%;
+    height: 80%;
+  }
+
+  .logoLinks ul {
+    display: none;
+  }
+
+  .inputBtns {
+    width: 25%;
+  }
+
+  .inputBtns input {
+    display: none;
+  }
+
+  .hamburgBtn {
+    display: block;
+    width: 50px;
+    height: 40px;
+    border: 0;
+  }
+
+  .inpSignUp {
+    display: none;
+  }
 }

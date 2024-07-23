@@ -1,16 +1,21 @@
 import React, { useState } from "react";
 import imageLogo from "../../assets/headerImages/Foody..png";
+import imageHamburger from "../../assets/headerImages/imageHamburger.png";
 import "../../style/header.css";
 import { Link } from "react-router-dom";
 
 function Header() {
   const [showDropdown, setShowDropdown] = useState(false);
+
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
   };
   return (
     <div className="navBar">
       <div className="logoLinks">
+        <button className="hamburgBtn">
+          <img src={imageHamburger} alt="" className="imgHamburg" />
+        </button>
         <img src={imageLogo} alt="" className="imgLogo" />
 
         <ul>
