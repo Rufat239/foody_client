@@ -35,19 +35,19 @@
 .div2 {
   top: 90%;
   left: -15%;
-  border-radius: 10%;
+  border-radius: 13px;
 }
 
 .div3 {
   top: 10%;
   left: 75%;
-  border-radius: 10%;
+  border-radius: 13px;
 }
 
 .div4 {
   top: 90%;
   left: 80%;
-  border-radius: 10%;
+  border-radius: 13px;
 }
 
 .div2 img,
@@ -64,7 +64,6 @@
 }
 
 .div2 p,
-.div3 p,
 .div4 p {
   line-height: 20px;
   letter-spacing: 0.03em;
@@ -73,6 +72,18 @@
   font-family: Mukta;
   font-size: 15px;
   font-weight: 500;
+  padding: 20px 59px 21px 19px;
+}
+
+.div3 p{
+  font-family: Mukta;
+font-size: 15px;
+font-weight: 500;
+line-height: 13px;
+letter-spacing: 0.03em;
+text-align: center;
+padding: 20px 59px 21px 19px;
+
 }
 
 .div3 p {
@@ -278,21 +289,26 @@ text-align: center;}
 
 .main1 h1 {
   font-family: Roboto;
-  font-size: 50px;
+  font-size: 45px;
   font-weight: 900;
   line-height: 70px;
   letter-spacing: 0.03em;
   text-align: left;
+  width: 70%;
+
 
 }
 
 .main1 p {
   font-family: Roboto;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.03em;
   text-align: left;
+  color: rgba(130, 130, 130, 1);
+  width: 70%;
+
 }
 
 .main2 {
@@ -308,20 +324,25 @@ text-align: center;}
 
 .txt2 h1 {
   font-family: Roboto;
-  font-size: 50px;
+  font-size: 45px;
   font-weight: 900;
   line-height: 70px;
   letter-spacing: 0.03em;
   text-align: left;
+  width: 90%;
 }
 
 .txt2 p {
   font-family: Roboto;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.03em;
   text-align: left;
+  color: rgba(130, 130, 130, 1);
+
+
+
 }
 
 .main3 {
@@ -346,11 +367,12 @@ text-align: center;}
 
 .txt3 p {
   font-family: Roboto;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.03em;
   text-align: left;
+  color: rgba(130, 130, 130, 1);
 }
 
 .main3 img {
