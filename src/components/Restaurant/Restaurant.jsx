@@ -58,12 +58,6 @@ function Restaurant() {
           ))}
         </div>
 
-                 {/* <ul >
-                <li>
-                  <img src={item.image} />
-                  <span>{item.menu}</span>
-              </li>
-              </ul> */}
       </section>
 
                                                                 {/* Restaurant_Card_Part */}

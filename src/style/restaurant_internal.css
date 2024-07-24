@@ -148,7 +148,7 @@ text-align: left;
     font-size: 15px;
     margin-left: 10px;
 }
-.circle {
+.circlebtn{
     width: 30px;
     height: 30px;
     margin-left: 40px;
@@ -162,7 +162,8 @@ text-align: left;
     font-size: 25px;
     color: rgba(189, 189, 189, 1);
 }
-.circle:hover{
+
+.circlebtn:hover{
     background: rgba(111, 207, 151, 1);
     color: white;
 
@@ -177,7 +178,7 @@ text-align: left;
 margin-top: 2.5%;
 margin-right: 10%;
 width: 30%;
-height:450px;
+height:100%;
 border-radius: 1% ;
 background-color: rgba(243, 244, 246, 1);
 box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.2);
@@ -210,6 +211,7 @@ box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.2);
 }
 .restaurants_common{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     
 }
@@ -243,7 +245,8 @@ font-family: Roboto;
 }
 
 .restaurants_price{
-    margin-right: 4%;
+    margin-left: 10%;
+    margin-top: -4%;
     width: 20%;
    
 }
@@ -272,6 +275,7 @@ font-family: Roboto;
     justify-content: space-between;
     margin-top: 45%;
     margin-left: 2.5%;
+    margin-bottom: 15px;
     border-radius: 100px;
     width: 95%;
     background-color: rgba(214, 54, 38, 1);
