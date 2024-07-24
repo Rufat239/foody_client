@@ -1,16 +1,24 @@
 import React, { useState } from "react";
 import imageLogo from "../../assets/headerImages/Foody..png";
 import imageHamburger from "../../assets/headerImages/imageHamburger.png";
+import engFlag from "../../assets/headerImages/engFlag.png";
+import rusFlag from "../../assets/headerImages/rusFlag.png";
+import azeFlag from "../../assets/headerImages/azeFlag.png";
 import "../../style/header.css";
 import { Link } from "react-router-dom";
 
 function Header() {
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showLangDropdown, setShowLangDropdown] = useState(false);
 
   const [hamburgerMenuStyle, setHamburgerMenuStyle] = useState({});
 
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
+  };
+
+  const langDropdown = () => {
+    setShowLangDropdown(!showLangDropdown);
   };
 
   const openHamburgerMenu = () => {
@@ -32,6 +40,15 @@ function Header() {
       display: "none",
     });
   };
+
+  const handleMouseEnter = () => {
+    setShowDropdown(true);
+  };
+
+  const handleMouseLeave = () => {
+    setShowDropdown(false);
+  };
+
   return (
     <div className="navBar">
       <div className="logoLinks">
@@ -66,13 +83,41 @@ function Header() {
 
       <div className="inputBtns">
         <input type="text" />
-        <button className="langBtn">LANG</button>
-        <button className="inpSignUp" onClick={toggleDropdown}>
+        <button className="langBtn" onClick={langDropdown}>
+          <img className="imgLangBtn" src={engFlag} alt="" />
+          {showLangDropdown && (
+            <div className="langDropdownMenu">
+              <ul>
+                <li>
+                  <button>
+                    <img src={engFlag} alt="" />
+                  </button>
+                </li>
+                <li>
+                  <button>
+                    <img src={rusFlag} alt="" />
+                  </button>
+                </li>
+                <li>
+                  <button>
+                    <img src={azeFlag} alt="" />
+                  </button>
+                </li>
+              </ul>
+            </div>
+          )}
+        </button>
+        <button
+          className="inpSignUp"
+          onClick={toggleDropdown}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           {showDropdown && (
             <div className="dropdownMenu">
               <ul>
                 <li>
-                  <a href="/profile">Profile</a>
+                  <Link to="/profile">Profile</Link>
                 </li>
                 <li>
                   <Link to="/yourBasketPage">Your Basket</Link>
@@ -81,10 +126,10 @@ function Header() {
                   <Link to="/ordersPage">Your Orders</Link>
                 </li>
                 <li>
-                  <a href="/checkout">Checkout</a>
+                  <Link to="/checkout">Checkout</Link>
                 </li>
                 <li>
-                  <a href="/logout">Logout</a>
+                  <Link to="/logout">Logout</Link>
                 </li>
               </ul>
             </div>

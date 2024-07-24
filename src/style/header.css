@@ -48,15 +48,16 @@ body {
 }
 
 .inputBtns {
-  width: 35%;
+  width: 40%;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 .inputBtns input {
-  width: 38%;
-  height: 28%;
+  width: 40%;
+  height: 40%;
   border-radius: 10px;
+  border: 0;
 }
 
 .langBtn {
@@ -64,6 +65,12 @@ body {
   height: 50px;
   border-radius: 50%;
   background-color: aqua;
+  padding: 0;
+  border: 0;
+}
+
+.imgLangBtn {
+  width: 100%;
 }
 
 .inpSignUp {
@@ -117,6 +124,29 @@ body {
   text-decoration: none;
   color: #000;
   font-family: "Roboto";
+}
+
+.langDropdownMenu {
+  position: absolute;
+  margin-top: 5px;
+  z-index: 999;
+  width: 3%;
+}
+
+.langDropdownMenu ul {
+  padding: 0;
+  background-color: white;
+}
+
+.langDropdownMenu ul li {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.langDropdownMenu ul li button {
+  border: 0;
+  padding: 0;
+  background-color: white;
 }
 
 .navRespons {
