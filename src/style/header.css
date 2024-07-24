@@ -43,16 +43,21 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.links {
+  text-decoration: none;
+}
+
 .inputBtns {
-  width: 35%;
+  width: 40%;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 .inputBtns input {
-  width: 38%;
-  height: 28%;
+  width: 40%;
+  height: 40%;
   border-radius: 10px;
+  border: 0;
 }
 
 .langBtn {
@@ -60,6 +65,12 @@ body {
   height: 50px;
   border-radius: 50%;
   background-color: aqua;
+  padding: 0;
+  border: 0;
+}
+
+.imgLangBtn {
+  width: 100%;
 }
 
 .inpSignUp {
@@ -115,6 +126,79 @@ body {
   font-family: "Roboto";
 }
 
+.langDropdownMenu {
+  position: absolute;
+  margin-top: 5px;
+  z-index: 999;
+  width: 3%;
+}
+
+.langDropdownMenu ul {
+  padding: 0;
+  background-color: white;
+}
+
+.langDropdownMenu ul li {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.langDropdownMenu ul li button {
+  border: 0;
+  padding: 0;
+  background-color: white;
+}
+
+.navRespons {
+  display: none;
+  position: absolute;
+  width: 100%;
+  /* height: 100%; */
+  background-color: white;
+  padding: 10px;
+}
+
+.closeHamburger {
+  border: 0;
+  background-color: white;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.resSignUpBtn {
+  width: 100%;
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.resSignUpBtn button {
+  background-color: #d63626;
+  width: 40%;
+  height: 25%;
+  border-radius: 25px;
+  border: 0;
+  color: white;
+  font-size: 22px;
+}
+
+.navRespons ul {
+  padding: 5%;
+}
+
+.navRespons ul li {
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+.responsLink {
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #828282;
+}
 @media only screen and (max-width: 431px) {
   body {
     padding-inline: 0;
