@@ -12,11 +12,11 @@ function Sidebar() {
         <img src={people} className="profileImage" />
         <span>Profile</span>
       </NavLink>
-      <NavLink to='/yourBasket' className={({ isActive }) => isActive ? "sidebarList activeSidebar" : "sidebarList"}>
+      <NavLink to='/yourBasketPage' className={({ isActive }) => isActive ? "sidebarList activeSidebar" : "sidebarList"}>
         <img src={basket} alt="" />
         <span>Your Basket</span>
       </NavLink>
-      <NavLink to='/yourOrders' className={({ isActive }) => isActive ? "sidebarList activeSidebar" : "sidebarList"}>
+      <NavLink to='/ordersPage' className={({ isActive }) => isActive ? "sidebarList activeSidebar" : "sidebarList"}>
         <img src={basket} alt="" />
         <span>Your Orders</span>
       </NavLink>
