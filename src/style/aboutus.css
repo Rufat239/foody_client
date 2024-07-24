@@ -1,0 +1,202 @@
+.about {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 100%;
+  height: 100vh;
+}
+
+ .about-us {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.about-us p{
+width: 35rem;
+height: 11.5rem;
+margin-left: 3%;
+opacity: 0px;
+font-family: Arial, Helvetica, sans-serif;
+color: rgb(130, 130, 130);
+font-size: 1.25rem;
+font-weight: 500;
+line-height: 2.1rem;
+letter-spacing: 0.01rem;
+text-align: left;
+}
+
+.about-us h1{
+color: rgb(0, 0, 0);
+font-family: Arial, Helvetica, sans-serif;
+font-size: 2rem;
+font-weight: 600;
+line-height: 1.88rem;
+letter-spacing: 0.01rem;
+text-align: left;
+width: 14rem;
+height: 2.25rem;
+margin-left: 3%;
+margin-top: 5.5rem;
+}
+
+.about-menu {
+
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.hamburger {
+  width: 35%;
+  border-radius: 20px;
+  position: absolute;
+  top: 25%; 
+  left: 77%;
+  transform: rotate(69deg);
+  animation: movieUp  2s infinite alternate;
+}
+
+.pizza{
+  width: 35%;
+  border-radius: 20px;
+  position: absolute;
+  transform: rotate(69deg);
+  top: -2.5rem;
+  left: 32%;
+  animation: movieUp  2s infinite alternate
+}
+
+.soup{
+  width: 35%;
+  border-radius: 20px;
+  position: absolute;
+  transform: rotate(69deg);
+  left: 1rem;
+  top: 11rem;
+  animation: movieUp  2s infinite alternate
+}
+
+.coffee{
+  width: 35%;
+  border-radius: 20px;
+  position: absolute;
+  transform: rotate(69deg);
+  left: -2rem;
+  top: -6rem;
+  animation: movieUp  2s infinite alternate;
+}
+
+.about-background {
+position: absolute;
+width: 39%;
+height: 20rem;
+top: 40%;
+left: 56%;
+transform: rotate(-67.93deg);
+border-radius: 5rem;
+box-shadow: 0rem 0.19rem 0.5rem -0.13rem rgba(0, 0, 0, 0.2);
+background: rgb(255, 182, 79);
+}
+
+.pizza, .soup, .coffee {
+  position: relative;
+}
+
+@keyframes movieUp  {
+  to {
+    transform: rotate(69deg) translateX(10px) translateY(10px);
+  }
+}
+
+
+  
+  @media (max-width: 431px) {
+    .about {
+      padding: 10px;
+    }
+  
+    .about-container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+    }
+  
+    .about-us {
+      width: 100%;
+      margin: 0;
+      left: 20%;
+    }
+  
+    .about-us h1 {
+      text-align: center;
+      width: 11.94rem;
+      height: 2rem;
+      left: 6rem;
+      top: 2rem;
+    }
+  
+    .about-us p {
+      width: 61%;
+      height: auto;
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      text-align: center;
+    }
+  
+    .about-menu {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .about-background {
+    width: 29.65rem;
+    height: 17.57rem;
+    left: 0;
+    top: 49rem;
+    transform: rotate(-90.00deg);
+    border-radius: 6.25rem;
+    box-shadow: 0rem 0.19rem 0.5rem -0.13rem rgba(0, 0, 0, 0.2);
+    background: rgb(255, 182, 79);
+    }
+
+    .hamburger{
+  width: 41%;
+  border-radius: 20px;
+  position: absolute;
+  top: 25%; 
+  left: 3rem;
+  transform: rotate(90deg);
+  animation: movieUp  2s infinite alternate;
+    }
+
+    .pizza{
+      visibility: hidden;
+    }
+
+    .coffee{
+      visibility: hidden;
+    }
+
+    .soup{
+    width: 41%;
+    border-radius: 20px;
+    position: absolute;
+    transform: rotate(90deg);
+    left: 17rem;
+    top: 4.5rem;
+    animation: movieUp  2s infinite alternate
+    }
+  }
+
+  
