@@ -2,7 +2,7 @@ import React from 'react'
 import '../../style/logout.css'
 import logoutImg from '../../assets/ordersImages/box-arrow-right.svg'
 
-function Logout() {
+function Logout({onCancel}) {
   return (
     <div className='logout-overlay'>
     <div className=' logout-container'>
