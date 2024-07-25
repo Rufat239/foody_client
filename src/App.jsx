@@ -9,6 +9,7 @@ import HowPage from "./pages/HowPage";
 import FaqPage from "./pages/FaqPage";
 import YourBasketPage from "./pages/YourBasketPage";
 import OrdersPage from "./pages/OrdersPage";
+import Profile from "./components/Profile/Profile";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/faqs" element={<FaqPage />} />
           <Route path="/yourBasketPage" element={<YourBasketPage />} />
           <Route path="/ordersPage" element={<OrdersPage />} />
+          <Route path="/profilePage" element={<Profile />} />
         </Routes>
       </Layout>
     </Router>
