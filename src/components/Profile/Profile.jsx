@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import styles from  "../../style/profilePage.css"
+import "../../style/profilePage.css"
 
 const Profile = () => {
   const [formData, setFormData] = useState({
@@ -60,16 +60,16 @@ const Profile = () => {
   };
 
   return (
-    <div className={styles["profile-container"]}>
+    <div className="profile-container">
       <h2>Profile</h2>
-      <form className={styles["profile-form"]} onSubmit={handleSubmit}>
-        <div className={styles["upload-container"]}>
-          <div className={styles.upload}>
+      <form className="profile-form" onSubmit={handleSubmit}>
+        <div className="upload-container">
+          <div className="upload">
             <span>upload</span>
           </div>
         </div>
-        <div className={styles["form-row"]}>
-          <div className={styles["form-group"]}>
+        <div className="form-row">
+          <div className="form-group">
             <label htmlFor="contact">Contact</label>
             <input
               type="text"
@@ -83,7 +83,7 @@ const Profile = () => {
               }}
             />
           </div>
-          <div className={styles["form-group"]}>
+          <div className="form-group">
             <label htmlFor="email">Email</label>
             <input
               type="email"
@@ -98,8 +98,8 @@ const Profile = () => {
             />
           </div>
         </div>
-        <div className={styles["form-row"]}>
-          <div className={styles["form-group"]}>
+        <div className="form-row">
+          <div className="form-group">
             <label htmlFor="username">Username</label>
             <input
               type="text"
@@ -113,7 +113,7 @@ const Profile = () => {
               }}
             />
           </div>
-          <div className={styles["form-group"]}>
+          <div className="form-group">
             <label htmlFor="address">Address</label>
             <input
               type="text"
@@ -128,8 +128,8 @@ const Profile = () => {
             />
           </div>
         </div>
-        <div className={styles["form-row"]}>
-          <div className={styles["form-group"]}>
+        <div className="form-row">
+          <div className="form-group">
             <label htmlFor="fullname">Full Name</label>
             <input
               type="text"
@@ -143,8 +143,8 @@ const Profile = () => {
               }}
             />
           </div>
-          <div className={styles["form-group"]}>
-            <button type="submit" className={styles["save-btn"]}>
+          <div className="form-group">
+            <button type="submit" className="save-btn">
               Save
             </button>
           </div>
