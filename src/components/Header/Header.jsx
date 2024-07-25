@@ -117,7 +117,7 @@ function Header() {
             <div className="dropdownMenu">
               <ul>
                 <li>
-                  <Link to="/profile">Profile</Link>
+                  <Link to="/profilePage">Profile</Link>
                 </li>
                 <li>
                   <Link to="/yourBasketPage">Your Basket</Link>
