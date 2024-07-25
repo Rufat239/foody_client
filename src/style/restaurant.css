@@ -4,14 +4,18 @@
 
 .main{
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
   font-family: Roboto;
 
 }
 
-                                                                      /* Section (Sidebar) */
+.restaurant_sidebar{
+  width: auto;
+}                                                                    /* Section (Sidebar) */
 .restaurant_body{
-    width: 251px;
+    display: block;
+    width: 120%;
     height:auto;
     margin-right: 10%;
     background-color: rgba(243, 244, 246, 1);
@@ -55,22 +59,31 @@ margin-top: 25px;
   color:rgba(214, 54, 38, 1);
 
 }
-
+.sidebar-toggle {
+  display: flex;
+  flex-direction: row;
+  display: none;
+  background-color: rgba(243, 244, 246, 1);
+  font-family: Mukta;
+  color:black;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+.sidebar-toggle p{
+  margin-left: 10%;
+  margin-top: -1%;
+}
 
                                                           /* Section (Restaurant) */
 .restaurantCards{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  overflow:auto;
+  width: 80%;
   margin-top: 1.9%;
-
-
+  margin-left: 4.5%;
 }
-.restaurantCards::-webkit-scrollbar {
-  width: 10px;
-  background: red;
 
-}
 .restaurantCards a {
   text-decoration: none;
 }
@@ -79,20 +92,18 @@ margin-top: 25px;
   background-color:rgba(255, 255, 255, 1);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 80%;
+  width: 60%;
   height: auto;
-  margin: 10px;
-  margin-left: 10%;
 
 }
 .restaurant_cardImage{
-  width: 40%;
-  margin-left: 30%;
+  width: 50%;
+  margin-left: 26%;
 }
 .restaurant_cardImage img {
   width: 100%;
   height: 100%;
-  margin-top: 10%;
+  margin-top: 15%;
   object-fit: fill;
 
 }
@@ -102,26 +113,26 @@ margin-top: 25px;
 
 }
 .restaurants_Info h2{
-  margin-left: 20px;
+  margin-left: 15px;
   font-size: 18px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   color: black;
  
-
 }
 
 .restaurants_Info p{
 color: rgba(130, 130, 130, 1);
-font-size: 15px;
-margin-left: 20px;  
+font-size: 13px;
+margin-left: 15px;  
+margin-top: -4%;
 
 }
 .delivery{
   display: flex;
   justify-content:space-around;
-  margin-left: 5px; 
+  margin-left: 10px; 
   }
 .delivery p {
     margin-right: 30px;
@@ -142,6 +153,89 @@ margin-left: 20px;
 
 }
 
+
+@media screen and (max-width: 432px){
+  .main{
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   margin-top: 10%;
+  }
+  .restaurant_body{
+    display: none;
+    
+  }
+
+  .restaurantCards{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    width: auto;
+    width: 100%;  
+  }
+  .restaurants_card{
+    background-color:rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    box-shadow: 0px 6px 8px  rgba(0, 0, 0, 0.25);
+    margin-top: -10%;
+    width: auto;
+    height:110%;
+  
+  }
+
+  .restaurant_cardImage{
+    width: auto;
+   margin-right: 20%;
+  }
+  .restaurant_cardImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  
+  }
+.restaurants_Info{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 5%;
+  
+  }
+  .restaurants_Info h2{
+  margin-right: 14px;
+  font-size: 13px;
+ 
+}
+
+.restaurants_Info p{
+color: rgba(130, 130, 130, 1);
+font-size: 11px;
+margin-right: 10px;  
+margin-top: -4%;
+
+}
+.delivery{
+    display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   margin-top: 4%;
+  }
+.delivery p {
+      margin-right: 10px;
+      font-weight: bold;
+      font-size: 15px;
+    }
+  
+.delivery span{
+       font-size: 13px;
+       width: 120px;
+       border-radius: 30px;
+       margin-top: -6%;
+       margin-right: 7%;
+  
+  }
+  
+}
 
 
 
