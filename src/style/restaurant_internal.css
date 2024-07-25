@@ -303,3 +303,79 @@ font-family: Roboto;
     border-radius: 100px;
 
 }
+
+
+
+.emptyBasket{
+    display: flex;
+    flex-direction: column;
+    height:auto;
+
+    
+}
+.emptyNav{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+    margin-left: 4%;
+
+}
+.emptyNav img{
+    width: 25px;
+    height: 25px;
+    object-fit: fill;
+
+}
+.emptyNav span{
+    margin-top: 5px;
+    margin-left: 10px;
+    color: rgba(189, 189, 189, 1);
+    font-family: Roboto;
+    font-weight: 500;
+}
+.emptyImage img  {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 10%;
+}
+.emptydescription p{
+    font-family: Roboto;
+    color: rgba(189, 189, 189, 1);
+    font-size: 30px;
+    text-align: center;
+
+}
+.emptycheck_btn{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2.5%;
+    margin-bottom: 15px;
+    border-radius: 100px;
+    width: 95%;
+    background-color:  rgba(189, 189, 189, 1);
+
+}
+.emptycheck_btn p{
+    color: white;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 18px;
+    margin-left: 4.5%;
+}
+.emptycheck_btn span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 15px;
+    background-color: white;
+    color: rgba(189, 189, 189, 1) ;
+    margin-right: 3%;
+    margin-top: 2.2%;
+    width: 40%;
+    height: 40px;
+    border-radius: 100px;
+
+}
+
