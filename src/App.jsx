@@ -10,7 +10,6 @@ import FaqPage from "./pages/FaqPage";
 import YourBasketPage from "./pages/YourBasketPage";
 import OrdersPage from "./pages/OrdersPage";
 
-
 function App() {
   return (
     <Router>
@@ -18,13 +17,12 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/restaurantMain" element={<Restaurant_Main />} />
-          <Route path='/internal'  element={<Internal/>}/>
+          <Route path="/internal" element={<Internal />} />
           <Route path="/aboutPage" element={<AboutPage />} />
           <Route path="/howItWorks" element={<HowPage />} />
           <Route path="/faqs" element={<FaqPage />} />
           <Route path="/yourBasketPage" element={<YourBasketPage />} />
           <Route path="/ordersPage" element={<OrdersPage />} />
-
         </Routes>
       </Layout>
     </Router>
