@@ -1,5 +1,5 @@
-import React from "react";
-import "../../style/Profile.css";
+import React, {useState} from 'react'
+import styles from  "../../style/profilePage.css"
 
 const Profile = () => {
   const [formData, setFormData] = useState({
@@ -43,7 +43,7 @@ const Profile = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      console.log(formData);
+      // console.log(formData);
       setFormData({
         contact: "",
         email: "",
