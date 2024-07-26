@@ -93,7 +93,7 @@ margin-top: 25px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width:auto;
   height: auto;
-  margin-left: 30%;
+  margin-left: 25%;
 
 }
 .restaurant_cardImage{
@@ -113,7 +113,7 @@ margin-top: 25px;
 
 }
 .restaurants_Info h2{
-  margin-left: 15px;
+  margin-left: 25px;
   font-size: 18px;
   white-space: nowrap;
   overflow: hidden;
@@ -125,7 +125,7 @@ margin-top: 25px;
 .restaurants_Info p{
 color: rgba(130, 130, 130, 1);
 font-size: 13px;
-margin-left: 15px;  
+margin-left: 25px;  
 margin-top: -4%;
 
 }
