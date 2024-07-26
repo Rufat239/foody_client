@@ -16,7 +16,7 @@ import twistermenu from "../../assets/homeImages/Twistermenu.jpg";
 
 function Home() {
   return (
-    <div>
+    <div className="allContainer">
       <div className="all">
         <div className="all1">
           <div className="info">
@@ -160,7 +160,7 @@ function Home() {
         </div>
       </div>
       <div className="finish">
-        <div>
+        <div className="son1img">
           <img src={pizza} alt="" />
         </div>
         <div className="end">
