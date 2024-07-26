@@ -78,9 +78,8 @@ margin-top: 25px;
 .restaurantCards{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  width: 80%;
+  width: 100%;
   margin-top: 1.9%;
-  margin-left: 6%;
 }
 
 .restaurantCards a {
@@ -91,8 +90,9 @@ margin-top: 25px;
   background-color:rgba(255, 255, 255, 1);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 62%;
-  height: 65%;
+  width:65%;
+  height: auto;
+  margin-left: 30%;
 
 }
 .restaurant_cardImage{

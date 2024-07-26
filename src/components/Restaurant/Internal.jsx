@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import "../../style/restaurant_internal.css";
+import "../../style/restaurant_internal.css"
 import Brand from '../../assets/restaurant_images/Brand.jpg';
 import trash from '../../assets/restaurant_images/trash.jpg';
 import basket from '../../assets/restaurant_images/basket.jpg';
 import pizza from '../../assets/restaurant_images/Pizza.jpg';
 import empty from '../../assets/restaurant_images/empty.jpg';
-import emptyIcon from '../../assets/restaurant_images/iconbasket.jpg';
+import emptyIcon from '../../assets/restaurant_images/iconbasket.jpg'
 import { Link } from 'react-router-dom';
 
 const productList = [
@@ -23,17 +23,14 @@ function Internal() {
 
   const handleAddToBasket = (product) => {
     const existingProduct = basketItems.find(item => item.id === product.id);
-    if (!existingProduct) {
+    if (existingProduct) {
+      const updatedBasketItems = basketItems.map(item =>
+        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+      );
+      setBasketItems(updatedBasketItems);
+    } else {
       setBasketItems([...basketItems, { ...product, quantity: 1 }]);
-      setTotalPrice(totalPrice + product.price);
     }
-  };
-
-  const handleIncreaseQuantity = (product) => {
-    const updatedBasketItems = basketItems.map(item =>
-      item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
-    );
-    setBasketItems(updatedBasketItems);
     setTotalPrice(totalPrice + product.price);
   };
 
@@ -97,6 +94,7 @@ function Internal() {
         </div>
 
         <div className="restaurants_basket">
+                                                                               {/* Full Basket part  */}
           {basketItems.length > 0 && (
             <div className='restaurants_nav'>
               <div className='bskt_image'>
@@ -109,7 +107,7 @@ function Internal() {
           )}
 
           {basketItems.length > 0 ? (
-            <div className='restaurants_common'>
+            <div className='restaurants_common'>                                                                       
               {basketItems.map((item, index) => (
                 <div className='restaurants_text' key={index}>
                   <div className='restaurants_image'>
@@ -124,7 +122,7 @@ function Internal() {
                       <img src={trash} alt="Remove" />
                     </div>
                     <div className='quantity'>
-                      <span className='plus' onClick={() => handleIncreaseQuantity(item)}>+</span>
+                      <span className='plus' onClick={() => handleAddToBasket(item)}>+</span>
                       <p>{item.quantity}</p>
                       <span onClick={() => handleRemoveFromBasket(index)}>—</span>
                     </div>
@@ -136,7 +134,7 @@ function Internal() {
                 <span>${totalPrice.toFixed(2)}</span>
               </div>
             </div>
-          ) : (
+          ) : (                                                                   /* Empty Basket part */
             <div className="emptyBasket">
               <div className="emptyNav">
                 <img src={emptyIcon} alt="Empty Icon" />
