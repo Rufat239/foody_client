@@ -1,15 +1,20 @@
-.profile-container {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 1031px;
-}
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
+.profile-container {
+    width: 79%;
+    height: 634px;
+    background-color: #F3F4F6;
+    border-radius: 5px;
+}
 h2 {
-    text-align: left;
-    margin-bottom: 20px;
+    transform: translateY(1.2em);
+    margin-left: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 550;
+    padding-inline: 2%;
+    color: #4f4f4f;
 }
 
 .profile-form {
@@ -26,23 +31,31 @@ h2 {
 }
 
 .upload {
-    width: 80px;
-    height: 80px;
-    background-color: #e0e0e0;
+    width: 9rem;
+    height: 8rem;
+    background-color: #ffffff;
     border-radius: 50%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 12px;
-    color: #5cb85c;
+    justify-content: center;
+    flex-direction: column;
+    color: #929292;
     cursor: pointer;
+}
+
+.upload p {
+    margin-top: -1px;
+    font-size: 18px;
+    font-family: "Roboto";
+    font-weight: 500;
 }
 
 .form-row {
     display: flex;
     justify-content: space-between;
     gap: 2%;
-    width: 100%;
+    width: 97%;
+    margin-left: 3%;
     flex-wrap: wrap;
 }
 
@@ -55,40 +68,75 @@ h2 {
 .form-group label {
     margin-bottom: 5px;
     font-size: 14px;
+    font-family: "Mukta";
+    font-weight: 700;
     color: #666666;
 }
 
-.form-group input,
-.save-btn {
+.form-group input {
     padding: 10px;
-    border: 1px solid #dddddd;
+    border: none;
     border-radius: 5px;
     font-size: 14px;
-    height: 50px;
+    height: 40px;
+    width: 90%;
 }
 
 .save-btn {
-    background-color: #5cb85c;
+    background-color: #6FCF97;
     color: #ffffff;
+    padding: 10px;
+    width: 93.5%;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-    height: 50px;
-    margin-top: 23px;
+    height: 60px;
+    font-size: 23px;
+    font-weight: 600;
+    font-family: "Mukta";
+    margin-top: 29px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 431px) {
     .profile-container {
-        width: 80%;
+        background-color: white;
+        margin-bottom: 20rem;
+        width: 100%;
     }
 
     .profile-form {
         align-items: center;
     }
-    
+
+    .form-group input {
+        background-color: #F3F4F6;
+        height: 40px;
+        margin: 0 auto;
+    }
+
     .form-row {
-        flex-direction: column;
         width: 100%;
-        align-items: center;
+        margin-left: 10px;
+    }
+
+    .form-group label {
+        margin-left: 15px;
+    }
+
+    .upload-container {
+        margin-top: 2rem;
+    }
+
+    .upload {
+        background-color: #F3F4F6;
+    }
+
+    .profile-form {
+        width: auto
+    }
+
+    .form-row {
+        width: 100%;
     }
 
     .form-group {
@@ -98,49 +146,8 @@ h2 {
     }
 
     .save-btn {
-        width: 100%;
-        margin-top: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .profile-container {
-        width: 90%;
-    }
-
-    .form-row {
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-    }
-
-    .form-group {
-        flex: 1 1 100%;
-        margin-top: 20px;
-        width: 100%;
-    }
-
-    .save-btn {
-        width: 100%;
-        margin-top: 20px;
-    }
-}
-
-@media (max-width: 320px) {
-    .form-row {
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-    }
-
-    .form-group {
-        flex: 1 1 100%;
-        margin-top: 20px;
-        width: 100%;
-    }
-
-    .save-btn {
-        width: 100%;
-        margin-top: 20px;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

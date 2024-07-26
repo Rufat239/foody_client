@@ -1,5 +1,6 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import "../../style/profilePage.css"
+import upload from "../../assets/ProfileImages/cloud_upload.png"
 
 const Profile = () => {
   const [formData, setFormData] = useState({
@@ -43,7 +44,7 @@ const Profile = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      // console.log(formData);
+      console.log(formData);
       setFormData({
         contact: "",
         email: "",
@@ -51,12 +52,7 @@ const Profile = () => {
         address: "",
         fullname: "",
       });
-    } else {
-      setShowErrors(true);
-      setTimeout(() => {
-        setShowErrors(false);
-      }, 1000);
-    }
+    } 
   };
 
   return (
@@ -65,7 +61,8 @@ const Profile = () => {
       <form className="profile-form" onSubmit={handleSubmit}>
         <div className="upload-container">
           <div className="upload">
-            <span>upload</span>
+            <img src={upload} alt="" />
+            <p>upload</p>
           </div>
         </div>
         <div className="form-row">
@@ -78,9 +75,6 @@ const Profile = () => {
               placeholder="+994"
               value={formData.contact}
               onChange={handleChange}
-              style={{
-                borderColor: showErrors && errors.contact ? "red" : "initial",
-              }}
             />
           </div>
           <div className="form-group">
@@ -92,13 +86,10 @@ const Profile = () => {
               placeholder="rahimlisarkhan@gmail.com"
               value={formData.email}
               onChange={handleChange}
-              style={{
-                borderColor: showErrors && errors.email ? "red" : "initial",
-              }}
+
             />
           </div>
-        </div>
-        <div className="form-row">
+
           <div className="form-group">
             <label htmlFor="username">Username</label>
             <input
@@ -108,11 +99,9 @@ const Profile = () => {
               placeholder="rahimlisarkhan"
               value={formData.username}
               onChange={handleChange}
-              style={{
-                borderColor: showErrors && errors.username ? "red" : "initial",
-              }}
             />
           </div>
+
           <div className="form-group">
             <label htmlFor="address">Address</label>
             <input
@@ -122,13 +111,10 @@ const Profile = () => {
               placeholder="Ataturk 45 Ganclik Baku"
               value={formData.address}
               onChange={handleChange}
-              style={{
-                borderColor: showErrors && errors.address ? "red" : "initial",
-              }}
+
             />
           </div>
-        </div>
-        <div className="form-row">
+
           <div className="form-group">
             <label htmlFor="fullname">Full Name</label>
             <input
@@ -138,9 +124,7 @@ const Profile = () => {
               placeholder="Sarkhan Rahimli"
               value={formData.fullname}
               onChange={handleChange}
-              style={{
-                borderColor: showErrors && errors.fullname ? "red" : "initial",
-              }}
+
             />
           </div>
           <div className="form-group">
