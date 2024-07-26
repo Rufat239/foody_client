@@ -143,53 +143,65 @@ function Orders({ itemsPerPageOptions = [5, 10, 15] }) {
 
 
     <div className='all-order-component'>
-      <div className='orderContainer'>
-        <div className='titleOrders'>
+      <div className='order-container'>
+        <div className='title-orders'>
           <h1>Your Orders</h1>
         </div>
 
 
-        <div className='tableContainer'>
+        <div className='table-container'>
           <table>
             <thead>
               <tr>
+              <th className='for-small-screen'></th>
                 <th>ID</th>
                 <th>Time</th>
                 <th>Delivery Address</th>
                 <th>Amount</th>
                 <th>Payment Method</th>
                 <th>Contact</th>
-                <th></th>
+                <th className='options-button-cell'></th>
               </tr>
             </thead>
             {selectedItems.map((x) => (
               <tbody>
                 <tr >
-                  <td className='idOrders'>
+                <td onClick={() =>toggleMenu(x.id)}
+                    className='for-small-screen'>
+                    <img
+                      className='options-button'
+                      src={options} />
+                         {menuVisible === x.id && (
+                    <div
+                      className='drop-down-menu-content'>
+                      <p onClick={handleVisibleShowModal} className='show-setting'>show</p>
+                      <p onClick={handleShowDeleteModal} className='delete-setting'>delete</p>
+                    </div>
+                  )}
+                  </td>
+               
+                  <td className='id-orders'>
                     <p>{x.id}</p>
                   </td>
                   <td>{x.time}</td>
-                  <td className='ordersAddress'>{x.address}</td>
+                  <td className='orders-address'>{x.address}</td>
                   <td>{x.amount}</td>
                   <td>{x.payment}</td>
                   <td>{x.contact}</td>
-                  <td onClick={toggleMenu}
-                    onMouseEnter={() => setMenuVisible(x.id)}
-                    onMouseLeave={() => setMenuVisible(null)}
-                    className='optionsButtonCell'>
+                  <td onClick={() =>toggleMenu(x.id)}
+                    className='options-button-cell'>
                     <img
-                      className='optionsButton'
+                      className='options-button'
                       src={options} />
-                  </td>
-                  {menuVisible === x.id && (
+                         {menuVisible === x.id && (
                     <div
-                      onMouseEnter={() => setMenuVisible(x.id)}
-                      onMouseLeave={() => setMenuVisible(null)}
-                      className='dropDownMenuContent'>
-                      <p onClick={handleVisibleShowModal} className='showLink'>show</p>
-                      <p onClick={handleShowDeleteModal} className='deleteLink'>delete</p>
+                      className='drop-down-menu-content'>
+                      <p onClick={handleVisibleShowModal} className='show-setting'>show</p>
+                      <p onClick={handleShowDeleteModal} className='delete-setting'>delete</p>
                     </div>
                   )}
+                  </td>
+               
                 </tr>
               </tbody>
             ))}
