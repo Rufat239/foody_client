@@ -1,29 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
 .delivery-container{
 height: 100vh;
 max-width: 100%;
+padding-inline: 8%;
 }
 
 
 .delivery-heading h1{
     text-align: center;
-    margin: 20px;
+    font-family: "Mukta";
+    margin-right: 8rem;
+    margin-bottom: 22px;
   }
 
   .delivery-heading p{
     text-align: center;
-    width: 65rem;
+    width:96%;
     height: 184px;
-    margin-left: 8%;
     opacity: 0px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-family: "Roboto";
+    font-size: 1.25rem;
     font-weight: 500;
     line-height: 35px;
     letter-spacing: 0.15px;
+    margin-top: 0;
 }
   
     .background {
-    width: 60rem;
+    width: 81%;
     height: 407px;
     margin-top: 10%;
     margin-left: 16%;
@@ -47,40 +54,44 @@ max-width: 100%;
   }
 
   @media (max-width:431px){
+    .delivery-container {
+      padding-inline: 4%;
+      text-align: center;
+    }
+  
+    .delivery-heading h1 {
+      margin-right: 0;
+      font-size: 1.5rem;
+    }
+  
+    .delivery-heading p {
+      width: 89%;
+      height: auto;
+      opacity: 1;
+      font-size: 1rem;
+      line-height: 1.5rem;
+  
+    }
+  
     .background {
-      width: 37rem;
-      height:17rem;
-      margin-left: 0px;
-      margin-top: 95%;
-      border-radius: 100px;
-      opacity: 0px;
-      transform: rotate(90deg);
+      width: 90%;
+      height: 33rem;
+      margin-top: 5%;
+      margin-left: 5%;
+      border-radius: 6.25rem;
+      opacity: 1;
+      transform: rotate(0deg);
       background: #FFB64F;
+    }
+  
+    .delivery-image {
+      position: relative;
+      width: 80%;
+      height: auto;
+      top: 0;
+      left: 50%;
+      transform: translate(-60%, -29rem);
+    }
   }
-
-  .delivery-heading p{
-    text-align: center;
-    width: 24rem;
-    height: 130px;
-    /* margin-left: 8%; */
-    opacity: 0px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 30px;
-    letter-spacing: 0.15px;
-}
-
-.delivery-image {
-  position: absolute; 
-  width: 20rem;
-  height: auto;
-  top: 22rem; 
-  left: 27rem; 
-  /* transform: translate(-98%, 90%);  */
-  z-index: 1; 
-
-}
-
-  }
+  
   
