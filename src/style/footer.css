@@ -2,8 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 .footer {
   background-color: #181617;
-  /* margin-left: calc(-2.5%); */
-  /* margin-right: calc(-2.5%); */
+  margin-left: calc(-2.5%);
+  margin-right: calc(-2.5%);
   margin-top: 20px;
   height: 24em;
   display: flex;
