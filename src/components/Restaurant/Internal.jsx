@@ -94,6 +94,7 @@ function Internal() {
         </div>
 
         <div className="restaurants_basket">
+                                                                               {/* Full Basket part  */}
           {basketItems.length > 0 && (
             <div className='restaurants_nav'>
               <div className='bskt_image'>
@@ -106,7 +107,7 @@ function Internal() {
           )}
 
           {basketItems.length > 0 ? (
-            <div className='restaurants_common'>
+            <div className='restaurants_common'>                                                                       
               {basketItems.map((item, index) => (
                 <div className='restaurants_text' key={index}>
                   <div className='restaurants_image'>
@@ -133,7 +134,7 @@ function Internal() {
                 <span>${totalPrice.toFixed(2)}</span>
               </div>
             </div>
-          ) : (
+          ) : (                                                                   /* Empty Basket part */
             <div className="emptyBasket">
               <div className="emptyNav">
                 <img src={emptyIcon} alt="Empty Icon" />
