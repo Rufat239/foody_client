@@ -40,7 +40,6 @@ const Profile = () => {
     setErrors(newErrors);
     return !Object.values(newErrors).some((error) => error);
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
@@ -52,24 +51,25 @@ const Profile = () => {
         address: "",
         fullname: "",
       });
-    } 
+    }
   };
 
   return (
     <div className="profile-container">
-      <h2>Profile</h2>
+      <h2 className='Profile-title'>Profile</h2>
       <form className="profile-form" onSubmit={handleSubmit}>
         <div className="upload-container">
           <div className="upload">
             <img src={upload} alt="" />
-            <p>upload</p>
+            <p className='upload-title'>upload</p>
           </div>
         </div>
         <div className="form-row">
           <div className="form-group">
-            <label htmlFor="contact">Contact</label>
+            <label htmlFor="contact" className='label-box'>Contact</label>
             <input
               type="text"
+              className='input-box'
               id="contact"
               name="contact"
               placeholder="+994"
@@ -78,9 +78,10 @@ const Profile = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email" className='label-box'>Email</label>
             <input
               type="email"
+              className='input-box'
               id="email"
               name="email"
               placeholder="rahimlisarkhan@gmail.com"
@@ -91,9 +92,10 @@ const Profile = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="username">Username</label>
+            <label htmlFor="username" className='label-box'>Username</label>
             <input
               type="text"
+              className='input-box'
               id="username"
               name="username"
               placeholder="rahimlisarkhan"
@@ -103,9 +105,10 @@ const Profile = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="address">Address</label>
+            <label htmlFor="address" className='label-box'>Address</label>
             <input
               type="text"
+              className='input-box'
               id="address"
               name="address"
               placeholder="Ataturk 45 Ganclik Baku"
@@ -116,9 +119,10 @@ const Profile = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="fullname">Full Name</label>
+            <label htmlFor="fullname" className='label-box'>Full Name</label>
             <input
               type="text"
+              className='input-box'
               id="fullname"
               name="fullname"
               placeholder="Sarkhan Rahimli"
