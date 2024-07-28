@@ -1,5 +1,5 @@
 import React from 'react'
-// import "../../style/header.css"
+import "../../style/SubNavLogin.css"
 import bayraq from '../../assets/loginimages/Rectangle.svg'
 
 function SubNavLogin() {
