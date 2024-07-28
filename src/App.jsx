@@ -10,8 +10,8 @@ import HowPage from "./pages/HowPage";
 import FaqPage from "./pages/FaqPage";
 import YourBasketPage from "./pages/YourBasketPage";
 import OrdersPage from "./pages/OrdersPage";
-
 import ProfilePage from "./pages/ProfilePage";
+import "./i18n";
 
 function App() {
   return (
