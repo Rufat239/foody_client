@@ -7,7 +7,7 @@
     background-color: #F3F4F6;
     border-radius: 5px;
 }
-h2 {
+.Profile-title {
     transform: translateY(1.2em);
     margin-left: 20px;
     font-family: Arial, sans-serif;
@@ -43,7 +43,7 @@ h2 {
     cursor: pointer;
 }
 
-.upload p {
+.upload-title {
     margin-top: -1px;
     font-size: 18px;
     font-family: "Roboto";
@@ -65,7 +65,7 @@ h2 {
     flex-direction: column;
 }
 
-.form-group label {
+.label-box {
     margin-bottom: 5px;
     font-size: 14px;
     font-family: "Mukta";
@@ -73,7 +73,7 @@ h2 {
     color: #666666;
 }
 
-.form-group input {
+.input-box {
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -108,7 +108,7 @@ h2 {
         align-items: center;
     }
 
-    .form-group input {
+    .input-box {
         background-color: #F3F4F6;
         height: 40px;
         margin: 0 auto;
@@ -119,7 +119,7 @@ h2 {
         margin-left: 10px;
     }
 
-    .form-group label {
+    .label-box {
         margin-left: 15px;
     }
 
