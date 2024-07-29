@@ -14,6 +14,7 @@ import LoginPage from "./pages/LoginPage";
 import "./i18n";
 import { Provider } from "react-redux";
 import store from '../src/components/Redux/store'
+import CheckoutPage from "./pages/CheckoutPage";
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route path="/ordersPage" element={<OrdersPage />} />
           <Route path="/profilePage" element={<ProfilePage />} />
           <Route path="/loginPage" element={<LoginPage />} />
+          <Route path="/checkoutPage" element={<CheckoutPage />} />
         </Routes>
       </Layout>
     </Router>
