@@ -73,9 +73,14 @@ body {
   width: 100%;
 }
 
-.inpSignUp {
+.linkSign {
   width: 17%;
   height: 38%;
+}
+
+.btnSignUp {
+  width: 100%;
+  height: 100%;
   border-radius: 15px;
   background-color: #d63626;
   border: 0;

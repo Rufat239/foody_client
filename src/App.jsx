@@ -11,6 +11,7 @@ import FaqPage from "./pages/FaqPage";
 import YourBasketPage from "./pages/YourBasketPage";
 import OrdersPage from "./pages/OrdersPage";
 import ProfilePage from "./pages/ProfilePage";
+import LoginPage from "./pages/LoginPage";
 import "./i18n";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/yourBasketPage" element={<YourBasketPage />} />
           <Route path="/ordersPage" element={<OrdersPage />} />
           <Route path="/profilePage" element={<ProfilePage />} />
+          <Route path="/loginPage" element={<LoginPage />} />
         </Routes>
       </Layout>
     </Router>
