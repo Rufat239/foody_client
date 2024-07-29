@@ -6,18 +6,21 @@ import rusFlag from "../../assets/headerImages/rusFlag.png";
 import azeFlag from "../../assets/headerImages/azeFlag.png";
 import "../../style/header.css";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function Header() {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showLangDropdown, setShowLangDropdown] = useState(false);
-
+  const [langImg, setLangImg] = useState(engFlag);
   const [hamburgerMenuStyle, setHamburgerMenuStyle] = useState({});
+
+  const { t, i18n } = useTranslation();
 
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
   };
 
-  const langDropdown = () => {
+  const toggleLangDropdown = () => {
     setShowLangDropdown(!showLangDropdown);
   };
 
@@ -64,42 +67,57 @@ function Header() {
 
         <ul>
           <Link className="links" to="/">
-            <li>Home</li>
+            <li>{t("navbar.home")}</li>
           </Link>
           <Link className="links" to="restaurantMain">
-            <li>Restaurants</li>
+            <li>{t("navbar.restaurants")}</li>
           </Link>
           <Link className="links" to="/aboutPage">
-            <li>About us</li>
+            <li>{t("navbar.aboutus")}</li>
           </Link>
           <Link className="links" to="/howItWorks">
-            <li>How it works</li>
+            <li>{t("navbar.howitworks")}</li>
           </Link>
           <Link className="links" to="/faqs">
-            <li>FAQs</li>
+            <li>{t("navbar.faq")}</li>
           </Link>
         </ul>
       </div>
 
       <div className="inputBtns">
         <input type="text" />
-        <button className="langBtn" onClick={langDropdown}>
-          <img className="imgLangBtn" src={engFlag} alt="" />
+        <button className="langBtn" onClick={toggleLangDropdown}>
+          <img className="imgLangBtn" src={langImg} alt="" />
           {showLangDropdown && (
             <div className="langDropdownMenu">
               <ul>
                 <li>
-                  <button>
+                  <button
+                    onClick={() => {
+                      setLangImg(engFlag);
+                      i18n.changeLanguage("en");
+                    }}
+                  >
                     <img src={engFlag} alt="" />
                   </button>
                 </li>
                 <li>
-                  <button>
+                  <button
+                    onClick={() => {
+                      setLangImg(rusFlag);
+                      i18n.changeLanguage("fr");
+                    }}
+                  >
                     <img src={rusFlag} alt="" />
                   </button>
                 </li>
                 <li>
-                  <button>
+                  <button
+                    onClick={() => {
+                      setLangImg(azeFlag);
+                      i18n.changeLanguage("az");
+                    }}
+                  >
                     <img src={azeFlag} alt="" />
                   </button>
                 </li>
@@ -107,8 +125,11 @@ function Header() {
             </div>
           )}
         </button>
+        <Link className="linkSign" to="/loginPage">
+          <button className="btnSignUp">{t("navbar.signup")}</button>
+        </Link>
         <button
-          className="inpSignUp"
+          className="adminBtn"
           onClick={toggleDropdown}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
@@ -117,7 +138,7 @@ function Header() {
             <div className="dropdownMenu">
               <ul>
                 <li>
-                  <Link to="/profile">Profile</Link>
+                  <Link to="/profilePage">Profile</Link>
                 </li>
                 <li>
                   <Link to="/yourBasketPage">Your Basket</Link>
@@ -134,7 +155,7 @@ function Header() {
               </ul>
             </div>
           )}
-          Sign up
+          Admin
         </button>
       </div>
 

@@ -7,6 +7,8 @@ import pizza from '../../assets/restaurant_images/Pizza.jpg';
 import empty from '../../assets/restaurant_images/empty.jpg';
 import emptyIcon from '../../assets/restaurant_images/iconbasket.jpg'
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToBasket, increaseQuantity, removeFromBasket } from '../Redux/actions/basketActions';
 
 const productList = [
   { id: 1, image: pizza, name: 'Papa John’s Pizza Restaurant', description: 'Prepared with a patty, a slice of cheese and special sauce', price: 7.90 },
@@ -18,36 +20,9 @@ const productList = [
 ];
 
 function Internal() {
-  const [basketItems, setBasketItems] = useState([]);
-  const [totalPrice, setTotalPrice] = useState(0);
-
-  const handleAddToBasket = (product) => {
-    const existingProduct = basketItems.find(item => item.id === product.id);
-    if (existingProduct) {
-      const updatedBasketItems = basketItems.map(item =>
-        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
-      );
-      setBasketItems(updatedBasketItems);
-    } else {
-      setBasketItems([...basketItems, { ...product, quantity: 1 }]);
-    }
-    setTotalPrice(totalPrice + product.price);
-  };
-
-  const handleRemoveFromBasket = (index, removeAll = false) => {
-    const product = basketItems[index];
-    const newBasketItems = [...basketItems];
-
-    if (removeAll || product.quantity === 1) {
-      newBasketItems.splice(index, 1);
-      setTotalPrice(Math.max(0, totalPrice - product.price * product.quantity));
-    } else {
-      newBasketItems[index] = { ...product, quantity: product.quantity - 1 };
-      setTotalPrice(Math.max(0, totalPrice - product.price));
-    }
-
-    setBasketItems(newBasketItems);
-  };
+  const dispatch = useDispatch();
+  const basketItems = useSelector(state => state.basket.basketItems);
+  const totalPrice = useSelector(state => state.basket.totalPrice);
 
   return (
     <div>
@@ -86,7 +61,7 @@ function Internal() {
                 </div>
                 <div className='price'>
                   <span>From <strong>${product.price.toFixed(2)}</strong></span>
-                  <button className='circlebtn' onClick={() => handleAddToBasket(product)}>+</button>
+                  <button className='circlebtn' onClick={() => dispatch(addToBasket(product))}>+</button>
                 </div>
               </div>
             ))}
@@ -117,13 +92,13 @@ function Internal() {
                     <span>${(item.price * item.quantity).toFixed(2)}</span>
                   </div>
                   <div className='restaurants_price'>
-                    <div className='trash' onClick={() => handleRemoveFromBasket(index, true)}>
+                    <div className='trash' onClick={() => dispatch(removeFromBasket(index, true))}>
                       <img src={trash} alt="Remove" />
                     </div>
                     <div className='quantity'>
-                      <span className='plus' onClick={() => handleAddToBasket(item)}>+</span>
+                      <span className='plus' onClick={() => dispatch(increaseQuantity(item))}>+</span>
                       <p>{item.quantity}</p>
-                      <span onClick={() => handleRemoveFromBasket(index)}>—</span>
+                      <span onClick={() => dispatch(removeFromBasket(index))}>—</span>
                     </div>
                   </div>
                 </div>

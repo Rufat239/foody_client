@@ -125,9 +125,13 @@
   font-size: 1rem;
   letter-spacing: 0.48px;
   font-weight: 500;
+
   font-family: "Mukta";
   line-height: 24px;
   margin-left: -40px;
+=======
+  /* padding: 20px 59px 21px 19px; */
+
 }
 .animationContainer2 p,
 .animationContainer3 p {

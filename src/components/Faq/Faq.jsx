@@ -37,7 +37,7 @@ const FAQ = () => {
             <h2>{item.question}</h2>
             <span>{activeIndex === index ? '-' : '+'}</span>
           </div>
-        <div className='answer'>
+        <div className={`answer ${activeIndex === index ? 'show' : ''}`}>
           {activeIndex === index && <p className="faq-answer">{item.answer}</p>}
           </div>
         </div>

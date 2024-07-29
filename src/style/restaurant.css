@@ -4,8 +4,7 @@
 
 .main{
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+ flex-direction: row;
   font-family: Roboto;
 
 }
@@ -27,6 +26,7 @@
   background: red;
   border-radius: 6px;
 }
+
 
 .restaurant_side{
 display: flex;
@@ -79,9 +79,8 @@ margin-top: 25px;
 .restaurantCards{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  width: 80%;
+  width: 100%;
   margin-top: 1.9%;
-  margin-left: 4.5%;
 }
 
 .restaurantCards a {
@@ -92,8 +91,9 @@ margin-top: 25px;
   background-color:rgba(255, 255, 255, 1);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 60%;
+  width:auto;
   height: auto;
+  margin-left: 25%;
 
 }
 .restaurant_cardImage{
@@ -113,7 +113,7 @@ margin-top: 25px;
 
 }
 .restaurants_Info h2{
-  margin-left: 15px;
+  margin-left: 25px;
   font-size: 18px;
   white-space: nowrap;
   overflow: hidden;
@@ -125,15 +125,15 @@ margin-top: 25px;
 .restaurants_Info p{
 color: rgba(130, 130, 130, 1);
 font-size: 13px;
-margin-left: 15px;  
+margin-left: 25px;  
 margin-top: -4%;
 
 }
 .delivery{
   display: flex;
   justify-content:space-around;
-  margin-left: 10px; 
   }
+  
 .delivery p {
     margin-right: 30px;
     color: black;
@@ -154,7 +154,7 @@ margin-top: -4%;
 }
 
 
-@media screen and (max-width: 432px){
+@media screen and (max-width: 431px){
   .main{
    display: flex;
    flex-direction: column;
@@ -169,17 +169,17 @@ margin-top: -4%;
   .restaurantCards{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 30px; 
     width: auto;
-    width: 100%;  
+    margin-left: -5%;
   }
   .restaurants_card{
     background-color:rgba(255, 255, 255, 1);
     border-radius: 10px;
     box-shadow: 0px 6px 8px  rgba(0, 0, 0, 0.25);
-    margin-top: -10%;
-    width: auto;
-    height:110%;
+    width: 131px;
+    height: 212px;
+    text-align: center;
   
   }
 
@@ -196,8 +196,7 @@ margin-top: -4%;
 .restaurants_Info{
     display: flex;
     justify-content: center;
-    text-align: center;
-    margin-top: 5%;
+    align-items: center;
   
   }
   .restaurants_Info h2{
@@ -210,7 +209,7 @@ margin-top: -4%;
 color: rgba(130, 130, 130, 1);
 font-size: 11px;
 margin-right: 10px;  
-margin-top: -4%;
+margin-top: -10%;
 
 }
 .delivery{
@@ -218,7 +217,7 @@ margin-top: -4%;
    flex-direction: column;
    align-items: center;
    text-align: center;
-   margin-top: 4%;
+   margin-top: -15%;
   }
 .delivery p {
       margin-right: 10px;

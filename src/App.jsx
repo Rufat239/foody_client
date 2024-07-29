@@ -9,10 +9,17 @@ import HowPage from "./pages/HowPage";
 import FaqPage from "./pages/FaqPage";
 import YourBasketPage from "./pages/YourBasketPage";
 import OrdersPage from "./pages/OrdersPage";
+import ProfilePage from "./pages/ProfilePage";
+import LoginPage from "./pages/LoginPage";
+import "./i18n";
+import { Provider } from "react-redux";
+import store from '../src/components/Redux/store'
+
 
 function App() {
   return (
-    <Router>
+    <Provider store={store}>
+  <Router>
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -23,9 +30,13 @@ function App() {
           <Route path="/faqs" element={<FaqPage />} />
           <Route path="/yourBasketPage" element={<YourBasketPage />} />
           <Route path="/ordersPage" element={<OrdersPage />} />
+          <Route path="/profilePage" element={<ProfilePage />} />
+          <Route path="/loginPage" element={<LoginPage />} />
         </Routes>
       </Layout>
     </Router>
+    </Provider>
+  
   );
 }
 
