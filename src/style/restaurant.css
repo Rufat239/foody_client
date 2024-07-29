@@ -168,8 +168,8 @@ margin-top: -4%;
 
   .restaurantCards{
     display: grid;
-    grid-template-columns: repeat(2, 2fr);
-    gap: 50px; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px; 
     width: auto;
     margin-left: -5%;
   }

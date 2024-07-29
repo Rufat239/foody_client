@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../../style/showModal.css'
+import prevButton from '../../assets/ordersImages/chevron-left.svg'
+import nextButton from '../../assets/ordersImages/chevron-right.svg'
 import pizza from '../../assets/ordersImages/Rectangle 145.png'
 import coffee from '../../assets/ordersImages/image (1).png'
 import close from '../../assets/ordersImages/Vector (1).svg'
@@ -93,51 +95,57 @@ function ShowModal({ onClose, itemsPerPageOptions = [2, 4, 6] }) {
 
 
   return (
-    <div className='showModalOverlay'>
+    <div className='showModal-overlay'>
       <div className='all-showModal-component'>
-        <div className='showModalContainer'>
-          <div className='closeButton'>
+        <div className='showModal-container'>
+          <div className='close-button-order'>
             <img src={close} onClick={onClose} />
           </div>
-          <table>
-            <thead>
-              <tr>
-                <th>Image</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Count</th>
-                <th>Amount</th>
-              </tr>
-            </thead>
-            {selectedItems.map((x) => (
-              <tbody>
-                <tr>
-                  <td><img src={x.image} /></td>
-                  <td>{x.name}</td>
-                  <td>{x.price}</td>
-                  <td>{x.count}</td>
-                  <td>{x.amount}</td>
-                </tr>
-              </tbody>
-            ))}
 
-          </table>
+          <div className='show-table-container'>
+            <table>
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Count</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              {selectedItems.map((x) => (
+                <tbody>
+                  <tr>
+                    <td><img src={x.image} /></td>
+                    <td>{x.name}</td>
+                    <td>{x.price}</td>
+                    <td>{x.count}</td>
+                    <td>{x.amount}</td>
+                  </tr>
+                </tbody>
+              ))}
+
+            </table>
+          </div>
 
           <div className='pagination'>
             <div className='prev-next'>
-              <button onClick={() => changePage(-1)} className='prev-button'>&#60;</button>
+              <button onClick={() => changePage(-1)} className='prev-button'> <img src={prevButton} /> </button>
               <span className='currentPage'> {currentPage}</span> <span className='slash'> /</span> <span className='totalPages'> {totalPages}</span>
-              <button onClick={() => changePage(1)} className='next-button'>&#62;</button>
+              <button onClick={() => changePage(1)} className='next-button'> <img src={nextButton} /> </button>
             </div>
-            <div className='select-options'>
-              <p className='select-text'>Rows per page</p>
-              <select value={itemsPerPage} onChange={changeItemsPerPage}>
+            <div className="select-options">
+            <div className="select-container">
+              <select value={itemsPerPage} onChange={changeItemsPerPage} className="custom-select">
                 {itemsPerPageOptions.map((option) =>
-                  <option value={option} key={option}>
+                  <option key={option} value={option}>
                     {option}
-                  </option>)}
+                  </option>
+                )}
               </select>
+              <div className="select-arrow">&#9660;</div>
             </div>
+          </div>
 
           </div>
 

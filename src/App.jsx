@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
+
 import HomePage from "./pages/HomePage";
 import Restaurant_Main from "./pages/Restaurant_Main";
 import Internal from "./components/Restaurant/Internal";
@@ -9,7 +10,8 @@ import HowPage from "./pages/HowPage";
 import FaqPage from "./pages/FaqPage";
 import YourBasketPage from "./pages/YourBasketPage";
 import OrdersPage from "./pages/OrdersPage";
-import Profile from "./components/Profile/Profile";
+
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
   return (
@@ -24,7 +26,7 @@ function App() {
           <Route path="/faqs" element={<FaqPage />} />
           <Route path="/yourBasketPage" element={<YourBasketPage />} />
           <Route path="/ordersPage" element={<OrdersPage />} />
-          <Route path="/profilePage" element={<Profile />} />
+          <Route path="/profilePage" element={<ProfilePage />} />
         </Routes>
       </Layout>
     </Router>

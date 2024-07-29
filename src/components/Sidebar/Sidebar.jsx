@@ -20,7 +20,7 @@ function Sidebar() {
     <div className="userSidebar">
       <ul>
         <NavLink
-          to="/profile"
+          to="/profilePage"
           className={({ isActive }) =>
             isActive ? "sidebarList activeSidebar" : "sidebarList"
           }
