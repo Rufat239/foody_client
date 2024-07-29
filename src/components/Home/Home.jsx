@@ -155,20 +155,20 @@ function Home() {
           </p>
         </div>
       </div>
-      <div className="cards">
-        <div className="cards1">
+      <div className="meal-cards">
+        <div className="meal-cards1">
           <img src={dublecheese} alt="" />
           <h2>Dubble Chees</h2>
           <p>Lorem ipsum is placeholder commonly used in the graphic </p>
         </div>
 
-        <div className="cards2">
+        <div className="meal-cards2">
           <img src={margarita} alt="" />
           <h2>Margarita</h2>
           <p>Lorem ipsum is placeholder commonly used in the graphic </p>
         </div>
 
-        <div className="cards3">
+        <div className="meal-cards3">
           <img src={twistermenu} alt="" />
           <h2>Twister Menu</h2>
           <p>Lorem ipsum is placeholder commonly used in the graphic </p>
