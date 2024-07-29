@@ -132,8 +132,8 @@ margin-top: -4%;
 .delivery{
   display: flex;
   justify-content:space-around;
-  margin-left: 10px; 
   }
+  
 .delivery p {
     margin-right: 30px;
     color: black;
