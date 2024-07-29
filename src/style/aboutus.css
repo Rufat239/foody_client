@@ -128,6 +128,8 @@ background: rgb(255, 182, 79);
       align-items: center;
       height: auto;
       padding: 1rem;
+      margin-bottom: 5rem;
+      /* overflow-y: auto; */
     }
   
     .about-us {
@@ -158,19 +160,19 @@ background: rgb(255, 182, 79);
     }
   
     .soup{
-      width: 80%;
+      width: 70%;
       position: relative;
-      top: -23rem;
+      top: -21rem;
       left: 11%;
       transform: none;
       animation: none;
       margin-bottom: 1rem;
     }
     .hamburger{
-      width: 80%;
+      width: 70%;
       position: relative;
-      top: 20rem;
-      left: 1%;
+      top: 17rem;
+      left: 0rem;
       transform: none;
       animation: none;
       margin-bottom: 1rem;
@@ -181,16 +183,15 @@ background: rgb(255, 182, 79);
     }
   
     .about-background {
-      width: 87%;
-      height: 37rem;
-      top: 25rem;
-      left: 1rem;
+      width: 83%;
+      height: 55%;
+      top: 26rem;
+      left: 2rem;
       transform: none;
       border-radius: 6.25rem;
       box-shadow: none;
       background: rgb(255, 182, 79);
       margin: 2rem 0;
-      /* padding: 1rem; */
     }
   }
   

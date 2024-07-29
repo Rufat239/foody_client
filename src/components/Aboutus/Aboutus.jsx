@@ -18,19 +18,18 @@ function About() {
             </div>
             <div className="about-background">
               <div className="about-menu">
-                {/* <div className="about-hamburger"> */}
                   <img className='hamburger' src={hamburger} alt="Hamburger" />
-                  {/* </div> */}
+                  
                 </div>
-                {/* <div className="about-pizza"> */}
+              
                   <img className='pizza' src={pizza} alt="Sausage Pizza" />
-                {/* </div> */}
-                {/* <div className="about-soup"> */}
+                
+               
                   <img className='soup' src={soup} alt="Tomato Soup" />
-                {/* </div> */}
-                {/* <div className="about-coffee"> */}
+              
+                
                   <img className='coffee' src={coffee} alt="Papa Coffee" />
-                {/* </div> */}
+               
               </div>
             </div>
           </div>
