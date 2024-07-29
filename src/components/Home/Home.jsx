@@ -15,11 +15,31 @@ import margarita from "../../assets/homeImages/margarita.jpg";
 import twistermenu from "../../assets/homeImages/Twistermenu.jpg";
 
 function Home() {
+
+  const sections = [
+    {
+      imgSrc: kfc,
+      title: "Menu That Always Make You Fall In Love",
+      description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+    },
+    {
+      imgSrc: bigpizza,
+      title: "Yummy Always Papa John’s Pizza. Agree?",
+      description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+    },
+    {
+      imgSrc: bigfries,
+      title: "Do You Like French Fries? Mmm...",
+      description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+    },
+  ];
+
   return (
     <div className="allContainer">
-      <div className="all">
-        <div className="all1">
-          <div className="info">
+      <div className="firstPart-headerContainer">
+      <div className="firstPart-header">
+        <div className="firstPart-leftSide">
+          <div className="leftSide-info"> 
             <h1>Our Food site makes it easy to find local food</h1>
             <p>
               Lorem ipsum is placeholder text commonly used in the graphic,
@@ -33,27 +53,40 @@ function Home() {
             <button className="order">Order now</button>
           </div>
         </div>
-        <div className="div1">
-          <div className="div5">
+        {/* <div className="div1"> */}
+          <div className="blackBackground-image">
             <img className="burger" src={burger} alt="" />
 
-            <div className="div2">
+            <div className="animationContainer1">
+              <figure className="animation-figure">
               <img src={pizza} alt="" />
+              </figure>
+             
               <p>Pizza Hut Yummy ...</p>
             </div>
 
-            <div className="div3">
+            <div className="animationContainer2">
+              <figure className="animation-figure">
               <img src={fries} alt="" />
+              </figure>
+              
               <p>French Fries Yummy ...</p>
             </div>
 
-            <div className="div4">
+            <div className="animationContainer3">
+              <figure className="animation-figure">
               <img src={miniburger} alt="" />
+              </figure>
+              
               <p>Cheesburger Yummy ...</p>
             </div>
           </div>
-        </div>
+        {/* </div> */}
       </div>
+      </div>
+      
+
+
       <h1 className="features">Features</h1>
       <div className="divFeaturesTxt">
         <div className="featurestXT">
@@ -63,7 +96,7 @@ function Home() {
           </p>
         </div>
       </div>
-      <div className="container">
+      <div className="containerHome-card">
         <div className="homecard1">
           <img src={card1} alt="" />
           <h2>Discount Boucher</h2>
@@ -82,51 +115,33 @@ function Home() {
           <p>Lorem ipsum is placeholder commonly used in the graphic </p>
         </div>
       </div>
-      <div className="main1">
-        <div className="txt1">
-          <h1>Menu That Always Make You Fall In Love</h1>
-          <p>
-            Lorem ipsum is placeholder text commonly used in the graphic, print,
-            and publishing industries for previewing layouts and visual
-            mockups.Lorem ipsum is placeholder text commonly used in the
-            graphic, print, and publishing industries for previewing layouts and
-            visual mockups.
-          </p>
+
+      {sections.map((section, index) => (
+        <div className={`main${index + 1}`} key={index}>
+          {index % 2 === 0 ? (
+            <>
+              <div className={`txt${index + 1}`}>
+                <h1>{section.title}</h1>
+                <p>{section.description}</p>
+              </div>
+              <div>
+                <img src={section.imgSrc} alt={section.title} />
+              </div>
+            </>
+          ) : (
+            <>
+              <div>
+                <img src={section.imgSrc} alt={section.title} />
+              </div>
+              <div className={`txt${index + 1}`}>
+                <h1>{section.title}</h1>
+                <p>{section.description}</p>
+              </div>
+            </>
+          )}
         </div>
-        <div>
-          <img src={kfc} alt="" />
-        </div>
-      </div>
-      <div className="main2">
-        <div>
-          <img src={bigpizza} alt="" />
-        </div>
-        <div className="txt2">
-          <h1>Yummy Always Papa John’s Pizza.Agree?</h1>
-          <p>
-            Lorem ipsum is placeholder text commonly used in the graphic, print,
-            and publishing industries for previewing layouts and visual
-            mockups.Lorem ipsum is placeholder text commonly used in the
-            graphic, print, and publishing industries for previewing layouts and
-            visual mockups.
-          </p>
-        </div>
-      </div>
-      <div className="main3">
-        <div className="txt3">
-          <h1>Do You Like French Fries? Mmm...</h1>
-          <p>
-            Lorem ipsum is placeholder text commonly used in the graphic, print,
-            and publishing industries for previewing layouts and visual
-            mockups.Lorem ipsum is placeholder text commonly used in the
-            graphic, print, and publishing industries for previewing layouts and
-            visual mockups.
-          </p>
-        </div>
-        <div className="imgcontainer">
-          <img className="fre" src={bigfries} alt="" />
-        </div>
-      </div>
+      ))}
+
       <div className="ourPopular">
         <div className="divPop">
           <h1 className="pop">Our Popular Update New Foods</h1>
@@ -159,6 +174,7 @@ function Home() {
           <p>Lorem ipsum is placeholder commonly used in the graphic </p>
         </div>
       </div>
+
       <div className="finish">
         <div className="son1img">
           <img src={pizza} alt="" />
