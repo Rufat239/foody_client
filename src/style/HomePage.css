@@ -398,35 +398,35 @@
   margin-top: 0.2em;
 }
 
-.cards {
+.meal-cards {
   display: flex;
   justify-content: space-evenly;
 }
 
-.cards1,
-.cards2,
-.cards3 {
+.meal-cards1,
+.meal-cards2,
+.meal-cards3 {
   width: 20.4em;
   height: 24.1em;
   background-color: #fff;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   margin-bottom: 10em;
 }
-.cards1 img,
-.cards2 img {
+.meal-cards1 img,
+.meal-cards2 img {
   width: 14.9em;
   height: 13.9em;
   margin-left: 10%;
 }
-.cards3 img {
+.meal-cards3 img {
   width: 85%;
   margin-top: 1em;
   margin-left: 8%;
 }
 
-.cards1 h2,
-.cards2 h2,
-.cards3 h2 {
+.meal-cards1 h2,
+.meal-cards2 h2,
+.meal-cards3 h2 {
   text-align: center;
   font-family: "Roboto";
   font-size: 1.8rem;
@@ -437,9 +437,9 @@
   margin-top: -10px;
 }
 
-.cards1 p,
-.cards2 p,
-.cards3 p {
+.meal-cards1 p,
+.meal-cards2 p,
+.meal-cards3 p {
   font-family: "Roboto";
   font-size: 1.1rem;
   font-weight: 400;
@@ -760,30 +760,30 @@
     color: rgba(130, 130, 130, 1);
   }
 
-  .cards {
+  .meal-cards {
     flex-direction: column-reverse;
     align-items: center;
     width: 90%;
     margin-left: 5%;
   }
 
-  .cards3 {
+  .meal-cards3 {
     display: none;
   }
-  .cards1,
-  .cards2 {
+  .meal-cards1,
+  .meal-cards2 {
     width: 90%;
     margin-bottom: 20px;
   }
 
-  .cards1 img,
-  .cards2 img {
+  .meal-cards1 img,
+  .meal-cards2 img {
     width: 60%;
     margin-left: 20%;
   }
 
-  .cards1 h2,
-  .cards2 h2 {
+  .meal-cards1 h2,
+  .meal-cards2 h2 {
     font-family: "Roboto";
     font-size: 25px;
     font-weight: 700;
