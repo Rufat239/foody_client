@@ -125,8 +125,11 @@ function Header() {
             </div>
           )}
         </button>
+        <Link className="linkSign" to="/loginPage">
+          <button className="btnSignUp">{t("navbar.signup")}</button>
+        </Link>
         <button
-          className="inpSignUp"
+          className="adminBtn"
           onClick={toggleDropdown}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
@@ -152,7 +155,7 @@ function Header() {
               </ul>
             </div>
           )}
-          {t("navbar.signup")}
+          Admin
         </button>
       </div>
 
