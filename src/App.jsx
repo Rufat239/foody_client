@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
-
 import HomePage from "./pages/HomePage";
 import Restaurant_Main from "./pages/Restaurant_Main";
 import Internal from "./components/Restaurant/Internal";
@@ -13,10 +12,14 @@ import OrdersPage from "./pages/OrdersPage";
 import ProfilePage from "./pages/ProfilePage";
 import LoginPage from "./pages/LoginPage";
 import "./i18n";
+import { Provider } from "react-redux";
+import store from '../src/components/Redux/store'
+
 
 function App() {
   return (
-    <Router>
+    <Provider store={store}>
+  <Router>
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -32,6 +35,8 @@ function App() {
         </Routes>
       </Layout>
     </Router>
+    </Provider>
+  
   );
 }
 
