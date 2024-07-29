@@ -11,6 +11,7 @@
 }
 .firstPart-header {
   display: flex;
+  justify-content: space-between;
   /* margin-left: 50px;  */
   transform: translateY(80px);
 }
@@ -451,7 +452,10 @@
   margin-left: 5%;
   margin-top: -30px;
 }
-
+.finishContainer{
+  display: flex;
+  justify-content: center;
+}
 .finish {
   display: flex;
   flex-direction: row;
@@ -459,7 +463,7 @@
   background-color: #272727;
   border-radius: 3.1em;
   width: 66em;
-  margin-left: 10%;
+  /* margin-left: 10%; */
   height: 23.23em;
   border-radius: 40px;
   transform: translateY(7em);

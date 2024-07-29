@@ -175,6 +175,7 @@ function Home() {
         </div>
       </div>
 
+      <div className="finishContainer">
       <div className="finish">
         <div className="son1img">
           <img src={pizza} alt="" />
@@ -186,6 +187,7 @@ function Home() {
         <div className="sonimg">
           <img src={burger} alt="" />
         </div>
+      </div>
       </div>
     </div>
   );
