@@ -129,6 +129,7 @@ background: rgb(255, 182, 79);
       height: auto;
       padding: 1rem;
       margin-bottom: 5rem;
+      /* overflow-y: auto; */
     }
   
     .about-us {
@@ -168,7 +169,7 @@ background: rgb(255, 182, 79);
       margin-bottom: 1rem;
     }
     .hamburger{
-      width: 72%;
+      width: 70%;
       position: relative;
       top: 17rem;
       left: 0rem;
@@ -183,15 +184,14 @@ background: rgb(255, 182, 79);
   
     .about-background {
       width: 83%;
-      height: 59%;
-      top: 25rem;
+      height: 55%;
+      top: 26rem;
       left: 2rem;
       transform: none;
       border-radius: 6.25rem;
       box-shadow: none;
       background: rgb(255, 182, 79);
       margin: 2rem 0;
-      /* padding: 1rem; */
     }
   }
   
