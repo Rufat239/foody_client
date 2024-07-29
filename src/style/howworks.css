@@ -56,17 +56,21 @@ margin-bottom: 6rem;
 
   @media (max-width:431px){
     .delivery-container {
-      padding-inline: 4%;
+      padding-inline: 3%;
       text-align: center;
     }
   
     .delivery-heading h1 {
       margin-right: 0;
-      font-size: 1.5rem;
+      font-size: 1.9rem;
+      text-align: center;
+      left: -5rem;
     }
   
     .delivery-heading p {
       width: 89%;
+      margin-left: 1rem;
+      margin-right: 0rem;
       height: auto;
       opacity: 1;
       font-size: 1rem;
@@ -75,10 +79,11 @@ margin-bottom: 6rem;
     }
   
     .background {
-      width: 90%;
-      height: 33rem;
+      width: 80%;
+      height: 30rem;
       margin-top: 5%;
-      margin-left: 5%;
+      margin-left: 6%;
+      margin-right: 0rem;
       border-radius: 6.25rem;
       opacity: 1;
       transform: rotate(0deg);
@@ -87,10 +92,9 @@ margin-bottom: 6rem;
   
     .delivery-image {
       position: relative;
-      width: 80%;
+      width: 78%;
       height: auto;
-      top: 0;
-      left: 50%;
+      left: 11rem;
       transform: translate(-60%, -29rem);
     }
   }
