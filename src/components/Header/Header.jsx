@@ -170,7 +170,7 @@ function Header() {
         <ul>
           <li>
             <Link className="responsLink" to="/" onClick={closeHamburgerMenu}>
-              Home
+              {t("navbar.home")}
             </Link>
           </li>
           <li>
@@ -179,7 +179,7 @@ function Header() {
               to="/restaurantMain"
               onClick={closeHamburgerMenu}
             >
-              Restaurants
+              {t("navbar.restaurants")}
             </Link>
           </li>
           <li>
@@ -188,7 +188,7 @@ function Header() {
               to="/aboutPage"
               onClick={closeHamburgerMenu}
             >
-              About us
+              {t("navbar.aboutus")}
             </Link>
           </li>
           <li>
@@ -197,7 +197,7 @@ function Header() {
               to="/howItWorks"
               onClick={closeHamburgerMenu}
             >
-              How it works?
+              {t("navbar.howitworks")}
             </Link>
           </li>
           <li>
@@ -206,7 +206,7 @@ function Header() {
               to="/faqs"
               onClick={closeHamburgerMenu}
             >
-              FAQs
+              {t("navbar.faq")}
             </Link>
           </li>
         </ul>
