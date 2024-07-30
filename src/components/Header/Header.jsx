@@ -147,7 +147,7 @@ function Header() {
                   <Link to="/ordersPage">Your Orders</Link>
                 </li>
                 <li>
-                  <Link to="/checkout">Checkout</Link>
+                  <Link to="/checkoutPage">Checkout</Link>
                 </li>
                 <li>
                   <Link to="/logout">Logout</Link>
