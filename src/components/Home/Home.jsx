@@ -15,77 +15,77 @@ import margarita from "../../assets/homeImages/margarita.jpg";
 import twistermenu from "../../assets/homeImages/Twistermenu.jpg";
 
 function Home() {
-
   const sections = [
     {
       imgSrc: kfc,
       title: "Menu That Always Make You Fall In Love",
-      description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      description:
+        "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
     },
     {
       imgSrc: bigpizza,
       title: "Yummy Always Papa John’s Pizza. Agree?",
-      description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      description:
+        "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
     },
     {
       imgSrc: bigfries,
       title: "Do You Like French Fries? Mmm...",
-      description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      description:
+        "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
     },
   ];
 
   return (
     <div className="allContainer">
       <div className="firstPart-headerContainer">
-      <div className="firstPart-header">
-        <div className="firstPart-leftSide">
-          <div className="leftSide-info"> 
-            <h1>Our Food site makes it easy to find local food</h1>
-            <p>
-              Lorem ipsum is placeholder text commonly used in the graphic,
-              print, and publishing industries for previewing layouts and visual
-              mockups.
-            </p>
-          </div>
+        <div className="firstPart-header">
+          <div className="firstPart-leftSide">
+            <div className="leftSide-info">
+              <h1>Our Food site makes it easy to find local food</h1>
+              <p className="leftSide-text">
+                Lorem ipsum is placeholder text commonly used in the graphic,
+                print, and publishing industries for previewing layouts and
+                visual mockups.
+              </p>
+            </div>
 
-          <div className="regor">
-            <button className="register">Register</button>
-            <button className="order">Order now</button>
+            <div className="regor">
+              <button className="register">Register</button>
+              <button className="order">Order now</button>
+            </div>
           </div>
-        </div>
-        {/* <div className="div1"> */}
+          {/* <div className="div1"> */}
           <div className="blackBackground-image">
             <img className="burger" src={burger} alt="" />
 
             <div className="animationContainer1">
               <figure className="animation-figure">
-              <img src={pizza} alt="" />
+                <img src={pizza} alt="" />
               </figure>
-             
+
               <p>Pizza Hut Yummy ...</p>
             </div>
 
             <div className="animationContainer2">
               <figure className="animation-figure">
-              <img src={fries} alt="" />
+                <img src={fries} alt="" />
               </figure>
-              
+
               <p>French Fries Yummy ...</p>
             </div>
 
             <div className="animationContainer3">
               <figure className="animation-figure">
-              <img src={miniburger} alt="" />
+                <img src={miniburger} alt="" />
               </figure>
-              
+
               <p>Cheesburger Yummy ...</p>
             </div>
           </div>
-        {/* </div> */}
+          {/* </div> */}
+        </div>
       </div>
-      </div>
-      
-
 
       <h1 className="features">Features</h1>
       <div className="divFeaturesTxt">
@@ -176,18 +176,18 @@ function Home() {
       </div>
 
       <div className="finishContainer">
-      <div className="finish">
-        <div className="son1img">
-          <img src={pizza} alt="" />
+        <div className="finish">
+          <div className="son1img">
+            <img src={pizza} alt="" />
+          </div>
+          <div className="end">
+            <h1>Discover Restaurants Near From you</h1>
+            <button>Explore now</button>
+          </div>
+          <div className="sonimg">
+            <img src={burger} alt="" />
+          </div>
         </div>
-        <div className="end">
-          <h1>Discover Restaurants Near From you</h1>
-          <button>Explore now</button>
-        </div>
-        <div className="sonimg">
-          <img src={burger} alt="" />
-        </div>
-      </div>
       </div>
     </div>
   );
