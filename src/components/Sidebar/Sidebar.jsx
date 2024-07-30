@@ -47,7 +47,7 @@ function Sidebar() {
           <span>Your Orders</span>
         </NavLink>
         <NavLink
-          to="/checkout"
+          to="/checkoutPage"
           className={({ isActive }) =>
             isActive ? "sidebarList activeSidebar" : "sidebarList"
           }
