@@ -101,6 +101,9 @@
 }
 
 
+
+
+
 /* PAGINATION */
 
 .pagination {
@@ -123,6 +126,11 @@
     border: 2px solid #FCDDEC;
     background-color: #FFFFFF;
     cursor: pointer;
+}
+
+.prev-button:hover,
+.next-button:hover{
+    box-shadow: 0px 6px 10px rgb(252, 221, 236);
 }
 
 .next-button {
