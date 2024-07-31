@@ -36,16 +36,12 @@ const filter = [
 
 function Restaurant() {
   const [selectedMenu, setSelectedMenu] = useState('All');
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const handleMenuClick = (menu) => {
     setSelectedMenu(menu);
-    setIsSidebarOpen(false);
   };
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
+
 
   const filteredRestaurants = selectedMenu === 'All'
     ? restaurants
@@ -54,12 +50,12 @@ function Restaurant() {
   return (
     <div className='main'>
                                                                 {/* Sidebar */}
-      <section className={`restaurant_sidebar ${isSidebarOpen ? 'open' : ''}`}>
+      <section className={`restaurant_sidebar `}>
         <div className='restaurant_body'>
-          <button className='sidebar-toggle' onClick={toggleSidebar} aria-label="Toggle Sidebar">
+          {/* <button className='sidebar-toggle' onClick={toggleSidebar} aria-label="Toggle Sidebar">
             <img src={filterIcon} alt="Filter Icon" />
             <p>Filters</p>
-          </button>
+          </button> */}
           {filter.map((item, index) => (
             <div key={index} className='restaurant_side' onClick={() => handleMenuClick(item.menu)}>
               <div className='image'>
