@@ -26,6 +26,7 @@
   font-size: 1.2rem;
   color: inherit;
   gap: 15px;
+  cursor: pointer;
 }
 .sidebarList span{
   font-family: Arial, Helvetica, sans-serif;
