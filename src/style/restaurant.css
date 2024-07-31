@@ -13,20 +13,30 @@
   width: auto;
 }                                                                    /* Section (Sidebar) */
 .restaurant_body{
-    display: block;
-    width: 120%;
-    height:auto;
-    margin-right: 10%;
-    background-color: rgba(243, 244, 246, 1);
-    overflow-y:scroll;
-    margin-top: 12%;
+  display: block;
+  width: 120%;
+  height: auto;
+  margin-right: 10%;
+  background-color: rgba(243, 244, 246, 1);
+  overflow-y: scroll;
+  margin-top: 12%;
 }
+
 .restaurant_body::-webkit-scrollbar {
   width: 4px;
   background: red;
   border-radius: 6px;
 }
 
+.restaurant_body::-webkit-scrollbar-track {
+  background: rgba(243, 244, 246, 1); 
+  border-radius: 6px;
+}
+
+.restaurant_body::-webkit-scrollbar-thumb {
+  background: red; 
+  border-radius: 6px;
+}
 
 .restaurant_side{
 display: flex;
@@ -76,13 +86,27 @@ margin-top: 25px;
 }
 
                                                           /* Section (Restaurant) */
-.restaurantCards{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  width: 100%;
-  margin-top: 1.9%;
+.restaurantCards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 110%;
+    height: auto;
+    margin-top: 1.9%;
+    overflow-y: auto;
 }
 
+.restaurantCards::-webkit-scrollbar {
+    width: 4px;
+}
+
+.restaurantCards::-webkit-scrollbar-track {
+    background: #d63626;
+}
+
+.restaurantCards::-webkit-scrollbar-thumb {
+    background-color: #d63626;
+    border-radius: 20px;
+}
 .restaurantCards a {
   text-decoration: none;
 }
@@ -91,9 +115,10 @@ margin-top: 25px;
   background-color:rgba(255, 255, 255, 1);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width:auto;
+  width:75%;
   height: auto;
-  margin-left: 25%;
+  margin-left: 24%;
+  margin-top: 1.5%;
 
 }
 .restaurant_cardImage{
@@ -142,7 +167,7 @@ margin-top: -4%;
   }
 
 .delivery span{
-     margin-top: 8.2%;
+     margin-top: 5%;
      color: white;
      background-color: rgba(214, 54, 38, 1);
      font-size: 13px;
