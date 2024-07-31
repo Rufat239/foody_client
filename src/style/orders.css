@@ -91,8 +91,10 @@
 }
 
 
+
+
 .id-orders p {
-    /* width: 57px; */
+    width: 57px;
     height: 24px;
     border: 1px solid #DFE2E9;
     border-radius: 8px;
@@ -163,6 +165,14 @@
     cursor: pointer;
 }
 
+.show-setting:hover{
+    text-shadow:0px 4px 8px rgb(111, 207, 151,0.5);
+}
+
+.delete-setting:hover{
+    text-shadow:0px 4px 8px rgb(235, 87, 87, 0.5);
+}
+
 
 .show-setting {
     color: #6FCF97;
@@ -227,6 +237,12 @@
     border: 2px solid #FCDDEC;
     background-color: #FFFFFF;
     cursor: pointer;
+}
+
+
+.prev-button-order:hover,
+.next-button-order:hover{
+    box-shadow: 0px 6px 10px rgb(252, 221, 236);
 }
 
 .next-button-order {
@@ -311,6 +327,10 @@
         overflow-x: auto;
         border-radius: 3px;
 
+    }
+
+    .id-orders{
+        padding: 0;
     }
 
     .drop-down-menu-content {
