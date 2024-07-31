@@ -1,6 +1,7 @@
 import React from 'react'
 import redBasket from "../../assets/userBasket/redBasket.png"
 import UserBasketItem from '../UserBasketItem/UserBasketItem'
+import { Link } from 'react-router-dom'
 import "../../style/userBasket.css"
 import { useSelector } from 'react-redux';
 
@@ -33,12 +34,14 @@ function UserBasket() {
       <UserBasketItem />
     </div>
 
+    <Link to="/checkoutPage">
     <div class="checkoutContainer2">
       <button class="checkoutButton2">
         <span class="checkoutText2">Checkout</span>
         <span class="checkoutPrice2">${totalPrice.toFixed(2)}</span>
       </button>
     </div>
+    </Link>
   </div>
   )
 }
