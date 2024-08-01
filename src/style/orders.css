@@ -6,8 +6,8 @@
 
 /* CONTAINER PART */
 
-.all-order-component{
-    width: 79%; 
+.all-order-component {
+    width: 79%;
     height: 634px;
     background-color: #F3F4F6;
     border-radius: 5px;
@@ -16,7 +16,7 @@
 
 .order-container {
     padding-inline: 2%;
-   
+
 }
 
 .title-orders h1 {
@@ -91,11 +91,14 @@
 }
 
 
+
+
 .id-orders p {
     width: 57px;
     height: 24px;
     border: 1px solid #DFE2E9;
     border-radius: 8px;
+    align-content: space-around;
     margin: auto
 }
 
@@ -108,12 +111,12 @@
     /* float: right; */
     margin-right: 30px;
     cursor: pointer;
-   
+
 
 }
 
 .options-button-cell {
-    width: 10%;
+    /* width: 5%; */
     /* background-color: red; */
     position: relative !important;
     display: flex;
@@ -121,19 +124,19 @@
     align-items: center;
 
 
- 
+
 }
 
-.for-small-screen{
+.for-small-screen {
     display: none;
-   
+
 }
 
 
 .drop-down-menu-content {
     position: absolute;
     bottom: -35px;
-    right: -35px;
+    right: 15px;
     z-index: 1;
     background-color: #FFF;
     box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.20);
@@ -160,6 +163,14 @@
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
+}
+
+.show-setting:hover{
+    text-shadow:0px 4px 8px rgb(111, 207, 151,0.5);
+}
+
+.delete-setting:hover{
+    text-shadow:0px 4px 8px rgb(235, 87, 87, 0.5);
 }
 
 
@@ -228,9 +239,20 @@
     cursor: pointer;
 }
 
+
+.prev-button-order:hover,
+.next-button-order:hover{
+    box-shadow: 0px 6px 10px rgb(252, 221, 236);
+}
+
 .next-button-order {
     margin-left: 10px;
 
+}
+
+.prev-next-order{
+    display: flex;
+    align-items: center;
 }
 
 
@@ -241,6 +263,11 @@
     width: 60px;
 }
 
+
+
+
+
+
 .custom-select-order {
     appearance: none;
     -webkit-appearance: none;
@@ -250,11 +277,13 @@
     color: #00072B;
     font-size: 16px;
     border-radius: 2px;
-    /* width: 100%; */
+    width: 100%;
     height: 32px;
     padding: 5px 30px 5px 10px;
     cursor: pointer;
 }
+
+
 
 .custom-select-order:focus {
     outline: none;
@@ -264,7 +293,9 @@
 .custom-select-order option {
     background-color: #FFF;
     color: #00072B;
+    
 }
+
 
 .select-arrow-order {
     position: absolute;
@@ -282,7 +313,7 @@
 
 
 @media screen and (max-width: 431px) {
-    .all-order-component{
+    .all-order-component {
         width: 100%;
         background-color: #FFFFFF;
     }
@@ -290,15 +321,25 @@
     /* .orderContainer{
         width: 100% ;
     } */
-    .table-container table{
+    .table-container table {
         /* width: 100%; */
         min-width: 1000px;
         overflow-x: auto;
         border-radius: 3px;
-       
+
     }
 
-    .for-small-screen{
+    .id-orders{
+        padding: 0;
+    }
+
+    .drop-down-menu-content {
+        position: absolute;
+        bottom: -35px;
+        right: -25px;
+    }
+
+    .for-small-screen {
         display: block;
         position: relative !important;
         display: flex;
@@ -308,9 +349,27 @@
     }
 
 
-    .options-button-cell{
-       display: none;
+    .options-button-cell {
+        display: none;
     }
 
-  
+    .custom-select-order option {
+        padding: 5px;
+    }
+
+    .custom-select-order {
+        font-size: 12px;
+        padding: 3px 20px 3px 8px;
+    }
+
+
+    .prev-next-order {
+        margin-bottom: 10px;
+    }
+
+    .select-container-order {
+        width: auto;
+    }
+
+
 }

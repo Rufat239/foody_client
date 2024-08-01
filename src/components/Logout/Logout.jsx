@@ -1,5 +1,6 @@
 import React from 'react'
 import '../../style/logout.css'
+import { Link } from 'react-router-dom'
 import logoutImg from '../../assets/ordersImages/box-arrow-right.svg'
 
 function Logout({onCancel}) {
@@ -12,7 +13,7 @@ function Logout({onCancel}) {
         </div>
         <div className='logout-buttons'>
            <button onClick={onCancel} className='logout-cancel-button'>Cancel</button>
-           <button className='logout-button'> <img src={logoutImg} /> <p>Logout</p> </button>
+           <button className='logout-button'> <img src={logoutImg} /> <p><Link to='/'>Logout</Link></p> </button>
         </div>
     </div>
 

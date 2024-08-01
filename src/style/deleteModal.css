@@ -64,6 +64,11 @@
     color: #BDBDBD;
 }
 
+
+.modal-cancel-button:hover{
+    box-shadow: 7px 7px 7px rgb(189, 189, 189,0.5);
+}
+
 .modal-delete-button {
     background-color: #D63626;
     border: 1px solid #D63626;
@@ -73,6 +78,10 @@
     font-size: 16px;
     color: #FFF;
 
+}
+
+.modal-delete-button:hover{
+    box-shadow: 7px 7px 7px rgb(235, 87, 87, 0.5);
 }
 
 .deleteModal-buttons {

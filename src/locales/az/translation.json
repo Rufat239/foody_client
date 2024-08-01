@@ -4,5 +4,10 @@
   "navbar.aboutus": "Haqqımızda",
   "navbar.howitworks": "Necə işləyir",
   "navbar.faq": "Tez-tez verilən suallar",
-  "navbar.signup": "Abunə olun"
+  "navbar.signup": "Abunə olun",
+  "sidebar.profile": "Profil",
+  "sidebar.yourBasket": "Səbət",
+  "sidebar.yourOrders": "Sifarişlər",
+  "sidebar.checkout": "Təsdiq et",
+  "sidebar.logout": "Çıxış"
 }
