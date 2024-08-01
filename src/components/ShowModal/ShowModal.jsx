@@ -56,20 +56,6 @@ function ShowModal({ onClose, itemsPerPageOptions = [2, 4, 6] }) {
       price: '1.10',
       count: '3',
       amount: '3.30'
-    },
-    {
-      image: pizza,
-      name: 'Papa John’s Pizza',
-      price: '7.90',
-      count: '2',
-      amount: '15.80'
-    },
-    {
-      image: coffee,
-      name: 'Coffee',
-      price: '1.10',
-      count: '3',
-      amount: '3.30'
     }
   ]
 

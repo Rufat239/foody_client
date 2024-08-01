@@ -4,9 +4,13 @@ import { NavLink } from "react-router-dom";
 import people from "../../assets/sidebarIcons/people.png";
 import basket from "../../assets/sidebarIcons/basket.png";
 import Logout from "../Logout/Logout"
+import { useTranslation } from "react-i18next";
 
 
 function Sidebar() {
+
+  const { t } = useTranslation();
+  
   const [showLogoutModal, setShowLogoutModal] = useState(false);
 
   const handleLogout = () => {
@@ -26,7 +30,7 @@ function Sidebar() {
           }
         >
           <img src={people} className="profileImage" />
-          <span>Profile</span>
+          <span>{t("sidebar.profile")}</span>
         </NavLink>
         <NavLink
           to="/yourBasketPage"
@@ -35,7 +39,7 @@ function Sidebar() {
           }
         >
           <img src={basket} alt="" />
-          <span>Your Basket</span>
+          <span>{t("sidebar.yourBasket")}</span>
         </NavLink>
         <NavLink
           to="/ordersPage"
@@ -44,22 +48,22 @@ function Sidebar() {
           }
         >
           <img src={basket} alt="" />
-          <span>Your Orders</span>
+          <span>{t("sidebar.yourOrders")}</span>
         </NavLink>
         <NavLink
-          to="/checkout"
+          to="/checkoutPage"
           className={({ isActive }) =>
             isActive ? "sidebarList activeSidebar" : "sidebarList"
           }
         >
           <img src={basket} alt="" />
-          <span>Checkout</span>
+          <span>{t("sidebar.checkout")}</span>
         </NavLink>
         <li
           className="sidebarList"
           onClick={handleLogout}>
             <img src={basket} alt="" />
-            <span>Logout</span>
+            <span>{t("sidebar.logout")}</span>
         </li>
         {showLogoutModal && (
           <Logout isOpen={showLogoutModal} onCancel={handleCancel} />

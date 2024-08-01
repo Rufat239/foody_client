@@ -4,5 +4,10 @@
   "navbar.aboutus": "À propos de nous",
   "navbar.howitworks": "Comment ça fonctionne",
   "navbar.faq": "FAQ",
-  "navbar.signup": "S'inscrire"
+  "navbar.signup": "S'inscrire",
+  "sidebar.profile": "Profil",
+  "sidebar.yourBasket": "Votre Panier",
+  "sidebar.yourOrders": "Commandes",
+  "sidebar.checkout": "Paiement",
+  "sidebar.logout": "Déconnexion"
 }

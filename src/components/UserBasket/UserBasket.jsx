@@ -1,10 +1,16 @@
 import React from 'react'
 import redBasket from "../../assets/userBasket/redBasket.png"
 import UserBasketItem from '../UserBasketItem/UserBasketItem'
+import { Link } from 'react-router-dom'
 import "../../style/userBasket.css"
+import { useSelector } from 'react-redux';
 
 
 function UserBasket() {
+
+  const basketItems = useSelector((state) => state.basket.basketItems);
+  const totalPrice = useSelector((state) => state.basket.totalPrice);
+
   return (
     <div className="userBasketContainer2">
     <div className="userBasketHeadPad2">
@@ -17,7 +23,7 @@ function UserBasket() {
           </figure>
 
           <div className="quantityItems2">
-            <span>3</span>
+            <span> {basketItems.reduce((sum, item) => sum + item.quantity, 0)}</span>
             <p>items</p>
           </div>
         </div>
@@ -28,12 +34,14 @@ function UserBasket() {
       <UserBasketItem />
     </div>
 
+    <Link to="/checkoutPage">
     <div class="checkoutContainer2">
       <button class="checkoutButton2">
         <span class="checkoutText2">Checkout</span>
-        <span class="checkoutPrice2">$37.40</span>
+        <span class="checkoutPrice2">${totalPrice.toFixed(2)}</span>
       </button>
     </div>
+    </Link>
   </div>
   )
 }
