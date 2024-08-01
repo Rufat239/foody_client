@@ -1,5 +1,5 @@
 .cards {
-    width: 380px;
+    width: 25%;
     height: 370px;
     background-color: #f3f4f6;
     border-radius: 8px;
@@ -37,10 +37,24 @@
 }
 
 .total {
-    text-align: center;
+    text-align: left;
     font-weight: bold;
     color: #828282;
 }
+
+.span{
+    color: #828282; 
+}
+
+.orders-lists{
+    display: flex;
+    align-items: center;
+}
+
+.orders-lists p {
+    margin: 0 10px;
+}
+
 
 
 /* Mobile styles */
