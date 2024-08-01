@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../../style/login.css';
-import Eye from '../../assets/loginimages/eye.svg'
+import Eye from '../../assets/loginimages/eye.svg';
+import image from '../../assets/loginimages/Login.png'
+import { Link } from 'react-router-dom';
 
 function Login(props) {
     const[username, setUsername]= useState('');
@@ -19,36 +21,44 @@ function Login(props) {
     
 return (
     <div className='login-form-container'>
-        <button>Login</button>
-        <button onClick={() => props.onFormSwitch('register')}>Register</button>
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="username">Username</label>
-            <input 
-                value={username} 
-                onChange={(e) => setUsername(e.target.value)} 
-                type="text" 
-                placeholder="Write Your Username" 
-                id="username" 
-                name="username"
-            />
-            <div className='input-box'>
+        <div className='login-image'>
+            <img src={image}></img>
+        </div>
+        <div className='login-form'>
+           <button className='login-btnSwitch'>Login</button>
+           <button className='register-btnswitch' onClick={() => props.onFormSwitch('register')}>Register</button>
+           <form onSubmit={handleSubmit}>
+            <div>
+               <label htmlFor="username">Username</label>
+               <div>
+                  <input 
+                    value={username} 
+                    onChange={(e) => setUsername(e.target.value)} 
+                    type="text" 
+                    placeholder="Write Your Username" 
+                    id="username" 
+                    name="username"
+                />
+               </div>   
+            </div>    
+            <div className='logInput-box'>
                 <label htmlFor="password">Password</label>
-                <div className='password-input'>
+                <div className='login-password-input'>
                     <input
-                        value={pass}
-                        onChange={(e) => setPass(e.target.value)}
-                        type={showPass ? "text" : "password"}
-                        placeholder="********"
-                        id="password"
-                        name="password"
+                      value={pass}
+                      onChange={(e) => setPass(e.target.value)}
+                      type={showPass ? "text" : "password"}
+                      placeholder="********"
+                      id="password"
+                      name="password"
                     />
-                    <img className='loginEye' src={Eye} onClick={() => setShowPass(!showPass)}/>
+                  <img className='loginEye' src={Eye} onClick={() => setShowPass(!showPass)}/>
                 </div>
             </div>
-        <button type="submit">Log in</button>
-        </form>
-                
-        
+            <button type="submit">Log in</button>
+            </form>
+        </div>
+              
     </div>
   );
 

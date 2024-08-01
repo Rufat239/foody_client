@@ -1,3 +1,18 @@
+
+import React  from 'react'
+import SubNavLogin from '../components/Login/SubNavLogin';
+import Login from '../components/Login/Login';
+
+
+function LoginPage() {
+  
+  return (
+    <div>
+        <SubNavLogin/>
+        <Login/>
+
+        
+
 import React, { useState } from "react";
 import "../style/loginPage.css";
 import SubNavLogin from "../components/Login/SubNavLogin";
@@ -13,6 +28,7 @@ function LoginPage() {
   return (
     <div>
       <SubNavLogin />
+
 
       {currentForm === "login" ? (
         <Login onFormSwitch={toggleForm} />

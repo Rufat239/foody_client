@@ -1,6 +1,7 @@
 import React , {useState} from 'react';
 import '../../style/register.css';
 import Eye from '../../assets/loginimages/eye.svg';
+import image from '../../assets/loginimages/Register.png'
 
 function Register(props) {
   const[name, setName]= useState('');
@@ -22,7 +23,11 @@ function Register(props) {
 
 
 return (
-    <div className='register-container'>
+    <div className='register-form-container'>
+      <div>
+        <img src={image}></img>
+      </div>
+      <div>
         <button onClick={() => props.onFormSwitch('login')}>Login</button>
         <button>Register</button>
         <form onSubmit={handleSubmit}>
@@ -53,9 +58,9 @@ return (
             id='email'
             name='email'
           />
-           <div className='input-box'>
+           <div className='register-input-box'>
                 <label htmlFor="password">Password</label>
-                <div className='password-input'>
+                <div className='register-password-input'>
                     <input
                         value={pass}
                         onChange={(e) => setPass(e.target.value)}
@@ -69,6 +74,8 @@ return (
             </div>
         <button type='submit'>Register</button>
         </form>
+      </div>
+        
     </div>
 );
 }
