@@ -1,61 +1,149 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
 .login-form-container {
   display: flex;
   margin-top: 2%;
-  gap: 5%;
-  
+
+
 }
-.login-image{
-  width: 51%;
+
+.login-image {
+  width: 50%;
   height: 750px;
   border-radius: 4px;
   background: var(--Red, #EB5757);
 }
-.login-image img{
+
+.login-image img {
   width: 557px;
-  padding-left: 31px;
+  padding-left: 30px;
 }
-.login-form{
+
+.login-form {
+  width: 45%;
+  padding-inline: 2%;
   margin-top: 5%;
-  font-family: Roboto;
-  font-style: normal;
   line-height: 24px;
+  transform: translateX(1.5em);
 }
-.login-btnSwitch{
-  color: var(--Red, #EB5757);
-  font-size: 30px;
-  font-weight: 500;
-  padding-left: 6em;
-  border: none;
-  background-color: rgb(255, 255, 255);
-  letter-spacing: 0.9px;
+
+.login-buttons {
+  margin-bottom: 72px;
+  gap: 65px;
+  display: flex;
+  justify-content: center;
+  margin-left: 8%;
 }
-.register-btnswitch{
+
+.login-btnSwitch {
   color: var(--Gray-3, #828282);
   font-size: 30px;
+  font-family: Roboto;
   font-weight: 400;
   border: none;
   background-color: rgb(255, 255, 255);
   letter-spacing: 0.9px;
-  padding-left: 60px;
 }
+
+.register-btnswitch {
+  color: var(--Gray-3, #828282);
+  font-size: 30px;
+  font-family: Roboto;
+  font-weight: 400;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  letter-spacing: 0.9px;
+ 
+}
+
+.username-container-login,
+.password-container-login {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.password-container-login{
+  margin-top: 40px;
+}
+
+
+.username-container-login label,
+.password-container-login label {
+  color: #4f4f4f;
+  font-size: 20px;
+  font-family: Roboto;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+}
+
+.login-username-input input {
+  width: 96%;
+  border: none;
+  border-radius: 5px;
+  background-color: #FFE7E7;
+  padding: 25px 10px;
+}
+.login-username-input ::placeholder{
+  color: var(--Gray-2, #4F4F4F);
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.54px;
+  padding-left: 15px;
+  
+  
+}
+.login-password-input ::placeholder{
+  color: var(--Gray-2, #4F4F4F);
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.54px;
+  padding-left: 15px;
+  
+}
+
 .loginEye {
   position: absolute;
   right: 2%;
   top: 50%;
   transform: translate(-2%, -50%);
-  height: 15px;
-  width: 15px;
+  height: 32px;
+  width: 30px;
   cursor: pointer;
 }
 
+
+
 .login-password-input {
   position: relative;
-  width: 200px;
+
+
 }
+
 .login-password-input input {
+  width: 96%;
+  border: none;
+  border-radius: 5px;
+  background-color: #FFE7E7;
+  padding: 25px 10px;
+}
+
+
+.login-submit-button{
+  border: none;
+  background-color: #EB5757;
   width: 100%;
+  padding: 20px 10px;
+  margin-left: 0 ;
+  margin-right: 0;
+  margin-top: 70px;
+  color: #fff;
+  font-family:'Roboto';
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.66px;
+  border-radius: 5px;
+ 
 }
