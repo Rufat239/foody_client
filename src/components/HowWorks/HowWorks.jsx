@@ -13,7 +13,13 @@ function HowWorks() {
        </div>
         <div className="image-container">
           <div className="background"></div>
-          <img src={delivery} alt="Delivery Services" className='delivery-image' />
+          <figure >
+          <img
+            src={delivery}
+            alt="Delivery Services"
+            className="delivery-image"
+          />
+        </figure>
         </div>
       </div>
   )
