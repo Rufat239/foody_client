@@ -28,7 +28,7 @@ return (
         <img src={image}></img>
       </div>
       <div>
-        <button onClick={() => props.onFormSwitch('login')}>Login</button>
+        <button >Login</button>
         <button>Register</button>
         <form onSubmit={handleSubmit}>
           <label htmlFor='name'>Full Name</label>

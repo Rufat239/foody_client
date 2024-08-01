@@ -26,7 +26,7 @@ return (
         </div>
         <div className='login-form'>
            <button className='login-btnSwitch'>Login</button>
-           <button className='register-btnswitch' onClick={() => props.onFormSwitch('register')}>Register</button>
+           <button className='register-btnswitch'>Register</button>
            <form onSubmit={handleSubmit}>
             <div>
                <label htmlFor="username">Username</label>
