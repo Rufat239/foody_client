@@ -1,26 +1,35 @@
-import React from 'react'
-import Style from '../../style/checkoutorder.css'
+import React from 'react';
+import Style from '../../style/checkoutorder.css';
+import { useDispatch, useSelector } from "react-redux";
+import { increaseQuantity, removeFromBasket } from '../Redux/actions/basketActions';
 
-function CheckoutOrderts() {
+function CheckoutOrders() {
+    const dispatch = useDispatch();
+    const basketItems = useSelector(state => state.basket.basketItems);
+    const totalPrice = useSelector(state => state.basket.totalPrice);
     return (
         <div>
             <div className="cards">
                 <div className="header">
                     <h2>Your Order</h2>
                 </div>
-                <div className="order-list">
-                    <p>1 x Papa John's Pizza Restaurant - $8.00</p>
-                    <p>2 x Papa Coffee - $6.00</p>
-                    <p>2 x Papa Cola - $3.80</p>
-                    <p>2 x Papa Sprite - $7.10</p>
-                </div>
+                {basketItems.map((item, index) => (
+                    <div key={index} className="order-list">
+                        <div className="orders-lists">
+                            <span className='sapan'>{item.quantity} x</span>
+                            <p>{item.name}</p>
+                            <span className='span'>${(item.price * item.quantity).toFixed(2)}</span>
+                        </div>
+                    </div>
+                ))}
                 <hr className="separator" />
                 <div className="total">
-                    <p>Total</p>
+                    <p>Total <span>${totalPrice}</span></p>
                 </div>
             </div>
+
         </div>
-    )
+    );
 }
 
-export default CheckoutOrderts
+export default CheckoutOrders;
