@@ -2,22 +2,25 @@ import React , {useState} from 'react';
 import '../../style/register.css';
 import Eye from '../../assets/loginimages/eye.svg';
 import image from '../../assets/loginimages/Register.png'
+import { NavLink, useNavigate } from 'react-router-dom';
 
-function Register(props) {
+function Register() {
   const[name, setName]= useState('');
   const[username, setUsername]= useState('');
   const[email, setEmail]= useState('');
   const[pass, setPass]= useState('');
-
-  
   const [showPass,setShowPass] = useState(false);
+  const navigate = useNavigate();
   
 
-
-  const handleSubmit =(e)=>{
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username);
-}
+    const newUser = { name, username, email, password: pass };
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    users.push(newUser);
+    localStorage.setItem('users', JSON.stringify(users));
+    navigate('/loginPage');
+  };
 
 
 
@@ -28,8 +31,11 @@ return (
         <img src={image}></img>
       </div>
       <div>
-        <button >Login</button>
-        <button>Register</button>
+        
+        <div className='register-buttons'>
+          <NavLink to='/loginPage'><button >Login</button></NavLink>
+          <NavLink to='/registerPage'><button>Register</button></NavLink>
+        </div>
         <form onSubmit={handleSubmit}>
           <label htmlFor='name'>Full Name</label>
           <input
