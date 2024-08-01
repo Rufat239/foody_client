@@ -11,6 +11,7 @@ import YourBasketPage from "./pages/YourBasketPage";
 import OrdersPage from "./pages/OrdersPage";
 import ProfilePage from "./pages/ProfilePage";
 import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 import "./i18n";
 import { Provider } from "react-redux";
 import store from "../src/components/Redux/store";
@@ -32,6 +33,7 @@ function App() {
             <Route path="/ordersPage" element={<OrdersPage />} />
             <Route path="/profilePage" element={<ProfilePage />} />
             <Route path="/loginPage" element={<LoginPage />} />
+            <Route path="/registerPage" element={<RegisterPage />} />
             <Route path="/checkoutPage" element={<CheckoutPage />} />
           </Routes>
         </Layout>
