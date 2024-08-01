@@ -15,21 +15,16 @@
   align-items: flex-start;
   max-width: 100%;
   height: 100vh;
-  /* gap: 40%; */
 }
 
  .about-us {
-  width: 100%;
+  width: 48%;
   height: 100%;
 }
 
 
 
 .about-us p{
-width: 35rem;
-height: 11.5rem;
-/* margin-left: 3%; */
-opacity: 0px;
 font-family: "Roboto";
 color: rgb(130, 130, 130);
 font-size: 1.25rem;
@@ -47,17 +42,10 @@ font-weight: 600;
 line-height: 1.88rem;
 letter-spacing: 0.01rem;
 text-align: left;
-width: 14rem;
-height: 2.25rem;
-/* margin-left: 3%; */
 margin-top: 5.5rem;
 }
 
-/* .about-menu {
 
-  display: flex;
-  flex-wrap: wrap;
-} */
 
 .hamburger {
   width: 35%;
@@ -150,7 +138,7 @@ background: rgb(255, 182, 79);
       margin-bottom: 0;
     }
   
-    .about-us p {
+    .about-us p{
       width: 90%;
       font-size: 1rem;
       line-height: 1.5rem;
