@@ -1,9 +1,19 @@
 import React from 'react'
 import '../../style/logout.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import logoutImg from '../../assets/ordersImages/box-arrow-right.svg'
 
 function Logout({onCancel}) {
+
+  
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem('isLoggedIn'); 
+    navigate('/'); 
+
+
+  };
   return (
     <div className='logout-overlay'>
     <div className=' logout-container'>
@@ -13,7 +23,10 @@ function Logout({onCancel}) {
         </div>
         <div className='logout-buttons'>
            <button onClick={onCancel} className='logout-cancel-button'>Cancel</button>
-           <button className='logout-button'> <img src={logoutImg} /> <p><Link to='/'>Logout</Link></p> </button>
+           <button onClick={handleLogout} className='logout-button'>
+            <img src={logoutImg} alt="Logout" />
+            <p>Logout</p>
+          </button>
         </div>
     </div>
 

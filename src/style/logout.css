@@ -59,8 +59,8 @@
     color: #BDBDBD;
 }
 
-.logout-button p a{
-    text-decoration: none;
+.logout-button p {
+    /* text-decoration: none; */
     font-family: Roboto;
     font-size: 16px;
     color: #FFF;
