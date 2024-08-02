@@ -3,7 +3,7 @@ import '../../style/restaurant.css';
 import pizza from '../../assets/restaurant_images/Pizza.jpg';
 import burger from '../../assets/restaurant_images/burger.jpg';
 import mania from '../../assets/restaurant_images/mania.jpg';
-import filterIcon from '../../assets/restaurant_images/filter_list.png'
+import filterImg from '../../assets/restaurant_images/filter_list.jpg';
 import { Link } from 'react-router-dom';
 
 const restaurants = [
@@ -31,17 +31,20 @@ const filter = [
   { image: pizza, menu: 'Kabab' },
   { image: pizza, menu: 'Fast Food' },
   { image: pizza, menu: 'Sea Food' },
-  
 ];
 
 function Restaurant() {
   const [selectedMenu, setSelectedMenu] = useState('All');
+  const [isFilterMenuVisible, setIsFilterMenuVisible] = useState(false);
 
   const handleMenuClick = (menu) => {
     setSelectedMenu(menu);
+    setIsFilterMenuVisible(false); 
   };
 
-
+  const toggleFilterMenu = () => {
+    setIsFilterMenuVisible(!isFilterMenuVisible);
+  };
 
   const filteredRestaurants = selectedMenu === 'All'
     ? restaurants
@@ -49,13 +52,9 @@ function Restaurant() {
 
   return (
     <div className='main'>
-                                                                {/* Sidebar */}
+                                                                           {/* Sidebar */}
       <section className={`restaurant_sidebar `}>
         <div className='restaurant_body'>
-          {/* <button className='sidebar-toggle' onClick={toggleSidebar} aria-label="Toggle Sidebar">
-            <img src={filterIcon} alt="Filter Icon" />
-            <p>Filters</p>
-          </button> */}
           {filter.map((item, index) => (
             <div key={index} className='restaurant_side' onClick={() => handleMenuClick(item.menu)}>
               <div className='image'>
@@ -67,11 +66,34 @@ function Restaurant() {
         </div>
       </section>
 
-                                                            {/* Restaurant Cards */}
+                                                                        {/* Filter part in Responsive */}
+      <div className="filterhamburger">
+        <div className="filterHead" onClick={toggleFilterMenu}>
+          <div className="filterIcon">
+            <img src={filterImg} alt="Filter Icon" />
+          </div>
+          <p>Filters</p>
+        </div>
+
+        {isFilterMenuVisible && (
+          <div className="filterMenu">
+            <button className='filterDelete' onClick={toggleFilterMenu}>x</button>
+            <ul className='menuList'>
+              {filter.map((item, index) => (
+                <li key={index} onClick={() => handleMenuClick(item.menu)}>
+                  <p>{item.menu}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+
+                                                                              {/* Restaurant Cards */}
       <section className='restaurantCards'>
         {filteredRestaurants.map((restaurant, index) => (
-          <Link key={index} to={'/internal'}>
-            <div className='restaurants_card'>
+          <div className='restaurants_card' key={index}>
+            <Link to={'/internal'}>
               <div className='restaurant_cardImage'>
                 <img src={restaurant.image} alt={restaurant.name} />
               </div>
@@ -83,8 +105,8 @@ function Restaurant() {
                 <p>{restaurant.price}</p>
                 <span>{restaurant.time}</span>
               </div>
-            </div>
-          </Link>
+            </Link>
+          </div>
         ))}
       </section>
     </div>
