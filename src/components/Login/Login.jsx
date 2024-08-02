@@ -70,14 +70,10 @@ function Login() {
                 id="password"
                 name="password"
               />
-              <div className='login-eye-box'>
-                <img className='loginEye' src={Eye} onClick={() => setShowPass(!showPass)} />
-              </div>
-
+              <img className='loginEye' src={Eye} onClick={() => setShowPass(!showPass)} />
             </div>
           </div>
            <button type="submit" className='login-submit-button'>Log in</button>
-         
         </form>
       </div>
 
