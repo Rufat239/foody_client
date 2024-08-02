@@ -4,8 +4,16 @@ import cheeseBurger from "../../assets/userBasketImages/cheeseBurger.png"
 import coffee from "../../assets/userBasketImages/coffee.png"
 import DeleteIcon from "../../assets/userBasket/deleteIcon.svg"
 import "../../style/userBasketItem.css"
+import { increaseQuantity, removeFromBasket } from '../Redux/actions/basketActions';
+import { useDispatch, useSelector } from "react-redux";
+
 
 function UserBasketItem() {
+
+
+  const dispatch = useDispatch();
+  const basketItems = useSelector(state => state.basket.basketItems);
+
   const userBasketData = [
     {
       image: pizza,
@@ -43,27 +51,27 @@ function UserBasketItem() {
 
   return (
     <div>
-      {userBasketData.map((x, index) => (
+      {basketItems.map((item, index)  => (
         <div key={index} className="userBasketItemContainer">
           <div className="userBasketItemFigDet">
             <figure className="userBasketItemFigure">
-              <img src={x.image} alt="" />
+              <img src={item.image} alt="" />
             </figure>
 
             <div className="userBasketItemDetails">
-              <h2>{x.title}</h2>
-              <h4>${x.price}</h4>
+              <h2>{item.name}</h2>
+              <h4>${(item.price * item.quantity).toFixed(2)}</h4>
             </div>
           </div>
 
           <div className="userBasketActions">
             <div className="userBasketItemInc">
-              <button>+</button>
-              <span>2</span>
-              <button>-</button>
+              <button onClick={() => dispatch(increaseQuantity(item))}>+</button>
+              <span>{item.quantity}</span>
+              <button onClick={() => dispatch(removeFromBasket(index))}>-</button>
             </div>
 
-            <button className="userDeleteIcon">
+            <button className="userDeleteIcon"  onClick={() => dispatch(removeFromBasket(index, true))}>
               <img src={DeleteIcon} alt="Delete" />
             </button>
           </div>
