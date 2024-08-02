@@ -213,7 +213,7 @@ overflow-y: auto;
   }
   
 .restaurants_basket::-webkit-scrollbar-thumb {
-    background-color: red;  .backbtn
+    background-color: red;  
     border-radius: 4px; 
   }
   
