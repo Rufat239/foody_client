@@ -13,7 +13,7 @@
     
 }
 .profileImg{
-    width:60rem;
+    width:60%;
     margin-left: 300px;
 
 }
@@ -24,13 +24,18 @@
 }
 .information{
     display: flex;
+   justify-content: space-between;
+   
+}
+.restaurantsbutton{
+    display: flex;
     flex-direction: row;
+    margin-top: -2%;
 }
 .restaurantName{
     margin-left: 40px;
 }
 .productName{
-    margin-left: 55%;
     color:rgba(130, 130, 130, 1);
     font-family: 14px;
 }
@@ -62,6 +67,7 @@ text-align: left;
     border-radius: 5px;
     width: 72px;
     height: 52px;
+    display: block;
 }
 .backbtn a{
     text-decoration: none;
@@ -75,35 +81,53 @@ text-align: left;
 
                                                                             /* Products part */
 
-.products {
-    width: 55%;
-    height: 701px;
-    margin-top: 30px;
-    margin-left: 40px;
-    border-radius: 1%;
-    background-color: rgba(243, 244, 246, 1);
-    font-family: Roboto, sans-serif;
-    overflow: auto;
-}
 
-.products::-webkit-scrollbar {
-    width: 4px;
-    background: red;
-    border-radius: 6px;
-}
 .restaurantsContainer {
     display: flex;
     flex-direction: column;
     margin-left: 8%;
-
+    width: 50%;
+    height: 600px;
+    margin-top: 30px;
+    margin-left: 40px;
+    border-radius: 1%;
+    font-family: Roboto, sans-serif;
+    overflow: auto;
+    background-color: rgba(243, 244, 246, 1);
+    overflow-y: auto; 
 }
+
+.restaurantsContainer::-webkit-scrollbar {
+    width: 3px; 
+  }
+  
+.restaurantsContainer::-webkit-scrollbar-thumb {
+    background-color: red; 
+    border-radius: 4px; 
+  }
+  
+.restaurantsContainer::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+  
 .restaurantsContainer h3{
+    display: block;
     text-align: center;
     margin-top: 40px;
     font-size: 23px;
 }
+.productItem{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2%;
+    margin-left: 2%;
+    padding: 0px 20px 20px 0px;
+
+ 
+}
 .productImg{
     margin-left: 58px;
+    display: block;
 }
 .productImg img{
     width: 40px;
@@ -114,11 +138,7 @@ text-align: left;
     width: 100px;
 }
 
-.productItem{
-    display: flex;
-    flex-direction: row;
- 
-}
+
 .restaurantsInfo{
     margin-left: 30px;
 
@@ -134,19 +154,21 @@ text-align: left;
 }
 .price{
     display: flex;
-    flex-direction: row;
     gap: 15px;
     margin-top: 50px;
     margin-left: 70px;
 }
-.price span{
+.price span {
     color: rgba(130, 130, 130, 1);
     font-size: 10px;
+    display: block;
 }
-.price span strong{
+.price p{
     color: black;
     font-size: 15px;
-    margin-left: 10px;
+    margin-right: 20px;
+    margin-top: -2.5%;
+    font-weight: bold;
 }
 .circlebtn{
     width: 30px;
@@ -175,6 +197,7 @@ text-align: left;
     justify-content: space-between;
 }
 .restaurants_basket{
+display: block;
 margin-top: 2.5%;
 margin-right: 10%;
 width: 30%;
@@ -182,9 +205,21 @@ height:100%;
 border-radius: 1% ;
 background-color: rgba(243, 244, 246, 1);
 box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.2);
-
+overflow-y: auto;
 
 }
+.restaurants_basket::-webkit-scrollbar {
+    width: 3px; 
+  }
+  
+.restaurants_basket::-webkit-scrollbar-thumb {
+    background-color: red; 
+    border-radius: 4px; 
+  }
+  
+.restaurants_basket::-webkit-scrollbar-track {
+    background: transparent; 
+  }
 .restaurants_nav{
     display: flex;
     flex-direction: row;
@@ -214,6 +249,9 @@ box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.2);
     flex-direction: column;
     justify-content: space-between;
     
+}
+.restaurants_common a{
+    text-decoration: none;
 }
 .restaurants_text{
     display: flex;
@@ -286,8 +324,10 @@ font-family: Roboto;
     font-weight: 500;
     font-size: 18px;
     margin-left: 4.5%;
+    margin-top: 3.5%;
     
 }
+
 .check_btn span{
     display: flex;
     justify-content: center;
@@ -301,17 +341,17 @@ font-family: Roboto;
     width: 40%;
     height: 40px;
     border-radius: 100px;
+    color: black;
 
 }
 
-
+                                                             /* Empty basket */
 
 .emptyBasket{
     display: flex;
     flex-direction: column;
     height:auto;
-
-    
+    display: block;
 }
 .emptyNav{
     display: flex;
@@ -362,6 +402,7 @@ font-family: Roboto;
     font-weight: 500;
     font-size: 18px;
     margin-left: 4.5%;
+    margin-top: 3.5%;
 }
 .emptycheck_btn span{
     display: flex;
@@ -381,3 +422,152 @@ font-family: Roboto;
 
 }
 
+
+
+@media screen and (max-width: 431px) {
+    .internalMain{
+        width: 430px;
+    }
+                                                                     
+    .profile {
+        margin-top: 1%;
+        margin-right: 5%;
+        width: auto;
+    }
+
+    .profileImg {
+        width: 100%;
+        margin: 10px auto;
+    }
+    
+    .profileImg img {
+        width: 100%;
+        height: auto;
+        object-fit: fill;
+        margin-left: 7%;
+    }
+
+    .information{
+        display: flex;
+        flex-direction: column;
+       
+    }
+    .restaurantName{
+        margin-left: 40px;
+    }
+    .restaurantName h3{
+        margin-top: -2%;
+    }
+    .restaurantName p{
+        margin-top: -4%;
+    }
+    .productName{
+        color:rgba(130, 130, 130, 1);
+        font-family: 14px;
+    }
+    .productName p{
+    font-size: 13px;
+    font-weight: 500;
+    text-align: left;
+    margin-top: -10%;
+    
+    }
+    .restaurantsbutton{
+      display: flex;
+      justify-content: space-between;
+      margin-left: 10%;
+       
+    }
+    .buttons{
+        display: flex;
+        flex-direction: row;
+        margin-right: 10px;;
+        margin-top: 5%;
+       
+    }
+    .delbtn{
+        border: 1px solid rgba(214, 54, 38, 1);
+        border-radius: 5px;
+        background-color: white;
+        color: rgba(214, 54, 38, 1);
+        width: 72px;
+        height: 52px;
+    }
+    .restaurants_user{
+        display: flex;
+        justify-content: center;
+        margin-right: 6%;
+    }
+    .restaurantsContainer {
+        width: auto;
+        height: auto;
+        margin-top: 15px;
+        margin-right: 3%;
+    }
+     .price{
+        display: flex;
+        flex-direction: row;
+        
+     }
+    .circlebtn {
+        width: 25px;
+        height: 25px;
+        margin-right: 10%;
+        
+    }
+
+    .price p {
+        display: block;
+        margin-left: 10%;
+    }
+    .productItem{
+        margin-left: -5%;
+        padding: 0;
+        width: 430px;
+        height: 150px;
+    }
+    .restaurantsInfo {
+        display: flex;
+        flex-direction: column;
+        margin-right: -70px;
+      
+    }
+
+    .restaurantsInfo h4 {
+        width: 140px;
+        font-size: 14px;
+        margin-left: 4%;
+      
+    }
+
+    .restaurantsInfo p {
+        font-size: 12px;
+        width: 180px;
+        margin-top:-11px;
+        margin-left: 4%;
+    }
+                                                                /* Responsivde olmayanlar */
+    .productImg {
+        display: none;
+    }
+
+    .price span {
+        display: none;
+    }
+
+    .restaurants_basket {
+        display: none;
+    }
+
+    .restaurantsContainer h3 {
+        display: none;
+    }
+
+    .emptyBasket {
+        display: none;
+    }
+
+    .backbtn {
+        display: none;
+    }
+}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "../../style/restaurant_internal.css"
-import Brand from '../../assets/restaurant_images/Brand.jpg';
+import Brand from '../../assets/restaurant_images/brand2.jpg';
 import trash from '../../assets/restaurant_images/trash.jpg';
 import basket from '../../assets/restaurant_images/basket.jpg';
 import pizza from '../../assets/restaurant_images/Pizza.jpg';
@@ -25,7 +25,7 @@ function Internal() {
   const totalPrice = useSelector(state => state.basket.totalPrice);
 
   return (
-    <div>
+    <div className='internalMain'>
       <div className='profile'>
         <div className='profileImg'>
           <img src={Brand} alt="Brand" />
@@ -35,6 +35,7 @@ function Internal() {
             <h3>Papa John’s Pizza Restaurant</h3>
             <p>19 Nizami street, Sabail, Baku</p>
           </div>
+          <div className="restaurantsbutton">
           <div className='productName'>
             <h4>Cuisine</h4>
             <p>pizza, drink, hotdog, sandwich, roll</p>
@@ -43,11 +44,14 @@ function Internal() {
             <button className='delbtn'> $5 Delivery</button>
             <button className='backbtn'> <Link to={'/restaurantMain'}> Go Back</Link></button>
           </div>
+
+          </div>
+     
         </div>
       </div>
       
       <div className="restaurants_user">
-        <div className='products'>
+      
           <div className='restaurantsContainer'>
             <h3>Products</h3>
             {productList.map((product, index) => (
@@ -60,13 +64,14 @@ function Internal() {
                   <p>{product.description}</p>
                 </div>
                 <div className='price'>
-                  <span>From <strong>${product.price.toFixed(2)}</strong></span>
+                  <span>From </span>
+                  <p>${product.price.toFixed(2)}</p>
                   <button className='circlebtn' onClick={() => dispatch(addToBasket(product))}>+</button>
                 </div>
               </div>
             ))}
           </div>
-        </div>
+        
 
         <div className="restaurants_basket">
           {basketItems.length > 0 && (
@@ -103,10 +108,13 @@ function Internal() {
                   </div>
                 </div>
               ))}
+              <Link to={'/checkoutPage'}>
               <div className='check_btn'>
                 <p>Checkout</p>
                 <span>${totalPrice.toFixed(2)}</span>
               </div>
+              </Link>
+           
             </div>
           ) : (
             <div className="emptyBasket">
