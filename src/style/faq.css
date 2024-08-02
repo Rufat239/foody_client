@@ -1,12 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
 .faq-container {
     width: 80%;
     margin: 0 auto;
-    text-align: center; 
+    text-align: center;
     margin-bottom: 4rem;
   }
-  
   .faq-container h1 {
 color: rgb(0, 0, 0);
 font-family: "Roboto";
@@ -15,15 +13,12 @@ font-weight: 500;
 line-height: 1.88rem;
 letter-spacing: 0.01rem;
 text-align: center;
-    
   }
-  
   .faq-item {
     border-bottom: 1px solid #ddd;
     padding: 15px 0;
-    text-align: left; 
+    text-align: left;
   }
-  
   .faq-question {
     display: flex;
     justify-content: space-between;
@@ -33,9 +28,7 @@ text-align: center;
     background: rgb(255, 255, 255);
     height: 4.5rem;
     position: relative;
-
   }
-  
   .faq-question h2 {
     color: rgb(0, 0, 0);
     font-family: "Roboto";
@@ -46,20 +39,16 @@ text-align: center;
     text-align: left;
     margin-left: 2%;
   }
-  
   .faq-question span {
     font-size: 1.5rem;
     margin-right: 3%;
     color: rgba(50, 50, 50, 1);
    font-weight: bolder;
-
   }
-
   .faq-question:hover {
-    box-shadow: 0 0 20px rgba(0, 255, 0, 1);
-    border-color: rgba(0, 255, 0, 0.8);
+    box-shadow: 0 0 20px rgb(201, 204, 201);
+    border-color: rgba(200, 206, 200, 0.8);
   }
-  
   .answer {
     width: 100%;
     overflow: hidden;
@@ -68,14 +57,11 @@ text-align: center;
     opacity: 0;
     background: rgb(255, 255, 255);
     box-shadow: 0rem 0.19rem 0.5rem -0.13rem rgba(0, 0, 0, 0.2)
-
   }
-  
   .answer.show {
-    max-height: 500px; 
+    max-height: 500px;
     opacity: 1;
   }
-  
   .faq-answer {
     width: 67%;
     margin-left: 2%;
@@ -85,8 +71,6 @@ text-align: center;
     color: rgba(130, 130, 130, 1);
     font-weight: 500;
   }
-  
-
   .faq-question::before,
   .faq-question::after {
     content: '';
@@ -99,21 +83,19 @@ text-align: center;
     box-sizing: border-box;
     pointer-events: none;
   }
-  
   .faq-question::before {
     border-color: rgba(0, 255, 0, 0);
     animation: border-shine 1.5s infinite linear;
   }
-  
   @keyframes border-shine {
     0% {
-      border-color: rgba(0, 255, 0, 0);
+      border-color: #fff;
     }
     50% {
-      border-color: rgba(0, 255, 0, 1);
+      border-color: rgba(214, 218, 214, 0.8);
     }
     100% {
-      border-color: rgba(0, 255, 0, 0);
+      border-color:rgba(211, 218, 211, 0.8);
     }
   }
   @media (max-width:431px){
@@ -126,16 +108,11 @@ text-align: center;
       letter-spacing: 0.01rem;
       text-align: center;
     }
-  
     .answer {
       width: 100%;
       height: 1%;
     }
-
     .faq-question span{
       font-weight: bolder;
     }
-    
-
   }
-  
