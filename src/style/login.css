@@ -8,14 +8,19 @@
 
 .login-image {
   width: 50%;
-  height: 750px;
+  height: auto;
   border-radius: 4px;
   background: var(--Red, #EB5757);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .login-image img {
-  width: 557px;
-  padding-left: 31px;
+  width: 84%;
+  height: auto;
+  padding-left: 0;
+  vertical-align: top;
 }
 
 .login-form {
@@ -133,5 +138,83 @@
   font-weight: 500;
   letter-spacing: 0.66px;
   border-radius: 5px;
+
+}
+
+@media screen and (max-width: 431px) {
+  .login-form-container {
+    display: flex;
+    margin-top: 0%;
+    flex-direction: column;
+  }
+
+  .login-image {
+    width: 90%;
+    margin-left: 6%;
+    margin-top: 5%;
+    height: 190px;
+    padding-top: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+  }
+
+  .login-image img {
+    width: 56%;
+    height: auto;
+    margin-top: -13%;
+
+  }
+
+  .login-form {
+    width: 90%;
+    padding-inline: 0%;
+    margin-top: 12%;
+
+  }
+
+  .login-buttons {
+    margin-bottom: 17%;
+    gap: 34px;
+    display: flex;
+    justify-content: center;
+    margin-left: 0%;
+
+  }
+
+  .login-btnSwitch,
+  .register-btnswitch {
+    font-size: 25px;
+  }
+
+  .username-container-login label,
+  .password-container-login label {
+    font-size: 18px;
+  }
+
+  .login-submit-button {
+    margin-top: 12%;
+  }
+
+  .password-container-login {
+    margin-top: 6%;
+  }
+
+  .login-username-input input,
+  .login-password-input input {
+    width: 96%;
+    padding: 23px 10px;
+
+  }
+
+  .login-username-input ::placeholder,
+  .login-password-input ::placeholder {
+    font-size: 18px;
+    padding-left: 0px;
+
+  }
+
+
 
 }

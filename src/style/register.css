@@ -8,13 +8,17 @@
 
 .register-image {
     width: 50%;
-    height: 820px;
+    height: 52.5rem;
     border-radius: 4px;
     background: var(--Red, #EB5757);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .register-image img {
     width: 79%;
+    height: auto;
     padding-left: 6.875em;
     padding-top: 4.375em;
 }
@@ -125,7 +129,8 @@
     width: 28px;
     cursor: pointer;
 }
-.register-submit-button{
+
+.register-submit-button {
     border: none;
     background-color: #EB5757;
     width: 100%;
@@ -139,5 +144,82 @@
     font-weight: 500;
     letter-spacing: 0.66px;
     border-radius: 5px;
-    
+
+}
+
+@media screen and (max-width: 431px) {
+    .register-form-container {
+        display: flex;
+        margin-top: 0%;
+        flex-direction: column;
+      
+    }
+
+    .register-image {
+        width: 90%;
+        margin-left: 6%;
+        margin-top: 5%;
+        height: 190px;
+        padding-top: 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .register-image img {
+        width: 42%;
+        height: auto;
+        padding-left: 0;
+        padding-top: 0;
+    }
+
+    .register-form {
+        width: 90%;
+        padding-inline: 0%;
+        margin-top: 12%;
+
+    }
+
+    .register-buttons {
+        margin-bottom: 17%;
+        gap: 34px;
+        display: flex;
+        justify-content: center;
+        margin-left: 0%;
+    }
+
+    .login-box-btnSwitch,
+    .register-box-btnswitch {
+        font-size: 25px;
+    }
+
+    .fullName-container-register label,
+    .username-container-register label,
+    .email-container-register label,
+    .password-container-register label {
+        font-size: 18px;
+    }
+
+    .register-submit-button {
+        margin-top: 12%;
+    }
+
+    .fullName-input-register input,
+    .username-input-register input,
+    .email-input-register input,
+    .register-password-input input {
+        width: 96%;
+        border: none;
+        padding: 23px 10px;
+    }
+
+    .fullName-input-register ::placeholder,
+    .username-input-register ::placeholder,
+    .email-input-register ::placeholder,
+    .register-password-input ::placeholder {
+        font-size: 18px;
+        padding-left: 0px;
+    }
+
+
 }
