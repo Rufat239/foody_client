@@ -224,21 +224,8 @@ margin-top: -4%;
     
   }
   .restCards::-webkit-scrollbar {
-    width: 4px; 
-  }
-  .restCards::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-    border-radius: 10px; 
-  }
-  
-  .restCards::-webkit-scrollbar-thumb {
-    background:red; 
-    border-radius: 10px; 
-  }
-  .restCards::-webkit-scrollbar-thumb:hover {
-    background: #cc0000; 
-  }
-
+    width: 2px; 
+  }git 
   .restCards {
     background-color: rgba(255, 255, 255, 1);
     border-radius: 10px;
@@ -315,8 +302,7 @@ margin-top: -4%;
   .filterHead {
     display: flex;
     justify-content: space-between;
-    box-shadow: 2px 3px 5px 1px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgb(127, 40, 40);
+    box-shadow: 2px 3px 5px 1px rgba(0, 0, 0, 0.15);
     width: 400px;
     margin-left: 3%;
     background-color: rgba(255, 255, 255, 1);
@@ -354,7 +340,7 @@ margin-top: -4%;
     overflow-y: auto; 
   }
   .filterMenu::-webkit-scrollbar {
-    width: 5px;
+    width: 2px;
   }
   
   .filterMenu::-webkit-scrollbar-thumb {
@@ -367,13 +353,14 @@ margin-top: -4%;
   }
   .filterDelete {
     border-radius: 50%;
-    width: 10%;
-    height: 5%;
+    width: 30px;
+    height: 100px;
     font-size: larger;
-    border: 1.5px solid rgb(15, 15, 15);
+    border: 2px solid #ccc;
     background-color: rgba(255, 255, 255, 1);
-    color: rgb(3, 3, 3);
-    margin-top: 8%;
+    color:#ccc;
+    margin-top: 5%;
+    margin-left: 2%;
     cursor: pointer; 
   }
   
@@ -387,9 +374,10 @@ margin-top: -4%;
     text-decoration: none;
     list-style: none;
     text-align: left;
+    font-size: 18px;
     font-weight: bold;
-    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
     padding: 10px; 
+    border-bottom: 0.1px solid #ccc;;
   }
   
   
