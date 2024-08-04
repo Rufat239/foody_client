@@ -14,7 +14,7 @@ const restaurants = [
   { image: mania, name: 'Coffee Mania', description: 'chinese, sea-food, thai, lebanese, caribbean', price: '5$ delivery', time: '9 min' },
   { image: burger, name: 'Burger King', description: 'chinese, sea-food, thai, lebanese, caribbean', price: '5$ delivery', time: '9 min' },
   { image: pizza, name: 'Anadolu Restoran', description: 'chinese, sea-food, thai, lebanese, caribbean', price: '5$ delivery', time: '9 min' },
-  { image: mania, name: 'Coffee Mania', description: 'chinese, sea-food, thai, lebanese, caribbean', price: '5$ delivery', time: '9 min' },
+  { image: mania, name: 'Coffee Mania', description: 'chinese, sea-food, thai, lebanese, caribbean', price: '5$ delivery', time: '9 min' }
 ];
 
 const filter = [
@@ -25,6 +25,9 @@ const filter = [
   { image: pizza, menu: 'Pizza' },
   { image: pizza, menu: 'Indian' },
   { image: pizza, menu: 'Kabab' },
+  { image: pizza, menu: 'Fast Food' },
+  { image: pizza, menu: 'Sea Food' },
+  { image: pizza, menu: 'Indian' },
   { image: pizza, menu: 'Fast Food' },
   { image: pizza, menu: 'Sea Food' },
   { image: pizza, menu: 'Indian' },
@@ -52,7 +55,7 @@ function Restaurant() {
 
   return (
     <div className='main'>
-                                                                           {/* Sidebar */}
+                                                                        {/* Sidebar */}
       <section className={`restaurant_sidebar `}>
         <div className='restaurant_body'>
           {filter.map((item, index) => (
@@ -89,11 +92,15 @@ function Restaurant() {
         )}
       </div>
 
-                                                                              {/* Restaurant Cards */}
+                                                                        {/* Restaurant Cards */}
       <section className='restaurantCards'>
         {filteredRestaurants.map((restaurant, index) => (
           <div className='restaurants_card' key={index}>
-            <Link to={'/internal'}>
+            <Link to={'/internal'} className='cardLink'>
+              <div className="restCards">
+              <div className="newBadge">
+                {index === 1 && <div className='newlist'>New</div>}
+                </div>
               <div className='restaurant_cardImage'>
                 <img src={restaurant.image} alt={restaurant.name} />
               </div>
@@ -105,6 +112,8 @@ function Restaurant() {
                 <p>{restaurant.price}</p>
                 <span>{restaurant.time}</span>
               </div>
+              </div>
+          
             </Link>
           </div>
         ))}

@@ -209,7 +209,8 @@ overflow-y: auto;
 
 }
 .restaurants_basket::-webkit-scrollbar {
-    width: 3px; 
+    width: 3px;
+ 
   }
   
 .restaurants_basket::-webkit-scrollbar-thumb {
@@ -238,7 +239,7 @@ overflow-y: auto;
 }
 
 .bskt_num{
-    margin-top: -10px;
+    margin-top: -8px;
     margin-left: 15px;
     color: rgba(214, 54, 38, 1);
     font-family: Roboto;
@@ -248,11 +249,11 @@ overflow-y: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
 }
 .restaurants_common a{
     text-decoration: none;
 }
+
 .restaurants_text{
     display: flex;
     flex-direction: row;
@@ -352,6 +353,9 @@ font-family: Roboto;
     flex-direction: column;
     height:auto;
     display: block;
+}
+.emptyBasket a{
+    text-decoration: none;
 }
 .emptyNav{
     display: flex;

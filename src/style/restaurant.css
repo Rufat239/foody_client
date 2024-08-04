@@ -4,28 +4,43 @@
 
 .main{
   display: flex;
-  flex-direction: row;
   font-family: Roboto;
 
 }
-
-.restaurant_sidebar{
-  width: auto;
-}                                                                    /* Section (Sidebar) */
+                                                             /* Section (Sidebar) */ 
 .restaurant_body{
   display: block;
   width: 120%;
-  height: auto;
+  max-height: 650px;
   margin-right: 10%;
   background-color: rgba(243, 244, 246, 1);
   margin-top: 12%;
+  overflow-y: auto;
+}
+.restaurant_body::-webkit-scrollbar {
+  width: 4px; 
 }
 
+.restaurant_body::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 10px; 
+}
+
+.restaurant_body::-webkit-scrollbar-thumb {
+  background:red; 
+  border-radius: 10px; 
+}
+
+.restaurant_body::-webkit-scrollbar-thumb:hover {
+  background: #cc0000; 
+}
+                                                             
 
 
 .restaurant_side{
 display: flex;
 flex-direction: row;
+padding-block: 0px 10px ;
 
 }
 .restaurant_side:hover{
@@ -36,7 +51,7 @@ flex-direction: row;
     width: 40px;
     height: 40px;
     margin-left: 40px;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 .image img{
     width: 100%;
@@ -48,7 +63,7 @@ font-family: Mukta;
 font-size: 20px;
 font-weight: 600;
 margin-left: 20px;
-margin-top: 25px;
+margin-top: 20px;
 
 }
 .restaurant_side span:hover{
@@ -57,29 +72,67 @@ margin-top: 25px;
 
 
                                                           /* Section (Restaurant) */
+                                                        
+/* ::-webkit-scrollbar {
+  width: 4px; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff0000; 
+  border-radius: 10px; 
+} */
+
 .restaurantCards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    width: 110%;
-    height: auto;
+    width: 100%;
+    height: 600px;
+    margin-left: 4%;
     margin-top: 1.9%;
-    overflow-y: auto;
-}
+    overflow-y: auto;}
 
 .restaurantCards a {
   text-decoration: none;
 }
-
-.restaurants_card{
-  background-color:rgba(255, 255, 255, 1);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width:75%;
-  height:75%;
-  margin-left: 24%;
-  margin-top: 1.5%;
-
+.restaurantCards::-webkit-scrollbar {
+  width: 4px; 
 }
+.restaurantCards::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 10px; 
+}
+
+.restaurantCards::-webkit-scrollbar-thumb {
+  background:red; 
+  border-radius: 10px; 
+}
+.restaurantCards::-webkit-scrollbar-thumb:hover {
+  background: #cc0000; 
+}
+.restCards{
+  width:75%;
+  height:auto;
+  background-color:rgba(255, 255, 255, 1);
+  border-radius: 3px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 10%;
+  margin-top: 1.5%;
+}
+.newlist {
+  display: block;
+  position: absolute;
+  width:2% ;
+  top: 17.3%;
+  left: 40.06%;
+  background-color:rgba(214, 54, 38, 1);
+  color: white;
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 3px;
+  z-index: 1;
+}
+
 .restaurant_cardImage{
   width: 50%;
   margin-left: 26%;
@@ -87,9 +140,8 @@ margin-top: 25px;
 .restaurant_cardImage img {
   width: 100%;
   height: 100%;
-  margin-top: 15%;
+  margin-top: 5%;
   object-fit: fill;
-
 }
 .restaurants_Info{
   display: flex;
@@ -149,15 +201,11 @@ margin-top: -4%;
 }
 
 
-
-
-
-
 @media screen and (max-width: 431px) {
   .main {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    height: 200%;
     margin-top: 10%;
   }
 
@@ -168,19 +216,40 @@ margin-top: -4%;
   .restaurantCards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
     width: auto;
-    margin-left: -5%;
     overflow:hidden;
+    overflow-y: auto;
+    gap: 5px;
+    margin-right: 2.7%;
+    
+  }
+  .restCards::-webkit-scrollbar {
+    width: 4px; 
+  }
+  .restCards::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px; 
+  }
+  
+  .restCards::-webkit-scrollbar-thumb {
+    background:red; 
+    border-radius: 10px; 
+  }
+  .restCards::-webkit-scrollbar-thumb:hover {
+    background: #cc0000; 
   }
 
-  .restaurants_card {
+  .restCards {
     background-color: rgba(255, 255, 255, 1);
     border-radius: 10px;
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.25);
     width: 131px;
     height: 212px;
     text-align: center;
+    margin-left: 15%;
+  }
+  .newlist {
+    display: none;
   }
 
   .restaurant_cardImage {
@@ -239,15 +308,16 @@ margin-top: -4%;
     display: flex;
     flex-direction: column;
     font-family: Roboto;
-    margin-right: 2%;
+    margin-left: 1%;
+    margin-top: -6%;
   }
   
   .filterHead {
     display: flex;
     justify-content: space-between;
     box-shadow: 2px 3px 5px 1px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 1);
-    width: auto;
+    border: 1px solid rgb(127, 40, 40);
+    width: 400px;
     margin-left: 3%;
     background-color: rgba(255, 255, 255, 1);
     cursor: pointer; 
@@ -262,7 +332,7 @@ margin-top: -4%;
   }
   
   .filterHead p {
-    margin-right: 37%;
+    margin-right: 40%;
     font-size: 19px;
     font-weight: bold;
     margin-top: 3%;

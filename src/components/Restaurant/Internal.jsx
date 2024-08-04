@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import "../../style/restaurant_internal.css"
+import React from 'react';
+import "../../style/restaurant_internal.css";
 import Brand from '../../assets/restaurant_images/brand2.jpg';
 import trash from '../../assets/restaurant_images/trash.jpg';
 import basket from '../../assets/restaurant_images/basket.jpg';
 import pizza from '../../assets/restaurant_images/Pizza.jpg';
 import empty from '../../assets/restaurant_images/empty.jpg';
-import emptyIcon from '../../assets/restaurant_images/iconbasket.jpg'
-import { Link } from 'react-router-dom';
+import emptyIcon from '../../assets/restaurant_images/iconbasket.jpg';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToBasket, increaseQuantity, removeFromBasket } from '../Redux/actions/basketActions';
 
@@ -23,9 +23,21 @@ function Internal() {
   const dispatch = useDispatch();
   const basketItems = useSelector(state => state.basket.basketItems);
   const totalPrice = useSelector(state => state.basket.totalPrice);
+  const navigate = useNavigate();
+
+  const handleAddToBasket = (product) => {
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+    if (isLoggedIn) {
+      dispatch(addToBasket(product));
+    } else {
+      navigate('/loginPage'); 
+    }
+  };
 
   return (
     <div className='internalMain'>
+                                                                        {/* Restaurant profile dizayn */}
       <div className='profile'>
         <div className='profileImg'>
           <img src={Brand} alt="Brand" />
@@ -36,42 +48,42 @@ function Internal() {
             <p>19 Nizami street, Sabail, Baku</p>
           </div>
           <div className="restaurantsbutton">
-          <div className='productName'>
-            <h4>Cuisine</h4>
-            <p>pizza, drink, hotdog, sandwich, roll</p>
+            <div className='productName'>
+              <h4>Cuisine</h4>
+              <p>pizza, drink, hotdog, sandwich, roll</p>
+            </div>
+            <div className='buttons'>
+              <button className='delbtn'> $5 Delivery</button>
+              <button className='backbtn'> <Link to={'/restaurantMain'}> Go Back</Link></button>
+            </div>
           </div>
-          <div className='buttons'>
-            <button className='delbtn'> $5 Delivery</button>
-            <button className='backbtn'> <Link to={'/restaurantMain'}> Go Back</Link></button>
-          </div>
-
-          </div>
-     
         </div>
       </div>
-      
+
       <div className="restaurants_user">
-      
-          <div className='restaurantsContainer'>
-            <h3>Products</h3>
-            {productList.map((product, index) => (
-              <div key={index} className='productItem'>
-                <div className='productImg'>
-                  <img src={product.image} alt="Product" />
-                </div>
-                <div className='restaurantsInfo'>
-                  <h4>{product.name}</h4>
-                  <p>{product.description}</p>
-                </div>
-                <div className='price'>
-                  <span>From </span>
-                  <p>${product.price.toFixed(2)}</p>
-                  <button className='circlebtn' onClick={() => dispatch(addToBasket(product))}>+</button>
-                </div>
+
+                                                                        {/* Product List dizayn */}
+        <div className='restaurantsContainer'>
+          <h3>Products</h3>
+          {productList.map((product, index) => (
+            <div key={index} className='productItem'>
+              <div className='productImg'>
+                <img src={product.image} alt="Product" />
               </div>
-            ))}
-          </div>
-        
+              <div className='restaurantsInfo'>
+                <h4>{product.name}</h4>
+                <p>{product.description}</p>
+              </div>
+              <div className='price'>
+                <span>From </span>
+                <p>${product.price.toFixed(2)}</p>
+                <button className='circlebtn' onClick={() => handleAddToBasket(product)}>+</button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+                                                                   {/* Full basket dizayn */}
 
         <div className="restaurants_basket">
           {basketItems.length > 0 && (
@@ -84,7 +96,7 @@ function Internal() {
               </div>
             </div>
           )}
-
+                                                             
           {basketItems.length > 0 ? (
             <div className='restaurants_common'>
               {basketItems.map((item, index) => (
@@ -109,14 +121,14 @@ function Internal() {
                 </div>
               ))}
               <Link to={'/checkoutPage'}>
-              <div className='check_btn'>
-                <p>Checkout</p>
-                <span>${totalPrice.toFixed(2)}</span>
-              </div>
+                <div className='check_btn'>
+                  <p>Checkout</p>
+                  <span>${totalPrice.toFixed(2)}</span>
+                </div>
               </Link>
-           
             </div>
-          ) : (
+          ) : (                                               
+                                                          // Empty basket dizayn
             <div className="emptyBasket">
               <div className="emptyNav">
                 <img src={emptyIcon} alt="Empty Icon" />
@@ -128,10 +140,13 @@ function Internal() {
               <div className="emptydescription">
                 <p>Oops! Basket empty</p>
               </div>
+              <Link to={'/checkoutPage'}>
               <div className='emptycheck_btn'>
                 <p>Checkout</p>
                 <span>${totalPrice.toFixed(2)}</span>
               </div>
+              </Link>
+            
             </div>
           )}
         </div>
@@ -141,3 +156,6 @@ function Internal() {
 }
 
 export default Internal;
+
+
+
