@@ -89,7 +89,9 @@ margin-top: 20px;
     margin-left: 4%;
     margin-top: 1.9%;
     overflow-y: auto;
-    gap: 40px;}
+    gap: 40px;
+    padding-bottom: 20px;
+  }
     
 
 .restaurantCards a {
