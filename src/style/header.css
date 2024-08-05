@@ -27,8 +27,14 @@ body {
   display: none;
 }
 
+.logoBtn {
+  border: 0;
+  padding: 0;
+  background-color: #f3f4f6;
+}
+
 .imgLogo {
-  width: 10%;
+  width: 100%;
 }
 
 .logoLinks ul {
