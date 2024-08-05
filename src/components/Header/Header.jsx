@@ -84,7 +84,11 @@ function Header() {
             onClick={openHamburgerMenu}
           />
         </button>
-        <img src={imageLogo} alt="" className="imgLogo" />
+        <Link to="/">
+          <button className="logoBtn">
+            <img src={imageLogo} alt="" className="imgLogo" />
+          </button>
+        </Link>
 
         <ul>
           <Link className="links" to="/">
