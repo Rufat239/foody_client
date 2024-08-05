@@ -96,27 +96,23 @@ function Restaurant() {
       <section className='restaurantCards'>
         {filteredRestaurants.map((restaurant, index) => (
           <div className='restaurants_card' key={index}>
-           
+            <Link to={'/internal'} className='cardLink'>
             <div className="newBadge">
                 {index === 1 && <div className='newlist'>New</div>}
                 </div>
-                <Link to={'/internal'} className='cardLink'>
               <div className='restaurant_cardImage'>
                 <img src={restaurant.image} alt={restaurant.name} />
-              </div>  
-              </Link>
-              <Link to={'/internal'} className='cardLink'>
+              </div>
               <div className='restaurants_Info'>
                 <h2>{restaurant.name}</h2>
                 <p>{restaurant.description}</p>
               </div>
-              </Link>
-         
               <div className='delivery'>
                 <p>{restaurant.price}</p>
                 <span>{restaurant.time}</span>
               </div>
-      
+          
+            </Link>
           </div>
         ))}
       </section>
