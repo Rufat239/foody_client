@@ -15,9 +15,6 @@
   justify-content: space-between;
   align-items: center;
 }
-.login-segment{
-  display: none;
-}
 .login-name {
   color: var(--white, #fff);
   text-align: center;
@@ -48,16 +45,10 @@
     border-radius: 0;
   
   }
-  .login-segment{ 
-    display: block;
-    background-color: #eb5757;
-    border: 0;
-    width: 38px;
-    margin-left: 3%;
+  .login-title{
+    width: 90%;
   }
-  .login-segment img{
-    width: 37px;
-  }
+ 
  
   
  
