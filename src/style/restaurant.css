@@ -45,6 +45,7 @@ padding-block: 0px 10px ;
 }
 .restaurant_side:hover{
   background-color: rgba(214, 54, 38, 0.12);
+  color: red;
 
 }
 .image{
@@ -66,9 +67,7 @@ margin-left: 20px;
 margin-top: 20px;
 
 }
-.restaurant_side span:hover{
-  color:rgba(214, 54, 38, 1);
-}
+
 
 
                                                           /* Section (Restaurant) */
@@ -89,7 +88,9 @@ margin-top: 20px;
     height: 600px;
     margin-left: 4%;
     margin-top: 1.9%;
-    overflow-y: auto;}
+    overflow-y: auto;
+    gap: 40px;}
+    
 
 .restaurantCards a {
   text-decoration: none;
@@ -109,10 +110,10 @@ margin-top: 20px;
 .restaurantCards::-webkit-scrollbar-thumb:hover {
   background: #cc0000; 
 }
-.restCards{
+.restaurants_card{
   width:75%;
-  height:auto;
-  background-color:rgba(255, 255, 255, 1);
+  height:88%;
+  background-color:rgb(255, 255, 255);
   border-radius: 3px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-left: 10%;
@@ -122,8 +123,8 @@ margin-top: 20px;
   display: block;
   position: absolute;
   width:2% ;
-  top: 17.3%;
-  left: 40.06%;
+  top: 17.2%;
+  left: 40.5%;
   background-color:rgba(214, 54, 38, 1);
   color: white;
   padding: 5px 10px;
@@ -219,14 +220,14 @@ margin-top: -4%;
     width: auto;
     overflow:hidden;
     overflow-y: auto;
-    gap: 5px;
+    gap: 10px;
     margin-right: 2.7%;
     
   }
-  .restCards::-webkit-scrollbar {
+  .restaurants_card::-webkit-scrollbar {
     width: 2px; 
-  }git 
-  .restCards {
+  }
+  .restaurants_card{
     background-color: rgba(255, 255, 255, 1);
     border-radius: 10px;
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.25);
@@ -242,6 +243,7 @@ margin-top: -4%;
   .restaurant_cardImage {
     width: auto;
     margin-right: 20%;
+    margin-top: 3%;
   }
 
   .restaurant_cardImage img {
