@@ -101,11 +101,6 @@ text-align: left;
     width: 3px; 
   }
   
-.restaurantsContainer::-webkit-scrollbar-thumb {
-    background-color: red; 
-    border-radius: 4px; 
-  }
-  
 .restaurantsContainer::-webkit-scrollbar-track {
     background: transparent; 
   }
@@ -212,12 +207,6 @@ overflow-y: auto;
     width: 3px;
  
   }
-  
-.restaurants_basket::-webkit-scrollbar-thumb {
-    background-color: red;  
-    border-radius: 4px; 
-  }
-  
 .restaurants_basket::-webkit-scrollbar-track {
     background: transparent; 
   }
