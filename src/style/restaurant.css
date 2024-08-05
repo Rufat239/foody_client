@@ -119,6 +119,15 @@ margin-top: 20px;
   margin-left: 10%;
   margin-top: 1.5%;
 }
+.cardLink {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
 .newlist {
   display: block;
   position: absolute;
