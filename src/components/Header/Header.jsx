@@ -4,6 +4,7 @@ import imageHamburger from "../../assets/headerImages/imageHamburger.png";
 import engFlag from "../../assets/headerImages/engFlag.png";
 import rusFlag from "../../assets/headerImages/rusFlag.png";
 import azeFlag from "../../assets/headerImages/azeFlag.png";
+import basket from "../../assets/headerImages/basket.png";
 import "../../style/header.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -145,6 +146,15 @@ function Header() {
             </div>
           )}
         </button>
+
+        {isLoggedIn && (
+          <Link to="/yourBasketPage">
+            <button className="basketBtn">
+              <img src={basket} alt="" className="imgBasketBtn" />
+            </button>
+          </Link>
+        )}
+
         {!isLoggedIn && (
           <Link className="linkSign" to="/loginPage">
             <button className="btnSignUp">{t("navbar.signup")}</button>
