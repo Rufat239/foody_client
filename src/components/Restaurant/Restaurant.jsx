@@ -97,8 +97,7 @@ function Restaurant() {
         {filteredRestaurants.map((restaurant, index) => (
           <div className='restaurants_card' key={index}>
             <Link to={'/internal'} className='cardLink'>
-              <div className="restCards">
-              <div className="newBadge">
+            <div className="newBadge">
                 {index === 1 && <div className='newlist'>New</div>}
                 </div>
               <div className='restaurant_cardImage'>
@@ -111,7 +110,6 @@ function Restaurant() {
               <div className='delivery'>
                 <p>{restaurant.price}</p>
                 <span>{restaurant.time}</span>
-              </div>
               </div>
           
             </Link>
