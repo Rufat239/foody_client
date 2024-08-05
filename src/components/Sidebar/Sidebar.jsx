@@ -3,15 +3,17 @@ import "../../style/sidebar.css";
 import { NavLink } from "react-router-dom";
 import people from "../../assets/sidebarIcons/people.png";
 import basket from "../../assets/sidebarIcons/basket.png";
-import Logout from "../Logout/Logout"
+import Logout from "../Logout/Logout";
 import { useTranslation } from "react-i18next";
 
-
 function Sidebar() {
-
   const { t } = useTranslation();
-  
+
   const [showLogoutModal, setShowLogoutModal] = useState(false);
+
+  const loggedOutHandler = () => {
+    setShowLogoutModal(false);
+  };
 
   const handleLogout = () => {
     setShowLogoutModal(true);
@@ -59,14 +61,12 @@ function Sidebar() {
           <img src={basket} alt="" />
           <span>{t("sidebar.checkout")}</span>
         </NavLink>
-        <li
-          className="sidebarList"
-          onClick={handleLogout}>
-            <img src={basket} alt="" />
-            <span>{t("sidebar.logout")}</span>
+        <li className="sidebarList" onClick={handleLogout}>
+          <img src={basket} alt="" />
+          <span>{t("sidebar.logout")}</span>
         </li>
         {showLogoutModal && (
-          <Logout isOpen={showLogoutModal} onCancel={handleCancel} />
+          <Logout onLoggedOut={loggedOutHandler} onCancel={handleCancel} />
         )}
       </ul>
     </div>

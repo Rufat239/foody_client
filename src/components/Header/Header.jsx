@@ -1,20 +1,40 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import imageLogo from "../../assets/headerImages/Foody..png";
 import imageHamburger from "../../assets/headerImages/imageHamburger.png";
 import engFlag from "../../assets/headerImages/engFlag.png";
 import rusFlag from "../../assets/headerImages/rusFlag.png";
 import azeFlag from "../../assets/headerImages/azeFlag.png";
 import "../../style/header.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import Logout from "../Logout/Logout";
 
 function Header() {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showLangDropdown, setShowLangDropdown] = useState(false);
   const [langImg, setLangImg] = useState(engFlag);
   const [hamburgerMenuStyle, setHamburgerMenuStyle] = useState({});
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
+
+  const loggedOutHandler = () => {
+    setShowLogoutModal(false);
+  };
+
+  useEffect(() => {
+    setIsLoggedIn(Boolean(localStorage.getItem("isLoggedIn")));
+  }, [navigate]);
 
   const { t, i18n } = useTranslation();
+
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
+
+  const handleLogout = () => {
+    setShowLogoutModal(true);
+  };
+  const handleCancel = () => {
+    setShowLogoutModal(false);
+  };
 
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
@@ -125,38 +145,45 @@ function Header() {
             </div>
           )}
         </button>
-        <Link className="linkSign" to="/loginPage">
-          <button className="btnSignUp">{t("navbar.signup")}</button>
-        </Link>
-        <button
-          className="adminBtn"
-          onClick={toggleDropdown}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          {showDropdown && (
-            <div className="dropdownMenu">
-              <ul>
-                <li>
-                  <Link to="/profilePage">Profile</Link>
-                </li>
-                <li>
-                  <Link to="/yourBasketPage">Your Basket</Link>
-                </li>
-                <li>
-                  <Link to="/ordersPage">Your Orders</Link>
-                </li>
-                <li>
-                  <Link to="/checkoutPage">Checkout</Link>
-                </li>
-                <li>
-                  <Link to="/logout">Logout</Link>
-                </li>
-              </ul>
-            </div>
-          )}
-          Admin
-        </button>
+        {!isLoggedIn && (
+          <Link className="linkSign" to="/loginPage">
+            <button className="btnSignUp">{t("navbar.signup")}</button>
+          </Link>
+        )}
+        {isLoggedIn && (
+          <button
+            className="adminBtn"
+            onClick={toggleDropdown}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            {showDropdown && (
+              <div className="dropdownMenu">
+                <ul>
+                  <li>
+                    <Link to="/profilePage">Profile</Link>
+                  </li>
+                  <li>
+                    <Link to="/yourBasketPage">Your Basket</Link>
+                  </li>
+                  <li>
+                    <Link to="/ordersPage">Your Orders</Link>
+                  </li>
+                  <li>
+                    <Link to="/checkoutPage">Checkout</Link>
+                  </li>
+                  <li>
+                    <Link onClick={handleLogout}>Logout</Link>
+                  </li>
+                </ul>
+              </div>
+            )}
+            Admin
+          </button>
+        )}
+        {showLogoutModal && (
+          <Logout onCancel={handleCancel} onLoggedOut={loggedOutHandler} />
+        )}
       </div>
 
       <div className="navRespons" style={hamburgerMenuStyle}>
