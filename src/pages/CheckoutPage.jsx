@@ -1,16 +1,27 @@
-import React from 'react'
-import Sidebar from '../components/Sidebar/Sidebar'
-import Checkout from '../components/CheckOut/Checkout'
-import CheckoutOrders from '../components/CheckoutOrders/CheckoutOrderts'
-
+import React, { useState } from 'react';
+import Sidebar from '../components/Sidebar/Sidebar';
+import Checkout from '../components/CheckOut/Checkout';
+import CheckoutOrders from '../components/CheckoutOrders/CheckoutOrderts';
+import OrderReceived from '../components/OrderReceived/OrderReceived';
 function CheckoutPage() {
-  return (
-    <div>
-       <Sidebar />
-       <Checkout/>
-       <CheckoutOrders/>
-    </div>
-  )
-}
+  const [orderReceived, setOrderReceived] = useState(false);
+  const [error, setError] = useState('');
+  const handleOrderComplete = (orderDetails) => {
 
-export default CheckoutPage
+    setOrderReceived(true);
+
+  };
+  return (
+    <div style={{ display: "flex", marginTop: "2%", columnGap: "2%" }} >
+      <Sidebar />
+      {!orderReceived && (
+        <>
+          <Checkout onOrderComplete={handleOrderComplete} />
+          <CheckoutOrders />
+        </>
+      )}
+      {orderReceived && <OrderReceived />}
+    </div>
+  );
+}
+export default CheckoutPage;
