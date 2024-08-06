@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import imageLogo from "../../assets/headerImages/Foody..png";
 import imageHamburger from "../../assets/headerImages/imageHamburger.png";
 import engFlag from "../../assets/headerImages/engFlag.png";
-import rusFlag from "../../assets/headerImages/rusFlag.png";
+import frFlag from "../../assets/headerImages/frFlag.png";
 import azeFlag from "../../assets/headerImages/azeFlag.png";
 import basket from "../../assets/headerImages/basket.png";
 import "../../style/header.css";
@@ -129,11 +129,11 @@ function Header() {
                 <li>
                   <button
                     onClick={() => {
-                      setLangImg(rusFlag);
+                      setLangImg(frFlag);
                       i18n.changeLanguage("fr");
                     }}
                   >
-                    <img src={rusFlag} alt="" />
+                    <img src={frFlag} alt="" />
                   </button>
                 </li>
                 <li>
