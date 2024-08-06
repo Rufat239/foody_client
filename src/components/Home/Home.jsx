@@ -119,19 +119,19 @@ function Home() {
         <div className="homecard1">
           <img src={card1} alt="" />
           <h2>{t( "home.Discount")}</h2>
-          <p>Lorem ipsum is placeholder commonly used in the graphic </p>
+          <p>{t("home.Lorem ipsum2,5")}</p>
         </div>
 
         <div className="homecard2">
           <img src={card2} alt="" />
           <h2>{t( "home.Fresh")}</h2>
-          <p>Lorem ipsum is placeholder commonly used in the graphic </p>
+          <p>{t("home.Lorem ipsum3")}</p>
         </div>
 
         <div className="homecard3">
           <img src={card3} alt="" />
           <h2>Fast Home Delivery</h2>
-          <p>Lorem ipsum is placeholder commonly used in the graphic </p>
+          <p>{t("home.Lorem ipsum4")}</p>
         </div>
       </div>
 
