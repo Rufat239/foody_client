@@ -7,32 +7,50 @@ import miniburger from "../../assets/homeImages/miniburger.jpeg";
 import card1 from "../../assets/homeImages/card1.png";
 import card2 from "../../assets/homeImages/card2.jpeg";
 import card3 from "../../assets/homeImages/card3.png";
-import kfc from "../../assets/homeImages/kfc pad.jpg";
-import bigpizza from "../../assets/homeImages/pizzapad.jpg";
-import bigfries from "../../assets/homeImages/fripad.png";
+import kfc from "../../assets/homeImages/kfc box.png";
+import bigpizza from "../../assets/homeImages/big pizza.png";
+import bigfries from "../../assets/homeImages/big fries.png";
 import dublecheese from "../../assets/homeImages/dublecheese.jpg";
 import margarita from "../../assets/homeImages/margarita.jpg";
 import twistermenu from "../../assets/homeImages/Twistermenu.jpg";
-import { useTranslation } from "react-i18next";
 
 function Home() {
-  const { t } = useTranslation();
-
   const sections = [
     {
       imgSrc: kfc,
-      title: t("home.Menuthat"),
-      description: t("home.Lorem ipsum5"),
+      title: "Menu That Always Make You Fall In Love",
+      description:
+        "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
     },
     {
       imgSrc: bigpizza,
-      title: t("home.Yummy Papa"),
-      description: t("home.Lorem ipsum6"),
+      title: "Yummy Always Papa John’s Pizza. Agree?",
+      description:
+        "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
     },
     {
       imgSrc: bigfries,
-      title: t("home.DoyouLike"),
-      description: t("home.Lorem ipsum7"),
+      title: "Do You Like French Fries? Mmm...",
+      description:
+        "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+    },
+    {
+      imgSrc: kfc,
+      title: "Menu That Always Make You Fall In Love",
+      description:
+        "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+    },
+    {
+      imgSrc: bigpizza,
+      title: "Yummy Always Papa John’s Pizza. Agree?",
+      description:
+        "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+    },
+    {
+      imgSrc: bigfries,
+      title: "Do You Like French Fries? Mmm...",
+      description:
+        "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
     },
   ];
 
@@ -42,16 +60,20 @@ function Home() {
         <div className="firstPart-header">
           <div className="firstPart-leftSide">
             <div className="leftSide-info">
-              <h1>{t("home.Our Food")}</h1>
-              <p className="leftSide-text">{t("home.Lorem ipsum1")}</p>
+              <h1>Our Food site makes it easy to find local food</h1>
+              <p className="leftSide-text">
+                Lorem ipsum is placeholder text commonly used in the graphic,
+                print, and publishing industries for previewing layouts and
+                visual mockups.
+              </p>
             </div>
 
             <div className="regor">
-              <button className="register">{t("home.Register")}</button>
-              <button className="order">{t("home.Order now")}</button>
+              <button className="register">Register</button>
+              <button className="order">Order now</button>
             </div>
           </div>
-          {/* <div className="div1"> */}
+         
           <div className="blackBackground-image">
             <img className="burger" src={burger} alt="" />
 
@@ -79,89 +101,90 @@ function Home() {
               <p>Cheesburger Yummy ...</p>
             </div>
           </div>
-          {/* </div> */}
+        
         </div>
       </div>
 
-      <h1 className="features">{t("home.Features")}</h1>
+      <h1 className="features">Features</h1>
       <div className="divFeaturesTxt">
         <div className="featurestXT">
-          <p>{t("home.Lorem ipsum2")}</p>
+          <p>
+            Lorem ipsum is placeholder text commonly used in the graphic, print,
+            and publishing industries for previewing layouts and visual mockups.
+          </p>
         </div>
       </div>
       <div className="containerHome-card">
         <div className="homecard1">
           <img src={card1} alt="" />
-          <h2>{t("home.Discount")}</h2>
-          <p>{t("home.Lorem ipsum2")}</p>
+          <h2>Discount Boucher</h2>
+          <p>Lorem ipsum is placeholder commonly used in the graphic </p>
         </div>
 
         <div className="homecard2">
           <img src={card2} alt="" />
-          <h2>{t("home.Fresh")}</h2>
-          <p>{t("home.Lorem ipsum3")}</p>
+          <h2>Fresh healthy Food</h2>
+          <p>Lorem ipsum is placeholder commonly used in the graphic </p>
         </div>
 
         <div className="homecard3">
           <img src={card3} alt="" />
-          <h2>{t("home.Fast")}</h2>
-          <p>{t("home.Lorem ipsum4")}</p>
+          <h2>Fast Home Delivery</h2>
+          <p>Lorem ipsum is placeholder commonly used in the graphic </p>
         </div>
       </div>
 
+
+
       {sections.map((section, index) => (
-        <div className={`main${index + 1}`} key={index}>
-          {index % 2 === 0 ? (
-            <>
-              <div className={`txt${index + 1}`}>
-                <h1>{section.title}</h1>
-                <p>{section.description}</p>
-              </div>
-              <div>
+        <div
+          className={`dinamicMain ${index % 2 === 0 ? "left" : "right"}`}
+          key={index}
+        >
+          <div className="text">
+            <h1>{section.title}</h1>
+            <p>{section.description}</p>
+          </div>
+          <div className="image">
+            <div className="image-wrapperHeader ">
+              <figure>
                 <img src={section.imgSrc} alt={section.title} />
-              </div>
-            </>
-          ) : (
-            <>
-              <div>
-                <img src={section.imgSrc} alt={section.title} />
-              </div>
-              <div className={`txt${index + 1}`}>
-                <h1>{section.title}</h1>
-                <p>{section.description}</p>
-              </div>
-            </>
-          )}
+              </figure>
+            </div>
+          </div>
         </div>
       ))}
 
       <div className="ourPopular">
         <div className="divPop">
-          <h1 className="pop">{t("home.Popular")}</h1>
+          <h1 className="pop">Our Popular Update New Foods</h1>
         </div>
       </div>
       <div className="mainDivPopTxt">
         <div className="divPopTxt">
-          <p className="txt">{t("home.Lorem ipsum8")}</p>
+          <p className="txt">
+            Lorem ipsum is placeholder text commonly used in the graphic, print,
+            and publishing industries for previewing layouts and visual mockups.
+          </p>
         </div>
       </div>
       <div className="meal-cards">
         <div className="meal-cards1">
           <img src={dublecheese} alt="" />
-          <h2>{t("home.Dubblechess")}</h2>
-          <p>{t("home.Lorem ipsum9")}</p>
+          <h2>Dubble Chees</h2>
+          <p>Lorem ipsum is placeholder commonly used in the graphic </p>
         </div>
 
         <div className="meal-cards2">
           <img src={margarita} alt="" />
-          <h2>{t("home.Margarita")}</h2>
-          <p>{t("home.Lorem ipsum10")}</p>
+          <h2>Margarita</h2>
+          <p>Lorem ipsum is placeholder commonly used in the graphic </p>
         </div>
 
         <div className="meal-cards3">
           <img src={twistermenu} alt="" />
-          <h2>{t("home.Twister")}</h2>
-          <p>{t("home.Lorem ipsum11")}</p>
+          <h2>Twister Menu</h2>
+          <p>Lorem ipsum is placeholder commonly used in the graphic </p>
         </div>
       </div>
 
@@ -171,8 +194,8 @@ function Home() {
             <img src={pizza} alt="" />
           </div>
           <div className="end">
-            <h1>{t("home.Discover")}</h1>
-            <button>{t("homr.Explore")}</button>
+            <h1>Discover Restaurants Near From you</h1>
+            <button>Explore now</button>
           </div>
           <div className="sonimg">
             <img src={burger} alt="" />
