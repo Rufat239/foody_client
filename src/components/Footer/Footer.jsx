@@ -5,7 +5,10 @@ import instagram from "../../assets/socials/instagram.svg";
 import twitter from "../../assets/socials/twitter.svg";
 import "../../style/footer.css";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 function Footer() {
+  const { t } = useTranslation()
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -27,7 +30,7 @@ function Footer() {
               fill="#EAAB00"
             />
           </svg>
-          <p>Lorem ipsum is placeholder text commonly used in the graphic.</p>
+          <p>{t("footerText")}</p>
           <div className="socials">
             <Link to="#" className="socialsBorder1">
               <img src={facebook} alt="facebook" />
@@ -41,55 +44,54 @@ function Footer() {
           </div>
         </div>
         <div className="footerSectionLinks">
-          <h2>Popular</h2>
+          <h2>{t("footerPopular")}</h2>
           <ul>
             <li>
-              <Link to="#">Programming</Link>
+              <Link to="#">{t("popularProgramming")}</Link>
             </li>
             <li>
-              <Link to="#">Books for children</Link>
+              <Link to="#">{t("popularBooks")}</Link>
             </li>
             <li>
-              <Link to="#">Psychology</Link>
+              <Link to="#">{t("popularPsychology")}</Link>
             </li>
             <li>
-              <Link to="#">Business</Link>
+              <Link to="#">{t("popularBusiness")}</Link>
             </li>
           </ul>
         </div>
         <div className="footerSectionLinks">
-          <h2>Cash</h2>
+          <h2>{t("footerCash")}</h2>
           <ul>
             <li>
-              <Link to="#">Delivery</Link>
+              <Link to="#">{t("footerDelivery")}</Link>
             </li>
             <li>
-              <Link to="#">Payment</Link>
+              <Link to="#">{t("footerPayment")}</Link>
             </li>
             <li>
-              <Link to="#">About the store</Link>
+              <Link to="#">{t("footerAbout")}</Link>
             </li>
           </ul>
         </div>
         <div className="footerSectionLinks">
-          <h2>Help</h2>
+          <h2>{t("footerHelp")}</h2>
           <ul>
             <li>
-              <Link to="#">Contacts</Link>
+              <Link to="#">{t("footerContacts")}</Link>
             </li>
             <li>
-              <Link to="#">Purchase returns</Link>
+              <Link to="#">{t("footerPurchase")}</Link>
             </li>
             <li>
-              <Link to="#">Buyer help</Link>
+              <Link to="#">{t("footerBuyer")}</Link>
             </li>
           </ul>
         </div>
       </div>
       <div className="footer-bottom">
         <p>
-          All rights reserved &copy; 2003-2022 Foody TERMS OF USE | Privacy
-          Policy
+        {t("footerPolicy")}
         </p>
       </div>
     </footer>
