@@ -102,6 +102,18 @@ body {
   color: white;
 }
 
+.adminBtn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: white;
+  background-color: #f178b6;
+  border: 0;
+}
+
 /* .dropdownMenu {
   display: none;
   position: absolute;
@@ -121,10 +133,12 @@ body {
 .dropdownMenu {
   background-color: #fff;
   box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.2);
-  width: 158px;
+  width: 130px;
   height: 234px;
   position: absolute;
   z-index: 9;
+  right: 0px;
+  top: 100px;
 }
 .dropdownMenu ul {
   margin-top: 30px;
@@ -133,7 +147,7 @@ body {
 }
 .dropdownMenu ul li {
   list-style: none;
-  margin-bottom: 18px;
+  margin-bottom: 7px;
   border-bottom: 1px solid #f3f4f6;
   padding: 0 5px;
   text-align: left;
@@ -145,6 +159,7 @@ body {
   text-decoration: none;
   color: #000;
   font-family: "Roboto";
+  font-size: 15px;
 }
 
 .langDropdownMenu {

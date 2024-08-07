@@ -198,7 +198,7 @@ function Header() {
                 </ul>
               </div>
             )}
-            Admin
+            AR
           </button>
         )}
         {showLogoutModal && (
