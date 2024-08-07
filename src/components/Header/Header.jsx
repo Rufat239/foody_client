@@ -5,6 +5,7 @@ import engFlag from "../../assets/headerImages/engFlag.png";
 import frFlag from "../../assets/headerImages/frFlag.png";
 import azeFlag from "../../assets/headerImages/azeFlag.png";
 import basket from "../../assets/headerImages/basket.png";
+import rufat from "../../assets/headerImages/Rufat.jpg";
 import "../../style/header.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -29,6 +30,11 @@ function Header() {
   const { t, i18n } = useTranslation();
 
   const [showLogoutModal, setShowLogoutModal] = useState(false);
+
+  const handleLogoutClick = () => {
+    handleLogout();
+    closeHamburgerMenu();
+  };
 
   const handleLogout = () => {
     setShowLogoutModal(true);
@@ -152,7 +158,7 @@ function Header() {
         </button>
 
         {isLoggedIn && (
-          <Link to="/yourBasketPage">
+          <Link to="/yourBasketPage" className="linkBasket">
             <button className="basketBtn">
               <img src={basket} alt="" className="imgBasketBtn" />
             </button>
@@ -204,8 +210,22 @@ function Header() {
         <button className="closeHamburger" onClick={closeHamburgerMenu}>
           X
         </button>
+
         <div className="resSignUpBtn">
-          <button>Sign up</button>
+          {!isLoggedIn && (
+            <Link className="linkSignRes" to="/loginPage">
+              <button className="btnSignUpRes" onClick={closeHamburgerMenu}>
+                {t("navbar.signup")}
+              </button>
+            </Link>
+          )}
+
+          {isLoggedIn && (
+            <div className="aboutClient">
+              <img className="imgClient" src={rufat} alt="" />
+              <h2 className="nameClient">Rüfət Ağarzayev</h2>
+            </div>
+          )}
         </div>
 
         <ul>
@@ -223,6 +243,46 @@ function Header() {
               {t("navbar.restaurants")}
             </Link>
           </li>
+          {isLoggedIn && (
+            <ul className="adminRes">
+              <li>
+                <Link
+                  className="responsLink"
+                  to="/profilePage"
+                  onClick={closeHamburgerMenu}
+                >
+                  Profile
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="responsLink"
+                  to="/yourBasketPage"
+                  onClick={closeHamburgerMenu}
+                >
+                  Your Basket
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="responsLink"
+                  to="/ordersPage"
+                  onClick={closeHamburgerMenu}
+                >
+                  Your Orders
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="responsLink"
+                  to="/checkoutPage"
+                  onClick={closeHamburgerMenu}
+                >
+                  Checkout
+                </Link>
+              </li>
+            </ul>
+          )}
           <li>
             <Link
               className="responsLink"
@@ -250,6 +310,14 @@ function Header() {
               {t("navbar.faq")}
             </Link>
           </li>
+
+          {isLoggedIn && (
+            <li className="logoutLink">
+              <Link className="responsLink" onClick={handleLogoutClick}>
+                Logout
+              </Link>
+            </li>
+          )}
         </ul>
       </div>
     </div>

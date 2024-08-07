@@ -14,29 +14,26 @@ import dublecheese from "../../assets/homeImages/dublecheese.jpg";
 import margarita from "../../assets/homeImages/margarita.jpg";
 import twistermenu from "../../assets/homeImages/Twistermenu.jpg";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 function Home() {
-
   const { t } = useTranslation();
 
   const sections = [
     {
       imgSrc: kfc,
       title: t("home.Menuthat"),
-      description:
-       t("home.Lorem ipsum5"),
+      description: t("home.Lorem ipsum5"),
     },
     {
       imgSrc: bigpizza,
       title: t("home.Yummy Papa"),
-      description:
-       t("home.Lorem ipsum6"),
+      description: t("home.Lorem ipsum6"),
     },
     {
       imgSrc: bigfries,
       title: t("home.DoyouLike"),
-      description:
-       t("home.Lorem ipsum7"),
+      description: t("home.Lorem ipsum7"),
     },
   ];
 
@@ -46,18 +43,18 @@ function Home() {
         <div className="firstPart-header">
           <div className="firstPart-leftSide">
             <div className="leftSide-info">
-              <h1>{t( "home.Our Food")}</h1>
-              <p className="leftSide-text">
-              {t( "home.Lorem ipsum1")}
-              </p>
+              <h1>{t("home.Our Food")}</h1>
+              <p className="leftSide-text">{t("home.Lorem ipsum1")}</p>
             </div>
 
             <div className="regor">
-              <button className="register">{t("home.Register")}</button>
+              <Link to="/registerPage">
+                <button className="register">{t("home.Register")}</button>
+              </Link>
               <button className="order">{t("home.Order now")}</button>
             </div>
           </div>
-         
+
           <div className="blackBackground-image">
             <img className="burger" src={burger} alt="" />
 
@@ -66,7 +63,7 @@ function Home() {
                 <img src={pizza} alt="" />
               </figure>
 
-              <p>{t( "home.Pizza Hut")}</p>
+              <p>{t("home.Pizza Hut")}</p>
             </div>
 
             <div className="animationContainer2">
@@ -85,28 +82,25 @@ function Home() {
               <p>{t("home.Cheesburger")}</p>
             </div>
           </div>
-        
         </div>
       </div>
 
       <h1 className="features">{t("home.Features")}</h1>
       <div className="divFeaturesTxt">
         <div className="featurestXT">
-          <p>
-          {t( "home.Lorem ipsum2")}
-          </p>
+          <p>{t("home.Lorem ipsum2")}</p>
         </div>
       </div>
       <div className="containerHome-card">
         <div className="homecard1">
           <img src={card1} alt="" />
-          <h2>{t( "home.Discount")}</h2>
+          <h2>{t("home.Discount")}</h2>
           <p>{t("home.Lorem ipsum2,5")}</p>
         </div>
 
         <div className="homecard2">
           <img src={card2} alt="" />
-          <h2>{t( "home.Fresh")}</h2>
+          <h2>{t("home.Fresh")}</h2>
           <p>{t("home.Lorem ipsum3")}</p>
         </div>
 
@@ -116,8 +110,6 @@ function Home() {
           <p>{t("home.Lorem ipsum4")}</p>
         </div>
       </div>
-
-
 
       {sections.map((section, index) => (
         <div
@@ -145,9 +137,7 @@ function Home() {
       </div>
       <div className="mainDivPopTxt">
         <div className="divPopTxt">
-          <p className="txt">
-         {t("home.Lorem ipsum8")}
-          </p>
+          <p className="txt">{t("home.Lorem ipsum8")}</p>
         </div>
       </div>
       <div className="meal-cards">
@@ -165,7 +155,7 @@ function Home() {
 
         <div className="meal-cards3">
           <img src={twistermenu} alt="" />
-          <h2>{t( "home.Twister")}</h2>
+          <h2>{t("home.Twister")}</h2>
           <p>{t("home.Lorem ipsum11")}</p>
         </div>
       </div>

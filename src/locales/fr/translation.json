@@ -40,5 +40,21 @@
   "home.Twister": "Menu Twister",
   "home.Lorem ipsum11": "Lorem ipsum est un espace réservé couramment utilisé dans le graphique",
   "home.Discover": "Découvrez les restaurants Près de chez vous",
-  "homr.Explore": "Explorez maintenant"
+  "homr.Explore": "Explorez maintenant",
+
+  "footerText": "Lorem ipsum est un texte factice couramment utilisé dans le graphisme.",
+  "footerPopular": "Populaire",
+  "popularProgramming": "Programmation",
+  "popularBooks": "Livres pour enfants",
+  "popularPsychology": "Psychologie",
+  "popularBusiness": "Affaires",
+  "footerCash": "Liquide",
+  "footerDelivery": "Livraison",
+  "footerPayment": "Paiement",
+  "footerAbout": "À propos du magasin",
+  "footerHelp": "Aide",
+  "footerContacts": "Contacts",
+  "footerPurchase": "Retours d'achat",
+  "footerBuyer": "Aide acheteurs",
+  "footerPolicy": "Tous droits réservés © 2003-2022 Foody CONDITIONS D'UTILISATION | Politique de confidentialité"
 }

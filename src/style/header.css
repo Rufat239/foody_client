@@ -267,4 +267,54 @@ body {
   .inpSignUp {
     display: none;
   }
+
+  .linkSign {
+    display: none;
+  }
+
+  .linkSignRes {
+    width: 50%;
+    height: 30%;
+  }
+
+  .btnSignUpRes {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .linkBasket {
+    display: none;
+  }
+
+  .adminBtn {
+    display: none;
+  }
+
+  .adminRes {
+    padding: 0 !important;
+  }
+
+  .logoutLink {
+    margin-top: 20%;
+  }
+
+  .aboutClient {
+    width: 75%;
+    height: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .imgClient {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+
+  .nameClient {
+    color: #333333;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 26px;
+  }
 }
