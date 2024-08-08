@@ -92,7 +92,7 @@ function Restaurant() {
         )}
       </div>
 
-                                                                        {/* Restaurant Cards */}
+                                                                               {/* Restaurant Cards */}
       <section className='restaurantCards'>
         {filteredRestaurants.map((restaurant, index) => (
             <div className="cardHeight">

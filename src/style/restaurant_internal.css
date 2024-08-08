@@ -98,6 +98,7 @@ text-align: left;
 }
 
 .restaurantsContainer::-webkit-scrollbar {
+    background-color: red;
     width: 3px; 
   }
   
@@ -205,6 +206,7 @@ overflow-y: auto;
 }
 .restaurants_basket::-webkit-scrollbar {
     width: 3px;
+    background-color: red;
  
   }
 .restaurants_basket::-webkit-scrollbar-track {
@@ -301,7 +303,7 @@ font-family: Roboto;
 .check_btn{
     display: flex;
     justify-content: space-between;
-    margin-top: 45%;
+    margin-top: 10%;
     margin-left: 2.5%;
     margin-bottom: 15px;
     border-radius: 100px;
