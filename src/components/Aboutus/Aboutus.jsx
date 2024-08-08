@@ -12,9 +12,11 @@ function About() {
           <div className="about-container">
             <div className="about-us">
               <h1>About Us</h1>
+              <div className='about-words'>
               <p>
                 Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
               </p>
+            </div>
             </div>
             <div className="about-background">
               <div className="about-menu">
