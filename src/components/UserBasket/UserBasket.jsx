@@ -11,6 +11,9 @@ function UserBasket() {
   const basketItems = useSelector((state) => state.basket.basketItems);
   const totalPrice = useSelector((state) => state.basket.totalPrice);
 
+  const itemQuantity = basketItems.reduce((sum, item) => sum + item.quantity, 0);
+  const itemText = itemQuantity === 1 || itemQuantity === 0 ? "item" : "items";
+
   return (
     <div className="userBasketContainer2">
     <div className="userBasketHeadPad2">
@@ -23,8 +26,8 @@ function UserBasket() {
           </figure>
 
           <div className="quantityItems2">
-            <span> {basketItems.reduce((sum, item) => sum + item.quantity, 0)}</span>
-            <p>items</p>
+            <span>{itemQuantity}</span>
+            <p>{itemText}</p>
           </div>
         </div>
       </div>
