@@ -2,7 +2,7 @@
 
 .about {
   font-family: "Roboto";
-  padding-inline: 4%;
+  padding-inline: 2%;
   max-width: 100%;
   min-height: 100vh;
   overflow: hidden;
@@ -17,8 +17,12 @@
   height: 100vh;
 }
 
+.about-words{
+  width: 100%;
+}
+
  .about-us {
-  width: 48%;
+  width: 46%;
   height: 100%;
 }
 
@@ -54,7 +58,7 @@ margin-top: 5.5rem;
   top: 25%; 
   left: 77%;
   transform: rotate(69deg);
-  animation: movieUp  2s infinite alternate;
+  /* animation: movieUp  2s infinite alternate; */
 }
 
 .pizza{
@@ -62,9 +66,9 @@ margin-top: 5.5rem;
   border-radius: 20px;
   position: absolute;
   transform: rotate(69deg);
-  top: -30%;
+  top: -15%;
   left: 32%;
-  animation: movieUp  2s infinite alternate
+  /* animation: movieUp  2s infinite alternate */
 }
 
 .soup{
@@ -74,7 +78,7 @@ margin-top: 5.5rem;
   transform: rotate(69deg);
   left: 1rem;
   top: 11rem;
-  animation: movieUp  2s infinite alternate
+  /* animation: movieUp  2s infinite alternate */
 }
 
 .coffee{
@@ -84,12 +88,12 @@ margin-top: 5.5rem;
   transform: rotate(69deg);
   left: -2rem;
   top: -6rem;
-  animation: movieUp  2s infinite alternate;
+  /* animation: movieUp  2s infinite alternate; */
 }
 
 .about-background {
 position: absolute;
-width: 36rem;
+width: 33rem;
 height: 20rem;
 top: 20rem;
 left: 56%;
@@ -103,11 +107,11 @@ background: rgb(255, 182, 79);
   position: relative;
 }
 
-@keyframes movieUp  {
+/* @keyframes movieUp  {
   to {
     transform: rotate(69deg) translateX(10px) translateY(10px);
   }
-}
+} */
 
 
   
@@ -152,18 +156,18 @@ background: rgb(255, 182, 79);
     }
   
     .soup{
-      width: 70%;
+      width: 69%;
       position: relative;
-      top: -19rem;
+      top: -17rem;
       left: 11%;
       transform: none;
       animation: none;
       margin-bottom: 1rem;
     }
     .hamburger{
-      width: 70%;
+      width: 69%;
       position: relative;
-      top: 18rem;
+      top: 19rem;
       left:10%;
       transform: none;
       animation: none;
@@ -175,10 +179,10 @@ background: rgb(255, 182, 79);
     }
   
     .about-background {
-      width: 75%;
+      width: 69%;
       height: 55%;
       top: 49%;
-      left: 9%;
+      left: 8%;
       transform: none;
       border-radius: 6.25rem;
       box-shadow: none;
