@@ -51,7 +51,9 @@ function Home() {
               <Link to="/registerPage">
                 <button className="register">{t("home.Register")}</button>
               </Link>
-              <button className="order">{t("home.Order now")}</button>
+              <Link to="/restaurantMain">
+                <button className="order">{t("home.Order now")}</button>
+              </Link>
             </div>
           </div>
 
@@ -167,7 +169,9 @@ function Home() {
           </div>
           <div className="end">
             <h1>{t("home.Discover")}</h1>
-            <button>{t("homr.Explore")}</button>
+            <Link to="/restaurantMain">
+              <button>{t("homr.Explore")}</button>
+            </Link>
           </div>
           <div className="sonimg">
             <img src={burger} alt="" />
