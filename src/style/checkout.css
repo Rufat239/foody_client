@@ -107,6 +107,7 @@
         align-items: flex-start;
         gap: 5px;
         margin-right: 0;
+        margin-bottom: 6rem;
     }
 
     .input,
@@ -118,15 +119,10 @@
         position: relative;
         margin-right: 20% !important;
         margin-top: 31rem;
-        z-index: -1;
         width: 90%;
         left: 3%;
         height: 33rem;
         background-color: #FFFFFF;
-    }
-
-    .checkout-button-checkout-page {
-        margin-top: 6rem;
     }
 
     .checkout-container-heading{
