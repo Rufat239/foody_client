@@ -91,8 +91,6 @@
 }
 
 
-
-
 .id-orders p {
     width: 57px;
     height: 24px;
@@ -118,7 +116,7 @@
 .options-button-cell {
     /* width: 5%; */
     /* background-color: red; */
-    position: relative !important;
+    /* position: relative !important; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -135,13 +133,13 @@
 
 .drop-down-menu-content {
     position: absolute;
-    bottom: -35px;
+    bottom: 53%;
     right: 15px;
     z-index: 1;
     background-color: #FFF;
     box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.20);
     text-align: left;
-    width: 79px;
+    width: 89px;
     /* height: 47px; */
     flex-direction: column;
     align-items: center;
@@ -335,13 +333,13 @@
 
     .drop-down-menu-content {
         position: absolute;
-        bottom: -35px;
-        right: -25px;
+        bottom: 53%;
+        right: 80%;
     }
 
     .for-small-screen {
         display: block;
-        position: relative !important;
+        /* position: relative !important; */
         display: flex;
         justify-content: center;
         align-items: center;

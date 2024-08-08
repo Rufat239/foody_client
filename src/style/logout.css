@@ -21,8 +21,8 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 15px 20px 40px 22px;
     z-index: 1000;
-    max-width: 25%;
-    width: 100%;
+    /* max-width: 25%; */
+    width: 30%;
     flex-direction: column;
     align-items: center;
 }
@@ -87,4 +87,44 @@
     display: flex;
     gap: 20px;
     justify-content: center;
+}
+
+
+
+@media only screen and (max-width: 431px) {
+    .logout-container {
+        width: 70%;
+         padding: 15px 30px 40px 32px;
+        padding-inline: 10%;
+        
+    }
+
+    .text-logoutModal h1{
+        font-size: 20px;
+    }
+
+    .text-logoutModal p{
+        font-size: 16px;
+    }
+
+
+    .logout-buttons {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 10px;
+
+    }
+
+
+    .logout-cancel-button{
+        height: 38px;
+    }
+
+    .logout-button{
+        height: 38px;
+        display: flex;
+        justify-content: center;
+    }
+
+    
 }
