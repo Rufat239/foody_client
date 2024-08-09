@@ -16,6 +16,7 @@ import "./i18n";
 import { Provider } from "react-redux";
 import store from "../src/components/Redux/store";
 import CheckoutPage from "./pages/CheckoutPage";
+import ErrorPage from "./pages/ErrorPage";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
             <Route path="/loginPage" element={<LoginPage />} />
             <Route path="/registerPage" element={<RegisterPage />} />
             <Route path="/checkoutPage" element={<CheckoutPage />} />
+            <Route path="/*" element={<ErrorPage />} />
           </Routes>
         </Layout>
       </Router>
