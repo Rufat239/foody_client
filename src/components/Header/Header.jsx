@@ -7,7 +7,7 @@ import azeFlag from "../../assets/headerImages/azeFlag.png";
 import basket from "../../assets/headerImages/basket.png";
 import rufat from "../../assets/headerImages/Rufat.jpg";
 import "../../style/header.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Logout from "../Logout/Logout";
 
@@ -97,21 +97,46 @@ function Header() {
         </Link>
 
         <ul>
-          <Link className="links" to="/">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "links activeLinks" : "links"
+            }
+          >
             <li>{t("navbar.home")}</li>
-          </Link>
-          <Link className="links" to="restaurantMain">
+          </NavLink>
+          <NavLink
+            to="restaurantMain"
+            className={({ isActive }) =>
+              isActive ? "links activeLinks" : "links"
+            }
+          >
             <li>{t("navbar.restaurants")}</li>
-          </Link>
-          <Link className="links" to="/aboutPage">
+          </NavLink>
+          <NavLink
+            to="/aboutPage"
+            className={({ isActive }) =>
+              isActive ? "links activeLinks" : "links"
+            }
+          >
             <li>{t("navbar.aboutus")}</li>
-          </Link>
-          <Link className="links" to="/howItWorks">
+          </NavLink>
+          <NavLink
+            to="/howItWorks"
+            className={({ isActive }) =>
+              isActive ? "links activeLinks" : "links"
+            }
+          >
             <li>{t("navbar.howitworks")}</li>
-          </Link>
-          <Link className="links" to="/faqs">
+          </NavLink>
+          <NavLink
+            to="/faqs"
+            className={({ isActive }) =>
+              isActive ? "links activeLinks" : "links"
+            }
+          >
             <li>{t("navbar.faq")}</li>
-          </Link>
+          </NavLink>
         </ul>
       </div>
 
