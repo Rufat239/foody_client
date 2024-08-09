@@ -95,6 +95,8 @@ text-align: left;
     overflow: auto;
     background-color: rgba(243, 244, 246, 1);
     overflow-y: auto; 
+    overflow-x: hidden;
+    cursor: pointer;
 }
 
 .restaurantsContainer::-webkit-scrollbar {
@@ -202,6 +204,7 @@ border-radius: 1% ;
 background-color: rgba(243, 244, 246, 1);
 box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.2);
 overflow-y: auto;
+overflow-x: hidden;
 
 }
 .restaurants_basket::-webkit-scrollbar {
@@ -362,36 +365,65 @@ font-family: Roboto;
 
 }
 .emptyNav span{
-    margin-top: 5px;
-    margin-left: 10px;
+    margin-top: 7px;
+    margin-left: 15px;
     color: rgba(189, 189, 189, 1);
     font-family: Roboto;
     font-weight: 500;
 }
-.emptyImage img  {
-    width: 50%;
-    margin-left: 25%;
-    margin-top: 10%;
+.emptyImage{
+    width: 263px;
+    height: 236px;
 }
-.emptydescription p{
+.emptyImage img{
+width: 100%;
+height: 100%;
+margin-top: 5%;
+}
+.emptydescription{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.emptydescription h2{
     font-family: Roboto;
-    color: rgba(189, 189, 189, 1);
-    font-size: 30px;
+    color: #bdbdbd;
     text-align: center;
-    margin-bottom: 10%;
+    font-family: "Roboto";
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 50px;
+  letter-spacing: 1.2px;
 
 }
-.emptycheck_btn{
+.emptydescription1{
+    margin-top: -10px;
+}
+.emptydescription2{
+    margin-top: -40px;
+
+}
+.emptycheckout{
     display: flex;
     justify-content: space-between;
     margin-left: 2.5%;
     margin-bottom: 15px;
     border-radius: 100px;
     width: 95%;
-    background-color:  rgba(189, 189, 189, 1);
 
 }
-.emptycheck_btn p{
+.emptycheckBtn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: none;
+    border-radius: 100px;
+    background-color: #BDBDBD;
+    padding: 5px 10px 5px 10px;
+}
+.emptycheckBtn p{
     color: white;
     font-family: Roboto;
     font-weight: 500;
@@ -399,7 +431,7 @@ font-family: Roboto;
     margin-left: 4.5%;
     margin-top: 3.5%;
 }
-.emptycheck_btn span{
+.emptycheckBtn span{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -408,10 +440,7 @@ font-family: Roboto;
     font-size: 15px;
     background-color: white;
     color: rgba(189, 189, 189, 1) ;
-    margin-right: 3%;
-    margin-top: 1.2%;
-    margin-bottom: 1.2%;
-    width: 40%;
+    width: 30%;
     height: 40px;
     border-radius: 100px;
 
@@ -505,10 +534,13 @@ font-family: Roboto;
         overflow-y:visible;
     }
     .restaurantsContainer::-webkit-scrollbar {
-        background-color:transparent;
+        background-color:red;
         width: 3px; 
       }
-      
+    .restaurantsContainer::-webkit-scrollbar-track {
+        background: red; 
+      }
+ 
      .price{
         display: flex;
         flex-direction: row;

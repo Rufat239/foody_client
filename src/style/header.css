@@ -51,6 +51,17 @@ body {
 
 .links {
   text-decoration: none;
+  font-family: Roboto;
+  font-size: 18px;
+  color: #828282;
+  font-weight: 600;
+}
+
+.links:hover {
+  color: #d63626;
+}
+.activeLinks {
+  color: #d63626;
 }
 
 .inputBtns {

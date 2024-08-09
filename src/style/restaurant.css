@@ -10,12 +10,13 @@
                                                              /* Section (Sidebar) */ 
 .restaurant_body{
   display: block;
-  width: 120%;
+  width: 130%;
   max-height: 650px;
   margin-right: 10%;
   background-color: rgba(243, 244, 246, 1);
   margin-top: 12%;
   overflow-y: auto;
+
 }
 .restaurant_body::-webkit-scrollbar {
   width: 4px; 
@@ -36,12 +37,11 @@
 }
                                                              
 
-
 .restaurant_side{
 display: flex;
 flex-direction: row;
 padding-block: 0px 10px ;
-
+cursor: pointer;
 }
 .restaurant_side:hover{
   background-color: rgba(214, 54, 38, 0.12);
@@ -70,23 +70,23 @@ margin-top: 20px;
 
 
 
-                                                          /* Section (Restaurant) */
+                                                          /* Section (RestaurantCards) */
                                                         
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 4px; 
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: #ff0000; 
   border-radius: 10px; 
-} */
+}
 
 .restaurantCards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     width: 100%;
     height: 600px;
-    margin-right: 0;
+    margin-left: 1%;
     margin-top: 1.9%;
     overflow-y: auto;
     gap: 20px;
@@ -116,24 +116,24 @@ margin-top: 20px;
   height:auto;
   background-color:rgb(255, 255, 255);
   border-radius: 3px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.25);
   margin-left: 22%;
   margin-top: 1.5%;
 }
 .newlist {
   display: block;
   position: absolute;
-  width:2% ;
-  top: 17.2%;
-  left: 39.8%;
-  background-color:rgba(214, 54, 38, 1);
+  top: 0; 
+  left: 0; 
+  background-color: rgba(214, 54, 38, 1);
   color: white;
-  padding: 5px 10px;
+  padding: 0.3em 0.6em; 
   font-weight: bold;
-  font-size: 14px;
+  font-size: 0.85em; 
   border-radius: 3px;
-  z-index: 1;
+  z-index: 10;
 }
+
 
 .restaurant_cardImage{
   width: 50%;
@@ -178,6 +178,7 @@ margin-top: -4%;
     color: black;
     font-weight: bold;
     font-size: 15px;
+    padding: 3px 0px 3px 0px;
   }
 
 .delivery span{
@@ -190,6 +191,7 @@ margin-top: -4%;
      width: 52px;
      height: 13%;
      border-radius: 30px;
+     padding: 3px 0px 3px 0px;
 
 }
 
@@ -228,6 +230,7 @@ margin-top: -4%;
     overflow-y: auto;
     gap: 10px;
     margin-right: 2.7%;
+    padding: 10px 10px 12px 15px;
     
   }
   .restaurants_card::-webkit-scrollbar {
@@ -282,7 +285,7 @@ margin-top: -4%;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: -5%;
+    margin-top: -10%;
     margin-left: 10%;
   }
 
@@ -294,42 +297,47 @@ margin-top: -4%;
 
   .delivery span {
     font-size: 13px;
-    width: 120px;
+    width: 100px;
     border-radius: 30px;
-    margin-top: -6%;
-    margin-right: 7%;
+    margin-top: -10%;
+    margin-right: 5%;
+    padding: 1px 1px 2px 1px;
   }
   .filterhamburger {
     display: flex;
     flex-direction: column;
     font-family: Roboto;
-    margin-left: 1%;
     margin-top: -6%;
+    margin-left: 5%;
+    width: 400px;
+    height: 100px;
+    overflow-x: hidden;
   }
   
   .filterHead {
     display: flex;
     justify-content: space-between;
     box-shadow: 2px 3px 5px 1px rgba(0, 0, 0, 0.15);
-    width: 400px;
-    margin-left: 3%;
     background-color: rgba(255, 255, 255, 1);
+    padding: 0px 1px 0px 0px;
     cursor: pointer; 
-    margin-top: -3%;
+    margin:0;
+    margin-left: -10px;
   }
   
   .filterIcon img {
-    width: 25px;
-    height: 25px;
-    margin-left: 9rem;
+    width: 35px;
+    height: 35px;
+    margin-left: 8rem;
     margin-top: 5%;
   }
   
   .filterHead p {
-    margin-right: 40%;
-    font-size: 19px;
+    margin-right: 38%;
+    font-size: 25px;
     font-weight: bold;
     margin-top: 3%;
+    font-family: Roboto;
   }
   
   .filterMenu {
@@ -345,19 +353,8 @@ margin-top: -4%;
     left: 0;
     z-index: 1000; 
     max-height: 60vh; 
-    overflow-y: auto; 
-  }
-  .filterMenu::-webkit-scrollbar {
-    width: 2px;
-  }
-  
-  .filterMenu::-webkit-scrollbar-thumb {
-    background:red;
-    border-radius: 3px;
-  }
-  
-  .filterMenu::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1); 
+    padding: 0px 11px 0px 1px;
+    overflow-x:hidden; 
   }
   .filterDelete {
     border-radius: 50%;
@@ -382,11 +379,22 @@ margin-top: -4%;
     text-decoration: none;
     list-style: none;
     text-align: left;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
-    padding: 10px; 
-    border-bottom: 0.1px solid #ccc;;
+    padding: 0px 25px; 
+    border-bottom: 0.1px solid #ccc;
+    cursor: pointer;
+    overflow-y: auto;
   }
+  .menuList li::-webkit-scrollbar {
+    width: 5px;
+    background: red;
+  }
+  
+  .menuList li::-webkit-scrollbar-thumb {
+    background-color:transparent;
+  }
+
   
   
 }

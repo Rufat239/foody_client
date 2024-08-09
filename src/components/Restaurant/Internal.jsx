@@ -4,8 +4,8 @@ import Brand from '../../assets/restaurant_images/brand2.jpg';
 import trash from '../../assets/restaurant_images/trash.jpg';
 import basket from '../../assets/restaurant_images/basket.jpg';
 import pizza from '../../assets/restaurant_images/Pizza.jpg';
-import empty from '../../assets/restaurant_images/empty.jpg';
-import emptyIcon from '../../assets/restaurant_images/iconbasket.jpg';
+import empty from '../../assets/userBasket/emptyBasket.svg';
+import emptyIcon from '../../assets/userBasket/iconBasket.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToBasket, increaseQuantity, removeFromBasket } from '../Redux/actions/basketActions';
@@ -136,18 +136,21 @@ function Internal() {
                 <img src={emptyIcon} alt="Empty Icon" />
                 <span>0 items</span>
               </div>
+              <div className="emptydescription">
               <div className="emptyImage">
                 <img src={empty} alt="Empty" />
               </div>
-              <div className="emptydescription">
-                <p>Oops! Basket empty</p>
+                <h2 className='emptydescription1'>Oops!</h2>
+                <h2 className='emptydescription2'>Basket empty</h2>
               </div>
-              <Link to={'/checkoutPage'}>
-              <div className='emptycheck_btn'>
-                <p>Checkout</p>
-                <span>${totalPrice.toFixed(2)}</span>
+          
+              <div className='emptycheckout'>
+               <button className='emptycheckBtn'>
+                 <p>Checkout</p>
+                <span>$0.00</span>
+               </button>
               </div>
-              </Link>
+      
             
             </div>
           )}
