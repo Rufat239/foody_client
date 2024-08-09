@@ -83,6 +83,8 @@ function Internal() {
           ))}
         </div>
 
+   
+
                                                                    {/* Full basket dizayn */}
 
         <div className="restaurants_basket">

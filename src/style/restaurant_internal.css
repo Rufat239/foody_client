@@ -418,6 +418,10 @@ font-family: Roboto;
 }
 
 
+.ResponsivBasket{
+    display: none;
+}
+
 
 @media screen and (max-width: 431px) {
     .internalMain{
@@ -491,14 +495,20 @@ font-family: Roboto;
     .restaurants_user{
         display: flex;
         justify-content: center;
-        margin-right: 6%;
+        margin-right: 0%;
     }
     .restaurantsContainer {
         width: auto;
         height: auto;
         margin-top: 15px;
         margin-right: 3%;
+        overflow-y:visible;
     }
+    .restaurantsContainer::-webkit-scrollbar {
+        background-color:transparent;
+        width: 3px; 
+      }
+      
      .price{
         display: flex;
         flex-direction: row;
@@ -565,4 +575,5 @@ font-family: Roboto;
     .backbtn {
         display: none;
     }
+  
 }
