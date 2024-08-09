@@ -45,7 +45,7 @@ function Login() {
           <NavLink to='/registerPage'><button className='register-btnswitch'>Register</button></NavLink>
         </div>
         <form onSubmit={handleSubmit}>
-        {error && <p className='error-message'>{error}</p>}
+        {error && <p className='login-error-message'>{error}</p>}
           <div className='username-container-login'>
             <label htmlFor="username">Username</label>
             <div className='login-username-input'>
