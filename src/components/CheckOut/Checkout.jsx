@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addOrder } from '../Redux/actions/orderActions';
+import { clearBasket } from '../Redux/actions/basketActions';
 import '../../style/checkout.css'
 let orderIdCounter = Math.floor(Math.random() * 5000);
 function generateId() {
@@ -34,6 +35,7 @@ function Checkout({ onOrderComplete }) {
             items: basketItems
         };
         dispatch(addOrder(newOrder));
+        dispatch(clearBasket())
         onOrderComplete(newOrder);
     };
     return (
