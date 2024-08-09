@@ -98,6 +98,7 @@ text-align: left;
 }
 
 .restaurantsContainer::-webkit-scrollbar {
+    background-color: red;
     width: 3px; 
   }
   
@@ -205,6 +206,7 @@ overflow-y: auto;
 }
 .restaurants_basket::-webkit-scrollbar {
     width: 3px;
+    background-color: red;
  
   }
 .restaurants_basket::-webkit-scrollbar-track {
@@ -301,7 +303,7 @@ font-family: Roboto;
 .check_btn{
     display: flex;
     justify-content: space-between;
-    margin-top: 45%;
+    margin-top: 10%;
     margin-left: 2.5%;
     margin-bottom: 15px;
     border-radius: 100px;
@@ -416,6 +418,10 @@ font-family: Roboto;
 }
 
 
+.ResponsivBasket{
+    display: none;
+}
+
 
 @media screen and (max-width: 431px) {
     .internalMain{
@@ -489,14 +495,20 @@ font-family: Roboto;
     .restaurants_user{
         display: flex;
         justify-content: center;
-        margin-right: 6%;
+        margin-right: 0%;
     }
     .restaurantsContainer {
         width: auto;
         height: auto;
         margin-top: 15px;
         margin-right: 3%;
+        overflow-y:visible;
     }
+    .restaurantsContainer::-webkit-scrollbar {
+        background-color:transparent;
+        width: 3px; 
+      }
+      
      .price{
         display: flex;
         flex-direction: row;
@@ -563,4 +575,5 @@ font-family: Roboto;
     .backbtn {
         display: none;
     }
+  
 }

@@ -1,4 +1,4 @@
-import { ADD_TO_BASKET, INCREASE_QUANTITY, REMOVE_FROM_BASKET } from '../actions/basketActions';
+import { ADD_TO_BASKET, INCREASE_QUANTITY, REMOVE_FROM_BASKET,CLEAR_BASKET } from '../actions/basketActions';
 
 const initialState = {
   basketItems: [],
@@ -54,7 +54,12 @@ const basketReducer = (state = initialState, action) => {
           basketItems: newBasketItems,
           totalPrice: Math.max(0, state.totalPrice - product.price)
         };
-      }
+      }case CLEAR_BASKET:
+            return {
+              ...state,
+              basketItems: [],
+              totalPrice: 0,
+            }
 
     default:
       return state;
