@@ -75,15 +75,16 @@ function Login() {
                 id="password"
                 name="password"
               />
-            </div>
-
-            <div className='loginEye'>
+                  <div className='loginEye'>
               {
                 (showPass === false) ? <FaRegEye onClick={toggle} className='loginEye-icons' /> :
                   <FaRegEyeSlash onClick={toggle} className='loginEye-icons'/>
               }
 
             </div>
+            </div>
+
+        
           </div>
           <button type="submit" className='login-submit-button'>Log in</button>
         </form>

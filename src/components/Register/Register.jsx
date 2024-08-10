@@ -92,15 +92,15 @@ function Register() {
                 id="password"
                 name="password"
               />
-             
-            </div>
-            <div className='register-loginEye'>
+              <div className='register-loginEye'>
               {
                 (showPass === false) ? <FaRegEye onClick={toggle}  className='loginEye-icons'/> :
                   <FaRegEyeSlash onClick={toggle} className='loginEye-icons'/>
               }
 
             </div>
+            </div>
+           
           </div>
           <button type='submit' className='register-submit-button'>Register</button>
         </form>
