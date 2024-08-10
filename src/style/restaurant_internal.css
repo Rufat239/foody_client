@@ -87,14 +87,16 @@ text-align: left;
     flex-direction: column;
     margin-left: 8%;
     width: 50%;
-    height: 600px;
+    height: 650px;
     margin-top: 30px;
-    margin-left: 40px;
+    margin-left: 35px;
     border-radius: 1%;
     font-family: Roboto, sans-serif;
     overflow: auto;
     background-color: rgba(243, 244, 246, 1);
     overflow-y: auto; 
+    overflow-x: hidden;
+    cursor: pointer;
 }
 
 .restaurantsContainer::-webkit-scrollbar {
@@ -115,19 +117,20 @@ text-align: left;
 .productItem{
     display: flex;
     flex-direction: row;
+    align-items: center;
     margin-bottom: 2%;
-    margin-left: 2%;
-    padding: 0px 20px 20px 0px;
+    margin-left: 6%;
+    padding: 10px 10px 10px 0px;
+    height: 80px;
 
- 
 }
 .productImg{
-    margin-left: 58px;
+    margin-left: 25px;
     display: block;
 }
 .productImg img{
     width: 40px;
-    margin-top: 40px;
+    margin-top: 4px;
 
 }
 .productImg img:hover{
@@ -137,6 +140,7 @@ text-align: left;
 
 .restaurantsInfo{
     margin-left: 30px;
+    margin-top: -24px;
 
 }
 .restaurantsInfo h4{
@@ -151,7 +155,7 @@ text-align: left;
 .price{
     display: flex;
     gap: 15px;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-left: 70px;
 }
 .price span {
@@ -167,10 +171,10 @@ text-align: left;
     font-weight: bold;
 }
 .circlebtn{
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     margin-left: 40px;
-    margin-top: -5px;
+    margin-top: -15px;
     border-radius: 50%;
     border: 1.5px solid rgba(189, 189, 189, 1);
     background-color:rgba(243, 244, 246, 1);
@@ -179,6 +183,7 @@ text-align: left;
     align-items: center;
     font-size: 25px;
     color: rgba(189, 189, 189, 1);
+    padding: 10px 10px 10px 10px;
 }
 
 .circlebtn:hover{
@@ -202,6 +207,7 @@ border-radius: 1% ;
 background-color: rgba(243, 244, 246, 1);
 box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.2);
 overflow-y: auto;
+overflow-x: hidden;
 
 }
 .restaurants_basket::-webkit-scrollbar {
@@ -249,17 +255,18 @@ overflow-y: auto;
     display: flex;
     flex-direction: row;
     margin-top: 6%;
+    padding: 10px 0px 10px 40px;
 }
 .restaurants_image img {
     width:45px;
     height: 45px;
-    margin-left: 40%;
+    margin-left: 20%;
     object-fit: fill;
 }
 .restaurants_info{
 display: flex;
 flex-direction: column;
-margin-left: 10%;
+margin-left: 4%;
 margin-top: -2.6%;
 font-family: Roboto;
 }
@@ -272,6 +279,7 @@ font-family: Roboto;
 }
 .restaurants_info span{
     font-size: 12px;
+    margin-top: -10px;
 }
 
 .restaurants_price{
@@ -281,19 +289,19 @@ font-family: Roboto;
    
 }
 .trash{
-    margin-left: 52%;
+    margin-left: 69%;
 }
 .quantity{
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: white;
-    margin-left: 10%;
-    margin-top: -15%;
+    margin-left: 32%;
+    margin-top: -25%;
     font-weight: 500;
     font-family: Roboto;
-    border-radius:30%;
-    width: 40%;
+    border-radius:50px;
+    width: 33%;
 
 }
 .plus{
@@ -303,15 +311,26 @@ font-family: Roboto;
 .check_btn{
     display: flex;
     justify-content: space-between;
-    margin-top: 10%;
     margin-left: 2.5%;
     margin-bottom: 15px;
     border-radius: 100px;
     width: 95%;
-    background-color: rgba(214, 54, 38, 1);
-    font-family: Roboto;
+    margin-top: 10%;
+
 }
-.check_btn p{
+.checkRedbtn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: none;
+    border-radius: 100px;
+    background-color: rgba(214, 54, 38, 1);
+    padding: 5px 10px 5px 10px;
+    font-family: Roboto;
+
+}
+.checkRedbtn p{
     color: white;
     font-weight: 500;
     font-size: 18px;
@@ -320,7 +339,7 @@ font-family: Roboto;
     
 }
 
-.check_btn span{
+.checkRedbtn span{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -330,7 +349,7 @@ font-family: Roboto;
     margin-right: 3%;
     margin-top: 1.2%;
     margin-bottom: 1.2%;
-    width: 40%;
+    width: 30%;
     height: 40px;
     border-radius: 100px;
     color: black;
@@ -362,36 +381,65 @@ font-family: Roboto;
 
 }
 .emptyNav span{
-    margin-top: 5px;
-    margin-left: 10px;
+    margin-top: 7px;
+    margin-left: 15px;
     color: rgba(189, 189, 189, 1);
     font-family: Roboto;
     font-weight: 500;
 }
-.emptyImage img  {
-    width: 50%;
-    margin-left: 25%;
-    margin-top: 10%;
+.emptyImage{
+    width: 263px;
+    height: 236px;
 }
-.emptydescription p{
+.emptyImage img{
+width: 100%;
+height: 100%;
+margin-top: 5%;
+}
+.emptydescription{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.emptydescription h2{
     font-family: Roboto;
-    color: rgba(189, 189, 189, 1);
-    font-size: 30px;
+    color: #bdbdbd;
     text-align: center;
-    margin-bottom: 10%;
+    font-family: "Roboto";
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 50px;
+  letter-spacing: 1.2px;
 
 }
-.emptycheck_btn{
+.emptydescription1{
+    margin-top: -10px;
+}
+.emptydescription2{
+    margin-top: -40px;
+
+}
+.emptycheckout{
     display: flex;
     justify-content: space-between;
     margin-left: 2.5%;
     margin-bottom: 15px;
     border-radius: 100px;
     width: 95%;
-    background-color:  rgba(189, 189, 189, 1);
 
 }
-.emptycheck_btn p{
+.emptycheckBtn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: none;
+    border-radius: 100px;
+    background-color: #BDBDBD;
+    padding: 5px 10px 5px 10px;
+}
+.emptycheckBtn p{
     color: white;
     font-family: Roboto;
     font-weight: 500;
@@ -399,7 +447,7 @@ font-family: Roboto;
     margin-left: 4.5%;
     margin-top: 3.5%;
 }
-.emptycheck_btn span{
+.emptycheckBtn span{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -408,10 +456,7 @@ font-family: Roboto;
     font-size: 15px;
     background-color: white;
     color: rgba(189, 189, 189, 1) ;
-    margin-right: 3%;
-    margin-top: 1.2%;
-    margin-bottom: 1.2%;
-    width: 40%;
+    width: 30%;
     height: 40px;
     border-radius: 100px;
 
@@ -505,10 +550,13 @@ font-family: Roboto;
         overflow-y:visible;
     }
     .restaurantsContainer::-webkit-scrollbar {
-        background-color:transparent;
+        background-color:red;
         width: 3px; 
       }
-      
+    .restaurantsContainer::-webkit-scrollbar-track {
+        background: red; 
+      }
+ 
      .price{
         display: flex;
         flex-direction: row;
@@ -523,7 +571,7 @@ font-family: Roboto;
 
     .price p {
         display: block;
-        margin-left: 10%;
+        margin-left: 20%;
     }
     .productItem{
         margin-left: -5%;
