@@ -116,13 +116,15 @@
 
 .loginEye {
   position: absolute;
-  right: 2%;
-  top: 50%;
+  right: 8%;
+  bottom: 44.2%;
   transform: translate(-2%, -50%);
-  height: 32px;
-  width: 28px;
   cursor: pointer;
 }
+.loginEye-icons{
+   font-size: 25px;
+}
+
 
 .login-submit-button {
   border: none;
