@@ -1,8 +1,8 @@
 import React from 'react';
 import "../../style/restaurant_internal.css";
 import Brand from '../../assets/restaurant_images/brand2.jpg';
-import trash from '../../assets/restaurant_images/trash.jpg';
-import basket from '../../assets/restaurant_images/basket.jpg';
+import trash from '../../assets/userBasket/deleteIcon.svg';
+import basket from '../../assets/userBasket/redBasket.png';
 import pizza from '../../assets/restaurant_images/Pizza.jpg';
 import empty from '../../assets/userBasket/emptyBasket.svg';
 import emptyIcon from '../../assets/userBasket/iconBasket.svg';
@@ -10,13 +10,17 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToBasket, increaseQuantity, removeFromBasket } from '../Redux/actions/basketActions';
 
+
 const productList = [
   { id: 1, image: pizza, name: 'Papa John’s Pizza Restaurant', description: 'Prepared with a patty, a slice of cheese and special sauce', price: 7.90 },
   { id: 2, image: pizza, name: 'Papa John’s Pizza Restaurant', description: 'Prepared with a patty, a slice of cheese and special sauce', price: 7.90 },
   { id: 3, image: pizza, name: 'Papa John’s Pizza Restaurant', description: 'Prepared with a patty, a slice of cheese and special sauce', price: 7.90 },
   { id: 4, image: pizza, name: 'Papa John’s Pizza Restaurant', description: 'Prepared with a patty, a slice of cheese and special sauce', price: 7.90 },
   { id: 5, image: pizza, name: 'Papa John’s Pizza Restaurant', description: 'Prepared with a patty, a slice of cheese and special sauce', price: 7.90 },
-  { id: 6, image: pizza, name: 'Papa John’s Pizza Restaurant', description: 'Prepared with a patty, a slice of cheese and special sauce', price: 7.90 }
+  { id: 6, image: pizza, name: 'Papa John’s Pizza Restaurant', description: 'Prepared with a patty, a slice of cheese and special sauce', price: 7.90 },
+  { id: 7, image: pizza, name: 'Papa John’s Pizza Restaurant', description: 'Prepared with a patty, a slice of cheese and special sauce', price: 7.90 },
+  { id: 8, image: pizza, name: 'Papa John’s Pizza Restaurant', description: 'Prepared with a patty, a slice of cheese and special sauce', price: 7.90 },
+  { id: 9, image: pizza, name: 'Papa John’s Pizza Restaurant', description: 'Prepared with a patty, a slice of cheese and special sauce', price: 7.90 }
 ];
 
 function Internal() {
@@ -60,9 +64,10 @@ function Internal() {
         </div>
       </div>
 
-      <div className="restaurants_user">
+                                                                   {/* Product List dizayn */} 
 
-                                                                        {/* Product List dizayn */}
+      <div className="restaurants_user">
+                                                                           
         <div className='restaurantsContainer'>
           <h3>Products</h3>
           {productList.map((product, index) => (
@@ -91,18 +96,18 @@ function Internal() {
           {basketItems.length > 0 && (
             <div className='restaurants_nav'>
               <div className='bskt_image'>
-                <img src={basket} alt="Basket" />
+                <img src={basket}  />
               </div>
               <div className='bskt_num'>
                 <p><span>{basketItems.reduce((sum, item) => sum + item.quantity, 0)}</span> items</p>
               </div>
             </div>
-          )}
-                                                             
+          )}                                              
           {basketItems.length > 0 ? (
             <div className='restaurants_common'>
               {basketItems.map((item, index) => (
                 <div className='restaurants_text' key={index}>
+      
                   <div className='restaurants_image'>
                     <img src={item.image} alt="Product" />
                   </div>
@@ -120,17 +125,22 @@ function Internal() {
                       <span onClick={() => dispatch(removeFromBasket(index))}>—</span>
                     </div>
                   </div>
+
+              
                 </div>
               ))}
               <Link to={'/checkoutPage'}>
                 <div className='check_btn'>
+                  <button className='checkRedbtn'>
                   <p>Checkout</p>
                   <span>${totalPrice.toFixed(2)}</span>
+                  </button>
+                  
                 </div>
               </Link>
             </div>
           ) : (                                               
-                                                          // Empty basket dizayn
+                                                        
             <div className="emptyBasket">
               <div className="emptyNav">
                 <img src={emptyIcon} alt="Empty Icon" />
@@ -140,7 +150,7 @@ function Internal() {
               <div className="emptyImage">
                 <img src={empty} alt="Empty" />
               </div>
-                <h2 className='emptydescription1'>Oops!</h2>
+                <h2 className='emptydescription1'>Opps!</h2>
                 <h2 className='emptydescription2'>Basket empty</h2>
               </div>
           
@@ -154,7 +164,7 @@ function Internal() {
             
             </div>
           )}
-        </div>
+        </div> 
       </div>
     </div>
   );
