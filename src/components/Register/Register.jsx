@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../style/register.css';
-import Eye from '../../assets/loginimages/eye.svg';
+import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
 import image from '../../assets/loginimages/Register.png'
 import { NavLink, useNavigate } from 'react-router-dom';
 
@@ -11,6 +11,12 @@ function Register() {
   const [pass, setPass] = useState('');
   const [showPass, setShowPass] = useState(false);
   const navigate = useNavigate();
+
+  
+  const toggle = () => {
+    setShowPass(!showPass)
+
+  }
 
 
   const handleSubmit = (e) => {
@@ -86,7 +92,14 @@ function Register() {
                 id="password"
                 name="password"
               />
-              <img className='loginEye' src={Eye} onClick={() => setShowPass(!showPass)} />
+             
+            </div>
+            <div className='register-loginEye'>
+              {
+                (showPass === false) ? <FaRegEye onClick={toggle}  className='loginEye-icons'/> :
+                  <FaRegEyeSlash onClick={toggle} className='loginEye-icons'/>
+              }
+
             </div>
           </div>
           <button type='submit' className='register-submit-button'>Register</button>

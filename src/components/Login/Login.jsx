@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import '../../style/login.css';
-import Eye from '../../assets/loginimages/eye.svg';
+import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
 import image from '../../assets/loginimages/Login.png'
 import { NavLink, useNavigate } from 'react-router-dom';
+
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -18,7 +19,10 @@ function Login() {
     }
   }, [navigate]);
 
+  const toggle = () => {
+    setShowPass(!showPass)
 
+  }
   const handleSubmit = (e) => {
     e.preventDefault();
     const users = JSON.parse(localStorage.getItem('users')) || [];
@@ -29,6 +33,7 @@ function Login() {
     } else {
       setError('Invalid username or password');
     }
+
   };
 
 
@@ -45,7 +50,7 @@ function Login() {
           <NavLink to='/registerPage'><button className='register-btnswitch'>Register</button></NavLink>
         </div>
         <form onSubmit={handleSubmit}>
-        {error && <p className='login-error-message'>{error}</p>}
+          {error && <p className='login-error-message'>{error}</p>}
           <div className='username-container-login'>
             <label htmlFor="username">Username</label>
             <div className='login-username-input'>
@@ -70,10 +75,17 @@ function Login() {
                 id="password"
                 name="password"
               />
-              <img className='loginEye' src={Eye} onClick={() => setShowPass(!showPass)} />
+            </div>
+
+            <div className='loginEye'>
+              {
+                (showPass === false) ? <FaRegEye onClick={toggle} className='loginEye-icons' /> :
+                  <FaRegEyeSlash onClick={toggle} className='loginEye-icons'/>
+              }
+
             </div>
           </div>
-           <button type="submit" className='login-submit-button'>Log in</button>
+          <button type="submit" className='login-submit-button'>Log in</button>
         </form>
       </div>
 
