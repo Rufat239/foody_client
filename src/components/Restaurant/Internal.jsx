@@ -69,8 +69,11 @@ function Internal() {
       <div className="restaurants_user">
                                                                            
         <div className='restaurantsContainer'>
+          <div className="productHead">
           <h3>Products</h3>
-          {productList.map((product, index) => (
+          </div>
+         <div className="restaurantProduct">
+         {productList.map((product, index) => (
             <div key={index} className='productItem'>
               <div className='productImg'>
                 <img src={product.image} alt="Product" />
@@ -86,6 +89,9 @@ function Internal() {
               </div>
             </div>
           ))}
+
+         </div>
+       
         </div>
 
    
