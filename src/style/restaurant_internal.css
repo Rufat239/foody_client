@@ -85,7 +85,7 @@ text-align: left;
 .restaurantsContainer {
     display: flex;
     flex-direction: column;
-    margin-left: 8%;
+    position: relative;
     width: 50%;
     height: 650px;
     margin-top: 30px;
@@ -109,10 +109,13 @@ text-align: left;
   }
   
 .restaurantsContainer h3{
+    position: -webkit-sticky; 
+    position: sticky;
     display: block;
     text-align: center;
     margin-top: 40px;
     font-size: 23px;
+    z-index: 1000;
 }
 .productItem{
     display: flex;
@@ -210,14 +213,7 @@ overflow-y: auto;
 overflow-x: hidden;
 
 }
-.restaurants_basket::-webkit-scrollbar {
-    width: 3px;
-    background-color: red;
- 
-  }
-.restaurants_basket::-webkit-scrollbar-track {
-    background: transparent; 
-  }
+
 .restaurants_nav{
     display: flex;
     flex-direction: row;
@@ -246,11 +242,19 @@ overflow-x: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-.restaurants_common a{
-    text-decoration: none;
+    overflow-y: auto;
+
+    height: 250px;
 }
 
+.restaurants_common::-webkit-scrollbar {
+    width: 3px;
+    background-color: red;
+ 
+  }
+.restaurants_common::-webkit-scrollbar-track {
+    background: transparent; 
+  }
 .restaurants_text{
     display: flex;
     flex-direction: row;
@@ -318,6 +322,9 @@ font-family: Roboto;
     margin-top: 10%;
 
 }
+.checkRedArea a{
+    text-decoration: none;
+}
 .checkRedbtn{
     display: flex;
     justify-content: space-between;
@@ -330,16 +337,18 @@ font-family: Roboto;
     font-family: Roboto;
 
 }
-.checkRedbtn p{
+  
+.checkP{
     color: white;
     font-weight: 500;
     font-size: 18px;
     margin-left: 4.5%;
     margin-top: 3.5%;
+
     
 }
 
-.checkRedbtn span{
+.checkS{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -353,6 +362,7 @@ font-family: Roboto;
     height: 40px;
     border-radius: 100px;
     color: black;
+ 
 
 }
 

@@ -103,74 +103,75 @@ function Internal() {
               </div>
             </div>
           )}                                              
-          {basketItems.length > 0 ? (
-            <div className='restaurants_common'>
-              {basketItems.map((item, index) => (
-                <div className='restaurants_text' key={index}>
-      
-                  <div className='restaurants_image'>
-                    <img src={item.image} alt="Product" />
-                  </div>
-                  <div className='restaurants_info'>
-                    <p>{item.name}</p>
-                    <span>${(item.price * item.quantity).toFixed(2)}</span>
-                  </div>
-                  <div className='restaurants_price'>
-                    <div className='trash' onClick={() => dispatch(removeFromBasket(index, true))}>
-                      <img src={trash} alt="Remove" />
-                    </div>
-                    <div className='quantity'>
-                      <span className='plus' onClick={() => dispatch(increaseQuantity(item))}>+</span>
-                      <p>{item.quantity}</p>
-                      <span onClick={() => dispatch(removeFromBasket(index))}>—</span>
-                    </div>
-                  </div>
+        {basketItems.length > 0 ? (
+  <div className='restaurants_common'>
+    {basketItems.map((item, index) => (
+      <div className='restaurants_text' key={index}>
+        <div className='restaurants_image'>
+          <img src={item.image} alt="Product" />
+        </div>
+        <div className='restaurants_info'>
+          <p>{item.name}</p>
+          <span>${(item.price * item.quantity).toFixed(2)}</span>
+        </div>
+        <div className='restaurants_price'>
+          <div className='trash' onClick={() => dispatch(removeFromBasket(index, true))}>
+            <img src={trash} alt="Remove" />
+          </div>
+          <div className='quantity'>
+            <span className='plus' onClick={() => dispatch(increaseQuantity(item))}>+</span>
+            <p>{item.quantity}</p>
+            <span onClick={() => dispatch(removeFromBasket(index))}>—</span>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+) : (
+  <div className="emptyBasket">
+    <div className="emptyNav">
+      <img src={emptyIcon} alt="Empty Icon" />
+      <span>0 items</span>
+    </div>
+    <div className="emptydescription">
+      <div className="emptyImage">
+        <img src={empty} alt="Empty" />
+      </div>
+      <h2 className='emptydescription1'>Opps!</h2>
+      <h2 className='emptydescription2'>Basket empty</h2>
+    </div>
+    <div className='emptycheckout'>
+      <button className='emptycheckBtn'>
+        <p>Checkout</p>
+        <span>$0.00</span>
+      </button>
+    </div>
+  </div>
+)}
 
-              
-                </div>
-              ))}
-              <Link to={'/checkoutPage'}>
-                <div className='check_btn'>
-                  <button className='checkRedbtn'>
-                  <p>Checkout</p>
-                  <span>${totalPrice.toFixed(2)}</span>
-                  </button>
-                  
-                </div>
-              </Link>
-            </div>
-          ) : (                                               
-                                                        
-            <div className="emptyBasket">
-              <div className="emptyNav">
-                <img src={emptyIcon} alt="Empty Icon" />
-                <span>0 items</span>
-              </div>
-              <div className="emptydescription">
-              <div className="emptyImage">
-                <img src={empty} alt="Empty" />
-              </div>
-                <h2 className='emptydescription1'>Opps!</h2>
-                <h2 className='emptydescription2'>Basket empty</h2>
-              </div>
-          
-              <div className='emptycheckout'>
-               <button className='emptycheckBtn'>
-                 <p>Checkout</p>
-                <span>$0.00</span>
-               </button>
-              </div>
-      
-            
-            </div>
-          )}
+{basketItems.length > 0 && (
+  <div className="checkRedArea">
+      <Link to={'/checkoutPage'}>
+    <div className='check_btn'>
+      <button className='checkRedbtn'>
+        <p className='checkP'>Checkout</p>
+        <span className='checkS'>${totalPrice.toFixed(2)}</span>
+      </button>
+    </div>
+  </Link>
+
+  </div>
+
+)}
+
         </div> 
       </div>
     </div>
   );
 }
 
-export default Internal;
 
+
+export default Internal;
 
 
