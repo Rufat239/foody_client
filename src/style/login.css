@@ -116,8 +116,8 @@
 
 .loginEye {
   position: absolute;
-  right: 8%;
-  bottom: 44.2%;
+  right: 6%;
+  top: 54%;
   transform: translate(-2%, -50%);
   cursor: pointer;
 }
