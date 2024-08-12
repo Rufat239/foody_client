@@ -203,12 +203,6 @@ margin-top: -4%;
   display: none;
 }
 
-@media screen and (max-width: 1440px){
-  .newlist{
-    top: 15%;
-    left: 41%;
-  }
-}
 
 @media screen and (max-width: 431px) {
   .main {

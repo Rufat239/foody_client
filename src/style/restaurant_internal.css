@@ -10,6 +10,7 @@
     width: 100%;
     font-family: Roboto;
     margin-top: 0.5%;
+    border-bottom: 1px solid #e0e0e0;
     
 }
 .profileImg{
@@ -25,6 +26,7 @@
 .information{
     display: flex;
    justify-content: space-between;
+ 
    
 }
 .restaurantsbutton{
@@ -34,6 +36,7 @@
 }
 .restaurantName{
     margin-left: 40px;
+    margin-top: -2%;
 }
 .productName{
     color:rgba(130, 130, 130, 1);
@@ -85,7 +88,7 @@ text-align: left;
 .restaurantsContainer {
     display: flex;
     flex-direction: column;
-    margin-left: 8%;
+    position: relative;
     width: 50%;
     height: 650px;
     margin-top: 30px;
@@ -93,36 +96,46 @@ text-align: left;
     border-radius: 1%;
     font-family: Roboto, sans-serif;
     overflow: auto;
-    background-color: rgba(243, 244, 246, 1);
-    overflow-y: auto; 
+    background-color: rgba(243, 244, 246, 1); 
     overflow-x: hidden;
     cursor: pointer;
 }
+.productHead {
+    position: sticky;
+  
+    z-index: 1000;
+}
+.productHead h3{
+    display: block;
+    border-bottom: 1px solid rgba(130, 130, 130, 0.2); 
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 23px;
+}
+.restaurantProduct{
+    display: flex;
+    flex-direction: column;
+    flex-direction: column;
+    height: auto;
+    overflow-y: auto;
+}
 
-.restaurantsContainer::-webkit-scrollbar {
+.restaurantProduct::-webkit-scrollbar {
     background-color: red;
     width: 3px; 
   }
   
-.restaurantsContainer::-webkit-scrollbar-track {
+.restaurantProduct::-webkit-scrollbar-track {
     background: transparent; 
   }
-  
-.restaurantsContainer h3{
-    display: block;
-    text-align: center;
-    margin-top: 40px;
-    font-size: 23px;
-}
 .productItem{
     display: flex;
-    flex-direction: row;
+   justify-content: center;
     align-items: center;
     margin-bottom: 2%;
-    margin-left: 6%;
-    padding: 10px 10px 10px 0px;
+    padding: 10px 10px 10px;
     height: 80px;
-
+    border-bottom: 1px solid #e0e0e0; 
 }
 .productImg{
     margin-left: 25px;
@@ -210,19 +223,13 @@ overflow-y: auto;
 overflow-x: hidden;
 
 }
-.restaurants_basket::-webkit-scrollbar {
-    width: 3px;
-    background-color: red;
- 
-  }
-.restaurants_basket::-webkit-scrollbar-track {
-    background: transparent; 
-  }
+
 .restaurants_nav{
     display: flex;
     flex-direction: row;
     margin-top: 3%;
     margin-left: 4%;
+    border-bottom: 1px solid #e0e0e0;
 }
 .bskt_image{
     width: 25px;
@@ -236,7 +243,7 @@ overflow-x: hidden;
 }
 
 .bskt_num{
-    margin-top: -8px;
+    margin-top: -2.2%;
     margin-left: 15px;
     color: rgba(214, 54, 38, 1);
     font-family: Roboto;
@@ -246,21 +253,31 @@ overflow-x: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-.restaurants_common a{
-    text-decoration: none;
+    overflow-y: auto;
+    height: 250px;
+
 }
 
+.restaurants_common::-webkit-scrollbar {
+    width: 3px;
+    background-color: red;
+ 
+  }
+.restaurants_common::-webkit-scrollbar-track {
+    background: transparent; 
+  }
 .restaurants_text{
     display: flex;
     flex-direction: row;
     margin-top: 6%;
-    padding: 10px 0px 10px 40px;
+    padding: 5px 0px 0px 35px;
+    border-bottom: 1px solid #e0e0e0; 
+    height: 100px;
+  
 }
 .restaurants_image img {
     width:45px;
     height: 45px;
-    margin-left: 20%;
     object-fit: fill;
 }
 .restaurants_info{
@@ -297,11 +314,12 @@ font-family: Roboto;
     align-items: center;
     background-color: white;
     margin-left: 32%;
-    margin-top: -25%;
+    margin-top: -35%;
     font-weight: 500;
     font-family: Roboto;
     border-radius:50px;
     width: 33%;
+    padding: 1px 1px 1px 1px;
 
 }
 .plus{
@@ -318,6 +336,9 @@ font-family: Roboto;
     margin-top: 10%;
 
 }
+.checkRedArea a{
+    text-decoration: none;
+}
 .checkRedbtn{
     display: flex;
     justify-content: space-between;
@@ -330,16 +351,18 @@ font-family: Roboto;
     font-family: Roboto;
 
 }
-.checkRedbtn p{
+  
+.checkP{
     color: white;
     font-weight: 500;
     font-size: 18px;
     margin-left: 4.5%;
     margin-top: 3.5%;
+
     
 }
 
-.checkRedbtn span{
+.checkS{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -353,6 +376,7 @@ font-family: Roboto;
     height: 40px;
     border-radius: 100px;
     color: black;
+ 
 
 }
 
@@ -463,10 +487,9 @@ margin-top: 5%;
 }
 
 
-.ResponsivBasket{
+.responsivBasketMain{
     display: none;
 }
-
 
 @media screen and (max-width: 431px) {
     .internalMain{
@@ -537,25 +560,22 @@ margin-top: 5%;
         width: 72px;
         height: 52px;
     }
-    .restaurants_user{
-        display: flex;
-        justify-content: center;
-        margin-right: 0%;
-    }
-    .restaurantsContainer {
+    .restaurants_user { 
+        margin: 0;
+        margin-bottom: 10%;
+      }
+      
+      .restaurantsContainer {
         width: auto;
         height: auto;
-        margin-top: 15px;
-        margin-right: 3%;
-        overflow-y:visible;
+        left: 1.7%;
+        position: relative;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px; 
+        margin: 0;
+        margin-bottom: 10px;
+      
     }
-    .restaurantsContainer::-webkit-scrollbar {
-        background-color:red;
-        width: 3px; 
-      }
-    .restaurantsContainer::-webkit-scrollbar-track {
-        background: red; 
-      }
  
      .price{
         display: flex;
@@ -574,15 +594,16 @@ margin-top: 5%;
         margin-left: 20%;
     }
     .productItem{
-        margin-left: -5%;
+        margin-left: -10%;
         padding: 0;
         width: 430px;
         height: 150px;
+        margin-bottom: 20px;
     }
     .restaurantsInfo {
         display: flex;
         flex-direction: column;
-        margin-right: -70px;
+        margin-right: -20px;
       
     }
 
@@ -623,5 +644,225 @@ margin-top: 5%;
     .backbtn {
         display: none;
     }
-  
+
+
+.responsivBasketMain{
+        display: block;
+    }
+   
+.responsivProdcut1{
+    display: flex;
+    flex-direction: column;
+    font-family: Roboto;
+    position: absolute;
+    background-color: white;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    width: 430px;
+    position: fixed; 
+    bottom: 0; 
+    left: 0;
+    z-index: 1000; 
+    height: 60vh; 
+    padding: 0px 11px 0px 1px;
+    overflow-x:hidden; 
+    overflow-y: auto;
+    
+    
+    }
+
+.responsivItem{
+  display: flex;
+  justify-content: space-around;
+  position: absolute; 
+  bottom: -69rem; 
+  left: 4px;
+  width: 100%; 
+  align-items: center;
+  font-family: Roboto;
+  color: white;
+  background-color: red;
+  border: none;
+  border-radius: 50px; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    }
+    .itemImage{
+        width: 25px;
+        height: 25px;
+    
+    }
+    .itemImage img{
+     
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+    .responsivItem p{
+        margin-top: 20px;
+        margin-right: 49%;
+        font-family: Roboto;
+        font-weight: bold;
+    
+    }
+    .checkR{
+        font-weight: 500;
+        font-size: 15px;
+        background-color: white;
+        padding: 4px 5px 5px 0px;
+        width: 18%;
+        height: 20px;
+        border-radius: 100px;
+        color:red;
+
+    }
+    .responsivDelete{
+        margin-top: 5%;
+        margin-left: 45%;
+       
+    }
+    .responsivDelete button{
+    border: 1px solid rgba(189, 189, 189, 1);
+    background-color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+
+    }
+    .responsivBasket{
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        height:200px ;
+     
+    }
+    .responsivBasketList::-webkit-scrollbar {
+        width: 4px;
+        background: red;
+        border-radius: 6px;
+    }
+    
+    .responsivlist{
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+    
+    }
+ 
+    .responsivImage {
+        margin-left: 10px;
+    }
+    .responsivImage img{
+        width: 40px;
+        height: 40px;
+        margin-top: 50%;
+    }
+    .responsivExplain{
+        display: flex;
+        flex-direction: column;
+        margin-top: 2%;
+       
+    }
+
+    .responsivExplain p{
+        width: 250px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: black;
+        margin-right: 20%;
+    }
+    .responsivQuantity{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color:rgba(243, 244, 246, 1);
+        margin-right: 5%;
+        margin-top: 3%;
+        font-weight: 500;
+        font-family: Roboto;
+        border-radius:35%;
+        width: 9%;
+    
+    }
+    .responsivPlus{
+        margin-top: 15.2%;
+    }
+    .responsivCheck {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background-color: rgba(214, 54, 38, 1);
+     border: none;
+     border-radius: 100px;
+     padding: 10px 0px 10px 0px;
+     color: white;
+     font-family: Roboto;
+     font-weight: bold;
+     width: 80%;
+     height: 50px;
+     margin-left: 9%;
+     margin-bottom: 5%;
+        
+    }
+     
+    .responsivText{
+        margin-left: 10%;
+       
+    }
+    .responsivPrice{
+        background-color: white;
+        width:15% ;
+        padding: 4px 0px 4px 0px;
+        color: rgba(214, 54, 38, 1) ;
+        margin-right: 10%;
+        border-radius: 50px;
+    }
+    .responsivButton a{
+        text-decoration: none;
+        margin: 40%;
+    }
+    .Responsivemptydescription1{
+        margin-top: 10px;
+    }
+    .Responsivemptydescription2{
+        margin-top: -10px;
+    }
+    .responsivEmpty h2 {
+        color: red;
+    }
+    .ResponsivemptycheckBtn{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 5%;
+        margin-left: 1.2%;
+        width: 100%;
+        border: none;
+        border-radius: 100px;
+        background-color: #BDBDBD;
+        padding: 5px 10px 5px 10px;
+    }
+    .ResponsivemptycheckBtn p{
+        color: white;
+        font-family: Roboto;
+        font-weight: 500;
+        font-size: 18px;
+        margin-left: 4.5%;
+        margin-top: 3.5%;
+    }
+    .ResponsivemptycheckBtn span{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Roboto;
+        font-weight: 500;
+        font-size: 15px;
+        background-color: white;
+        color: rgba(189, 189, 189, 1) ;
+        width: 30%;
+        height: 40px;
+        border-radius: 100px;
+    
+    }
 }
