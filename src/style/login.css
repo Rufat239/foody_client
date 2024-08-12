@@ -1,35 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-
 .login-form-container {
   display: flex;
   margin-top: 2%;
 }
-
 .login-image {
   width: 50%;
-  height: auto;
+  height: 860px;
   border-radius: 4px;
   background: var(--Red, #EB5757);
   display: flex;
   align-items: flex-start;
   justify-content: center;
 }
-
 .login-image img {
   width: 84%;
   height: auto;
   padding-left: 0;
-  vertical-align: top;
+  
+  
 }
-
 .login-form {
   width: 45%;
   padding-inline: 2%;
   margin-top: 5%;
   transform: translateX(1.5em);
 }
-
 .login-buttons {
   margin-bottom: 72px;
   gap: 65px;
@@ -37,7 +33,6 @@
   justify-content: center;
   margin-left: 8%;
 }
-
 .login-btnSwitch {
   color: var(--Red, #EB5757);
   font-size: 30px;
@@ -47,7 +42,6 @@
   background-color: rgb(255, 255, 255);
   letter-spacing: 0.9px;
 }
-
 .register-btnswitch {
   color: var(--Gray-3, #828282);
   font-size: 30px;
@@ -56,76 +50,63 @@
   border: none;
   background-color: rgb(255, 255, 255);
   letter-spacing: 0.9px;
-
 }
-
 .username-container-login,
 .password-container-login {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-
 .password-container-login {
   margin-top: 40px;
 }
-
-
 .username-container-login label,
 .password-container-login label {
-  color: #4f4f4f;
+  color: #4F4F4F;
   font-size: 20px;
   font-family: Roboto;
   font-weight: 500;
   letter-spacing: 0.6px;
 }
-
 .login-username-input input,
 .login-password-input input {
-  width: 96%;
+  width: 92%;
   border: none;
   border-radius: 5px;
   background-color: #FFE7E7;
-  padding: 25px 10px;
+  padding: 25px 25px;
 }
-
+.login-username-input input:focus,
+.login-password-input input:focus{
+  outline: none;
+}
 .login-username-input ::placeholder {
   color: var(--Gray-2, #4F4F4F);
   font-family: "Roboto";
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   letter-spacing: 0.54px;
-  padding-left: 4px;
-
-
 }
-
 .login-password-input ::placeholder {
   color: var(--Gray-2, #4F4F4F);
   font-family: "Roboto";
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 0.54px;
-  padding-left: 4px;
-
 }
-
 .login-password-input {
   position: relative;
 }
 
 .loginEye {
   position: absolute;
-  right: 6%;
-  top: 54%;
-  transform: translate(-2%, -50%);
+  right: 3%;
+  bottom: 24%;
   cursor: pointer;
 }
 .loginEye-icons{
    font-size: 25px;
 }
-
-
 .login-submit-button {
   border: none;
   background-color: #EB5757;
@@ -140,89 +121,86 @@
   font-weight: 500;
   letter-spacing: 0.66px;
   border-radius: 5px;
-
 }
-.login-error-message{
+.username-error-login,
+.password-error-login {
   color: #EB5757;
   font-family: Roboto;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 400;
 }
-
+input.login-error-input {
+  border: 2px solid red;
+}
+input.login-error-input:focus {
+  border: 2px solid red;
+}
+input.login-success-input {
+  border: 2px solid green;
+}
+input.login-success-input:focus {
+  border: 2px solid green;
+}
+.login-submit-button:disabled{
+  background-color: #828282;
+}
 @media screen and (max-width: 431px) {
   .login-form-container {
     display: flex;
     margin-top: 0%;
     flex-direction: column;
   }
-
   .login-image {
     width: 90%;
     margin-left: 6%;
     margin-top: 5%;
     height: 190px;
     padding-top: 0;
+
     display: flex;
     align-items: flex-start;
     justify-content: center;
-
   }
-
   .login-image img {
-    width: 56%;
-    height: auto;
-    margin-top: -13%;
-
+    width: 46%;
+    height: 220px;
+    padding-top: 0;
+    
   }
-
   .login-form {
     width: 90%;
     padding-inline: 0%;
     margin-top: 12%;
-
   }
-
   .login-buttons {
     margin-bottom: 17%;
     gap: 34px;
     display: flex;
     justify-content: center;
     margin-left: 0%;
-
   }
-
   .login-btnSwitch,
   .register-btnswitch {
     font-size: 25px;
   }
-
   .username-container-login label,
   .password-container-login label {
     font-size: 18px;
   }
-
   .login-submit-button {
     margin-top: 12%;
   }
-
   .password-container-login {
     margin-top: 6%;
   }
-
   .login-username-input input,
   .login-password-input input {
     width: 96%;
     padding: 23px 10px;
-
   }
-
   .login-username-input ::placeholder,
   .login-password-input ::placeholder {
     font-size: 18px;
     padding-left: 0px;
-
   }
-
-
-
 }

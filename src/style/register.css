@@ -5,31 +5,27 @@
     display: flex;
     margin-top: 2%;
 }
-
 .register-image {
     width: 50%;
-    height: 52.5rem;
+    height: auto;
     border-radius: 4px;
     background: var(--Red, #EB5757);
     display: flex;
     align-items: flex-start;
     justify-content: center;
 }
-
 .register-image img {
-    width: 79%;
+    width: 59%;
     height: auto;
     padding-left: 6.875em;
-    padding-top: 4.375em;
+    padding-top: 9.375em;
 }
-
 .register-form {
     width: 45%;
     padding-inline: 2%;
     margin-top: 5%;
     transform: translateX(1.5em);
 }
-
 .register-buttons {
     margin-bottom: 66px;
     gap: 66px;
@@ -37,7 +33,6 @@
     justify-content: center;
     margin-left: 8%;
 }
-
 .login-box-btnSwitch {
     color: var(--Gray-3, #828282);
     font-size: 30px;
@@ -47,7 +42,6 @@
     background-color: rgb(255, 255, 255);
     letter-spacing: 0.9px;
 }
-
 .register-box-btnswitch {
     color: var(--Red, #EB5757);
     font-size: 30px;
@@ -56,9 +50,7 @@
     border: none;
     background-color: rgb(255, 255, 255);
     letter-spacing: 0.9px;
-
 }
-
 .fullName-container-register,
 .username-container-register,
 .email-container-register,
@@ -67,71 +59,65 @@
     flex-direction: column;
     gap: 10px;
 }
-
 .username-container-register,
 .email-container-register,
 .password-container-register {
     margin-top: 30px;
 }
-
 .fullName-container-register label,
 .username-container-register label,
 .email-container-register label,
 .password-container-register label {
-    color: #4f4f4f;
+    color: #4F4F4F;
     font-size: 20px;
     font-family: Roboto;
     font-weight: 500;
     letter-spacing: 0.6px;
 }
-
 .fullName-input-register input,
 .username-input-register input,
 .email-input-register input,
 .register-password-input input {
-    width: 96%;
+    width: 92%;
     border: none;
     border-radius: 5px;
     background-color: #FFE7E7;
-    padding: 25px 10px;
+    padding: 25px 25px;
 }
-
+.fullName-input-register input:focus,
+.username-input-register input:focus,
+.email-input-register input:focus,
+.register-password-input input:focus {
+    outline: none;
+}
 .fullName-input-register ::placeholder,
 .username-input-register ::placeholder,
 .email-input-register ::placeholder {
     color: var(--Gray-2, #4F4F4F);
     font-family: "Roboto";
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
     letter-spacing: 0.54px;
-    padding-left: 4px;
 }
-
 .register-password-input ::placeholder {
     color: var(--Gray-2, #4F4F4F);
     font-family: "Roboto";
     font-size: 18px;
     font-weight: 400;
     letter-spacing: 0.54px;
-    padding-left: 4px;
 }
-
 .register-password-input {
     position: relative;
 }
-
 .register-loginEye {
     position: absolute;
-    right: 6%;
-    top: 54%;
-    transform: translate(-2%, -50%);
+    right: 4%;
+    bottom:24%;
     cursor: pointer;
 }
-
-.loginEye-icons{
+.loginEye-icons {
     font-size: 25px;
- }
-
+}
 .register-submit-button {
     border: none;
     background-color: #EB5757;
@@ -139,24 +125,46 @@
     padding: 20px 10px;
     margin-left: 0;
     margin-right: 0;
-    margin-top: 50px;
     color: #fff;
     font-family: 'Roboto';
     font-size: 22px;
     font-weight: 500;
     letter-spacing: 0.66px;
     border-radius: 5px;
-
+    margin-top: 77px;
+    margin-bottom: 10%;
+    
 }
-
+.fullname-error-register,
+.username-error-register,
+.email-error-register,
+.password-error-register {
+    color: #EB5757;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+}
+input.register-error-input {
+    border: 2px solid red;
+}
+input.register-error-input:focus {
+    border: 2px solid red;
+}
+input.register-success-input:focus {
+    border: 2px solid green;
+}
+input.register-success-input {
+    border: 2px solid green;
+}
+.register-submit-button:disabled {
+    background-color: #828282;
+}
 @media screen and (max-width: 431px) {
     .register-form-container {
         display: flex;
         margin-top: 0%;
         flex-direction: column;
-      
     }
-
     .register-image {
         width: 90%;
         margin-left: 6%;
@@ -167,21 +175,17 @@
         align-items: flex-start;
         justify-content: center;
     }
-
     .register-image img {
         width: 42%;
         height: auto;
         padding-left: 0;
         padding-top: 0;
     }
-
     .register-form {
         width: 90%;
         padding-inline: 0%;
         margin-top: 12%;
-
     }
-
     .register-buttons {
         margin-bottom: 17%;
         gap: 34px;
@@ -189,23 +193,19 @@
         justify-content: center;
         margin-left: 0%;
     }
-
     .login-box-btnSwitch,
     .register-box-btnswitch {
         font-size: 25px;
     }
-
     .fullName-container-register label,
     .username-container-register label,
     .email-container-register label,
     .password-container-register label {
         font-size: 18px;
     }
-
     .register-submit-button {
-        margin-top: 12%;
+        margin-bottom: 50%;
     }
-
     .fullName-input-register input,
     .username-input-register input,
     .email-input-register input,
@@ -214,7 +214,6 @@
         border: none;
         padding: 23px 10px;
     }
-
     .fullName-input-register ::placeholder,
     .username-input-register ::placeholder,
     .email-input-register ::placeholder,
@@ -222,6 +221,16 @@
         font-size: 18px;
         padding-left: 0px;
     }
-
-
+    input.register-error-input {
+        border: 2px solid red;
+    }
+    input.register-error-input:focus {
+        border: 2px solid red;
+    }
+    input.register-success-input:focus {
+        border: 2px solid green;
+    }
+    input.register-success-input {
+        border: 2px solid green;
+    }
 }
