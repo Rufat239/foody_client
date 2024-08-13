@@ -93,6 +93,11 @@
     text-align: center;
 }
 
+
+.show-table-image{
+    width: 50px;
+}
+
 .close-button-order {
     position: absolute;
     top: 20%;

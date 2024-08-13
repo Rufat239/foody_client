@@ -5,6 +5,7 @@ import nextButton from '../../assets/ordersImages/chevron-right.svg'
 import pizza from '../../assets/ordersImages/Rectangle 145.png'
 import coffee from '../../assets/ordersImages/image (1).png'
 import close from '../../assets/ordersImages/Vector (1).svg'
+import { useDispatch, useSelector } from "react-redux";
 
 function ShowModal({ onClose, itemsPerPageOptions = [2, 4, 6] }) {
 
@@ -12,56 +13,58 @@ function ShowModal({ onClose, itemsPerPageOptions = [2, 4, 6] }) {
   const [itemsPerPage, setItemsPerPage] = useState(itemsPerPageOptions[0])
   const [totalPages, setTotalPages] = useState(1)
 
+  const dispatch = useDispatch();
+  const basketItems = useSelector(state => state.basket.basketItems);
+  const totalPrice = useSelector(state => state.basket.totalPrice);
 
-
-  const showModalContent = [
-    {
-      image: pizza,
-      name: 'Papa John’s Pizza',
-      price: '7.90',
-      count: '2',
-      amount: '15.80'
-    },
-    {
-      image: coffee,
-      name: 'Coffee',
-      price: '1.10',
-      count: '3',
-      amount: '3.30'
-    },
-    {
-      image: pizza,
-      name: 'Papa John’s Pizza',
-      price: '7.90',
-      count: '2',
-      amount: '15.80'
-    },
-    {
-      image: coffee,
-      name: 'Coffee',
-      price: '1.10',
-      count: '3',
-      amount: '3.30'
-    },
-    {
-      image: pizza,
-      name: 'Papa John’s Pizza',
-      price: '7.90',
-      count: '2',
-      amount: '15.80'
-    },
-    {
-      image: coffee,
-      name: 'Coffee',
-      price: '1.10',
-      count: '3',
-      amount: '3.30'
-    }
-  ]
+  // const showModalContent = [
+  //   {
+  //     image: pizza,
+  //     name: 'Papa John’s Pizza',
+  //     price: '7.90',
+  //     count: '2',
+  //     amount: '15.80'
+  //   },
+  //   {
+  //     image: coffee,
+  //     name: 'Coffee',
+  //     price: '1.10',
+  //     count: '3',
+  //     amount: '3.30'
+  //   },
+  //   {
+  //     image: pizza,
+  //     name: 'Papa John’s Pizza',
+  //     price: '7.90',
+  //     count: '2',
+  //     amount: '15.80'
+  //   },
+  //   {
+  //     image: coffee,
+  //     name: 'Coffee',
+  //     price: '1.10',
+  //     count: '3',
+  //     amount: '3.30'
+  //   },
+  //   {
+  //     image: pizza,
+  //     name: 'Papa John’s Pizza',
+  //     price: '7.90',
+  //     count: '2',
+  //     amount: '15.80'
+  //   },
+  //   {
+  //     image: coffee,
+  //     name: 'Coffee',
+  //     price: '1.10',
+  //     count: '3',
+  //     amount: '3.30'
+  //   }
+  // ]
 
   useEffect(() => {
-    setTotalPages(Math.ceil(showModalContent.length / itemsPerPage))
-  }, [showModalContent, itemsPerPage])
+    setTotalPages(Math.ceil(basketItems.length / itemsPerPage))
+  }, [basketItems, itemsPerPage])
 
   const changePage = (x) => {
     setCurrentPage((prev) => {
@@ -76,7 +79,7 @@ function ShowModal({ onClose, itemsPerPageOptions = [2, 4, 6] }) {
   }
 
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const selectedItems = showModalContent.slice(startIndex, startIndex + itemsPerPage);
+  const selectedItems = basketItems.slice(startIndex, startIndex + itemsPerPage);
 
 
 
@@ -99,14 +102,14 @@ function ShowModal({ onClose, itemsPerPageOptions = [2, 4, 6] }) {
                   <th>Amount</th>
                 </tr>
               </thead>
-              {selectedItems.map((x) => (
+              {selectedItems.map((item, index) => (
                 <tbody>
-                  <tr>
-                    <td><img src={x.image} /></td>
-                    <td>{x.name}</td>
-                    <td>{x.price}</td>
-                    <td>{x.count}</td>
-                    <td>{x.amount}</td>
+                  <tr key={index}>
+                    <td><img src={item.image}/></td>
+                    <td>{item.name}</td>
+                    <td>{item.price}</td>
+                    <td>{item.quantity}</td>
+                    <td>{(item.price * item.quantity).toFixed(2)}</td>
                   </tr>
                 </tbody>
               ))}
@@ -121,17 +124,17 @@ function ShowModal({ onClose, itemsPerPageOptions = [2, 4, 6] }) {
               <button onClick={() => changePage(1)} className='next-button'> <img src={nextButton} /> </button>
             </div>
             <div className="select-options">
-            <div className="select-container">
-              <select value={itemsPerPage} onChange={changeItemsPerPage} className="custom-select">
-                {itemsPerPageOptions.map((option) =>
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
-                )}
-              </select>
-              <div className="select-arrow">&#9660;</div>
+              <div className="select-container">
+                <select value={itemsPerPage} onChange={changeItemsPerPage} className="custom-select">
+                  {itemsPerPageOptions.map((option) =>
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  )}
+                </select>
+                <div className="select-arrow">&#9660;</div>
+              </div>
             </div>
-          </div>
 
           </div>
 

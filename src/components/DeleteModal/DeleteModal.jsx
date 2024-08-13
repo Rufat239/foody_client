@@ -6,7 +6,6 @@ function DeleteModal({ onCancel }) {
 
     return (
         <div className='deleteModal-overlay'>
-            {/* <div className='all-deletemodal-component'> */}
                 <div className='deleteModal-container'>
                     <div className='textDelete-modal'>
                         <h1>Are you sure it’s deleted ?</h1>
@@ -16,7 +15,6 @@ function DeleteModal({ onCancel }) {
                         <button onClick={onCancel} className='modal-cancel-button'>cancel</button>
                         <button className='modal-delete-button'>delete</button>
                     </div>
-                {/* </div> */}
             </div>
 
 
