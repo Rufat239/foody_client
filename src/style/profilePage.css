@@ -7,6 +7,7 @@
     background-color: #F3F4F6;
     border-radius: 5px;
 }
+
 .Profile-title {
     transform: translateY(1.2em);
     margin-left: 20px;
@@ -82,6 +83,31 @@
     width: 90%;
 }
 
+.error {
+    border: 1px solid red;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    font-family: "Roboto";
+    font-weight: 600;
+    margin-top: 3px;
+}
+
+.thank-you-message {
+    color: white;
+    background-color: #6FCF97;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    padding: 10px;
+    font-size: 30px;
+    font-family: "Roboto";
+    font-weight: 600;
+    margin-top: -5px;
+}
+
+
 .save-btn {
     background-color: #6FCF97;
     color: #ffffff;
@@ -98,9 +124,14 @@
 }
 
 @media (max-width: 431px) {
+    .error-message {
+        margin-left: 10px;
+
+    }
+
     .profile-container {
         background-color: white;
-        margin-bottom: 20rem;
+        margin-bottom: 28rem;
         width: 100%;
     }
 
