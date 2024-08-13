@@ -5,7 +5,9 @@ import PrevButton from '../../assets/ordersImages/chevron-left.svg';
 import NextButton from '../../assets/ordersImages/chevron-right.svg';
 import DeleteModal from '../DeleteModal/DeleteModal';
 import ShowModal from '../ShowModal/ShowModal';
+import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
+import { deleteOrder } from '../Redux/actions/orderActions';
 
 function Orders({ orders = [], itemsPerPageOptions = [5, 10, 15] }) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -19,6 +21,9 @@ function Orders({ orders = [], itemsPerPageOptions = [5, 10, 15] }) {
   const orderList = useSelector((state) => state.order.orders);
   const totalPrice = useSelector((state) => state.basket.totalPrice);
 
+  const dispatch = useDispatch()
+  const [selectedOrder, setSelectedOrder] = useState(null)
+
   const toggleMenu = (id) => {
     console.log('menu')
     if (menuVisible === id) {
@@ -28,13 +33,19 @@ function Orders({ orders = [], itemsPerPageOptions = [5, 10, 15] }) {
     }
   };
 
-  const handleShowDeleteModal = () => {
+  const handleShowDeleteModal = (id) => {
+    setSelectedOrder(id)
     setVisibleDeleteModal(true);
   };
 
   const handleVisibleShowModal = () => {
     setVisibleShowModal(true);
   };
+
+  const handleDelete = () => {
+    dispatch(deleteOrder(selectedOrder))
+    setVisibleDeleteModal(false)
+  }
 
   const handleCancel = () => {
     setVisibleDeleteModal(false);
@@ -92,7 +103,7 @@ function Orders({ orders = [], itemsPerPageOptions = [5, 10, 15] }) {
                     {menuVisible === item.id && (
                       <div className='drop-down-menu-content'>
                         <p onClick={handleVisibleShowModal} className='show-setting'>show</p>
-                        <p onClick={handleShowDeleteModal} className='delete-setting'>delete</p>
+                        <p onClick={() => handleShowDeleteModal(item.id)} className='delete-setting'>delete</p>
                       </div>
                     )}
                   </td>
@@ -109,7 +120,7 @@ function Orders({ orders = [], itemsPerPageOptions = [5, 10, 15] }) {
                     {menuVisible === item.id && (
                       <div className='drop-down-menu-content'>
                         <p onClick={handleVisibleShowModal} className='show-setting'>show</p>
-                        <p onClick={handleShowDeleteModal} className='delete-setting'>delete</p>
+                        <p onClick={() => handleShowDeleteModal(item.id)} className='delete-setting'>delete</p>
                       </div>
                     )}
                   </td>
@@ -141,7 +152,7 @@ function Orders({ orders = [], itemsPerPageOptions = [5, 10, 15] }) {
             </div>
           </div>
         </div>
-        {visibleDeleteModal && <DeleteModal onCancel={handleCancel} />}
+        {visibleDeleteModal && <DeleteModal onCancel={handleCancel}  onDelete={handleDelete}/>}
         {visibleShowModal && <ShowModal onClose={handleClose} />}
       </div>
     </div>
