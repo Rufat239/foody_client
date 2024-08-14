@@ -29,7 +29,6 @@ function CheckoutOrders() {
                             </div>
                         ))}
                     </div>
-                    {/* <hr className="separator" /> */}
                     <div className="total">
                         <p>Total </p>
                         <span>${totalPrice.toFixed(2)}</span>
