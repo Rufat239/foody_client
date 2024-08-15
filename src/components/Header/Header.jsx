@@ -17,6 +17,8 @@ function Header() {
   const [langImg, setLangImg] = useState(engFlag);
   const [hamburgerMenuStyle, setHamburgerMenuStyle] = useState({});
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [displayName, setDisplayName] = useState("");
+  const [resDisplayName, setResDisplayName] = useState("");
   const navigate = useNavigate();
 
   const loggedOutHandler = () => {
@@ -25,6 +27,8 @@ function Header() {
 
   useEffect(() => {
     setIsLoggedIn(Boolean(localStorage.getItem("isLoggedIn")));
+    setDisplayName(localStorage.getItem("displayName"));
+    setResDisplayName(localStorage.getItem("resDisplayName"));
   }, [navigate]);
 
   const { t, i18n } = useTranslation();
@@ -223,7 +227,7 @@ function Header() {
                 </ul>
               </div>
             )}
-            AR
+            {displayName}
           </button>
         )}
         {showLogoutModal && (
@@ -248,7 +252,7 @@ function Header() {
           {isLoggedIn && (
             <div className="aboutClient">
               <img className="imgClient" src={rufat} alt="" />
-              <h2 className="nameClient">Rüfət Ağarzayev</h2>
+              <h2 className="nameClient">{resDisplayName}</h2>
             </div>
           )}
         </div>
