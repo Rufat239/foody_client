@@ -15,6 +15,9 @@ import margarita from "../../assets/homeImages/margarita.jpg";
 import twistermenu from "../../assets/homeImages/Twistermenu.jpg";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useState } from "react";
+import { useEffect } from "react";
 
 function Home() {
   const { t } = useTranslation();
@@ -36,6 +39,26 @@ function Home() {
       description: t("home.Lorem ipsum7"),
     },
   ];
+
+     //  GET OFFER DATAS
+     const [offerData, setOfferData] = useState([]);
+
+     useEffect(() => {
+      const getOffers = async () => {
+        const offerURL = `https://test-foody-admin-default-rtdb.firebaseio.com/offers.json`;
+        try {
+          const response = await axios.get(offerURL);
+          const data = response.data;
+          console.log(data, "data");
+  
+          setOfferData(Object.values(data));
+        } catch (error) {
+          console.log("error", error);
+        }
+      };
+  
+      getOffers();
+    }, []);
 
   return (
     <div className="allContainer">
@@ -113,19 +136,19 @@ function Home() {
         </div>
       </div>
 
-      {sections.map((section, index) => (
+      {offerData.map((offer, index) => (
         <div
           className={`dinamicMain ${index % 2 === 0 ? "left" : "right"}`}
           key={index}
         >
           <div className="text">
-            <h1>{section.title}</h1>
-            <p>{section.description}</p>
+            <h1>{offer.title}</h1>
+            <p>{offer.description}</p>
           </div>
           <div className="image">
             <div className="image-wrapperHeader ">
               <figure>
-                <img src={section.imgSrc} alt={section.title} />
+                <img src={offer.url} alt={offer.title} />
               </figure>
             </div>
           </div>
