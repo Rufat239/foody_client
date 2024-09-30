@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "../../style/restaurant_internal.css";
 import Brand from '../../assets/restaurant_images/brand2.jpg';
 import trash from '../../assets/userBasket/deleteIcon.svg';
@@ -9,28 +8,62 @@ import BigredBasket from '../../assets/restaurant_images/redbigBasket.svg';
 import pizza from '../../assets/restaurant_images/Pizza.jpg';
 import empty from '../../assets/userBasket/emptyBasket.svg';
 import emptyIcon from '../../assets/userBasket/iconBasket.svg';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToBasket, increaseQuantity, removeFromBasket } from '../Redux/actions/basketActions';
-
-const productList = [
-  { id: 1, image: pizza, name: 'Papa John’s Pizza Restaurant', description: 'Prepared with a patty, a slice of cheese and special sauce', price: 7.90 },
-  { id: 2, image: pizza, name: 'Papa John’s Pizza Restaurant', description: 'Prepared with a patty, a slice of cheese and special sauce', price: 7.90 },
-  { id: 3, image: pizza, name: 'Papa John’s Pizza Restaurant', description: 'Prepared with a patty, a slice of cheese and special sauce', price: 7.90 },
-  { id: 4, image: pizza, name: 'Papa John’s Pizza Restaurant', description: 'Prepared with a patty, a slice of cheese and special sauce', price: 7.90 },
-  { id: 5, image: pizza, name: 'Papa John’s Pizza Restaurant', description: 'Prepared with a patty, a slice of cheese and special sauce', price: 7.90 },
-  { id: 6, image: pizza, name: 'Papa John’s Pizza Restaurant', description: 'Prepared with a patty, a slice of cheese and special sauce', price: 7.90 },
-  { id: 7, image: pizza, name: 'Papa John’s Pizza Restaurant', description: 'Prepared with a patty, a slice of cheese and special sauce', price: 7.90 },
-  { id: 8, image: pizza, name: 'Papa John’s Pizza Restaurant', description: 'Prepared with a patty, a slice of cheese and special sauce', price: 7.90 },
-  { id: 9, image: pizza, name: 'Papa John’s Pizza Restaurant', description: 'Prepared with a patty, a slice of cheese and special sauce', price: 7.90 }
-];
+import axios from 'axios';
 
 function Internal() {
   const dispatch = useDispatch();
+  const location = useLocation();
+  const restaurant = location.state.restaurant;
   const basketItems = useSelector(state => state.basket.basketItems);
-  const totalPrice = useSelector(state => state.basket.totalPrice);
+  const reduxTotalPrice = useSelector(state => state.basket.totalPrice);
   const navigate = useNavigate();
-  const [isBasketOpen, setIsBasketOpen] = React.useState(false);
+  const [isBasketOpen, setIsBasketOpen] = useState(false);
+  const [productList, setProductList] = useState([]);
+  const [localTotalPrice, setLocalTotalPrice] = useState(0);
+
+
+  useEffect(() => {
+    const getProducts = async () => {
+      const productUrl = 'https://test-foody-admin-default-rtdb.firebaseio.com/products.json';
+      try {
+        const response = await axios.get(productUrl);
+        const data = response.data;
+        console.log(data, "data")
+        const productsArray = Object.values(data);
+        const filteredProducts = productsArray
+          .filter((product) => product.restaurant && product.restaurant.trim() === restaurant.name.trim())
+          .map((product, i) => {
+            return {
+              id: i,
+              name: product.name,
+              price: product.price,
+              restaurant: product.restaurant,
+              image: product.imageUrl,
+              description: product.description,
+            };
+          });
+
+        setProductList(filteredProducts);
+        console.log(filteredProducts, "array")
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    getProducts();
+  }, [restaurant.name]);
+
+  console.log(reduxTotalPrice, "price")
+
+  console.log("isledi");
+
+  console.log(basketItems, "list")
+
+
+
 
   const toggleBasket = () => {
     setIsBasketOpen(prevState => !prevState);
@@ -40,6 +73,7 @@ function Internal() {
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
     if (isLoggedIn) {
       dispatch(addToBasket(product));
+
     } else {
       navigate('/loginPage');
     }
@@ -47,30 +81,30 @@ function Internal() {
 
   return (
     <div className='internalMain'>
-                                                                                  {/* Restaurant Area */}
-      <div className='profile'>
-        <div className='profileImg'>
-          <img src={Brand} alt="Brand" />
+      {/* Restaurant Area */}
+      <div className='internal-res-container'>
+        <div className='internal-res-img'>
+          <img src={restaurant.url} alt="Brand" />
         </div>
         <div className='information'>
           <div className='restaurantName'>
-            <h3>Papa John’s Pizza Restaurant</h3>
-            <p>19 Nizami street, Sabail, Baku</p>
+            <h3>{restaurant.name}</h3>
+            <p>{restaurant.address}</p>
           </div>
           <div className="restaurantsbutton">
-            <div className='productName'>
+            <div className='cuisine-name-res'>
               <h4>Cuisine</h4>
-              <p>pizza, drink, hotdog, sandwich, roll</p>
+              <p>{restaurant.cuisine}</p>
             </div>
-            <div className='buttons'>
-              <button className='delbtn'> $5 Delivery</button>
+            <div className='delivery-res-buttons'>
+              <button className='delbtn'> ${restaurant.deliveryPrice} Delivery</button>
               <button className='backbtn'> <Link to={'/restaurantMain'}> Go Back</Link></button>
             </div>
           </div>
         </div>
       </div>
 
-                                                                                     {/* Basket Area*/}
+      {/* Basket Area */}
       <div className="restaurants_user">
         <div className='restaurantsContainer'>
           <div className="productHead">
@@ -80,7 +114,7 @@ function Internal() {
             {productList.map((product, index) => (
               <div key={index} className='productItem'>
                 <div className='productImg'>
-                  <img src={product.image} alt="Product" />
+                  <img src={product.image} />
                 </div>
                 <div className='restaurantsInfo'>
                   <h4>{product.name}</h4>
@@ -88,7 +122,7 @@ function Internal() {
                 </div>
                 <div className='price'>
                   <span>From </span>
-                  <p>${product.price.toFixed(2)}</p>
+                  <p>${product.price}</p>
                   <button className='circlebtn' onClick={() => handleAddToBasket(product)}>+</button>
                 </div>
               </div>
@@ -96,7 +130,7 @@ function Internal() {
           </div>
         </div>
 
-                                                                                  {/* Basket Area*/}
+        {/* Basket Area */}
         <div className="restaurants_basket">
           {basketItems.length > 0 && (
             <div className='restaurants_nav'>
@@ -129,6 +163,7 @@ function Internal() {
                       <span onClick={() => dispatch(removeFromBasket(index))}>—</span>
                     </div>
                   </div>
+
                 </div>
               ))}
             </div>
@@ -146,9 +181,9 @@ function Internal() {
                 <h2 className='emptydescription2'>Basket empty</h2>
               </div>
               <div className='emptycheckout'>
-                <button className='emptycheckBtn'>
+                <button className='emptycheckBtn' >
                   <p>Checkout</p>
-                  <span>$0.00</span>
+                  <span>$ 0.00</span>
                 </button>
               </div>
             </div>
@@ -159,7 +194,7 @@ function Internal() {
                 <div className='check_btn'>
                   <button className='checkRedbtn'>
                     <p className='checkP'>Checkout</p>
-                    <span className='checkS'>${totalPrice.toFixed(2)}</span>
+                    <span className='checkS'>${reduxTotalPrice.toFixed(2)}</span>
                   </button>
                 </div>
               </Link>
@@ -168,79 +203,57 @@ function Internal() {
         </div>
       </div>
 
-                                                                                  {/* Responsiv Basket*/}
-  <div className="responsivBasketMain">
-  {!isBasketOpen ? (
-    <button className='responsivItem' onClick={toggleBasket}>
-      <div className="itemImage">
-        <img src={whiteBasket} />
-      </div>
-      <p><span>{basketItems.reduce((sum, item) => sum + item.quantity, 0)}</span> items</p>
-      <span className='checkR'>${totalPrice.toFixed(2)}</span>
-    </button>
-  ) : (
-    <div className="responsivProdcut1">
-      <div className="responsivDelete">
-        <button onClick={toggleBasket}>&#10005;</button>
-      </div>
-      {basketItems.length > 0 ? (
-        basketItems.map((item) => (
-          <div key={item.id} className="responsivBasket">
-            <div className="responsivBasketList">
-              <div className='deleteimg' onClick={() => dispatch(removeFromBasket(item, true))}>
-                <img src={trash} alt="Remove" />
-              </div>
-              <div className="responsivlist">
-                <div className="responsivImage">
-                  <img src={item.image} alt={item.name} />
+      {/* Responsive Basket */}
+      <div className="responsivBasketMain">
+        {!isBasketOpen ? (
+          <button className='responsivItem' onClick={toggleBasket}>
+            <div className="itemImage">
+              <img src={whiteBasket} />
+            </div>
+            <p><span>{basketItems.reduce((sum, item) => sum + item.quantity, 0)}</span> items</p>
+            <span className='checkR'>${localTotalPrice.toFixed(2)}</span>
+          </button>
+        ) : (
+          <div className="responsivProdcut1">
+            <div className="responsivDelete">
+              <button onClick={toggleBasket}>&#10005;</button>
+            </div>
+            {basketItems.length > 0 ? (
+              basketItems.map((item) => (
+                <div key={item.id} className="responsivBasket">
+                  <div className="responsivBasketList">
+                    <div className='deleteimg' onClick={() => dispatch(removeFromBasket(item, true))}>
+                      <img src={trash} alt="Remove" />
+                    </div>
+                    <div className="responsivlist">
+                      <div className="responsivImage">
+                        <img src={item.image} alt={item.name} />
+                      </div>
+                      <div className="responsivInfo">
+                        <p>{item.name}</p>
+                        <span>${(item.price * item.quantity).toFixed(2)}</span>
+                        <p>Quantity: {item.quantity}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="responsivExplain">
-                  <p>{item.name}</p>
-                  <span>${(item.price * item.quantity).toFixed(2)}</span>
-                </div>
-                <div className='responsivQuantity'>
-                  <span className='plus' onClick={() => dispatch(increaseQuantity(item))}>+</span>
-                  <p>{item.quantity}</p>
-                  <span onClick={() => dispatch(removeFromBasket(item))}>—</span>
-                </div>
-              </div>
+              ))
+            ) : (
+              <p>Basket is empty</p>
+            )}
+            <div className="responsivCheckout">
+              <Link to={'/checkoutPage'}>
+                <button className='checkRedbtn'>
+                  <p className='checkP'>Checkout</p>
+                  <span className='checkS'>${localTotalPrice.toFixed(2)}</span>
+                </button>
+              </Link>
             </div>
           </div>
-        ))
-      ) : (
-        <div className="responsivEmpty">
-          <div className="emptydescription">
-            <div className="emptyImage">
-              <img src={BigredBasket} />
-            </div>
-            <h2 className='Responsivemptydescription1'>Opps!</h2>
-            <h2 className='Responsivemptydescription2'>Basket empty</h2>
-          </div>
-          <div className='Responsivemptycheckout'>
-            <button className='ResponsivemptycheckBtn'>
-              <p>Checkout</p>
-              <span>$0.00</span>
-            </button>
-          </div>
-        </div>
-      )}
-      {basketItems.length > 0 && (
-        <div className="responsivButton">
-          <Link to={'/checkoutPage'}>
-            <button className='responsivCheck'>
-              <span className='responsivText'>Checkout</span>
-              <span className='responsivPrice'>${totalPrice.toFixed(2)}</span>
-            </button>
-          </Link>
-        </div>
-      )}
-    </div>
-  )}
-</div>
-
+        )}
+      </div>
     </div>
   );
 }
 
 export default Internal;
-
