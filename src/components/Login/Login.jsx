@@ -7,6 +7,7 @@ import { useFormik } from "formik";
 import { loginSchema } from "../../components/Schema/schema";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
+import axios from "axios";
 
 function Login() {
   const [showPass, setShowPass] = useState(false);
@@ -36,26 +37,25 @@ function Login() {
     }
     setOpen(false);
   };
-  function onSubmit() {
+  async function onSubmit(values) {
     console.log(values);
-    setTimeout(() => {
-      const users = JSON.parse(localStorage.getItem("users")) || [];
-      const user = users.find(
-        (u) => u.username === values.username && u.password === values.password
-      );
 
-      if (user) {
-        localStorage.setItem("isLoggedIn", "true");
-        const fullName = user.fullname.split(" ");
-        localStorage.setItem("displayName", fullName[0][0] + fullName[1][0]);
-        localStorage.setItem("resDisplayName", user.fullname);
-        navigate("/profilePage");
-      } else {
-        setError("Invalid username or password");
-        setOpen(true);
-      }
-      resetForm();
-    }, 2000);
+    const url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAyG34t6yFnMuYrg1IkTGR0HQUugxr6zco`;
+
+    const formData = {
+      email: values.username,
+      password: values.password,
+      returnSecureToken: true,
+    };
+    try {
+      const { data } = await axios.post(url, formData);
+
+      localStorage.setItem("userInfo", JSON.stringify(data));
+      localStorage.setItem("isLoggedIn", "true")
+      navigate("/profilePage");
+    } catch (error) {
+      console.log(error.message);
+    }
   }
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("isLoggedIn");
