@@ -3,7 +3,10 @@ import { ADD_TO_BASKET, INCREASE_QUANTITY, REMOVE_FROM_BASKET,CLEAR_BASKET } fro
 const initialState = {
   basketItems: [],
   totalPrice: 0
+  
 };
+
+
 
 const basketReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -15,13 +18,15 @@ const basketReducer = (state = initialState, action) => {
           basketItems: state.basketItems.map(item =>
             item.id === action.payload.id ? { ...item, quantity: item.quantity + 1 } : item
           ),
-          totalPrice: state.totalPrice + action.payload.price
+          totalPrice: state.totalPrice +  +action.payload.price
+          
         };
+       
       } else {
         return {
           ...state,
           basketItems: [...state.basketItems, { ...action.payload, quantity: 1 }],
-          totalPrice: state.totalPrice + action.payload.price
+          totalPrice: state.totalPrice + +action.payload.price
         };
       }
 
@@ -32,34 +37,30 @@ const basketReducer = (state = initialState, action) => {
       return {
         ...state,
         basketItems: updatedBasketItems,
-        totalPrice: state.totalPrice + action.payload.price
+        totalPrice: state.totalPrice + +action.payload.price
       };
 
-    case REMOVE_FROM_BASKET:
-      const { index, removeAll } = action.payload;
-      const product = state.basketItems[index];
-      const newBasketItems = [...state.basketItems];
-
-      if (removeAll || product.quantity === 1) {
-        newBasketItems.splice(index, 1);
-        return {
-          ...state,
-          basketItems: newBasketItems,
-          totalPrice: Math.max(0, state.totalPrice - product.price * product.quantity)
-        };
-      } else {
-        newBasketItems[index] = { ...product, quantity: product.quantity - 1 };
-        return {
-          ...state,
-          basketItems: newBasketItems,
-          totalPrice: Math.max(0, state.totalPrice - product.price)
-        };
-      }case CLEAR_BASKET:
-            return {
-              ...state,
-              basketItems: [],
-              totalPrice: 0,
-            }
+      case REMOVE_FROM_BASKET:
+        const { index, removeAll } = action.payload;
+        const product = state.basketItems[index];
+        const newBasketItems = [...state.basketItems];
+      
+        if (removeAll || product.quantity === 1) {
+          newBasketItems.splice(index, 1);
+          return {
+            ...state,
+            basketItems: newBasketItems,
+            totalPrice: Math.max(0, state.totalPrice - +product.price * product.quantity),
+          };
+        } else {
+          newBasketItems[index] = { ...product, quantity: product.quantity - 1 };
+          return {
+            ...state,
+            basketItems: newBasketItems,
+            totalPrice: Math.max(0, state.totalPrice - +product.price),
+          };
+        }
+      
 
     default:
       return state;
