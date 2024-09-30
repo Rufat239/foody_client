@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addOrder } from '../Redux/actions/orderActions';
 import { clearBasket } from '../Redux/actions/basketActions';
 import '../../style/checkout.css'
+import { v4 } from 'uuid';
+import postCheckoutDatas from '../../service/checkout/postCheckout';
+
 let orderIdCounter = Math.floor(Math.random() * 5000);
 function generateId() {
     return ++orderIdCounter;
@@ -18,14 +21,16 @@ function Checkout({ onOrderComplete }) {
     const handleCheckout = () => {
         if (!paymentMethod || !deliveryAddress || !contactNumber) {
             setError('Incomplete information detected. Fill out all fields to continue.');
+    
             return;
         }
         setError('');
         const newOrder = {
+            customerID : JSON.parse(localStorage.getItem("userInfo")).localId,
             deliveryAddress,
             contactNumber,
             paymentMethod,
-            id: generateId(),
+            id: v4().replace(/-/g, ""),
             time: new Date().toLocaleString('en-GB', {
                 day: 'numeric',
                 month: 'long',
@@ -34,9 +39,11 @@ function Checkout({ onOrderComplete }) {
             totalPrice,
             items: basketItems
         };
+        postCheckoutDatas(newOrder)
         dispatch(addOrder(newOrder));
         dispatch(clearBasket())
         onOrderComplete(newOrder);
+
     };
     return (
         <div>
