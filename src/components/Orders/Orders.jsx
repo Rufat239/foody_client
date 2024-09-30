@@ -8,17 +8,20 @@ import ShowModal from '../ShowModal/ShowModal';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { deleteOrder } from '../Redux/actions/orderActions';
+import getAllOrders from '../../service/orders/getOrders';
+import deleteOrders from '../../service/orders/deleteOrder';
 
 function Orders({ orders = [], itemsPerPageOptions = [5, 10, 15] }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(itemsPerPageOptions[0]);
   const [totalPages, setTotalPages] = useState(1);
+  const [ordersList, setOrdersList] = useState([])
+  const [selectedID, setSelectedID] = useState("")
 
   const [menuVisible, setMenuVisible] = useState(null);
   const [visibleDeleteModal, setVisibleDeleteModal] = useState(false);
   const [visibleShowModal, setVisibleShowModal] = useState(false);
 
-  const orderList = useSelector((state) => state.order.orders);
   const totalPrice = useSelector((state) => state.basket.totalPrice);
 
   const dispatch = useDispatch()
@@ -36,6 +39,8 @@ function Orders({ orders = [], itemsPerPageOptions = [5, 10, 15] }) {
   const handleShowDeleteModal = (id) => {
     setSelectedOrder(id)
     setVisibleDeleteModal(true);
+    setSelectedID(id)
+ 
   };
 
   const handleVisibleShowModal = () => {
@@ -45,6 +50,8 @@ function Orders({ orders = [], itemsPerPageOptions = [5, 10, 15] }) {
   const handleDelete = () => {
     dispatch(deleteOrder(selectedOrder))
     setVisibleDeleteModal(false)
+    deleteOrders(selectedID)
+    
   }
 
   const handleCancel = () => {
@@ -56,9 +63,22 @@ function Orders({ orders = [], itemsPerPageOptions = [5, 10, 15] }) {
   };
 
   useEffect(() => {
-     console.log('Order list ', orderList);
-    setTotalPages(Math.ceil(orderList.length / itemsPerPage));
-  }, [orderList, itemsPerPage]);
+    console.log('Order list ', ordersList);
+    setTotalPages(Math.ceil(ordersList.length / itemsPerPage));
+  }, [ordersList, itemsPerPage]);
+
+  useEffect(() => {
+    getAllOrders().then((x) => {
+      setOrdersList(Object.values(x ?? {}).filter((x) => x.customerID === JSON.parse(localStorage.getItem("userInfo")).localId))
+    })
+   
+
+  }, [])
+
+  console.log(ordersList, "ordersList");
+
+  console.log()
+
 
   const changePage = (x) => {
     setCurrentPage((prev) => {
@@ -73,7 +93,8 @@ function Orders({ orders = [], itemsPerPageOptions = [5, 10, 15] }) {
   };
 
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const selectedItems = orderList.slice(startIndex, startIndex + itemsPerPage);
+  const selectedItems = ordersList.slice(startIndex, startIndex + itemsPerPage);
+  console.log(selectedItems,"selecteditems")
 
   return (
     <div className='all-order-component'>
@@ -152,7 +173,7 @@ function Orders({ orders = [], itemsPerPageOptions = [5, 10, 15] }) {
             </div>
           </div>
         </div>
-        {visibleDeleteModal && <DeleteModal onCancel={handleCancel}  onDelete={handleDelete}/>}
+        {visibleDeleteModal && <DeleteModal onCancel={handleCancel} onDelete={handleDelete} />}
         {visibleShowModal && <ShowModal onClose={handleClose} />}
       </div>
     </div>
