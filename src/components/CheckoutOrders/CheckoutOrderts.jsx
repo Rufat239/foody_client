@@ -1,11 +1,25 @@
 import React from 'react';
 import Style from '../../style/checkoutorder.css';
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from 'react-router-dom';
 import { increaseQuantity, removeFromBasket } from '../Redux/actions/basketActions';
+
 function CheckoutOrders() {
     const dispatch = useDispatch();
     const basketItems = useSelector(state => state.basket.basketItems);
     const totalPrice = useSelector(state => state.basket.totalPrice);
+    const navigate = useNavigate();
+
+    const handleCheckout = () => {
+        
+        if (basketItems.length === 0) {
+            alert('Sepetiniz boş!');
+            return;
+        }
+
+        navigate('/checkoutPage');
+    }
+
     return (
         <div>
             <div className="mobile-edit">
@@ -34,8 +48,15 @@ function CheckoutOrders() {
                         <span>${totalPrice.toFixed(2)}</span>
                     </div>
                 </div>
+
+                <div className="checkout-btn-container">
+                    <button onClick={handleCheckout} className="checkout-btn">
+                        Proceed to Checkout
+                    </button>
+                </div>
             </div>
         </div>
     );
 }
+
 export default CheckoutOrders;
