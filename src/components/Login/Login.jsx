@@ -93,7 +93,7 @@ function Login() {
         </div>
         <form onSubmit={handleSubmit}>
           <div className="username-container-login">
-            <label htmlFor="username">Username</label>
+            <label htmlFor="username">Email</label>
             <div className="login-username-input">
               <input
                 value={values.username}
