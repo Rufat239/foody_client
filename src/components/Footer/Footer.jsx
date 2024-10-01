@@ -47,16 +47,16 @@ function Footer() {
           <h2>{t("footerPopular")}</h2>
           <ul>
             <li>
-              <Link to="#">{t("popularProgramming")}</Link>
+              <Link to="#">{t("popularRestaurant")}</Link>
             </li>
             <li>
-              <Link to="#">{t("popularBooks")}</Link>
+              <Link to="#">{t("popularCuisine")}</Link>
             </li>
             <li>
-              <Link to="#">{t("popularPsychology")}</Link>
+              <Link to="#">{t("popularBranches")}</Link>
             </li>
             <li>
-              <Link to="#">{t("popularBusiness")}</Link>
+              <Link to="#">{t("popularCompanies")}</Link>
             </li>
           </ul>
         </div>
