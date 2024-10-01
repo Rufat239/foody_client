@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
 
 
-                                                           /* Profile part */
-.internal-res-container{
+/* Profile part */
+.internal-res-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,54 +11,63 @@
     font-family: Roboto;
     margin-top: 0.5%;
     border-bottom: 1px solid #e0e0e0;
-    
+
 }
-.internal-res-img{
-    width:80%;
+
+.internal-res-img {
+    width: 80%;
     height: 600px;
     padding-inline: 10%;
     /* margin-left: 300px; */
 
 }
-.internal-res-img img{
+
+.internal-res-img img {
     width: 100%;
     height: 100%;
     object-fit: fill;
 }
-.information{
+
+.information {
     display: flex;
-   justify-content: space-between;
- 
-   
+    justify-content: space-between;
+
+
 }
-.restaurantsbutton{
+
+.restaurantsbutton {
     display: flex;
     flex-direction: row;
     /* margin-top: -2%; */
 }
-.restaurantName{
+
+.restaurantName {
     margin-left: 40px;
     /* margin-top: -2%; */
 }
-.cuisine-name-res{
-    color:rgba(130, 130, 130, 1);
+
+.cuisine-name-res {
+    color: rgba(130, 130, 130, 1);
     font-family: 14px;
 }
-.cuisine-name-res p{
-font-size: 10px;
-font-weight: 500;
-text-align: left;
+
+.cuisine-name-res p {
+    font-size: 10px;
+    font-weight: 500;
+    text-align: left;
 
 }
-.delivery-res-buttons{
+
+.delivery-res-buttons {
     display: flex;
     flex-direction: row;
     margin-top: 24px;
     margin-left: 100px;
     gap: 20px;
-   
+
 }
-.delbtn{
+
+.delbtn {
     border: 1px solid rgba(214, 54, 38, 1);
     border-radius: 5px;
     background-color: white;
@@ -66,15 +75,17 @@ text-align: left;
     width: 72px;
     height: 52px;
 }
-.backbtn{
-    background-color:rgba(214, 54, 38, 1) ;
+
+.backbtn {
+    background-color: rgba(214, 54, 38, 1);
     border: 0;
     border-radius: 5px;
     width: 72px;
     height: 52px;
     display: block;
 }
-.backbtn a{
+
+.backbtn a {
     text-decoration: none;
     color: white;
 }
@@ -84,7 +95,7 @@ text-align: left;
 
 
 
-                                                                            /* Products part */
+/* Products part */
 
 
 .restaurantsContainer {
@@ -98,22 +109,25 @@ text-align: left;
     border-radius: 1%;
     font-family: Roboto, sans-serif;
     overflow: auto;
-    background-color: rgba(243, 244, 246, 1); 
+    background-color: rgba(243, 244, 246, 1);
     overflow-x: hidden;
     cursor: pointer;
 }
+
 .productHead {
     position: sticky;
     z-index: 1000;
 }
-.productHead h3{
+
+.productHead h3 {
     display: block;
-    border-bottom: 1px solid rgba(130, 130, 130, 0.2); 
+    border-bottom: 1px solid rgba(130, 130, 130, 0.2);
     text-align: center;
     padding-bottom: 20px;
     font-size: 23px;
 }
-.restaurantProduct{
+
+.restaurantProduct {
     display: flex;
     flex-direction: column;
     flex-direction: column;
@@ -123,75 +137,85 @@ text-align: left;
 
 .restaurantProduct::-webkit-scrollbar {
     background-color: red;
-    width: 3px; 
-  }
-  
+    width: 3px;
+}
+
 .restaurantProduct::-webkit-scrollbar-track {
-    background: transparent; 
-  }
-.productItem{
+    background: transparent;
+}
+
+.productItem {
     display: flex;
-   justify-content: center;
+    justify-content: center;
     align-items: center;
     margin-bottom: 2%;
     padding: 10px 10px 10px;
     height: 80px;
-    border-bottom: 1px solid #e0e0e0; 
+    border-bottom: 1px solid #e0e0e0;
 }
-.productImg{
+
+.productImg {
     margin-left: 25px;
     display: block;
 }
-.productImg img{
+
+.productImg img {
     width: 40px;
     margin-top: 4px;
 
 }
-.productImg img:hover{
+
+.productImg img:hover {
     width: 100px;
 }
 
 
-.restaurantsInfo{
+.restaurantsInfo {
     margin-left: 30px;
     margin-top: -24px;
 
 }
-.restaurantsInfo h4{
+
+.restaurantsInfo h4 {
     margin-top: 40px;
     font-size: 15px;
 }
-.restaurantsInfo p{
+
+.restaurantsInfo p {
     margin-top: -20px;
     color: rgba(130, 130, 130, 1);
     font-size: 12px;
 }
-.price{
+
+.price {
     display: flex;
     gap: 15px;
     margin-top: 20px;
     margin-left: 70px;
 }
+
 .price span {
     color: rgba(130, 130, 130, 1);
     font-size: 10px;
     display: block;
 }
-.price p{
+
+.price p {
     color: black;
     font-size: 15px;
     margin-right: 20px;
     margin-top: -2.5%;
     font-weight: bold;
 }
-.circlebtn{
+
+.circlebtn {
     width: 35px;
     height: 35px;
     margin-left: 40px;
     margin-top: -15px;
     border-radius: 50%;
     border: 1.5px solid rgba(189, 189, 189, 1);
-    background-color:rgba(243, 244, 246, 1);
+    background-color: rgba(243, 244, 246, 1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -200,57 +224,61 @@ text-align: left;
     padding: 10px 10px 10px 10px;
 }
 
-.circlebtn:hover{
+.circlebtn:hover {
     background: rgba(111, 207, 151, 1);
     color: white;
 
 }
 
-                                                                  /* Basket part */
-.restaurants_user{
+/* Basket part */
+.restaurants_user {
     display: flex;
     justify-content: space-between;
 }
-.restaurants_basket{
-display: block;
-margin-top: 2.5%;
-margin-right: 10%;
-width: 30%;
-height:100%;
-border-radius: 1% ;
-background-color: rgba(243, 244, 246, 1);
-box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.2);
-overflow-y: auto;
-overflow-x: hidden;
+
+.restaurants_basket {
+    display: block;
+    margin-top: 2.5%;
+    margin-right: 10%;
+    width: 30%;
+    height: 100%;
+    border-radius: 1%;
+    background-color: rgba(243, 244, 246, 1);
+    box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    overflow-x: hidden;
 
 }
 
-.restaurants_nav{
+.restaurants_nav {
     display: flex;
     flex-direction: row;
     margin-top: 3%;
     margin-left: 4%;
     border-bottom: 1px solid #e0e0e0;
 }
-.bskt_image{
+
+.bskt_image {
     width: 25px;
     height: 25px;
 
 }
+
 .bskt_image img {
     width: 100%;
     height: 100%;
     object-fit: fill;
 }
 
-.bskt_num{
+.bskt_num {
     margin-top: -2.2%;
     margin-left: 15px;
     color: rgba(214, 54, 38, 1);
     font-family: Roboto;
     font-weight: 500;
 }
-.restaurants_common{
+
+.restaurants_common {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -262,54 +290,63 @@ overflow-x: hidden;
 .restaurants_common::-webkit-scrollbar {
     width: 3px;
     background-color: red;
- 
-  }
+
+}
+
 .restaurants_common::-webkit-scrollbar-track {
-    background: transparent; 
-  }
-.restaurants_text{
+    background: transparent;
+}
+
+.restaurants_text {
     display: flex;
     flex-direction: row;
     margin-top: 6%;
     padding: 5px 0px 0px 35px;
-    border-bottom: 1px solid #e0e0e0; 
+    border-bottom: 1px solid #e0e0e0;
     height: 100px;
-  
+
 }
+
 .restaurants_image img {
-    width:45px;
+    width: 45px;
     height: 45px;
     object-fit: fill;
 }
-.restaurants_info{
-display: flex;
-flex-direction: column;
-margin-left: 4%;
-margin-top: -2.6%;
-font-family: Roboto;
+
+.restaurants_info {
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 4%;
+    margin-top: -2.6%;
+    font-family: Roboto;
 }
-.restaurants_info p{
+
+.restaurants_info p {
     font-size: 15px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    
+
 }
-.restaurants_info span{
+
+.restaurants_info span {
     font-size: 12px;
     margin-top: -10px;
 }
 
-.restaurants_price{
+.restaurants_price {
     margin-left: 10%;
     margin-top: -4%;
     width: 20%;
-   
+
 }
-.trash{
+
+.trash {
     margin-left: 69%;
 }
-.quantity{
+
+.quantity {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -318,16 +355,17 @@ font-family: Roboto;
     margin-top: -35%;
     font-weight: 500;
     font-family: Roboto;
-    border-radius:50px;
+    border-radius: 50px;
     width: 33%;
     padding: 1px 1px 1px 1px;
 
 }
-.plus{
+
+.plus {
     margin-top: 10.2%;
 }
 
-.check_btn{
+.check_btn {
     display: flex;
     justify-content: space-between;
     margin-left: 2.5%;
@@ -337,10 +375,12 @@ font-family: Roboto;
     margin-top: 10%;
 
 }
-.checkRedArea a{
+
+.checkRedArea a {
     text-decoration: none;
 }
-.checkRedbtn{
+
+.checkRedbtn {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -352,18 +392,18 @@ font-family: Roboto;
     font-family: Roboto;
 
 }
-  
-.checkP{
+
+.checkP {
     color: white;
     font-weight: 500;
     font-size: 18px;
     margin-left: 4.5%;
     margin-top: 3.5%;
 
-    
+
 }
 
-.checkS{
+.checkS {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -377,75 +417,86 @@ font-family: Roboto;
     height: 40px;
     border-radius: 100px;
     color: black;
- 
+
 
 }
 
-                                                             /* Empty basket */
+/* Empty basket */
 
-.emptyBasket{
+.emptyBasket {
     display: flex;
     flex-direction: column;
-    height:auto;
+    height: auto;
     display: block;
 }
-.emptyBasket a{
+
+.emptyBasket a {
     text-decoration: none;
 }
-.emptyNav{
+
+.emptyNav {
     display: flex;
     flex-direction: row;
     margin-top: 2%;
     margin-left: 4%;
 
 }
-.emptyNav img{
+
+.emptyNav img {
     width: 25px;
     height: 25px;
     object-fit: fill;
 
 }
-.emptyNav span{
+
+.emptyNav span {
     margin-top: 7px;
     margin-left: 15px;
     color: rgba(189, 189, 189, 1);
     font-family: Roboto;
     font-weight: 500;
 }
-.emptyImage{
+
+.emptyImage {
     width: 263px;
     height: 236px;
 }
-.emptyImage img{
-width: 100%;
-height: 100%;
-margin-top: 5%;
+
+.emptyImage img {
+    width: 100%;
+    height: 100%;
+    margin-top: 5%;
 }
-.emptydescription{
+
+.emptydescription {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.emptydescription h2{
+
+.emptydescription h2 {
     font-family: Roboto;
     color: #bdbdbd;
     text-align: center;
     font-family: "Roboto";
-  font-size: 35px;
-  font-weight: 500;
-  line-height: 50px;
-  letter-spacing: 1.2px;
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 50px;
+    letter-spacing: 1.2px;
 
 }
-.emptydescription1{
+
+.emptydescription1 {
     margin-top: -10px;
 }
-.emptydescription2{
+
+.emptydescription2 {
     margin-top: -40px;
 
 }
-.emptycheckout{
+
+.emptycheckout {
     display: flex;
     justify-content: space-between;
     margin-left: 2.5%;
@@ -454,7 +505,8 @@ margin-top: 5%;
     width: 95%;
 
 }
-.emptycheckBtn{
+
+.emptycheckBtn {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -464,7 +516,8 @@ margin-top: 5%;
     background-color: #BDBDBD;
     padding: 5px 10px 5px 10px;
 }
-.emptycheckBtn p{
+
+.emptycheckBtn p {
     color: white;
     font-family: Roboto;
     font-weight: 500;
@@ -472,7 +525,8 @@ margin-top: 5%;
     margin-left: 4.5%;
     margin-top: 3.5%;
 }
-.emptycheckBtn span{
+
+.emptycheckBtn span {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -480,7 +534,7 @@ margin-top: 5%;
     font-weight: 500;
     font-size: 15px;
     background-color: white;
-    color: rgba(189, 189, 189, 1) ;
+    color: rgba(189, 189, 189, 1);
     width: 30%;
     height: 40px;
     border-radius: 100px;
@@ -488,15 +542,15 @@ margin-top: 5%;
 }
 
 
-.responsivBasketMain{
+.responsivBasketMain {
     display: none;
 }
 
 @media screen and (max-width: 431px) {
-    .internalMain{
+    .internalMain {
         width: 430px;
     }
-                                                                     
+
     .internal-res-container {
         margin-top: 1%;
         margin-right: 5%;
@@ -507,7 +561,7 @@ margin-top: 5%;
         width: 100%;
         margin: 10px auto;
     }
-    
+
     .internal-res-container img {
         width: 100%;
         height: auto;
@@ -515,45 +569,54 @@ margin-top: 5%;
         margin-left: 7%;
     }
 
-    .information{
+    .information {
         display: flex;
         flex-direction: column;
-       
+
     }
-    .restaurantName{
+
+    .restaurantName {
         margin-left: 40px;
     }
-    .restaurantName h3{
+
+    .restaurantName h3 {
         margin-top: -2%;
     }
-    .restaurantName p{
+
+    .restaurantName p {
         margin-top: -4%;
     }
-    .cuisine-name-res{
-        color:rgba(130, 130, 130, 1);
+
+    .cuisine-name-res {
+        color: rgba(130, 130, 130, 1);
         font-family: 14px;
     }
-    .cuisine-name-res p{
-    font-size: 13px;
-    font-weight: 500;
-    text-align: left;
-    margin-top: -10%;
-    
+
+    .cuisine-name-res p {
+        font-size: 13px;
+        font-weight: 500;
+        text-align: left;
+        margin-top: -10%;
+
     }
-    .restaurantsbutton{
-      display: flex;
-      justify-content: space-between;
-      margin-left: 10%;
-       
+
+    .restaurantsbutton {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 10%;
+
     }
-    .delivery-res-buttons{
+
+    .delivery-res-buttons {
         display: flex;
         flex-direction: row;
-        margin-right: 10px;;
+        margin-right: 10px;
+        ;
         margin-top: 5%;
-       
+
     }
-    .delbtn{
+
+    .delbtn {
         border: 1px solid rgba(214, 54, 38, 1);
         border-radius: 5px;
         background-color: white;
@@ -561,67 +624,72 @@ margin-top: 5%;
         width: 72px;
         height: 52px;
     }
-    .restaurants_user { 
+
+    .restaurants_user {
         margin: 0;
         margin-bottom: 10%;
-      }
-      
-      .restaurantsContainer {
+    }
+
+    .restaurantsContainer {
         width: auto;
         height: auto;
         left: 1.7%;
         position: relative;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 8px; 
+        border-radius: 8px;
         margin: 0;
         margin-bottom: 10px;
-      
+
     }
- 
-     .price{
+
+    .price {
         display: flex;
         flex-direction: row;
-        
-     }
+
+    }
+
     .circlebtn {
         width: 25px;
         height: 25px;
         margin-right: 10%;
-        
+
     }
 
     .price p {
         display: block;
         margin-left: 20%;
     }
-    .productItem{
+
+    .productItem {
         margin-left: -10%;
         padding: 0;
         width: 430px;
         height: 150px;
         margin-bottom: 20px;
     }
+
     .restaurantsInfo {
         display: flex;
         flex-direction: column;
         margin-right: -20px;
-      
+
     }
 
     .restaurantsInfo h4 {
         width: 140px;
         font-size: 14px;
         margin-left: 4%;
-      
+
     }
 
     .restaurantsInfo p {
         font-size: 12px;
         width: 180px;
-        margin-top:-11px;
+        margin-top: -11px;
         margin-left: 4%;
     }
-                                                                /* Responsivde olmayanlar */
+
+    /* Responsivde olmayanlar */
     .productImg {
         display: none;
     }
@@ -647,65 +715,69 @@ margin-top: 5%;
     }
 
 
-.responsivBasketMain{
+    .responsivBasketMain {
         display: block;
     }
-   
-.responsivProdcut1{
-    display: flex;
-    flex-direction: column;
-    font-family: Roboto;
-    position: absolute;
-    background-color: white;
-    border-top-right-radius: 30px;
-    border-top-left-radius: 30px;
-    width: 430px;
-    position: fixed; 
-    bottom: 0; 
-    left: 0;
-    z-index: 1000; 
-    height: 60vh; 
-    padding: 0px 11px 0px 1px;
-    overflow-x:hidden; 
-    overflow-y: auto;
-    
-    
+
+    .responsivProdcut1 {
+        display: flex;
+        flex-direction: column;
+        font-family: Roboto;
+        position: absolute;
+        background-color: white;
+        border-top-right-radius: 30px;
+        border-top-left-radius: 30px;
+        width: 430px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        height: 60vh;
+        padding: 0px 11px 0px 1px;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+
     }
 
-.responsivItem{
-  display: flex;
-  justify-content: space-around;
-  position: absolute; 
-  bottom: -69rem; 
-  left: 4px;
-  width: 100%; 
-  align-items: center;
-  font-family: Roboto;
-  color: white;
-  background-color: red;
-  border: none;
-  border-radius: 50px; 
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    .responsivItem {
+        display: flex;
+        justify-content: space-around;
+        position: absolute;
+        bottom: -69rem;
+        left: 4px;
+        width: 100%;
+        align-items: center;
+        font-family: Roboto;
+        color: white;
+        background-color: red;
+        border: none;
+        border-radius: 50px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-    .itemImage{
+
+    .itemImage {
         width: 25px;
         height: 25px;
-    
+
     }
-    .itemImage img{
-     
+
+    .itemImage img {
+
         width: 100%;
         height: 100%;
         object-fit: fill;
     }
-    .responsivItem p{
+
+    .responsivItem p {
         margin-top: 20px;
         margin-right: 49%;
         font-family: Roboto;
         font-weight: bold;
-    
+
     }
-    .checkR{
+
+    .checkR {
         font-weight: 500;
         font-size: 15px;
         background-color: white;
@@ -713,59 +785,65 @@ margin-top: 5%;
         width: 18%;
         height: 20px;
         border-radius: 100px;
-        color:red;
+        color: red;
 
     }
-    .responsivDelete{
+
+    .responsivDelete {
         margin-top: 5%;
         margin-left: 45%;
-       
-    }
-    .responsivDelete button{
-    border: 1px solid rgba(189, 189, 189, 1);
-    background-color: white;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
 
     }
-    .responsivBasket{
+
+    .responsivDelete button {
+        border: 1px solid rgba(189, 189, 189, 1);
+        background-color: white;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+
+    }
+
+    .responsivBasket {
         width: auto;
         display: flex;
         flex-direction: column;
-        height:200px ;
-     
+        height: 200px;
+
     }
+
     .responsivBasketList::-webkit-scrollbar {
         width: 4px;
         background: red;
         border-radius: 6px;
     }
-    
-    .responsivlist{
+
+    .responsivlist {
         display: flex;
         justify-content: space-between;
         gap: 15px;
-    
+
     }
- 
+
     .responsivImage {
         margin-left: 10px;
     }
-    .responsivImage img{
+
+    .responsivImage img {
         width: 40px;
         height: 40px;
         margin-top: 50%;
     }
-    .responsivExplain{
+
+    .responsivExplain {
         display: flex;
         flex-direction: column;
         margin-top: 2%;
-       
+
     }
 
-    .responsivExplain p{
+    .responsivExplain p {
         width: 250px;
         white-space: nowrap;
         overflow: hidden;
@@ -773,66 +851,75 @@ margin-top: 5%;
         color: black;
         margin-right: 20%;
     }
-    .responsivQuantity{
+
+    .responsivQuantity {
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color:rgba(243, 244, 246, 1);
+        background-color: rgba(243, 244, 246, 1);
         margin-right: 5%;
         margin-top: 3%;
         font-weight: 500;
         font-family: Roboto;
-        border-radius:35%;
+        border-radius: 35%;
         width: 9%;
-    
+
     }
-    .responsivPlus{
+
+    .responsivPlus {
         margin-top: 15.2%;
     }
+
     .responsivCheck {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     background-color: rgba(214, 54, 38, 1);
-     border: none;
-     border-radius: 100px;
-     padding: 10px 0px 10px 0px;
-     color: white;
-     font-family: Roboto;
-     font-weight: bold;
-     width: 80%;
-     height: 50px;
-     margin-left: 9%;
-     margin-bottom: 5%;
-        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(214, 54, 38, 1);
+        border: none;
+        border-radius: 100px;
+        padding: 10px 0px 10px 0px;
+        color: white;
+        font-family: Roboto;
+        font-weight: bold;
+        width: 80%;
+        height: 50px;
+        margin-left: 9%;
+        margin-bottom: 5%;
+
     }
-     
-    .responsivText{
+
+    .responsivText {
         margin-left: 10%;
-       
+
     }
-    .responsivPrice{
+
+    .responsivPrice {
         background-color: white;
-        width:15% ;
+        width: 15%;
         padding: 4px 0px 4px 0px;
-        color: rgba(214, 54, 38, 1) ;
+        color: rgba(214, 54, 38, 1);
         margin-right: 10%;
         border-radius: 50px;
     }
-    .responsivButton a{
+
+    .responsivButton a {
         text-decoration: none;
         margin: 40%;
     }
-    .Responsivemptydescription1{
+
+    .Responsivemptydescription1 {
         margin-top: 10px;
     }
-    .Responsivemptydescription2{
+
+    .Responsivemptydescription2 {
         margin-top: -10px;
     }
+
     .responsivEmpty h2 {
         color: red;
     }
-    .ResponsivemptycheckBtn{
+
+    .ResponsivemptycheckBtn {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -844,7 +931,8 @@ margin-top: 5%;
         background-color: #BDBDBD;
         padding: 5px 10px 5px 10px;
     }
-    .ResponsivemptycheckBtn p{
+
+    .ResponsivemptycheckBtn p {
         color: white;
         font-family: Roboto;
         font-weight: 500;
@@ -852,7 +940,8 @@ margin-top: 5%;
         margin-left: 4.5%;
         margin-top: 3.5%;
     }
-    .ResponsivemptycheckBtn span{
+
+    .ResponsivemptycheckBtn span {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -860,10 +949,10 @@ margin-top: 5%;
         font-weight: 500;
         font-size: 15px;
         background-color: white;
-        color: rgba(189, 189, 189, 1) ;
+        color: rgba(189, 189, 189, 1);
         width: 30%;
         height: 40px;
         border-radius: 100px;
-    
+
     }
 }
