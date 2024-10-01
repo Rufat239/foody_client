@@ -25,7 +25,7 @@
 
 .order-received-image-box img {
     animation: rotateIn;
-    animation-duration: 0.8s;
+    animation-duration: 0.6s;
 }
 
 .order-received-container h1 {

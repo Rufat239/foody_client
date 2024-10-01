@@ -10,15 +10,7 @@ function CheckoutOrders() {
     const totalPrice = useSelector(state => state.basket.totalPrice);
     const navigate = useNavigate();
 
-    const handleCheckout = () => {
-        
-        if (basketItems.length === 0) {
-            alert('Sepetiniz boş!');
-            return;
-        }
-
-        navigate('/checkoutPage');
-    }
+ 
 
     return (
         <div>
@@ -50,9 +42,9 @@ function CheckoutOrders() {
                 </div>
 
                 <div className="checkout-btn-container">
-                    <button onClick={handleCheckout} className="checkout-btn">
+                    {/* <button onClick={handleCheckout} className="checkout-btn">
                         Proceed to Checkout
-                    </button>
+                    </button> */}
                 </div>
             </div>
         </div>
