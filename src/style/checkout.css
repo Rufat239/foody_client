@@ -55,10 +55,18 @@
 }
 
 
+
+
+
 .payment-checkout {
     display: flex;
     align-items: center;
     gap: 5px;
+}
+
+
+.payment-checkout input[type="radio"]:checked{
+    accent-color: #4f9d70;
 }
 
 .payment-checkout:hover {
