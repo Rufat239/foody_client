@@ -6,10 +6,7 @@ import '../../style/checkout.css'
 import { v4 } from 'uuid';
 import postCheckoutDatas from '../../service/checkout/postCheckout';
 
-let orderIdCounter = Math.floor(Math.random() * 5000);
-function generateId() {
-    return ++orderIdCounter;
-}
+
 function Checkout({ onOrderComplete }) {
     const dispatch = useDispatch();
     const basketItems = useSelector(state => state.basket.basketItems);
@@ -45,6 +42,11 @@ function Checkout({ onOrderComplete }) {
         onOrderComplete(newOrder);
 
     };
+
+    const handleContactNumberInput = (e) => {
+        const value = e.target.value.replace(/\D/g, ''); 
+        setContactNumber(value);
+    };
     return (
         <div>
             <div className='mobile-edit'>
@@ -53,16 +55,33 @@ function Checkout({ onOrderComplete }) {
                     <label className='heading-of-inputs' htmlFor="">Delivery Address</label>
                     <input type="text" className="input-checkout-page" placeholder='Enter your address' value={deliveryAddress} onChange={(e) => setDeliveryAddress(e.target.value)} />
                     <label className='heading-of-inputs' htmlFor="">Contact Number</label>
-                    <input type="text" className="input-checkout-page" placeholder='Enter your phone number' value={contactNumber} onChange={(e) => setContactNumber(e.target.value)} />
-                    <p c></p>
+                    <input type="tel"  className="input-checkout-page" placeholder='Enter your phone number' value={contactNumber} onChange={handleContactNumberInput} />
                     <label className='heading-of-inputs' htmlFor="">Payment Method</label>
                     <div className="radio-group-checkout">
-                        <div className='payment-checkout'>
-                            <input type="radio" name="payment" value="Cash on Delivery" checked={paymentMethod === 'Cash on Delivery'} onChange={() => setPaymentMethod('Cash on Delivery')} />
+                        <div 
+                            className={`payment-checkout ${paymentMethod === 'Cash on Delivery' ? 'active' : ''}`}
+                            onClick={() => setPaymentMethod('Cash on Delivery')}
+                        >
+                            <input 
+                                type="radio" 
+                                name="payment" 
+                                value="Cash on Delivery" 
+                                checked={paymentMethod === 'Cash on Delivery'} 
+                                readOnly
+                            />
                             <p>Pay at the door</p>
                         </div>
-                        <div className='payment-checkout'>
-                            <input type="radio" name="payment" value="Pay by Card" checked={paymentMethod === 'Pay by Card'} onChange={() => setPaymentMethod('Pay by Card')} />
+                        <div 
+                            className={`payment-checkout ${paymentMethod === 'Pay by Card' ? 'active' : ''}`}
+                            onClick={() => setPaymentMethod('Pay by Card')}
+                        >
+                            <input 
+                                type="radio" 
+                                name="payment" 
+                                value="Pay by Card" 
+                                checked={paymentMethod === 'Pay by Card'} 
+                                readOnly
+                            />
                             <p>Pay the door by credit card</p>
                         </div>
                     </div>

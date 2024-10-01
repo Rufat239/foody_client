@@ -12,7 +12,7 @@ function CheckoutPage() {
 
   };
   return (
-    <div style={{ display: "flex", marginTop: "2%", columnGap: "2%" }} >
+    <div style={{ display: "flex", marginTop: "2%", columnGap: "2%", marginBottom: "17%" }} >
       <Sidebar />
       {!orderReceived && (
         <>

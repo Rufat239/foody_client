@@ -5,7 +5,7 @@
 }
 
 .card-checkout-order {
-    width: 25%;
+    width: 28%;
     height: 370px;
     background-color: #F3F4F6;
     border-radius: 8px;
@@ -16,7 +16,7 @@
     justify-content: space-between;
     position: absolute;
     top: 17%;
-    right: 7%;
+    right: 3%;
     max-height: 370px;
     overflow-y: auto;
 }
@@ -25,7 +25,7 @@
     display: flex;
     flex-direction: column;
     gap: 23px;
-    flex-grow: 1;
+    /* flex-grow: 1; */
     overflow-y: auto;
 }
 
@@ -61,6 +61,7 @@
 .order-list-checkout-page p {
     margin: 5px 0;
     color: #828282;
+    font-size: 10px;
 }
 
 
@@ -165,5 +166,9 @@
 
     .header-checkout-order {
         text-align: left;
+    }
+
+    .total{
+        background-color: #fff;
     }
 }
