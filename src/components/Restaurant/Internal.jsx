@@ -25,6 +25,10 @@ function Internal() {
   const [localTotalPrice, setLocalTotalPrice] = useState(0);
 
 
+  const itemQuantity = basketItems.reduce((sum, item) => sum + item.quantity, 0);
+  const itemText = itemQuantity === 1 || itemQuantity === 0 ? "item" : "items";
+
+
   useEffect(() => {
     const getProducts = async () => {
       const productUrl = 'https://test-foody-admin-default-rtdb.firebaseio.com/products.json';
@@ -138,7 +142,7 @@ function Internal() {
                 <img src={basket} alt="Basket" />
               </div>
               <div className='bskt_num'>
-                <p><span>{basketItems.reduce((sum, item) => sum + item.quantity, 0)}</span> items</p>
+                <p><span>{basketItems.reduce((sum, item) => sum + item.quantity, 0)}</span> {itemText}</p>
               </div>
             </div>
           )}
@@ -171,7 +175,7 @@ function Internal() {
             <div className="emptyBasket">
               <div className="emptyNav">
                 <img src={emptyIcon} alt="Empty Icon" />
-                <span>0 items</span>
+                <span>0 item</span>
               </div>
               <div className="emptydescription">
                 <div className="emptyImage">
@@ -211,7 +215,7 @@ function Internal() {
               <img src={whiteBasket} />
             </div>
             <p><span>{basketItems.reduce((sum, item) => sum + item.quantity, 0)}</span> items</p>
-            <span className='checkR'>${localTotalPrice.toFixed(2)}</span>
+            <span className='checkR'>${basketItems.reduce((sum, item) => sum + (item.price * item.quantity), 0).toFixed(2)}</span>
           </button>
         ) : (
           <div className="responsivProdcut1">
@@ -219,7 +223,7 @@ function Internal() {
               <button onClick={toggleBasket}>&#10005;</button>
             </div>
             {basketItems.length > 0 ? (
-              basketItems.map((item) => (
+              basketItems.map((item, index) => (
                 <div key={item.id} className="responsivBasket">
                   <div className="responsivBasketList">
                     <div className='deleteimg' onClick={() => dispatch(removeFromBasket(item, true))}>
@@ -230,28 +234,39 @@ function Internal() {
                         <img src={item.image} alt={item.name} />
                       </div>
                       <div className="responsivInfo">
-                        <p>{item.name}</p>
-                        <span>${(item.price * item.quantity).toFixed(2)}</span>
-                        <p>Quantity: {item.quantity}</p>
+                        <div className='resp-item-quantity'>
+                          <p>{item.name}</p>
+                          <span>${(item.price * item.quantity).toFixed(2)}</span>
+                        </div>
+                        <div className='quantity'>
+                          <span className='plus' onClick={() => dispatch(increaseQuantity(item))}>+</span>
+                          <p>{item.quantity}</p>
+                          <span onClick={() => dispatch(removeFromBasket(index))}>—</span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               ))
             ) : (
-              <p>Basket is empty</p>
+              <div className='empty-basket-resp'>
+                <img src={BigredBasket} alt="" />
+                <p>Oops! </p>
+                <p>Basket empty</p>
+              </div>
             )}
             <div className="responsivCheckout">
               <Link to={'/checkoutPage'}>
-                <button className='checkRedbtn'>
+                <button className='checkRedbtn' disabled={basketItems.length === 0}>
                   <p className='checkP'>Checkout</p>
-                  <span className='checkS'>${localTotalPrice.toFixed(2)}</span>
+                  <span className='checkS'>${basketItems.reduce((sum, item) => sum + (item.price * item.quantity), 0).toFixed(2)}</span>
                 </button>
               </Link>
             </div>
           </div>
         )}
       </div>
+
     </div>
   );
 }
