@@ -13,7 +13,9 @@ function Login() {
   const [showPass, setShowPass] = useState(false);
   const [open, setOpen] = useState(false);
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false); // Success state
   const navigate = useNavigate();
+
   const {
     values,
     touched,
@@ -31,12 +33,15 @@ function Login() {
     onSubmit,
     validationSchema: loginSchema,
   });
+
   const handleClose = (x) => {
     if (x === "clickaway") {
       return;
     }
     setOpen(false);
+    setSuccess(false); // Close success message
   };
+
   async function onSubmit(values) {
     console.log(values);
 
@@ -51,23 +56,34 @@ function Login() {
       const { data } = await axios.post(url, formData);
 
       localStorage.setItem("userInfo", JSON.stringify(data));
-      localStorage.setItem("isLoggedIn", "true")
-      navigate("/profilePage");
+      localStorage.setItem("isLoggedIn", "true");
+
+      setSuccess(true); 
+      setOpen(true); 
+      setTimeout(() => {
+        navigate("/profilePage");
+      }, 2000); 
     } catch (error) {
-      console.log(error.message);
+      setError("Login failed, please check your details."); 
+      setSuccess(false); 
+      setOpen(true);
     }
   }
+
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("isLoggedIn");
     if (isLoggedIn === "true") {
       navigate("/profilePage");
     }
   }, [navigate]);
+
   const toggle = () => {
     setShowPass(!showPass);
   };
+
   return (
     <div className="login-form-container">
+      {/* Error & Success Message */}
       <Snackbar
         open={open}
         autoHideDuration={2000}
@@ -75,10 +91,15 @@ function Login() {
         anchorOrigin={{ vertical: "top", horizontal: "right" }}
         style={{ top: "18vh" }}
       >
-        <MuiAlert onClose={handleClose} severity="error" sx={{ width: "100%" }}>
-          {error}
+        <MuiAlert
+          onClose={handleClose}
+          severity={success ? "success" : "error"}
+          sx={{ width: "100%" }}
+        >
+          {success ? "Login successful!" : error}
         </MuiAlert>
       </Snackbar>
+
       <div className="login-image">
         <img src={image} alt="Login" />
       </div>
@@ -93,7 +114,7 @@ function Login() {
         </div>
         <form onSubmit={handleSubmit}>
           <div className="username-container-login">
-            <label htmlFor="username">Email</label>
+            <label htmlFor="username">Username</label>
             <div className="login-username-input">
               <input
                 value={values.username}
@@ -158,4 +179,5 @@ function Login() {
     </div>
   );
 }
+
 export default Login;
