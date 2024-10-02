@@ -346,6 +346,11 @@
     margin-left: 69%;
 }
 
+
+
+
+
+
 .quantity {
     display: flex;
     flex-direction: column;
@@ -360,6 +365,8 @@
     padding: 1px 1px 1px 1px;
 
 }
+
+
 
 .plus {
     margin-top: 10.2%;
@@ -393,6 +400,12 @@
 
 }
 
+.checkRedbtn:disabled{
+    background-color: #BDBDBD;
+}
+
+
+
 .checkP {
     color: white;
     font-weight: 500;
@@ -416,7 +429,7 @@
     width: 30%;
     height: 40px;
     border-radius: 100px;
-    color: black;
+    color: #828282;
 
 
 }
@@ -566,7 +579,11 @@
         width: 100%;
         height: auto;
         object-fit: fill;
-        margin-left: 7%;
+        /* margin-left: 7%; */
+    }
+
+    .internal-res-img{
+        height: 400px;
     }
 
     .information {
@@ -627,7 +644,7 @@
 
     .restaurants_user {
         margin: 0;
-        margin-bottom: 10%;
+        margin-bottom: 30%;
     }
 
     .restaurantsContainer {
@@ -711,12 +728,13 @@
     }
 
     .backbtn {
-        display: none;
+        /* display: none; */
     }
 
 
     .responsivBasketMain {
         display: block;
+      
     }
 
     .responsivProdcut1 {
@@ -736,7 +754,7 @@
         padding: 0px 11px 0px 1px;
         overflow-x: hidden;
         overflow-y: auto;
-
+        
 
     }
 
@@ -744,7 +762,7 @@
         display: flex;
         justify-content: space-around;
         position: absolute;
-        bottom: -69rem;
+        bottom: -53rem;
         left: 4px;
         width: 100%;
         align-items: center;
@@ -754,6 +772,25 @@
         border: none;
         border-radius: 50px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .empty-basket-resp{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 55px 0;
+    }
+
+
+    .empty-basket-resp img {
+        width: 60%;
+
+    }
+
+    .empty-basket-resp p{
+        margin: 0;
+        color: #EB5757;
+        font-size: 30px;
     }
 
     .itemImage {
@@ -831,8 +868,8 @@
     }
 
     .responsivImage img {
-        width: 40px;
-        height: 40px;
+        width: 46px;
+        height: 50px;
         margin-top: 50%;
     }
 
@@ -866,9 +903,33 @@
 
     }
 
+    .responsivInfo{
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        justify-content: center;
+    }
+
+    .quantity {
+        margin-top: 0;
+        
+    
+    }
+
+    .resp-item-quantity{
+        width: 90%;
+    }
+
     .responsivPlus {
         margin-top: 15.2%;
     }
+
+
+    .responsivCheckout a{
+        text-decoration: none;
+    }
+
+    
 
     .responsivCheck {
         display: flex;
