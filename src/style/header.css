@@ -127,7 +127,12 @@ body {
   border-radius: 30px;
   background-color: #d63626;
   border: 0;
-  color: white;   
+  color: white;
+  cursor: pointer;
+  transition-duration: 1s;   
+}
+.btnSignUp:hover{
+  background-color: #b1281b; 
 }
 
 .adminBtn {
@@ -236,6 +241,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+ 
 }
 
 .resSignUpBtn button {
