@@ -55,6 +55,11 @@
   font-weight: 500;
   letter-spacing: 0.75px;
   margin-right: 50px;
+  cursor: pointer;
+  transition-duration: 1s;
+}
+.register:hover{
+  background-color: #b1281b;  
 }
 .order {
   color: #828282;
@@ -67,6 +72,12 @@
   border-radius: 1.8rem;
   background-color: #f2f2f2;
   font-family: "Roboto";
+  cursor: pointer;
+  transition-duration: 1s;
+}
+.order:hover{
+  background-color: rgba(160, 155, 155, 0.5);
+
 }
 .blackBackground-image {
   transform: translateX(-10%);
