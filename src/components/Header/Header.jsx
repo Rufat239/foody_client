@@ -145,7 +145,7 @@ function Header() {
       </div>
 
       <div className="inputBtns">
-        <input type="text" />
+        <input type="text" placeholder="Search"/>
         <button className="langBtn" onClick={toggleLangDropdown}>
           <img className="imgLangBtn" src={langImg} alt="" />
           {showLangDropdown && (

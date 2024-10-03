@@ -55,6 +55,9 @@ body {
   font-size: 18px;
   color: #828282;
   font-weight: 600;
+  text-decoration: none; 
+  border-bottom: 2px solid transparent; 
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
 }
 
 .links:hover {
@@ -62,6 +65,7 @@ body {
 }
 .activeLinks {
   color: #d63626;
+  border-bottom: 2px solid #d63626;
 }
 
 .inputBtns {
@@ -69,13 +73,24 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  align-content: center;
+  padding-inline: 6%;
 }
 .inputBtns input {
   width: 40%;
   height: 40%;
   border-radius: 10px;
   border: 0;
+  padding-left: 15px;
 }
+.inputBtns input::placeholder {
+  color: #828282; 
+  font-family: "Roboto"; 
+  font-size: 14px; 
+
+}
+
+
 
 .langBtn {
   width: 50px;
@@ -83,6 +98,7 @@ body {
   border-radius: 50%;
   padding: 0;
   border: 0;
+  cursor: pointer;
 }
 
 .imgLangBtn {
@@ -100,17 +116,18 @@ body {
 }
 
 .linkSign {
-  width: 17%;
-  height: 38%;
+  width: 30%;
+  height: 48%;
 }
 
 .btnSignUp {
   width: 100%;
-  height: 100%;
-  border-radius: 15px;
+  /* height: 100%; */
+  height: 35px;
+  border-radius: 30px;
   background-color: #d63626;
   border: 0;
-  color: white;
+  color: white;   
 }
 
 .adminBtn {
@@ -194,6 +211,7 @@ body {
   border: 0;
   padding: 0;
   background-color: white;
+  cursor: pointer;
 }
 
 .navRespons {
@@ -296,16 +314,23 @@ body {
 
   .linkSign {
     display: none;
+    height: 20%;
+    width: 20%;
   }
 
   .linkSignRes {
-    width: 50%;
-    height: 30%;
+    width: 40%;
+    height: 25%;
+    border-radius: 30px;
+    display: block;
+    align-self: center;
   }
+  
 
   .btnSignUpRes {
     width: 100% !important;
     height: 100% !important;
+    transform: translateX(-20px);
   }
 
   .linkBasket {
