@@ -131,8 +131,9 @@
     display: flex;
     flex-direction: column;
     flex-direction: column;
-    height: auto;
+    max-height: 580px;
     overflow-y: auto;
+  
 }
 
 .restaurantProduct::-webkit-scrollbar {
@@ -146,7 +147,7 @@
 
 .productItem {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 2%;
     padding: 10px 10px 10px;
@@ -171,7 +172,8 @@
 
 
 .restaurantsInfo {
-    margin-left: 30px;
+    width: 50%;
+    margin-left: 4%;
     margin-top: -24px;
 
 }
@@ -656,6 +658,7 @@
         border-radius: 8px;
         margin: 0;
         margin-bottom: 10px;
+        margin-top: 40px;
 
     }
 
@@ -678,7 +681,7 @@
     }
 
     .productItem {
-        margin-left: -10%;
+        margin-left: -6%;
         padding: 0;
         width: 430px;
         height: 150px;
@@ -727,9 +730,7 @@
         display: none;
     }
 
-    .backbtn {
-        /* display: none; */
-    }
+  
 
 
     .responsivBasketMain {
@@ -762,7 +763,7 @@
         display: flex;
         justify-content: space-around;
         position: absolute;
-        bottom: -53rem;
+        bottom: -28rem;
         left: 4px;
         width: 100%;
         align-items: center;

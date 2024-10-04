@@ -35,7 +35,6 @@ function Internal() {
       try {
         const response = await axios.get(productUrl);
         const data = response.data;
-        console.log(data, "data")
         const productsArray = Object.values(data);
         const filteredProducts = productsArray
           .filter((product) => product.restaurant && product.restaurant.trim() === restaurant.name.trim())
@@ -60,11 +59,6 @@ function Internal() {
     getProducts();
   }, [restaurant.name]);
 
-  console.log(reduxTotalPrice, "price")
-
-  console.log("isledi");
-
-  console.log(basketItems, "list")
 
 
 
