@@ -5,11 +5,11 @@ import engFlag from "../../assets/headerImages/engFlag.png";
 import frFlag from "../../assets/headerImages/frFlag.png";
 import azeFlag from "../../assets/headerImages/azeFlag.png";
 import basket from "../../assets/headerImages/basket.png";
-import rufat from "../../assets/headerImages/Rufat.jpg";
 import "../../style/header.css";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Logout from "../Logout/Logout";
+import axios from "axios";
 
 function Header() {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -18,22 +18,47 @@ function Header() {
   const [hamburgerMenuStyle, setHamburgerMenuStyle] = useState({});
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [displayName, setDisplayName] = useState("");
+  const [profileImage, setProfileImage] = useState("");
   const [resDisplayName, setResDisplayName] = useState("");
+  const [userInfo, setUserInfo] = useState({});
   const navigate = useNavigate();
 
   const loggedOutHandler = () => {
     setShowLogoutModal(false);
   };
 
+  const { t, i18n } = useTranslation();
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
+
   useEffect(() => {
     setIsLoggedIn(Boolean(localStorage.getItem("isLoggedIn")));
     setDisplayName(localStorage.getItem("displayName"));
     setResDisplayName(localStorage.getItem("resDisplayName"));
+
+    const storedProfileImage = localStorage.getItem("profileImage");
+    if (storedProfileImage) {
+      setProfileImage(storedProfileImage); 
+    }
   }, [navigate]);
 
-  const { t, i18n } = useTranslation();
+  async function getUserInfo() {
+    const id = JSON.parse(localStorage.getItem("userInfo")).localId;
+    const { data } = await axios.get(
+      `https://test-foody-admin-default-rtdb.firebaseio.com/users/${id}.json`
+    );
+    setUserInfo(data);
+  }
 
-  const [showLogoutModal, setShowLogoutModal] = useState(false);
+  useEffect(() => {
+    getUserInfo();
+  }, []);
+
+  useEffect(() => {
+    // `userInfo` değiştiğinde `profileImage`'ı güncelle
+    if (userInfo && userInfo.profileImage) {
+      setProfileImage(userInfo.profileImage);
+    }
+  }, [userInfo]);
 
   const handleLogoutClick = () => {
     handleLogout();
@@ -43,6 +68,7 @@ function Header() {
   const handleLogout = () => {
     setShowLogoutModal(true);
   };
+
   const handleCancel = () => {
     setShowLogoutModal(false);
   };
@@ -99,7 +125,6 @@ function Header() {
             <img src={imageLogo} alt="" className="imgLogo" />
           </button>
         </Link>
-
         <ul>
           <NavLink
             to="/"
@@ -143,9 +168,8 @@ function Header() {
           </NavLink>
         </ul>
       </div>
-
       <div className="inputBtns">
-        <input type="text" placeholder="Search"/>
+        <input type="text" />
         <button className="langBtn" onClick={toggleLangDropdown}>
           <img className="imgLangBtn" src={langImg} alt="" />
           {showLangDropdown && (
@@ -185,7 +209,6 @@ function Header() {
             </div>
           )}
         </button>
-
         {isLoggedIn && (
           <Link to="/yourBasketPage" className="linkBasket">
             <button className="basketBtn">
@@ -193,7 +216,6 @@ function Header() {
             </button>
           </Link>
         )}
-
         {!isLoggedIn && (
           <Link className="linkSign" to="/loginPage">
             <button className="btnSignUp">{t("navbar.signup")}</button>
@@ -206,9 +228,19 @@ function Header() {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
+            {profileImage ? (
+              <img src={profileImage} alt="Profile" className="profileImages" />
+            ) : (
+              <img
+                src={userInfo.profileImage}
+                alt="Profile"
+                className="profileImage"
+              />
+            )}
             {showDropdown && (
               <div className="dropdownMenu">
                 <ul>
+                  <h1 className="userName">{userInfo.fullname}</h1>
                   <li>
                     <Link to="/profilePage">Profile</Link>
                   </li>
@@ -227,19 +259,16 @@ function Header() {
                 </ul>
               </div>
             )}
-            {displayName}
           </button>
         )}
         {showLogoutModal && (
           <Logout onCancel={handleCancel} onLoggedOut={loggedOutHandler} />
         )}
       </div>
-
       <div className="navRespons" style={hamburgerMenuStyle}>
         <button className="closeHamburger" onClick={closeHamburgerMenu}>
           X
         </button>
-
         <div className="resSignUpBtn">
           {!isLoggedIn && (
             <Link className="linkSignRes" to="/loginPage">
@@ -248,104 +277,54 @@ function Header() {
               </button>
             </Link>
           )}
-
           {isLoggedIn && (
             <div className="aboutClient">
-              <img className="imgClient" src={rufat} alt="" />
-              <h2 className="nameClient">{resDisplayName}</h2>
+              <img className="imgClient" src={userInfo.profileImage} alt="" />
+              <h2 className="nameClient">
+                {resDisplayName ? resDisplayName : displayName}
+              </h2>
             </div>
           )}
         </div>
-
         <ul>
-          <li>
-            <Link className="responsLink" to="/" onClick={closeHamburgerMenu}>
-              {t("navbar.home")}
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="responsLink"
-              to="/restaurantMain"
-              onClick={closeHamburgerMenu}
-            >
-              {t("navbar.restaurants")}
-            </Link>
-          </li>
+          <NavLink to="/" className="navLinkRes" onClick={closeHamburgerMenu}>
+            <li>{t("navbar.home")}</li>
+          </NavLink>
+          <NavLink
+            to="/restaurantMain"
+            className="navLinkRes"
+            onClick={closeHamburgerMenu}
+          >
+            <li>{t("navbar.restaurants")}</li>
+          </NavLink>
+          <NavLink
+            to="/aboutPage"
+            className="navLinkRes"
+            onClick={closeHamburgerMenu}
+          >
+            <li>{t("navbar.aboutus")}</li>
+          </NavLink>
+          <NavLink
+            to="/howItWorks"
+            className="navLinkRes"
+            onClick={closeHamburgerMenu}
+          >
+            <li>{t("navbar.howitworks")}</li>
+          </NavLink>
+          <NavLink
+            to="/faqs"
+            className="navLinkRes"
+            onClick={closeHamburgerMenu}
+          >
+            <li>{t("navbar.faq")}</li>
+          </NavLink>
           {isLoggedIn && (
-            <ul className="adminRes">
-              <li>
-                <Link
-                  className="responsLink"
-                  to="/profilePage"
-                  onClick={closeHamburgerMenu}
-                >
-                  Profile
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="responsLink"
-                  to="/yourBasketPage"
-                  onClick={closeHamburgerMenu}
-                >
-                  Your Basket
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="responsLink"
-                  to="/ordersPage"
-                  onClick={closeHamburgerMenu}
-                >
-                  Your Orders
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="responsLink"
-                  to="/checkoutPage"
-                  onClick={closeHamburgerMenu}
-                >
-                  Checkout
-                </Link>
-              </li>
-            </ul>
-          )}
-          <li>
-            <Link
-              className="responsLink"
-              to="/aboutPage"
-              onClick={closeHamburgerMenu}
+            <NavLink
+              className="navLinkRes"
+              onClick={handleLogoutClick}
             >
-              {t("navbar.aboutus")}
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="responsLink"
-              to="/howItWorks"
-              onClick={closeHamburgerMenu}
-            >
-              {t("navbar.howitworks")}
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="responsLink"
-              to="/faqs"
-              onClick={closeHamburgerMenu}
-            >
-              {t("navbar.faq")}
-            </Link>
-          </li>
-
-          {isLoggedIn && (
-            <li className="logoutLink">
-              <Link className="responsLink" onClick={handleLogoutClick}>
-                Logout
-              </Link>
-            </li>
+              <li>Logout</li>
+            </NavLink>
           )}
         </ul>
       </div>
