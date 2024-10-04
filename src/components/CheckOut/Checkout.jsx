@@ -15,6 +15,7 @@ function Checkout({ onOrderComplete }) {
     const [contactNumber, setContactNumber] = useState('');
     const [paymentMethod, setPaymentMethod] = useState('');
     const [error, setError] = useState('');
+
     const handleCheckout = () => {
         if (basketItems.length === 0) {
             setError('Your basket is empty. Please add items to proceed.');
@@ -49,10 +50,17 @@ function Checkout({ onOrderComplete }) {
 
     };
 
-    const handleContactNumberInput = (e) => {
-        const value = e.target.value.replace(/\D/g, '');
-        setContactNumber(value);
+    const validateContactNumber = (value) => {
+        const regex = /^[0-9\s+()-]*$/; 
+        if (regex.test(value) || value === '') {
+            setContactNumber(value);
+            
+        } else {
+            console.log("error");
+        }
     };
+
+    
     return (
         <div>
             <div className='mobile-edit'>
@@ -61,7 +69,8 @@ function Checkout({ onOrderComplete }) {
                     <label className='heading-of-inputs' htmlFor="">Delivery Address</label>
                     <input type="text" className="input-checkout-page" placeholder='Enter your address' value={deliveryAddress} onChange={(e) => setDeliveryAddress(e.target.value)} />
                     <label className='heading-of-inputs' htmlFor="">Contact Number</label>
-                    <input type="tel" className="input-checkout-page" placeholder='Enter your phone number' value={contactNumber} onChange={handleContactNumberInput} />
+                    <input type="text" className="input-checkout-page" placeholder='Enter your phone number' value={contactNumber}
+                        onChange={(e) => validateContactNumber(e.target.value)}/>
                     <label className='heading-of-inputs' htmlFor="">Payment Method</label>
                     <div className="radio-group-checkout">
                         <div
