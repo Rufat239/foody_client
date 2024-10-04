@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import "../../style/profilePage.css";
 import upload from "../../assets/ProfileImages/cloud_upload.png";
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
+import postProfile from '../Services/createProfile';  
+import updatedProfile from '../Services/updateProfile';  
 
 const Profile = () => {
   const [formData, setFormData] = useState({
@@ -9,9 +13,8 @@ const Profile = () => {
     username: "",
     address: "",
     fullname: "",
-    profileImage: null, 
+    profileImage: null,
   });
-
   const [errors, setErrors] = useState({
     contact: false,
     email: false,
@@ -19,32 +22,46 @@ const Profile = () => {
     address: false,
     fullname: false,
   });
-
   const [showThankYou, setShowThankYou] = useState(false);
+  const [users, setUsers] = useState([]);
+  const [isUpdate, setIsUpdate] = useState(false); 
+  const [currentUserId, setCurrentUserId] = useState(""); 
 
   useEffect(() => {
-    const savedData = localStorage.getItem('profileData');
-    if (savedData) {
-      setFormData(JSON.parse(savedData));
+    const storedProfileData = JSON.parse(localStorage.getItem("profileData")) || {};
+    const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
+    setUsers(storedUsers);
+  
+    const loggedInUser = storedUsers[1] || {}; 
+    if (loggedInUser || Object.keys(storedProfileData).length > 0) {
+      setFormData({
+        email: loggedInUser?.email || storedProfileData?.email || "",
+        username: loggedInUser?.username || storedProfileData?.username || "",
+        fullname: loggedInUser?.fullname || storedProfileData?.fullname || "",
+        contact: storedProfileData?.contact || "",
+        address: storedProfileData?.address || "",
+        profileImage: storedProfileData?.profileImage || null,
+      });
+      setCurrentUserId(loggedInUser?.id || "");  
+      setIsUpdate(!!loggedInUser?.id); 
     }
-  }, []);
 
+  }, []);
+  
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     const updatedFormData = { ...formData, [name]: value };
     setFormData(updatedFormData);
-
     if (value !== "") {
       setErrors({ ...errors, [name]: false });
     }
-
     localStorage.setItem('profileData', JSON.stringify(updatedFormData));
   };
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     setFormData({ ...formData, profileImage: file });
-
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -74,14 +91,43 @@ const Profile = () => {
     return !Object.values(newErrors).some((error) => error);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+  
+    
+    const cleanFormData = {
+      contact: formData.contact || "",
+      email: formData.email || "",
+      username: formData.username || "",
+      address: formData.address || "",
+      fullname: formData.fullname || "",
+      profileImage: formData.profileImage || null,
+    };
+  
     if (validateForm()) {
-      console.log(formData);
-      setShowThankYou(true);
-      setTimeout(() => setShowThankYou(false), 2000);
+      const updatedFormData = {
+        ...cleanFormData,
+        image: formData.profileImage,  
+      };
+  
+      try {
+        if (isUpdate) {
+          await updatedProfile(currentUserId, updatedFormData);
+        } else {
+          await postProfile(updatedFormData);
+        }
+  
+        localStorage.setItem("profileImage", formData.profileImage);
+        setShowThankYou(true);
+        setTimeout(() => setShowThankYou(false), 2000);
+  
+        window.dispatchEvent(new Event("profileUpdated"));
+      } catch (error) {
+        console.error("Error during profile submission:", error);
+      }
     }
   };
+  
 
   return (
     <div className="profile-container">
@@ -173,7 +219,12 @@ const Profile = () => {
             </button>
           </div>
         </div>
-        {showThankYou && <p className="thank-you-message">Thank You!</p>}
+        {showThankYou && (
+          <Alert severity="success" className="thank-you-message">
+            <AlertTitle>Success</AlertTitle>
+            Thank you! Your information has been saved.
+          </Alert>
+        )}
       </form>
     </div>
   );
