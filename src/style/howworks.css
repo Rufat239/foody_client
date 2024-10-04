@@ -11,24 +11,37 @@ justify-content: center;
 align-items: center;
 margin-top: -1em;
 }
-.delivery-heading h1{
-    text-align: center;
-    font-family: "Mukta";
-    margin-bottom: 10px;
+/* p üçün fade-in animasiyası */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  .delivery-heading p{
-    text-align: center;
-    width:96%;
-    height: 184px;
-    opacity: 0px;
-    font-family: "Roboto";
-    font-size: 1.25rem;
-    font-weight: 500;
-    line-height: 35px;
-    letter-spacing: 0.15px;
-    margin-bottom: 20px;
-    
+  to {
+    opacity: 1;
+  }
 }
+
+.delivery-heading h1 {
+  text-align: center;
+  font-family: "Mukta";
+  margin-bottom: 10px;
+  animation: fadeIn 2s ease-in forwards;
+}
+
+.delivery-heading p {
+  text-align: center;
+  width: 96%;
+  height: 184px;
+  opacity: 0; /* İlk olaraq gizli */
+  font-family: "Roboto";
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 35px;
+  letter-spacing: 0.15px;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in forwards; /* fade-in animasiyası 2 saniyə */
+}
+
   .image-container{
     width: 100%;
     height: 40%;

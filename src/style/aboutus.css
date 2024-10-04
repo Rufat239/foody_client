@@ -28,25 +28,51 @@
 
 
 
-.about-us p{
-font-family: "Roboto";
-color: rgb(130, 130, 130);
-font-size: 1.25rem;
-font-weight: 500;
-line-height: 2.1rem;
-letter-spacing: 0.01rem;
-text-align: left;
+/* h1 üçün aşağıdan yuxarı animasiya */
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-.about-us h1{
-color: rgb(0, 0, 0);
-font-family: "Roboto";
-font-size: 2rem;
-font-weight: 600;
-line-height: 1.88rem;
-letter-spacing: 0.01rem;
-text-align: left;
-margin-top: 5.5rem;
+/* p üçün fade-in animasiyası */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.about-us h1 {
+  color: rgb(0, 0, 0);
+  font-family: "Roboto";
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.88rem;
+  letter-spacing: 0.01rem;
+  text-align: left;
+  margin-top: 5.5rem;
+  /* Animasiya xüsusiyyətləri */
+  animation: slideUp 1s ease-out;
+}
+
+.about-us p {
+  font-family: "Roboto";
+  color: rgb(130, 130, 130);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 2.1rem;
+  letter-spacing: 0.01rem;
+  text-align: left;
+  /* Animasiya xüsusiyyətləri */
+  animation: fadeIn 2s ease-in;
 }
 
 
