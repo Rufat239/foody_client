@@ -7,7 +7,7 @@ const OrdersPage = () => {
   const orders = useSelector((state) => state.order.orders);
 
   return (
-    <div style={{ display: "flex", marginTop: "2%", columnGap: "2%" }}>
+    <div style={{ display: "flex", marginTop: "2%", columnGap: "2%", marginBottom: "17%" }}>
       <Sidebar />
       <Orders orders={orders} />
     </div>
