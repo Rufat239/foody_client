@@ -12,6 +12,7 @@
     background-color: #F3F4F6;
     border-radius: 5px;
     position: relative;
+   
 }
 
 .order-container {
@@ -82,6 +83,7 @@
     font-weight: 400;
     border-bottom: 1px solid #DFE2E9;
     text-align: center;
+    position: relative;
 }
 
 .orders-address {
@@ -133,7 +135,7 @@
 
 .drop-down-menu-content {
     position: absolute;
-    bottom: 53%;
+    bottom: -70%;
     right: 15px;
     z-index: 1;
     background-color: #FFF;

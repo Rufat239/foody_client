@@ -17,18 +17,19 @@ function Orders({ orders = [], itemsPerPageOptions = [5, 10, 15] }) {
   const [totalPages, setTotalPages] = useState(1);
   const [ordersList, setOrdersList] = useState([])
   const [selectedID, setSelectedID] = useState("")
-
   const [menuVisible, setMenuVisible] = useState(null);
   const [visibleDeleteModal, setVisibleDeleteModal] = useState(false);
   const [visibleShowModal, setVisibleShowModal] = useState(false);
+  const [selectedOrder, setSelectedOrder] = useState(null)
+
+
 
   const totalPrice = useSelector((state) => state.basket.totalPrice);
 
   const dispatch = useDispatch()
-  const [selectedOrder, setSelectedOrder] = useState(null)
+ 
 
   const toggleMenu = (id) => {
-    console.log('menu')
     if (menuVisible === id) {
       setMenuVisible(null);
     } else {
@@ -43,9 +44,13 @@ function Orders({ orders = [], itemsPerPageOptions = [5, 10, 15] }) {
  
   };
 
-  const handleVisibleShowModal = () => {
+  const handleVisibleShowModal = (order) => {
+    console.log("Selected Order:", order);
+    setSelectedOrder(order); 
     setVisibleShowModal(true);
   };
+
+  
 
   const handleDelete = () => {
     dispatch(deleteOrder(selectedOrder))
@@ -63,7 +68,6 @@ function Orders({ orders = [], itemsPerPageOptions = [5, 10, 15] }) {
   };
 
   useEffect(() => {
-    console.log('Order list ', ordersList);
     setTotalPages(Math.ceil(ordersList.length / itemsPerPage));
   }, [ordersList, itemsPerPage]);
 
@@ -77,7 +81,7 @@ function Orders({ orders = [], itemsPerPageOptions = [5, 10, 15] }) {
 
   console.log(ordersList, "ordersList");
 
-  console.log()
+  
 
 
   const changePage = (x) => {
@@ -94,7 +98,7 @@ function Orders({ orders = [], itemsPerPageOptions = [5, 10, 15] }) {
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const selectedItems = ordersList.slice(startIndex, startIndex + itemsPerPage);
-  console.log(selectedItems,"selecteditems")
+ 
 
   return (
     <div className='all-order-component'>
@@ -123,7 +127,7 @@ function Orders({ orders = [], itemsPerPageOptions = [5, 10, 15] }) {
                     <img className='options-button' src={options} alt="options" />
                     {menuVisible === item.id && (
                       <div className='drop-down-menu-content'>
-                        <p onClick={handleVisibleShowModal} className='show-setting'>show</p>
+                        <p onClick={() => handleVisibleShowModal(item)} className='show-setting'>show</p>
                         <p onClick={() => handleShowDeleteModal(item.id)} className='delete-setting'>delete</p>
                       </div>
                     )}
@@ -140,7 +144,7 @@ function Orders({ orders = [], itemsPerPageOptions = [5, 10, 15] }) {
                     <img className='options-button' src={options} alt="options" />
                     {menuVisible === item.id && (
                       <div className='drop-down-menu-content'>
-                        <p onClick={handleVisibleShowModal} className='show-setting'>show</p>
+                        <p onClick={() =>handleVisibleShowModal(item.id)} className='show-setting'>show</p>
                         <p onClick={() => handleShowDeleteModal(item.id)} className='delete-setting'>delete</p>
                       </div>
                     )}
@@ -174,7 +178,7 @@ function Orders({ orders = [], itemsPerPageOptions = [5, 10, 15] }) {
           </div>
         </div>
         {visibleDeleteModal && <DeleteModal onCancel={handleCancel} onDelete={handleDelete} />}
-        {visibleShowModal && <ShowModal onClose={handleClose} />}
+        {visibleShowModal && <ShowModal onClose={handleClose}  order={selectedOrder}/>}
       </div>
     </div>
   );
