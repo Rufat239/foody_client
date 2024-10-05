@@ -82,16 +82,144 @@ body {
   border-radius: 10px;
   border: 0;
   padding-left: 15px;
+  transition: all 0.3s ease;
 }
 .inputBtns input::placeholder {
   color: #828282; 
   font-family: "Roboto"; 
   font-size: 14px; 
+}
 
+                                  /* DROPDOWN MENU  FOR SEARCH*/
+
+.inputBtns input[type="text"]:focus {
+  outline: none;
+  border: 1px solid #888;
+}
+/* Dropdown menu style */
+.search-dropdown {
+  position: absolute;
+  top: 80px; 
+  left: 47%;
+  /* width: 390px; */
+  width: 29%;
+  background-color: white;
+  border: 1px solid #F7F6FC;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  height: auto;
+  max-height: 300px;
+  overflow-y: auto; 
+  display: none; 
+  z-index: 1;
+}
+
+/* Dropdown menu ul*/
+.search-dropdown ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.search-dropdown ul a{
+  text-decoration: none;
+}
+
+.search-dropdown li {
+  padding: 5px;
+  height: 50px;
+  border-bottom:  1px solid #F7F6FC;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  transition: transform 0.3s ease;
+}
+
+.search-dropdown li:hover {
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+/* when active show dropdown */
+.show {
+  display: block !important;
+}
+.restaurant-item {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.restaurant-item:hover {
+  background-color: #f5f5f5;
+}
+
+.restaurant-item figure{
+  width: 70px;
+  height: 40px;
+  border-radius: 10%;
+  margin-left: 20px;
+}
+/* Restoran logo */
+.restaurant-logo {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Restoran ismi ve açıklamasının olduğu alan */
+.restaurant-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.restaurant-name {
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Roboto";
+  margin: 0;
+}
+
+.restaurant-description {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.moreLinkStyle, .moreLinkLess{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.moreLink{
+  border-style: none;
+  background-color: inherit;
+  font-size: 14px;
+  font-family: "Roboto";
+  font-weight: 700;
+  /* margin-right: 10px; */
+  color: #d63626;
+  cursor: pointer;
+  /* transition: 1s ease-in; */
+}
+.moreLink:hover{
+  font-size: 16px;
+}
+
+/* Scroll hide and show */
+.hide-scroll {
+  overflow: hidden;
+}
+
+.show-scroll {
+  overflow: auto; 
 }
 
 
-
+                                /* LANG DROPDOWN */
 .langBtn {
   width: 50px;
   height: 50px;
