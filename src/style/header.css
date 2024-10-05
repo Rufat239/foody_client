@@ -120,6 +120,18 @@ body {
   padding: 0;
   margin: 0;
 }
+.no-results33{
+  text-align: center; 
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 50px;
+  cursor: default;
+  pointer-events: none;
+  color: #828282;
+  font-family: "Roboto";
+  font-size: 17px;
+}
 .search-dropdown ul a{
   text-decoration: none;
 }
