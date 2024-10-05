@@ -21,26 +21,7 @@ import { useEffect } from "react";
 
 function Home() {
   const { t } = useTranslation();
-
-  const sections = [
-    {
-      imgSrc: kfc,
-      title: t("home.Menuthat"),
-      description: t("home.Lorem ipsum5"),
-    },
-    {
-      imgSrc: bigpizza,
-      title: t("home.Yummy Papa"),
-      description: t("home.Lorem ipsum6"),
-    },
-    {
-      imgSrc: bigfries,
-      title: t("home.DoyouLike"),
-      description: t("home.Lorem ipsum7"),
-    },
-  ];
-
-     //  GET OFFER DATAS
+  //  GET OFFER DATAS
      const [offerData, setOfferData] = useState([]);
 
      useEffect(() => {
@@ -60,6 +41,14 @@ function Home() {
       getOffers();
     }, []);
 
+
+    const [isRegistered, setIsRegistered] = useState(false);
+
+    useEffect(() => {
+      const registered = localStorage.getItem("isRegistered");
+      setIsRegistered(!!registered);
+    }, []);
+
   return (
     <div className="allContainer">
       <div className="firstPart-headerContainer">
@@ -71,9 +60,11 @@ function Home() {
             </div>
 
             <div className="regor">
-              <Link to="/registerPage">
-                <button className="register">{t("home.Register")}</button>
-              </Link>
+            {!isRegistered && (
+                <Link to="/registerPage">
+                  <button className="register">{t("home.Register")}</button>
+                </Link>
+              )}
               <Link to="/restaurantMain">
                 <button className="order">{t("home.Order now")}</button>
               </Link>
