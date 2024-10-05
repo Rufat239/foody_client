@@ -242,7 +242,7 @@ function Header() {
       <div className="inputBtns">
         <input
           type="text"
-          placeholder="Search"
+          placeholder={t("placeholder")}
           value={searchQuery}
           onChange={handleInputChange}
         />

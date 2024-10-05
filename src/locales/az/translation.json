@@ -3,13 +3,15 @@
   "navbar.restaurants": "Restoranlar",
   "navbar.aboutus": "Haqqımızda",
   "navbar.howitworks": "Necə işləyir",
-  "navbar.faq": "Tez-tez verilən suallar",
+  "navbar.faq": "FAQ",
   "navbar.signup": "Abunə olun",
   "sidebar.profile": "Profil",
   "sidebar.yourBasket": "Səbət",
   "sidebar.yourOrders": "Sifarişlər",
   "sidebar.checkout": "Təsdiq et",
   "sidebar.logout": "Çıxış",
+  "placeholder": "Axtar",
+
   "home.Our Food": "Qida saytımız yerli yeməkləri tapmağı asanlaşdırır",
   "home.Lorem ipsum1": "Lorem ipsum qrafika, çap və nəşriyyat sənayesində tərtibatların və vizual maketlərin önizləməsi üçün geniş istifadə olunan yer tutucu mətndir.",
   "home.Register": "Qeydiyyat",
@@ -17,6 +19,7 @@
   "home.French fries": "Fransız kartofu Dadli...",
   "home.Pizza Hut": "Pizza Hut Dadlı...",
   "home.Cheesburger": "Çizburger Dadlı...",
+
   "home.Features": "Xüsusiyyətlər",
   "home.Lorem ipsum2": "Lorem ipsum qrafika, çap və nəşriyyat sənayesində tərtibatların və vizual maketlərin önizləməsi üçün geniş istifadə olunan yer tutucu mətndir.",
   "home.Discount": "Endirim Səbəti",
@@ -25,6 +28,7 @@
   "home.Lorem ipsum3": "Lorem ipsum qrafikdə çox istifadə olunan yer tutucudur.",
   "home.Fast": "Evə Sürətli Çatdırılma",
   "home.Lorem ipsum4": "Lorem ipsum qrafikdə çox istifadə olunan yer tutucudur.",
+
   "home.Menuthat": "Sizi Həmişə Aşiq Etdirən Menyu",
   "home.Lorem ipsum5": "Lorem ipsum qrafika, çap və nəşriyyat sənayesində tərtibatların və vizual maketlərin önizləməsi üçün geniş istifadə olunan yer tutucu mətndir.Lorem ipsum qrafika, çap və nəşriyyat sənayesində tərtibatların və vizual maketlərin önizləməsi üçün geniş istifadə olunan yer tutucu mətndir.",
   "home.Yummy Papa": "Həmişə dadlı  Papa John's Pizza. Razılaşırsınız?",
@@ -39,7 +43,7 @@
   "home.Lorem ipsum10": "Lorem ipsum qrafikdə çox istifadə olunan yer tutucudur",
   "home.Twister": "Twister Menyu",
   "home.Lorem ipsum11": "Lorem ipsum qrafikdə çox istifadə olunan yer tutucudur",
-  "home.Discover": "Sənə Yaxın Restoranları kəşf edin",
+  "home.Discover": "Sizə yaxın Restoranları Kəşf edin",
   "homr.Explore": "İndi kəşf edin",
 
  "footerText": "Restoranları nəzərdən keçirin, yeməkləri əlavə edin, asanlıqla sifariş verin.",
