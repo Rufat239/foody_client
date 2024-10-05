@@ -132,8 +132,11 @@ body {
   font-family: "Roboto";
   font-size: 17px;
 }
-.search-dropdown ul a{
-  text-decoration: none;
+.homeLinkInt{
+  text-decoration: none !important;
+}
+.homeLinkInt:active{
+  color: inherit;
 }
 
 .search-dropdown li {
@@ -188,14 +191,14 @@ body {
   flex-direction: column;
 }
 
-.restaurant-name {
+.restaurant-nameHome {
   font-size: 14px;
   font-weight: bold;
   font-family: "Roboto";
   margin: 0;
 }
 
-.restaurant-description {
+.restaurant-descriptionHome {
   font-size: 14px;
   color: #666;
   margin: 0;
@@ -300,40 +303,24 @@ body {
 
 .userName{
   font-size: 15px;
-  color:red;
+  color:rgb(12, 184, 175);
 }
-.dropdownMenu ul {
+/* .dropdownMenu ul {
   padding: 0; 
-}
+} */
 
 .dropdownMenu ul h1 {
   margin: 0; 
+  transform: translateY(-10px);
   /* padding-bottom: 0px;  */
   margin-left: 3px;
   margin-top: 0px;
 }
 
-.dropdownMenu ul li {
+/* .dropdownMenu ul li {
   margin-top: 0; 
-  padding: 5px 0; 
-}
-
-/* .dropdownMenu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background: white;
-  border: 1px solid #ccc;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  padding: 10px;
-  border-radius: 4px;
-  width: 200px;
-}
-.profile:hover .dropdownMenu {
-  display: block;
 } */
+
 .dropdownMenu {
   background-color: #fff;
   box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.2);
@@ -341,12 +328,12 @@ body {
   height: 234px;
   position: absolute;
   z-index: 9;
-  right: 0px;
+  right: 3%;
   top: 11%;
 }
 .dropdownMenu ul {
-  margin-top: 30px;
-  padding: 7%;
+  margin-top: 25px;
+  padding: 0 5px 30px 5px;
   text-align: left;
 }
 .dropdownMenu ul li {
@@ -361,9 +348,15 @@ body {
 }
 .dropdownMenu ul li a {
   text-decoration: none;
-  color: #000;
+  color: #b6b2b2;
   font-family: "Roboto";
   font-size: 15px;
+}
+.dropdownMenu ul li a:hover{
+  color: #969292;
+}
+.logoutLinkSty:hover{
+color: #f1867c !important;
 }
 
 .langDropdownMenu {
@@ -503,7 +496,25 @@ body {
     align-self: center;
   }
   
-
+  .navRespons a {
+    text-decoration: none;
+  }
+  .navLinkRes {
+    font-family: Roboto;
+    font-size: 18px;
+    color: #828282;
+    font-weight: 500;
+  }
+  .navLinkRes:hover{
+    color: #D63626;
+  }
+.navLinkRes.active {
+  color: #D63626;
+  /* border-bottom: 1px solid #D63626; */
+}
+.logoutLinkSty{
+color:  #969292 !important;
+}
   .btnSignUpRes {
     width: 100% !important;
     height: 100% !important;

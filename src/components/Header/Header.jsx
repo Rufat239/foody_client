@@ -265,6 +265,7 @@ function Header() {
                 ).map((restaurant, id) => (
                   <section key={id}>
                     <Link
+                    className="homeLinkInt"
                       to="/internal"
                       state={{ restaurant }}
                       onClick={() => {
@@ -282,8 +283,8 @@ function Header() {
                         </figure>
 
                         <div className="restaurant-info">
-                          <h4 className="restaurant-name">{restaurant.name}</h4>
-                          <p className="restaurant-description">
+                          <h4 className="restaurant-nameHome">{restaurant.name}</h4>
+                          <p className="restaurant-descriptionHome">
                             {restaurant.category}
                           </p>
                         </div>
@@ -447,7 +448,7 @@ function Header() {
                     <Link to="/checkoutPage">Checkout</Link>
                   </li>
                   <li>
-                    <Link onClick={handleLogout}>Logout</Link>
+                    <Link onClick={handleLogout} className="logoutLinkSty">Logout</Link>
                   </li>
                 </ul>
               </div>
