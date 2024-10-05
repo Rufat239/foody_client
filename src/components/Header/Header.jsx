@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import imageLogo from "../../assets/headerImages/Foody..png";
 import imageHamburger from "../../assets/headerImages/imageHamburger.png";
 import engFlag from "../../assets/headerImages/engFlag.png";
@@ -166,6 +166,19 @@ function Header() {
 
   // scroll hide and active
   const [showMore, setShowMore] = useState(false);
+  // touch screen hide dropdown
+  const dropdownRef = useRef(null);
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownVisible(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [dropdownRef]);
 
   return (
     <div className="navBar">
@@ -235,44 +248,50 @@ function Header() {
         />
 
         {/* Dropdown for serach */}
+
         {dropdownVisible && (
           <div
             className={`search-dropdown ${dropdownVisible ? "show" : ""} 
-          ${showMore ? "show-scroll" : "hide-scroll"}`}
+    ${showMore ? "show-scroll" : "hide-scroll"}`}
+            ref={dropdownRef}
           >
             <ul>
-              {(showAllRestaurants
-                ? filteredRestaurantsName
-                : filteredRestaurantsName.slice(0, 4)
-              ).map((restaurant, id) => (
-                <section>
-                  <Link
-                    to="/internal"
-                    state={{ restaurant }}
-                    onClick={() => {
-                      setDropdownVisible(false);
-                      setSearchQuery("");
-                    }}
-                  >
-                    <li key={id} className="restaurant-item">
-                      <figure>
-                        <img
-                          src={restaurant.url}
-                          alt={restaurant.name}
-                          className="restaurant-logo"
-                        />
-                      </figure>
+              {filteredRestaurantsName.length === 0 ? (
+                <li className="no-results33">No result found</li>
+              ) : (
+                (showAllRestaurants
+                  ? filteredRestaurantsName
+                  : filteredRestaurantsName.slice(0, 4)
+                ).map((restaurant, id) => (
+                  <section key={id}>
+                    <Link
+                      to="/internal"
+                      state={{ restaurant }}
+                      onClick={() => {
+                        setDropdownVisible(false);
+                        setSearchQuery("");
+                      }}
+                    >
+                      <li className="restaurant-item">
+                        <figure>
+                          <img
+                            src={restaurant.url}
+                            alt={restaurant.name}
+                            className="restaurant-logo"
+                          />
+                        </figure>
 
-                      <div className="restaurant-info">
-                        <h4 className="restaurant-name">{restaurant.name}</h4>
-                        <p className="restaurant-description">
-                          {restaurant.category}
-                        </p>
-                      </div>
-                    </li>
-                  </Link>
-                </section>
-              ))}
+                        <div className="restaurant-info">
+                          <h4 className="restaurant-name">{restaurant.name}</h4>
+                          <p className="restaurant-description">
+                            {restaurant.category}
+                          </p>
+                        </div>
+                      </li>
+                    </Link>
+                  </section>
+                ))
+              )}
               {filteredRestaurantsName.length > 4 && !showAllRestaurants && (
                 <li className="moreLinkStyle">
                   <button
@@ -293,20 +312,20 @@ function Header() {
                     >
                       <path
                         d="M0.439371 4.33538L12.6665 4.33538L9.00867 7.38246C8.83687 
-                          7.52613 8.83687 7.75871 9.00867 7.90201C9.18048 8.04568 
-                          9.4586 8.04568 9.62996 7.90201L13.9798 4.26483C14.149 4.12335 
-                          14.149 3.88675 13.9798 3.74528L9.62993 0.10772C9.45812 -0.03595 
-                          9.18 -0.03595 9.00864 0.10772C8.83683 0.25139 8.83683 0.483968 
-                          9.00864 0.627271L12.6665 3.60054L0.439407 3.60054C0.196858 
-                          3.60054 3.57638e-05 3.76516 3.5741e-05 3.96796C3.57182e-05 
-                          4.17076 0.196858 4.33538 0.439371 4.33538Z"
+                  7.52613 8.83687 7.75871 9.00867 7.90201C9.18048 8.04568 
+                  9.4586 8.04568 9.62996 7.90201L13.9798 4.26483C14.149 4.12335 
+                  14.149 3.88675 13.9798 3.74528L9.62993 0.10772C9.45812 -0.03595 
+                  9.18 -0.03595 9.00864 0.10772C8.83683 0.25139 8.83683 0.483968 
+                  9.00864 0.627271L12.6665 3.60054L0.439407 3.60054C0.196858 
+                  3.60054 3.57638e-05 3.76516 3.5741e-05 3.96796C3.57182e-05 
+                  4.17076 0.196858 4.33538 0.439371 4.33538Z"
                         fill="#d63626"
                       />
                     </svg>
                   </button>
                 </li>
               )}
-              {showAllRestaurants && (
+              {filteredRestaurantsName.length > 4 && showAllRestaurants && (
                 <li className="moreLinkLess">
                   <button
                     onClick={() => {
@@ -326,13 +345,13 @@ function Header() {
                     >
                       <path
                         d="M0.439371 4.33538L12.6665 4.33538L9.00867 7.38246C8.83687 
-                          7.52613 8.83687 7.75871 9.00867 7.90201C9.18048 8.04568 
-                          9.4586 8.04568 9.62996 7.90201L13.9798 4.26483C14.149 4.12335 
-                          14.149 3.88675 13.9798 3.74528L9.62993 0.10772C9.45812 -0.03595 
-                          9.18 -0.03595 9.00864 0.10772C8.83683 0.25139 8.83683 0.483968 
-                          9.00864 0.627271L12.6665 3.60054L0.439407 3.60054C0.196858 
-                          3.60054 3.57638e-05 3.76516 3.5741e-05 3.96796C3.57182e-05 
-                          4.17076 0.196858 4.33538 0.439371 4.33538Z"
+                  7.52613 8.83687 7.75871 9.00867 7.90201C9.18048 8.04568 
+                  9.4586 8.04568 9.62996 7.90201L13.9798 4.26483C14.149 4.12335 
+                  14.149 3.88675 13.9798 3.74528L9.62993 0.10772C9.45812 -0.03595 
+                  9.18 -0.03595 9.00864 0.10772C8.83683 0.25139 8.83683 0.483968 
+                  9.00864 0.627271L12.6665 3.60054L0.439407 3.60054C0.196858 
+                  3.60054 3.57638e-05 3.76516 3.5741e-05 3.96796C3.57182e-05 
+                  4.17076 0.196858 4.33538 0.439371 4.33538Z"
                         fill="#d63626"
                       />
                     </svg>
@@ -343,8 +362,6 @@ function Header() {
             </ul>
           </div>
         )}
-
-        
 
         <button className="langBtn" onClick={toggleLangDropdown}>
           <img className="imgLangBtn" src={langImg} alt="" />
