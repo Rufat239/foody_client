@@ -37,7 +37,7 @@ function Header() {
 
     const storedProfileImage = localStorage.getItem("profileImage");
     if (storedProfileImage) {
-      setProfileImage(storedProfileImage); 
+      setProfileImage(storedProfileImage);
     }
   }, [navigate]);
 
@@ -109,6 +109,64 @@ function Header() {
     setShowDropdown(false);
   };
 
+  // Search part dropdown
+  const [searchQuery, setSearchQuery] = useState("");
+  const [dropdownVisible, setDropdownVisible] = useState(false);
+  const [showAllRestaurants, setShowAllRestaurants] = useState(false);
+
+  const [restaurantData, setRestaurantData] = useState([]);
+  const [category, setCategory] = useState([]);
+
+  //  GET RESTAURANT DATAS
+  useEffect(() => {
+    const getRestaurants = async () => {
+      const restaurantURL = `https://test-foody-admin-default-rtdb.firebaseio.com/restaurants.json`;
+      try {
+        const response = await axios.get(restaurantURL);
+        const data = response.data;
+        setRestaurantData(Object.values(data));
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+
+    getRestaurants();
+  }, []);
+
+  // GET CATEGORY DATAS
+  useEffect(() => {
+    const getCategoryDatas = async () => {
+      const categorUrl = `https://test-foody-admin-default-rtdb.firebaseio.com/categories.json`;
+
+      try {
+        const response = await axios.get(categorUrl);
+        const dataCategory = response.data;
+        setCategory(Object.values(dataCategory));
+      } catch (error) {
+        console.log("error");
+      }
+    };
+    getCategoryDatas();
+  }, []);
+
+  const filteredRestaurantsName = restaurantData.filter((restaurant) =>
+    restaurant.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const handleInputChange = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+
+    if (query.length > 0) {
+      setDropdownVisible(true);
+    } else {
+      setDropdownVisible(false);
+    }
+  };
+
+  // scroll hide and active
+  const [showMore, setShowMore] = useState(false);
+
   return (
     <div className="navBar">
       <div className="logoLinks">
@@ -169,7 +227,125 @@ function Header() {
         </ul>
       </div>
       <div className="inputBtns">
-        <input type="text" />
+        <input
+          type="text"
+          placeholder="Search"
+          value={searchQuery}
+          onChange={handleInputChange}
+        />
+
+        {/* Dropdown for serach */}
+        {dropdownVisible && (
+          <div
+            className={`search-dropdown ${dropdownVisible ? "show" : ""} 
+          ${showMore ? "show-scroll" : "hide-scroll"}`}
+          >
+            <ul>
+              {(showAllRestaurants
+                ? filteredRestaurantsName
+                : filteredRestaurantsName.slice(0, 4)
+              ).map((restaurant, id) => (
+                <section>
+                  <Link
+                    to="/internal"
+                    state={{ restaurant }}
+                    onClick={() => {
+                      setDropdownVisible(false);
+                      setSearchQuery("");
+                    }}
+                  >
+                    <li key={id} className="restaurant-item">
+                      <figure>
+                        <img
+                          src={restaurant.url}
+                          alt={restaurant.name}
+                          className="restaurant-logo"
+                        />
+                      </figure>
+
+                      <div className="restaurant-info">
+                        <h4 className="restaurant-name">{restaurant.name}</h4>
+                        <p className="restaurant-description">
+                          {restaurant.category}
+                        </p>
+                      </div>
+                    </li>
+                  </Link>
+                </section>
+              ))}
+              {filteredRestaurantsName.length > 4 && !showAllRestaurants && (
+                <li className="moreLinkStyle">
+                  <button
+                    onClick={() => {
+                      setShowAllRestaurants(true);
+                      setShowMore(true);
+                    }}
+                    className="moreLink"
+                  >
+                    More
+                    <svg
+                      style={{ marginLeft: "10px" }}
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="15"
+                      height="8"
+                      viewBox="0 0 15 8"
+                      fill="none"
+                    >
+                      <path
+                        d="M0.439371 4.33538L12.6665 4.33538L9.00867 7.38246C8.83687 
+                          7.52613 8.83687 7.75871 9.00867 7.90201C9.18048 8.04568 
+                          9.4586 8.04568 9.62996 7.90201L13.9798 4.26483C14.149 4.12335 
+                          14.149 3.88675 13.9798 3.74528L9.62993 0.10772C9.45812 -0.03595 
+                          9.18 -0.03595 9.00864 0.10772C8.83683 0.25139 8.83683 0.483968 
+                          9.00864 0.627271L12.6665 3.60054L0.439407 3.60054C0.196858 
+                          3.60054 3.57638e-05 3.76516 3.5741e-05 3.96796C3.57182e-05 
+                          4.17076 0.196858 4.33538 0.439371 4.33538Z"
+                        fill="#d63626"
+                      />
+                    </svg>
+                  </button>
+                </li>
+              )}
+              {showAllRestaurants && (
+                <li className="moreLinkLess">
+                  <button
+                    onClick={() => {
+                      setShowAllRestaurants(false);
+                      setShowMore(false);
+                    }}
+                    className="moreLink"
+                  >
+                    <svg
+                      style={{ marginRight: "20px" }}
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="15"
+                      height="8"
+                      viewBox="0 0 15 8"
+                      fill="none"
+                      transform="scale(-1, 1) translate(-15, 0)"
+                    >
+                      <path
+                        d="M0.439371 4.33538L12.6665 4.33538L9.00867 7.38246C8.83687 
+                          7.52613 8.83687 7.75871 9.00867 7.90201C9.18048 8.04568 
+                          9.4586 8.04568 9.62996 7.90201L13.9798 4.26483C14.149 4.12335 
+                          14.149 3.88675 13.9798 3.74528L9.62993 0.10772C9.45812 -0.03595 
+                          9.18 -0.03595 9.00864 0.10772C8.83683 0.25139 8.83683 0.483968 
+                          9.00864 0.627271L12.6665 3.60054L0.439407 3.60054C0.196858 
+                          3.60054 3.57638e-05 3.76516 3.5741e-05 3.96796C3.57182e-05 
+                          4.17076 0.196858 4.33538 0.439371 4.33538Z"
+                        fill="#d63626"
+                      />
+                    </svg>
+                    Less
+                  </button>
+                </li>
+              )}
+            </ul>
+          </div>
+        )}
+
+        
+
         <button className="langBtn" onClick={toggleLangDropdown}>
           <img className="imgLangBtn" src={langImg} alt="" />
           {showLangDropdown && (
@@ -319,10 +495,7 @@ function Header() {
             <li>{t("navbar.faq")}</li>
           </NavLink>
           {isLoggedIn && (
-            <NavLink
-              className="navLinkRes"
-              onClick={handleLogoutClick}
-            >
+            <NavLink className="navLinkRes" onClick={handleLogoutClick}>
               <li>Logout</li>
             </NavLink>
           )}
