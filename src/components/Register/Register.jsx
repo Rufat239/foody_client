@@ -53,6 +53,7 @@ function Register() {
           }
         );
         const data = await response.json();
+        localStorage.setItem("isRegistered", true);
         console.log(data);
 
         const fullData = {
